@@ -1,10 +1,9 @@
 pragma solidity 0.4.24;
 
 // Internal
-import "./Collateralizer.sol";
-// External
-import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "./BetPayments.sol";
+import "./Oracle.sol";
+import "./BetTerms.sol";
 
 
 /**
@@ -13,6 +12,37 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
-contract BetKernel is Pausable {
-    using SafeMath for uint;
+/** @title Bet kernel. */
+contract BetKernel is BetTerms {
+
+    Oracle oracle;
+    BetPayments paymentsContract;
+
+    constructor(
+        address _oracle,
+        address _paymentsContract
+        ) public
+    {
+        // TODO: Check if both are correct implementations of the interface
+        oracle = Oracle(_oracle);
+        paymentsContract = BetPayments(_paymentsContract);
+    }
+
+    // Internal variables getters
+
+    function getPaymentsContractAddress()
+        public
+        view
+        returns(address)
+    {
+        return address(paymentsContract);
+    }
+
+    function getOracleContractAddress()
+        public
+        view
+        returns(address)
+    {
+        return address(oracle);
+    }
 }

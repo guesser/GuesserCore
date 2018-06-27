@@ -11,7 +11,7 @@
     "migrate": "truffle migrate",
     "chain": "ganache-cli --networkId 70 --accounts 20",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npm run lint-ts; npm run lint-sol",
+    "lint": "npm run lint-sol",
     "lint-sol": "solhint contracts/*.sol"
   },
   "pre-commit": [
