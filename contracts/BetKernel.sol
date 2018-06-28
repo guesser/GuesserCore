@@ -15,8 +15,8 @@ import "./BetTerms.sol";
 /** @title Bet kernel. */
 contract BetKernel is BetTerms {
 
-    Oracle oracle;
-    BetPayments paymentsContract;
+    Oracle public oracle;
+    BetPayments public paymentsContract;
 
     constructor(
         address _oracle,
@@ -26,23 +26,5 @@ contract BetKernel is BetTerms {
         // TODO: Check if both are correct implementations of the interface
         oracle = Oracle(_oracle);
         paymentsContract = BetPayments(_paymentsContract);
-    }
-
-    // Internal variables getters
-
-    function getPaymentsContractAddress()
-        public
-        view
-        returns(address)
-    {
-        return address(paymentsContract);
-    }
-
-    function getOracleContractAddress()
-        public
-        view
-        returns(address)
-    {
-        return address(oracle);
     }
 }

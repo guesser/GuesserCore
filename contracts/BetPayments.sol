@@ -32,6 +32,10 @@ contract BetPayments is Pausable {
         _;
     }
 
+    /**
+     * @dev Function to add the final Bet Token of the event
+     * @param _betToken address Address of the token
+     */
     function addBetToken (address _betToken)
         public
         onlyOwner
@@ -42,22 +46,37 @@ contract BetPayments is Pausable {
     }
 
     /**
+     * @dev Function that returns the address of the bet token
+     * @return address Address of the token
+     */
+    function getBetToken ()
+        public
+        view
+        whenPaused
+        returns(address)
+    {
+        return address(betToken);
+    }
+
+    /**
      * @dev Function that tells the balance of the bet
+     * @param _owner address Address of the better
      * @return uint the balance of the user 
      */
-    function balance() 
+    function allowance(address _owner) 
         public
         view
         returns(uint);
 
     /**
      * @dev Function to send the profits the bet has to a winner
+     * @param _from address Address of the current owner
      * @param _to address Address of the beneficiary
      * @param _profit uint this will depend in the child token if it is 
      * an ERC721 or ERC20 Token. But it's the profit the person gets
      * @return bool if the transaction was succesfull
      */
-    function transfer(address _to, uint _profit) 
+    function transferFrom(address _from, address _to, uint _profit) 
         public
         whenPaused
         onlyBetToken

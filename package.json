@@ -10,7 +10,7 @@
     "compile": "truffle compile --all",
     "migrate": "truffle migrate",
     "chain": "ganache-cli --networkId 70 --accounts 20",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "truffle test ./test/tests.js",
     "lint": "npm run lint-sol",
     "lint-sol": "solhint contracts/*.sol"
   },
@@ -18,9 +18,10 @@
     "lint"
   ],
   "keywords": [],
-  "author": "",
+  "author": "carlosgj94",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.1.2",
     "openzeppelin-solidity": "1.10.0",
     "solhint": "^1.2.1"
   },
