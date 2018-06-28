@@ -12,7 +12,6 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
 /** @title Oracle. */
-contract Oracle is Pausable{
+contract Oracle is Pausable {
     using SafeMath for uint;
-
 }

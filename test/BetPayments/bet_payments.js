@@ -42,7 +42,7 @@ contract("Bet ERC20 Payments Test", async (accounts) => {
 
     it("should tell the exact address of the Bet Token the payments contract is related to", async () => {
         await betPayment.addBetToken(betToken.address);
-        const betTokenAddress = await betPayment.getBetToken();
+        const betTokenAddress = await betPayment.betToken();
         expect(
             betTokenAddress
         ).to.be.equal(betToken.address);

@@ -21,8 +21,7 @@ contract BetKernel is BetTerms {
     constructor(
         address _oracle,
         address _paymentsContract
-        ) public
-    {
+    ) public {
         // TODO: Check if both are correct implementations of the interface
         oracle = Oracle(_oracle);
         paymentsContract = BetPayments(_paymentsContract);

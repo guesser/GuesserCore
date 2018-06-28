@@ -21,14 +21,25 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol";
 contract BetPayments is Pausable {
     using SafeMath for uint;
 
+    // Events
+    event LogPaymentReceived(
+        address sender,
+        uint amount
+    );
+
     // Storage variables
-    ERC721Token betToken;
+    ERC721Token public betToken;
+
+    // Fallback function
+    function () external payable {
+        emit LogPaymentReceived(msg.sender, msg.value);
+    }
 
     /**
      * @dev Modifier that checks if the sender is the Bet Token
      */
     modifier onlyBetToken() {
-       require(address(betToken) == msg.sender);
+        require(address(betToken) == msg.sender);
         _;
     }
 
@@ -43,19 +54,6 @@ contract BetPayments is Pausable {
     {
         betToken = ERC721Token(_betToken);
         pause();
-    }
-
-    /**
-     * @dev Function that returns the address of the bet token
-     * @return address Address of the token
-     */
-    function getBetToken ()
-        public
-        view
-        whenPaused
-        returns(address)
-    {
-        return address(betToken);
     }
 
     /**
