@@ -1,4 +1,4 @@
-![banner](https://imgur.com/a/pk9aKM4)
+![banner](https://raw.githubusercontent.com/GuesserProtocol/GuesserProtocol/master/core_name.png)
 
 
 # Guesser Protocol 
