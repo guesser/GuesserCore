@@ -5,12 +5,14 @@ const BetToken = artifacts.require("TestingBasicBetToken");
 const Oracle = artifacts.require("Oracle");
 const ERC20Payment = artifacts.require("ERC20Payment");
 const DummyToken = artifacts.require("DummyToken");
+const OwnerBased = artifacts.require("OwnerBased");
 
 contract("Bet ERC20 Payments Test", async (accounts) => {
     var token;
     var oracle;
     var betPayment;
     var betToken;
+    var ownerBased;
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -30,9 +32,19 @@ contract("Bet ERC20 Payments Test", async (accounts) => {
             token.address
         );
 
+        ownerBased = await OwnerBased.new();
+        var termsHash = await ownerBased.getTermsHash.call(
+            Math.floor(Math.random()*999999999999)
+        );
+        await ownerBased.getTermsHash(
+            Math.floor(Math.random()*999999999999)
+        );
+
         betToken = await BetToken.new(
             oracle.address,
-            betPayment.address
+            betPayment.address,
+            ownerBased.address,
+            termsHash
         );
 
 
