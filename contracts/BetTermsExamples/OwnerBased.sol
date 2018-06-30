@@ -30,27 +30,45 @@ contract OwnerBased is TermsContract, Ownable {
         FinishedPeriod
     }
     mapping(bytes32 => uint) hashStatus;
+    uint betAmount = 0;
 
     /**
-     * @dev Function that given a random number creates a terms hash
-     * @param _salt uint the random number to create the terms hash
+     * @dev Function that returns a terms hash for the next event
      * @return bytes32 the terms hash
      */
-    function getTermsHash(uint _salt)
+    function getTermsHash()
         public
+        view
         returns(bytes32)
+    {
+        return keccak256(
+            abi.encodePacked(
+                msg.sender,
+                betAmount
+            )
+        );
+    }
+
+    /**
+     * @dev Function that given a terms hash creates it if it is true
+     * @param _termsHash bytes32 the random number to create the terms hash
+     */
+    function setTermsHash(bytes32 _termsHash)
+        public
+        returns(bool)
     {
         bytes32 _hash = keccak256(
             abi.encodePacked(
-                block.timestamp,
-                _salt
+                msg.sender,
+                betAmount
             )
         );
 
+        require(_termsHash == _hash);
+
         // Setting the hash to the first state of the enum
         hashStatus[_hash] = 0;
-
-        return _hash;
+        betAmount++;
     }
 
     /**
@@ -60,6 +78,7 @@ contract OwnerBased is TermsContract, Ownable {
      */
     function participationPeriod(bytes32 _termsHash)
         public
+        view
         returns(bool)
     {
         if (hashStatus[_termsHash] == 0)
@@ -75,6 +94,7 @@ contract OwnerBased is TermsContract, Ownable {
      */
     function retrievingPeriod(bytes32 _termsHash)
         public 
+        view
         returns(bool)
     {
         if (hashStatus[_termsHash] == 1)
@@ -90,6 +110,7 @@ contract OwnerBased is TermsContract, Ownable {
      */
     function finishedPeriod(bytes32 _termsHash)
         public
+        view
         returns(bool)
     {
         if(hashStatus[_termsHash] == 2)

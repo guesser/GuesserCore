@@ -33,11 +33,9 @@ contract("Bet ERC20 Payments Reverts Test", async (accounts) => {
         );
 
         ownerBased = await OwnerBased.new();
-        var termsHash = await ownerBased.getTermsHash.call(
-            Math.floor(Math.random()*999999999999)
-        );
-        await ownerBased.getTermsHash(
-            Math.floor(Math.random()*999999999999)
+        var termsHash = await ownerBased.getTermsHash();
+        await ownerBased.setTermsHash(
+            termsHash
         );
 
         betToken = await BetToken.new(

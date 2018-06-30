@@ -7,12 +7,13 @@ const ERC20Payment = artifacts.require("ERC20Payment");
 const DummyToken = artifacts.require("DummyToken");
 const OwnerBased = artifacts.require("OwnerBased");
 
-contract("Bet Kernel Test", async (accounts) => {
+contract("Owner Based Bet Terms Test", async (accounts) => {
     var token;
     var oracle;
     var betPayment;
     var betKernel;
     var ownerBased;
+    var termsHash;
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -33,11 +34,16 @@ contract("Bet Kernel Test", async (accounts) => {
         );
 
         ownerBased = await OwnerBased.new();
-        var termsHash = await ownerBased.getTermsHash.call();
+    });
+
+    it("should have the termsHash in the call and the txo", async () => {
+        termsHash = await ownerBased.getTermsHash.call();
         await ownerBased.setTermsHash(
             termsHash
         );
+    });
 
+    it("should be in the participation period", async () => {
         betKernel = await BetKernel.new(
             oracle.address,
             betPayment.address,
@@ -47,12 +53,33 @@ contract("Bet Kernel Test", async (accounts) => {
 
         await token.setBalance(BETTER_1, 5);
         await token.setBalance(BETTER_2, 5);
+
+        expect(
+            await ownerBased.participationPeriod(termsHash)
+        ).to.be.equal(true);
     });
 
-    it("should have the proper oracle address and payments", async () => {
-        const oracleAddress = await betKernel.getOracleAddress();
+    it("should let the owner change to any state", async () => {
+        await ownerBased.changePeriod(
+            termsHash,
+            1
+        );
         expect(
-          oracleAddress
-        ).to.be.equal(oracle.address);
+            await ownerBased.participationPeriod(termsHash)
+        ).to.be.equal(false);
+        expect(
+            await ownerBased.retrievingPeriod(termsHash)
+        ).to.be.equal(true);
+
+        await ownerBased.changePeriod(
+            termsHash,
+            2
+        );
+        expect(
+            await ownerBased.retrievingPeriod(termsHash)
+        ).to.be.equal(false);
+        expect(
+            await ownerBased.finishedPeriod(termsHash)
+        ).to.be.equal(true);
     });
 });
