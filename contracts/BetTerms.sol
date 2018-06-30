@@ -38,11 +38,11 @@ contract BetTerms is Pausable {
     }
 
     /**
-     * @dev Function that asks the TermsContract if playing is allowd
+     * @dev function that asks the termscontract if playing is allowd
      * @return bool if it is the period for playing
      */
     function participationPeriod()
-        internal
+        public
         view
         returns(bool)
     {
@@ -50,11 +50,23 @@ contract BetTerms is Pausable {
     }
 
     /**
+     * @dev function that asks the termscontract if playing is in stand by
+     * @return bool if it is the waiting period
+     */
+    function waitingPeriod()
+        public
+        view
+        returns(bool)
+    {
+        return termsContract.waitingPeriod(termsHash);
+    }
+
+    /**
      * @dev Function that asks the TermsContract if it is the time to ask for the profits
      * @return bool if the period for betting is over
      */
     function retrievingPeriod()
-        internal
+        public
         view
         returns(bool)
     {
@@ -66,7 +78,7 @@ contract BetTerms is Pausable {
      * @return bool if the event is over
      */
     function finishedPeriod()
-        internal
+        public
         view
         returns(bool)
     {

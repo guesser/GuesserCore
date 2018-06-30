@@ -88,6 +88,22 @@ contract OwnerBased is TermsContract, Ownable {
     }
 
     /**
+     * @dev Function that tells if the event is in stand by
+     * @param _termsHash bytes32 of the event
+     * @return bool if it is the waiting period
+     */
+    function waitingPeriod(bytes32 _termsHash)
+        public
+        view
+        returns(bool)
+    {
+        if (hashStatus[_termsHash] == 1)
+            return true;
+        else
+            return false;
+    }
+
+    /**
      * @dev Function that tells if the period for playing is over
      * @param _termsHash bytes32 of the event
      * @return bool if the period for betting is over
@@ -97,7 +113,7 @@ contract OwnerBased is TermsContract, Ownable {
         view
         returns(bool)
     {
-        if (hashStatus[_termsHash] == 1)
+        if (hashStatus[_termsHash] == 2)
             return true;
         else
             return false;
@@ -113,7 +129,7 @@ contract OwnerBased is TermsContract, Ownable {
         view
         returns(bool)
     {
-        if(hashStatus[_termsHash] == 2)
+        if(hashStatus[_termsHash] == 3)
             return true;
         else
             return false;
