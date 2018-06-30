@@ -15,12 +15,16 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol";
 contract BetToken is BetKernel, ERC721Token {
     constructor (
         address _oracle,
-        address _collateral
+        address _collateral,
+        address _termsContract,
+        bytes32 _termsHash
     )
     public
     BetKernel(
         _oracle,
-        _collateral
+        _collateral,
+        _termsContract,
+        _termsHash
     )
     ERC721Token(
         "GuesserEventToken",

@@ -16,12 +16,16 @@ contract TestingBasicBetToken is BetToken {
 
     constructor (
         address _oracle,
-        address _collateral
+        address _collateral,
+        address _termsContract,
+        bytes32 _termsHash
     )
     public
     BetToken(
         _oracle,
-        _collateral
+        _collateral,
+        _termsContract,
+        _termsHash
     ) {}
 
     function transferFrom(

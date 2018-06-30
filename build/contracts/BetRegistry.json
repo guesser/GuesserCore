@@ -1,0 +1,848 @@
+{
+  "contractName": "BetRegistry",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eventEntryHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "LogEventEntry",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unpause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x608060405260008060146101000a81548160ff021916908315150217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506105d08061006d6000396000f300608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633f4ba83a1461007d5780635c975abb14610094578063715018a6146100c35780638456cb59146100da5780638da5cb5b146100f1578063f2fde38b14610148575b600080fd5b34801561008957600080fd5b5061009261018b565b005b3480156100a057600080fd5b506100a9610249565b604051808215151515815260200191505060405180910390f35b3480156100cf57600080fd5b506100d861025c565b005b3480156100e657600080fd5b506100ef61035e565b005b3480156100fd57600080fd5b5061010661041e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561015457600080fd5b50610189600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610443565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101e657600080fd5b600060149054906101000a900460ff16151561020157600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102b757600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b957600080fd5b600060149054906101000a900460ff161515156103d557600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561049e57600080fd5b6104a7816104aa565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156104e657600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058203d42aadf976db025143715c100d926cf28c820b09c8976a28f3c8699a0eec97a0029",
+  "deployedBytecode": "0x608060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633f4ba83a1461007d5780635c975abb14610094578063715018a6146100c35780638456cb59146100da5780638da5cb5b146100f1578063f2fde38b14610148575b600080fd5b34801561008957600080fd5b5061009261018b565b005b3480156100a057600080fd5b506100a9610249565b604051808215151515815260200191505060405180910390f35b3480156100cf57600080fd5b506100d861025c565b005b3480156100e657600080fd5b506100ef61035e565b005b3480156100fd57600080fd5b5061010661041e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561015457600080fd5b50610189600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610443565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156101e657600080fd5b600060149054906101000a900460ff16151561020157600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102b757600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b957600080fd5b600060149054906101000a900460ff161515156103d557600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561049e57600080fd5b6104a7816104aa565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156104e657600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058203d42aadf976db025143715c100d926cf28c820b09c8976a28f3c8699a0eec97a0029",
+  "sourceMap": "388:438:2:-;;;268:5:10;247:26;;;;;;;;;;;;;;;;;;;;575:10:12;567:5;;:18;;;;;;;;;;;;;;;;;;388:438:2;;;;;;",
+  "deployedSourceMap": "388:438:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;838:92:10;;;;;;247:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:26:10;;;;;;;;;;;;;;;;;;;;;;;;;;;827:111:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:111:12;;;;;;666:90:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:90:10;;;;;;238:20:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:12;;;;;;;;;;;;;;;;;;;;;;;;;;;1100:103;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1100:103:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:10;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;568:6:10;;;;;;;;;;;560:15;;;;;;;;900:5;891:6;;:14;;;;;;;;;;;;;;;;;;916:9;;;;;;;;;;838:92::o;247:26::-;;;;;;;;;;;;;:::o;827:111:12:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;903:5;;;;;;;;;;;884:25;;;;;;;;;;;;931:1;915:5;;:18;;;;;;;;;;;;;;;;;;827:111::o;666:90:10:-;719:5:12;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:10;;;;;;;;;;;415:7;407:16;;;;;;;;729:4;720:6;;:13;;;;;;;;;;;;;;;;;;744:7;;;;;;;;;;666:90::o;238:20:12:-;;;;;;;;;;;;;:::o;1100:103::-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1169:29;1188:9;1169:18;:29::i;:::-;1100:103;:::o;1338:171::-;1429:1;1408:23;;:9;:23;;;;1400:32;;;;;;;;1471:9;1443:38;;1464:5;;;;;;;;;;;1443:38;;;;;;;;;;;;1495:9;1487:5;;:17;;;;;;;;;;;;;;;;;;1338:171;:::o",
+  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"./BetToken.sol\";\n// External\nimport \"openzeppelin-solidity/contracts/lifecycle/Pausable.sol\";\nimport \"openzeppelin-solidity/contracts/math/SafeMath.sol\";\n\n\n/**\n * Stores the bets of the platform and provides a way to verify the integrity\n * of the tokens.\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title Bet BetRegistry. */\ncontract BetRegistry is Pausable {\n    using SafeMath for uint;\n\n    // Events\n    event LogEventEntry(\n        bytes32 eventEntryHash\n    );\n\n    // Storage\n    struct EventEntry {\n        address token;\n        address oracle;\n        address collateral;\n        address termsContract;\n        bytes32 termsHash;\n    }\n\n    // Primary registry mapping the events with their hash\n    mapping(bytes32 => EventEntry) internal registry;\n\n\n}\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetRegistry.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetRegistry.sol",
+    "exportedSymbols": {
+      "BetRegistry": [
+        145
+      ]
+    },
+    "id": 146,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 117,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetToken.sol",
+        "file": "./BetToken.sol",
+        "id": 118,
+        "nodeType": "ImportDirective",
+        "scope": 146,
+        "sourceUnit": 382,
+        "src": "37:24:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "id": 119,
+        "nodeType": "ImportDirective",
+        "scope": 146,
+        "sourceUnit": 533,
+        "src": "74:64:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 120,
+        "nodeType": "ImportDirective",
+        "scope": 146,
+        "sourceUnit": 627,
+        "src": "139:59:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 121,
+              "name": "Pausable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 532,
+              "src": "412:8:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Pausable_$532",
+                "typeString": "contract Pausable"
+              }
+            },
+            "id": 122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "412:8:2"
+          }
+        ],
+        "contractDependencies": [
+          532,
+          712
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Bet BetRegistry. ",
+        "fullyImplemented": true,
+        "id": 145,
+        "linearizedBaseContracts": [
+          145,
+          532,
+          712
+        ],
+        "name": "BetRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 125,
+            "libraryName": {
+              "contractScope": null,
+              "id": 123,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 626,
+              "src": "433:8:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$626",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "427:24:2",
+            "typeName": {
+              "id": 124,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "446:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 129,
+            "name": "LogEventEntry",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 127,
+                  "indexed": false,
+                  "name": "eventEntryHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "500:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 126,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "500:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "490:38:2"
+            },
+            "src": "471:58:2"
+          },
+          {
+            "canonicalName": "BetRegistry.EventEntry",
+            "id": 140,
+            "members": [
+              {
+                "constant": false,
+                "id": 131,
+                "name": "token",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "578:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 130,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "578:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 133,
+                "name": "oracle",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "601:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 132,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "601:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 135,
+                "name": "collateral",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "625:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 134,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "625:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 137,
+                "name": "termsContract",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "653:21:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 136,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "653:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 139,
+                "name": "termsHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "684:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 138,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "684:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "EventEntry",
+            "nodeType": "StructDefinition",
+            "scope": 145,
+            "src": "550:158:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 144,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 145,
+            "src": "773:48:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_EventEntry_$140_storage_$",
+              "typeString": "mapping(bytes32 => struct BetRegistry.EventEntry)"
+            },
+            "typeName": {
+              "id": 143,
+              "keyType": {
+                "id": 141,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "781:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "773:30:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_EventEntry_$140_storage_$",
+                "typeString": "mapping(bytes32 => struct BetRegistry.EventEntry)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 142,
+                "name": "EventEntry",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 140,
+                "src": "792:10:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_EventEntry_$140_storage_ptr",
+                  "typeString": "struct BetRegistry.EventEntry"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 146,
+        "src": "388:438:2"
+      }
+    ],
+    "src": "0:827:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetRegistry.sol",
+    "exportedSymbols": {
+      "BetRegistry": [
+        145
+      ]
+    },
+    "id": 146,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 117,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetToken.sol",
+        "file": "./BetToken.sol",
+        "id": 118,
+        "nodeType": "ImportDirective",
+        "scope": 146,
+        "sourceUnit": 382,
+        "src": "37:24:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "id": 119,
+        "nodeType": "ImportDirective",
+        "scope": 146,
+        "sourceUnit": 533,
+        "src": "74:64:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
+        "id": 120,
+        "nodeType": "ImportDirective",
+        "scope": 146,
+        "sourceUnit": 627,
+        "src": "139:59:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 121,
+              "name": "Pausable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 532,
+              "src": "412:8:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Pausable_$532",
+                "typeString": "contract Pausable"
+              }
+            },
+            "id": 122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "412:8:2"
+          }
+        ],
+        "contractDependencies": [
+          532,
+          712
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Bet BetRegistry. ",
+        "fullyImplemented": true,
+        "id": 145,
+        "linearizedBaseContracts": [
+          145,
+          532,
+          712
+        ],
+        "name": "BetRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 125,
+            "libraryName": {
+              "contractScope": null,
+              "id": 123,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 626,
+              "src": "433:8:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$626",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "427:24:2",
+            "typeName": {
+              "id": 124,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "446:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 129,
+            "name": "LogEventEntry",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 127,
+                  "indexed": false,
+                  "name": "eventEntryHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "500:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 126,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "500:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "490:38:2"
+            },
+            "src": "471:58:2"
+          },
+          {
+            "canonicalName": "BetRegistry.EventEntry",
+            "id": 140,
+            "members": [
+              {
+                "constant": false,
+                "id": 131,
+                "name": "token",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "578:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 130,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "578:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 133,
+                "name": "oracle",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "601:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 132,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "601:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 135,
+                "name": "collateral",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "625:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 134,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "625:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 137,
+                "name": "termsContract",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "653:21:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 136,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "653:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 139,
+                "name": "termsHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 140,
+                "src": "684:17:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 138,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "684:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "EventEntry",
+            "nodeType": "StructDefinition",
+            "scope": 145,
+            "src": "550:158:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 144,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 145,
+            "src": "773:48:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_EventEntry_$140_storage_$",
+              "typeString": "mapping(bytes32 => struct BetRegistry.EventEntry)"
+            },
+            "typeName": {
+              "id": 143,
+              "keyType": {
+                "id": 141,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "781:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "773:30:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_EventEntry_$140_storage_$",
+                "typeString": "mapping(bytes32 => struct BetRegistry.EventEntry)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 142,
+                "name": "EventEntry",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 140,
+                "src": "792:10:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_EventEntry_$140_storage_ptr",
+                  "typeString": "struct BetRegistry.EventEntry"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 146,
+        "src": "388:438:2"
+      }
+    ],
+    "src": "0:827:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-06-30T11:16:49.675Z"
+}

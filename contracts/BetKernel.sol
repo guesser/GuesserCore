@@ -20,10 +20,22 @@ contract BetKernel is BetTerms {
 
     constructor(
         address _oracle,
-        address _paymentsContract
-    ) public {
-        // TODO: Check if both are correct implementations of the interface
+        address _paymentsContract,
+        address _termsContract,
+        bytes32 _termsHash
+    ) public BetTerms(
+        _termsContract,
+        _termsHash
+    ) {
         oracle = Oracle(_oracle);
         paymentsContract = BetPayments(_paymentsContract);
+    }
+
+    function getOracleAddress() public view returns(address) {
+        return address(oracle);
+    }
+
+    function getPaymentsContractAddress() public view returns(address) {
+        return address(paymentsContract);
     }
 }

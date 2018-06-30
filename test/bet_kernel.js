@@ -5,12 +5,14 @@ const BetKernel = artifacts.require("BetKernel");
 const Oracle = artifacts.require("Oracle");
 const ERC20Payment = artifacts.require("ERC20Payment");
 const DummyToken = artifacts.require("DummyToken");
+const OwnerBased = artifacts.require("OwnerBased");
 
 contract("Bet Kernel Test", async (accounts) => {
     var token;
     var oracle;
     var betPayment;
     var betKernel;
+    var ownerBased;
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -30,19 +32,27 @@ contract("Bet Kernel Test", async (accounts) => {
             token.address
         );
 
-        betKernel = await BetKernel.new(
-            oracle.address,
-            betPayment.address
+        ownerBased = await OwnerBased.new();
+        var termsHash = await ownerBased.getTermsHash.call(
+            Math.floor(Math.random()*999999999999)
+        );
+        await ownerBased.getTermsHash(
+            Math.floor(Math.random()*999999999999)
         );
 
+        betKernel = await BetKernel.new(
+            oracle.address,
+            betPayment.address,
+            ownerBased.address,
+            termsHash
+        );
 
         await token.setBalance(BETTER_1, 5);
         await token.setBalance(BETTER_2, 5);
     });
 
     it("should have the proper oracle address and payments", async () => {
-        const oracleAddress = await betKernel.oracle();
-        // assert.equal(oracleAddress, oracle.address);
+        const oracleAddress = await betKernel.getOracleAddress();
         expect(
           oracleAddress
         ).to.be.equal(oracle.address);

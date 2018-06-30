@@ -1,0 +1,1207 @@
+{
+  "contractName": "BetToken",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApproved",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "initialBlock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenOfOwnerByIndex",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "exists",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenByIndex",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ownerOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paymentsContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_approved",
+          "type": "bool"
+        }
+      ],
+      "name": "setApprovalForAll",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTermsContractAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "termsHash",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenURI",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_operator",
+          "type": "address"
+        }
+      ],
+      "name": "isApprovedForAll",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_oracle",
+          "type": "address"
+        },
+        {
+          "name": "_collateral",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_approved",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_approved",
+          "type": "bool"
+        }
+      ],
+      "name": "ApprovalForAll",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unpause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"./BetKernel.sol\";\n// External\nimport \"openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol\";\n\n\n/**\n * This is the final token that users will receive as the output of creating a bet.\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title Bet Token. */\ncontract BetToken is BetKernel, ERC721Token {\n    constructor (\n        address _oracle,\n        address _collateral\n    )\n    public\n    BetKernel(\n        _oracle,\n        _collateral\n    )\n    ERC721Token(\n        \"GuesserEventToken\",\n        \"GET\"\n    ) {}\n}\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetToken.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetToken.sol",
+    "exportedSymbols": {
+      "BetToken": [
+        381
+      ]
+    },
+    "id": 382,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 358,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetKernel.sol",
+        "file": "./BetKernel.sol",
+        "id": 359,
+        "nodeType": "ImportDirective",
+        "scope": 382,
+        "sourceUnit": 32,
+        "src": "37:25:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "file": "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "id": 360,
+        "nodeType": "ImportDirective",
+        "scope": 382,
+        "sourceUnit": 1845,
+        "src": "75:70:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 361,
+              "name": "BetKernel",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 31,
+              "src": "338:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetKernel_$31",
+                "typeString": "contract BetKernel"
+              }
+            },
+            "id": 362,
+            "nodeType": "InheritanceSpecifier",
+            "src": "338:9:5"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 363,
+              "name": "ERC721Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1844,
+              "src": "349:11:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC721Token_$1844",
+                "typeString": "contract ERC721Token"
+              }
+            },
+            "id": 364,
+            "nodeType": "InheritanceSpecifier",
+            "src": "349:11:5"
+          }
+        ],
+        "contractDependencies": [
+          31,
+          228,
+          532,
+          712,
+          739,
+          759,
+          766,
+          873,
+          1457,
+          1844
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Bet Token. ",
+        "fullyImplemented": false,
+        "id": 381,
+        "linearizedBaseContracts": [
+          381,
+          1844,
+          1457,
+          766,
+          759,
+          739,
+          873,
+          31,
+          228,
+          532,
+          712
+        ],
+        "name": "BetToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 379,
+              "nodeType": "Block",
+              "src": "575:2:5",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 380,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 371,
+                    "name": "_oracle",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 366,
+                    "src": "474:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 372,
+                    "name": "_collateral",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 368,
+                    "src": "491:11:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 373,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 370,
+                  "name": "BetKernel",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 31,
+                  "src": "455:9:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_BetKernel_$31_$",
+                    "typeString": "type(contract BetKernel)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "455:53:5"
+              },
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "477565737365724576656e74546f6b656e",
+                    "id": 375,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "534:19:5",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_4d36823a6f254bd1d20adfb67be34c5e9778f484ec89c47c12cfe501d04e15ab",
+                      "typeString": "literal_string \"GuesserEventToken\""
+                    },
+                    "value": "GuesserEventToken"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "474554",
+                    "id": 376,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "563:5:5",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_5a61babeb76c554783ca90a1a250e84f1b703409fdff33c217ab64dd51f05199",
+                      "typeString": "literal_string \"GET\""
+                    },
+                    "value": "GET"
+                  }
+                ],
+                "id": 377,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 374,
+                  "name": "ERC721Token",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1844,
+                  "src": "513:11:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_ERC721Token_$1844_$",
+                    "typeString": "type(contract ERC721Token)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "513:61:5"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 369,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 366,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 380,
+                  "src": "389:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 365,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "389:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 368,
+                  "name": "_collateral",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 380,
+                  "src": "414:19:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 367,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "379:60:5"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 378,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "575:0:5"
+            },
+            "scope": 381,
+            "src": "367:210:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 382,
+        "src": "317:262:5"
+      }
+    ],
+    "src": "0:580:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetToken.sol",
+    "exportedSymbols": {
+      "BetToken": [
+        381
+      ]
+    },
+    "id": 382,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 358,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetKernel.sol",
+        "file": "./BetKernel.sol",
+        "id": 359,
+        "nodeType": "ImportDirective",
+        "scope": 382,
+        "sourceUnit": 32,
+        "src": "37:25:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "file": "openzeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "id": 360,
+        "nodeType": "ImportDirective",
+        "scope": 382,
+        "sourceUnit": 1845,
+        "src": "75:70:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 361,
+              "name": "BetKernel",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 31,
+              "src": "338:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetKernel_$31",
+                "typeString": "contract BetKernel"
+              }
+            },
+            "id": 362,
+            "nodeType": "InheritanceSpecifier",
+            "src": "338:9:5"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 363,
+              "name": "ERC721Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1844,
+              "src": "349:11:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC721Token_$1844",
+                "typeString": "contract ERC721Token"
+              }
+            },
+            "id": 364,
+            "nodeType": "InheritanceSpecifier",
+            "src": "349:11:5"
+          }
+        ],
+        "contractDependencies": [
+          31,
+          228,
+          532,
+          712,
+          739,
+          759,
+          766,
+          873,
+          1457,
+          1844
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Bet Token. ",
+        "fullyImplemented": false,
+        "id": 381,
+        "linearizedBaseContracts": [
+          381,
+          1844,
+          1457,
+          766,
+          759,
+          739,
+          873,
+          31,
+          228,
+          532,
+          712
+        ],
+        "name": "BetToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 379,
+              "nodeType": "Block",
+              "src": "575:2:5",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 380,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 371,
+                    "name": "_oracle",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 366,
+                    "src": "474:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 372,
+                    "name": "_collateral",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 368,
+                    "src": "491:11:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 373,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 370,
+                  "name": "BetKernel",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 31,
+                  "src": "455:9:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_BetKernel_$31_$",
+                    "typeString": "type(contract BetKernel)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "455:53:5"
+              },
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "477565737365724576656e74546f6b656e",
+                    "id": 375,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "534:19:5",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_4d36823a6f254bd1d20adfb67be34c5e9778f484ec89c47c12cfe501d04e15ab",
+                      "typeString": "literal_string \"GuesserEventToken\""
+                    },
+                    "value": "GuesserEventToken"
+                  },
+                  {
+                    "argumentTypes": null,
+                    "hexValue": "474554",
+                    "id": 376,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "563:5:5",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_5a61babeb76c554783ca90a1a250e84f1b703409fdff33c217ab64dd51f05199",
+                      "typeString": "literal_string \"GET\""
+                    },
+                    "value": "GET"
+                  }
+                ],
+                "id": 377,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 374,
+                  "name": "ERC721Token",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1844,
+                  "src": "513:11:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_ERC721Token_$1844_$",
+                    "typeString": "type(contract ERC721Token)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "513:61:5"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 369,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 366,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 380,
+                  "src": "389:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 365,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "389:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 368,
+                  "name": "_collateral",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 380,
+                  "src": "414:19:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 367,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "379:60:5"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 378,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "575:0:5"
+            },
+            "scope": 381,
+            "src": "367:210:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 382,
+        "src": "317:262:5"
+      }
+    ],
+    "src": "0:580:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-06-30T11:16:49.673Z"
+}
