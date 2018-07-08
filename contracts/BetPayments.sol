@@ -2,6 +2,7 @@ pragma solidity 0.4.24;
 
 // Internal
 import "./RegistrySetter.sol";
+import "./ProxyInterfaces/BetPaymentsProxyInterface.sol";
 
 
 /**
@@ -30,11 +31,19 @@ contract BetPayments is RegistrySetter {
      * @param _owner address Address of the better
      * @return uint the balance of the user
      */
-    function allowance(address _owner)
+    function allowance(
+        address _paymentsProxy,
+        address _token,
+        address _owner
+    )
         public
         view
         returns(uint)
     {
+        return BetPaymentsProxyInterface(_paymentsProxy).allowance(
+            _token,
+            _owner
+        );
     }
 
     /**
@@ -45,10 +54,28 @@ contract BetPayments is RegistrySetter {
      * an ERC721 or ERC20 Token. But it's the profit the person gets
      * @return bool if the transaction was succesfull
      */
-    function transferFrom(address _from, address _to, uint _profit)
+    function transferFrom(
+        address _paymentsProxy,
+        address _token,
+        address _from,
+        address _to,
+        uint _profit
+    )
         public
         whenPaused
         returns(bool)
     {    
+        require(_paymentsProxy.delegatecall(
+            bytes4(
+                keccak256(
+                    "transferFrom(address,address,address,uint256)"
+                )
+            ),
+            _token,
+            _from,
+            _to,
+            _profit
+        ));
+        return true;
     }
 }
