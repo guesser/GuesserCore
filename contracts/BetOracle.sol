@@ -8,6 +8,6 @@ import "./RegistrySetter.sol";
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
-/** @title BetKernel. */
-contract BetKernel is RegistrySetter {
+/** @title Bet Oracle. */
+contract BetOracle is RegistrySetter {
 }

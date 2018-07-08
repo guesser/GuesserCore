@@ -2,86 +2,65 @@ pragma solidity 0.4.24;
 
 //Internal
 import "./TermsContract.sol";
-// External
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
+import "./RegistrySetter.sol";
 
 
 /**
- * The Bet Terms contract is in charge of storing the basic information of the event
+ * The Bet Terms contract is in charge of the basic information of the event
  * to function in time. This contract is the one that will ask if participation in an event is
  * still allowed, and, in case it is time, to allow the Oracle to ask for the information
- * and give the permision to return the profits to the Bet Token hodlers.
+ * and give the permision to return the profits to the Bet hodlers.
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
-/** @title Bet terms. */
-contract BetTerms is Pausable {
-    using SafeMath for uint;
-
-    TermsContract internal termsContract;
-    bytes32 public termsHash;
-    uint public initialBlock;
-
-    constructor(address _termsContract, bytes32 _termsHash) public {
-        termsContract = TermsContract(_termsContract);
-        termsHash = _termsHash;
-        initialBlock = block.number;
-    }
-
-    /**
-     * @dev Function that returns the address of the Terms Contract of the event
-     * @return address the address of the Terms Contract it relates to
-     */
-    function getTermsContractAddress() public view returns(address) {
-        return address(termsContract);
-    }
+/** @title Bet Terms. */
+contract BetTerms is RegistrySetter {
 
     /**
      * @dev function that asks the termscontract if playing is allowd
      * @return bool if it is the period for playing
      */
-    function participationPeriod()
+    function participationPeriod(address _termsContract, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return termsContract.participationPeriod(termsHash);
+        return TermsContract(_termsContract).participationPeriod(_termsHash);
     }
 
     /**
      * @dev function that asks the termscontract if playing is in stand by
      * @return bool if it is the waiting period
      */
-    function waitingPeriod()
+    function waitingPeriod(address _termsContract, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return termsContract.waitingPeriod(termsHash);
+        return TermsContract(_termsContract).waitingPeriod(_termsHash);
     }
 
     /**
      * @dev Function that asks the TermsContract if it is the time to ask for the profits
      * @return bool if the period for betting is over
      */
-    function retrievingPeriod()
+    function retrievingPeriod(address _termsContract, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return termsContract.retrievingPeriod(termsHash);
+        return TermsContract(_termsContract).retrievingPeriod(_termsHash);
     }
 
     /**
      * @dev Function that asks the TermsContract if the event has finished
      * @return bool if the event is over
      */
-    function finishedPeriod()
+    function finishedPeriod(address _termsContract, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return termsContract.finishedPeriod(termsHash);
+        return TermsContract(_termsContract).finishedPeriod(_termsHash);
     }
 }
