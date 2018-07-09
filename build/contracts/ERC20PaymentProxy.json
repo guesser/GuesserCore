@@ -1,0 +1,1620 @@
+{
+  "contractName": "ERC20PaymentProxy",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betRegistry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_betRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setBetRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unpause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_profit",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008060146101000a81548160ff021916908315150217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610ad08061006d6000396000f3006080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315dacbea146100a95780631ff677bf1461014e5780633f4ba83a146101a55780635c975abb146101bc578063715018a6146101eb5780638456cb59146102025780638da5cb5b14610219578063dd62ed3e14610270578063efdb2b46146102e7578063f2fde38b1461032a575b600080fd5b3480156100b557600080fd5b50610134600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061036d565b604051808215151515815260200191505060405180910390f35b34801561015a57600080fd5b5061016361048e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101b157600080fd5b506101ba6104b4565b005b3480156101c857600080fd5b506101d1610572565b604051808215151515815260200191505060405180910390f35b3480156101f757600080fd5b50610200610585565b005b34801561020e57600080fd5b50610217610687565b005b34801561022557600080fd5b5061022e610747565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561027c57600080fd5b506102d1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061076c565b6040518082815260200191505060405180910390f35b3480156102f357600080fd5b50610328600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610880565b005b34801561033657600080fd5b5061036b600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610943565b005b60008473ffffffffffffffffffffffffffffffffffffffff166323b872dd8585856040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b15801561044657600080fd5b505af115801561045a573d6000803e3d6000fd5b505050506040513d602081101561047057600080fd5b81019080805190602001909291905050505060019050949350505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561050f57600080fd5b600060149054906101000a900460ff16151561052a57600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105e057600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106e257600080fd5b600060149054906101000a900460ff161515156106fe57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008273ffffffffffffffffffffffffffffffffffffffff1663dd62ed3e83336040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050602060405180830381600087803b15801561083d57600080fd5b505af1158015610851573d6000803e3d6000fd5b505050506040513d602081101561086757600080fd5b8101908080519060200190929190505050905092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108db57600080fd5b600060149054906101000a900460ff161515156108f757600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610940610687565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561099e57600080fd5b6109a7816109aa565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156109e657600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820d41881c4944555857048bcbd58ebe9e49384f322a2eda886905619be4e5f0e550029",
+  "deployedBytecode": "0x6080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315dacbea146100a95780631ff677bf1461014e5780633f4ba83a146101a55780635c975abb146101bc578063715018a6146101eb5780638456cb59146102025780638da5cb5b14610219578063dd62ed3e14610270578063efdb2b46146102e7578063f2fde38b1461032a575b600080fd5b3480156100b557600080fd5b50610134600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061036d565b604051808215151515815260200191505060405180910390f35b34801561015a57600080fd5b5061016361048e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101b157600080fd5b506101ba6104b4565b005b3480156101c857600080fd5b506101d1610572565b604051808215151515815260200191505060405180910390f35b3480156101f757600080fd5b50610200610585565b005b34801561020e57600080fd5b50610217610687565b005b34801561022557600080fd5b5061022e610747565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561027c57600080fd5b506102d1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061076c565b6040518082815260200191505060405180910390f35b3480156102f357600080fd5b50610328600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610880565b005b34801561033657600080fd5b5061036b600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610943565b005b60008473ffffffffffffffffffffffffffffffffffffffff166323b872dd8585856040518463ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b15801561044657600080fd5b505af115801561045a573d6000803e3d6000fd5b505050506040513d602081101561047057600080fd5b81019080805190602001909291905050505060019050949350505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561050f57600080fd5b600060149054906101000a900460ff16151561052a57600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105e057600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106e257600080fd5b600060149054906101000a900460ff161515156106fe57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008273ffffffffffffffffffffffffffffffffffffffff1663dd62ed3e83336040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050602060405180830381600087803b15801561083d57600080fd5b505af1158015610851573d6000803e3d6000fd5b505050506040513d602081101561086757600080fd5b8101908080519060200190929190505050905092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108db57600080fd5b600060149054906101000a900460ff161515156108f757600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610940610687565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561099e57600080fd5b6109a7816109aa565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156109e657600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820d41881c4944555857048bcbd58ebe9e49384f322a2eda886905619be4e5f0e550029",
+  "sourceMap": "495:1055:2:-;;;268:5:8;247:26;;;;;;;;;;;;;;;;;;;;575:10:10;567:5;;:18;;;;;;;;;;;;;;;;;;495:1055:2;;;;;;",
+  "deployedSourceMap": "495:1055:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1304:244;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1304:244:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;367:30:6;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;838:92:8;;;;;;247:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:26:8;;;;;;;;;;;;;;;;;;;;;;;;;;;827:111:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:111:10;;;;;;666:90:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:90:8;;;;;;238:20:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:10;;;;;;;;;;;;;;;;;;;;;;;;;;;740:172:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;740:172:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;537:179:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;537:179:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;1100:103:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1100:103:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;1304:244:2;1453:4;1479:6;1473:26;;;1500:5;1507:3;1512:7;1473:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1473:47:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1473:47:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1473:47:2;;;;;;;;;;;;;;;;;1537:4;1530:11;;1304:244;;;;;;:::o;367:30:6:-;;;;;;;;;;;;;:::o;838:92:8:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;568:6:8;;;;;;;;;;;560:15;;;;;;;;900:5;891:6;;:14;;;;;;;;;;;;;;;;;;916:9;;;;;;;;;;838:92::o;247:26::-;;;;;;;;;;;;;:::o;827:111:10:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;903:5;;;;;;;;;;;884:25;;;;;;;;;;;;931:1;915:5;;:18;;;;;;;;;;;;;;;;;;827:111::o;666:90:8:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:8;;;;;;;;;;;415:7;407:16;;;;;;;;729:4;720:6;;:13;;;;;;;;;;;;;;;;;;744:7;;;;;;;;;;666:90::o;238:20:10:-;;;;;;;;;;;;;:::o;740:172:2:-;835:4;868:6;862:23;;;886:6;894:10;862:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;862:43:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;862:43:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;862:43:2;;;;;;;;;;;;;;;;855:50;;740:172;;;;:::o;537:179:6:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:8;;;;;;;;;;;415:7;407:16;;;;;;;;679:12:6;653:11;;:39;;;;;;;;;;;;;;;;;;702:7;:5;:7::i;:::-;537:179;:::o;1100:103:10:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1169:29;1188:9;1169:18;:29::i;:::-;1100:103;:::o;1338:171::-;1429:1;1408:23;;:9;:23;;;;1400:32;;;;;;;;1471:9;1443:38;;1464:5;;;;;;;;;;;1443:38;;;;;;;;;;;;1495:9;1487:5;;:17;;;;;;;;;;;;;;;;;;1338:171;:::o",
+  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"../ProxyInterfaces/BetPaymentsProxyInterface.sol\";\nimport \"../RegistrySetter.sol\";\n// External\nimport \"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\";\n\n\n/**\n * An ERC20 implementation for the payments used in the Guesser Protocol\n * It has to inherate from the BetRegistry so it can get called throught\n * a delegate call from the BetPayments contract.\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title ERC20PaymentProxy. */\ncontract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {\n\n    /**\n     * @dev Function that tells the balance of the bet\n     * @param _owner address Address of the better\n     * @return uint the balance of the user\n     */\n    function allowance(address _token, address _owner)\n        public\n        view\n        returns(uint)\n    {\n        return ERC20(_token).allowance(_owner, msg.sender);\n    }\n\n    /**\n     * @dev Function to send the profits the bet has to a winner\n     * @param _from address Address of the current owner\n     * @param _to address Address of the beneficiary\n     * @param _profit uint this will depend in the child token if it is\n     * an ERC721 or ERC20 Token. But it's the profit the person gets\n     * @return bool if the transaction was succesfull\n     */\n    function transferFrom(\n        address _token,\n        address _from,\n        address _to,\n        uint _profit\n    )\n        public\n        returns(bool)\n    {\n        ERC20(_token).transferFrom(_from, _to, _profit);\n        return true;\n    }\n}\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetPaymentsProxies/ERC20PaymentProxy.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetPaymentsProxies/ERC20PaymentProxy.sol",
+    "exportedSymbols": {
+      "ERC20PaymentProxy": [
+        180
+      ]
+    },
+    "id": 181,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 128,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetPaymentsProxyInterface.sol",
+        "file": "../ProxyInterfaces/BetPaymentsProxyInterface.sol",
+        "id": 129,
+        "nodeType": "ImportDirective",
+        "scope": 181,
+        "sourceUnit": 334,
+        "src": "37:58:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
+        "file": "../RegistrySetter.sol",
+        "id": 130,
+        "nodeType": "ImportDirective",
+        "scope": 181,
+        "sourceUnit": 366,
+        "src": "96:31:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "id": 131,
+        "nodeType": "ImportDirective",
+        "scope": 181,
+        "sourceUnit": 675,
+        "src": "140:63:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 132,
+              "name": "RegistrySetter",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 365,
+              "src": "525:14:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RegistrySetter_$365",
+                "typeString": "contract RegistrySetter"
+              }
+            },
+            "id": 133,
+            "nodeType": "InheritanceSpecifier",
+            "src": "525:14:2"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 134,
+              "name": "BetPaymentsProxyInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 333,
+              "src": "541:25:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetPaymentsProxyInterface_$333",
+                "typeString": "contract BetPaymentsProxyInterface"
+              }
+            },
+            "id": 135,
+            "nodeType": "InheritanceSpecifier",
+            "src": "541:25:2"
+          }
+        ],
+        "contractDependencies": [
+          333,
+          365,
+          451,
+          631
+        ],
+        "contractKind": "contract",
+        "documentation": "@title ERC20PaymentProxy. ",
+        "fullyImplemented": true,
+        "id": 180,
+        "linearizedBaseContracts": [
+          180,
+          333,
+          365,
+          451,
+          631
+        ],
+        "name": "ERC20PaymentProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 153,
+              "nodeType": "Block",
+              "src": "845:67:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 148,
+                        "name": "_owner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 139,
+                        "src": "886:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 149,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 721,
+                          "src": "894:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 150,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "894:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 145,
+                            "name": "_token",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 137,
+                            "src": "868:6:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 144,
+                          "name": "ERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 674,
+                          "src": "862:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ERC20_$674_$",
+                            "typeString": "type(contract ERC20)"
+                          }
+                        },
+                        "id": 146,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "862:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$674",
+                          "typeString": "contract ERC20"
+                        }
+                      },
+                      "id": 147,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "allowance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 645,
+                      "src": "862:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address,address) view external returns (uint256)"
+                      }
+                    },
+                    "id": 151,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "862:43:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 143,
+                  "id": 152,
+                  "nodeType": "Return",
+                  "src": "855:50:2"
+                }
+              ]
+            },
+            "documentation": "@dev Function that tells the balance of the bet\n@param _owner address Address of the better\n@return uint the balance of the user",
+            "id": 154,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "allowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 137,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "759:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 136,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "759:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 139,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "775:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 138,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "758:32:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 143,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 142,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "835:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 141,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "835:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "834:6:2"
+            },
+            "scope": 180,
+            "src": "740:172:2",
+            "stateMutability": "view",
+            "superFunction": 332,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 178,
+              "nodeType": "Block",
+              "src": "1463:85:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 171,
+                        "name": "_from",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 158,
+                        "src": "1500:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 172,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 160,
+                        "src": "1507:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 173,
+                        "name": "_profit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 162,
+                        "src": "1512:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 168,
+                            "name": "_token",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 156,
+                            "src": "1479:6:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 167,
+                          "name": "ERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 674,
+                          "src": "1473:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ERC20_$674_$",
+                            "typeString": "type(contract ERC20)"
+                          }
+                        },
+                        "id": 169,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1473:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$674",
+                          "typeString": "contract ERC20"
+                        }
+                      },
+                      "id": 170,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 656,
+                      "src": "1473:26:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1473:47:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 175,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1473:47:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 176,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1537:4:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 166,
+                  "id": 177,
+                  "nodeType": "Return",
+                  "src": "1530:11:2"
+                }
+              ]
+            },
+            "documentation": "@dev Function to send the profits the bet has to a winner\n@param _from address Address of the current owner\n@param _to address Address of the beneficiary\n@param _profit uint this will depend in the child token if it is\nan ERC721 or ERC20 Token. But it's the profit the person gets\n@return bool if the transaction was succesfull",
+            "id": 179,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "transferFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 156,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1335:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 155,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1335:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 158,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1359:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 157,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 160,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1382:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 159,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1382:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 162,
+                  "name": "_profit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1403:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 161,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1403:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1325:96:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 166,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 165,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1453:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 164,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1453:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1452:6:2"
+            },
+            "scope": 180,
+            "src": "1304:244:2",
+            "stateMutability": "nonpayable",
+            "superFunction": 323,
+            "visibility": "public"
+          }
+        ],
+        "scope": 181,
+        "src": "495:1055:2"
+      }
+    ],
+    "src": "0:1551:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetPaymentsProxies/ERC20PaymentProxy.sol",
+    "exportedSymbols": {
+      "ERC20PaymentProxy": [
+        180
+      ]
+    },
+    "id": 181,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 128,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetPaymentsProxyInterface.sol",
+        "file": "../ProxyInterfaces/BetPaymentsProxyInterface.sol",
+        "id": 129,
+        "nodeType": "ImportDirective",
+        "scope": 181,
+        "sourceUnit": 334,
+        "src": "37:58:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
+        "file": "../RegistrySetter.sol",
+        "id": 130,
+        "nodeType": "ImportDirective",
+        "scope": 181,
+        "sourceUnit": 366,
+        "src": "96:31:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "id": 131,
+        "nodeType": "ImportDirective",
+        "scope": 181,
+        "sourceUnit": 675,
+        "src": "140:63:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 132,
+              "name": "RegistrySetter",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 365,
+              "src": "525:14:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RegistrySetter_$365",
+                "typeString": "contract RegistrySetter"
+              }
+            },
+            "id": 133,
+            "nodeType": "InheritanceSpecifier",
+            "src": "525:14:2"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 134,
+              "name": "BetPaymentsProxyInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 333,
+              "src": "541:25:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetPaymentsProxyInterface_$333",
+                "typeString": "contract BetPaymentsProxyInterface"
+              }
+            },
+            "id": 135,
+            "nodeType": "InheritanceSpecifier",
+            "src": "541:25:2"
+          }
+        ],
+        "contractDependencies": [
+          333,
+          365,
+          451,
+          631
+        ],
+        "contractKind": "contract",
+        "documentation": "@title ERC20PaymentProxy. ",
+        "fullyImplemented": true,
+        "id": 180,
+        "linearizedBaseContracts": [
+          180,
+          333,
+          365,
+          451,
+          631
+        ],
+        "name": "ERC20PaymentProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 153,
+              "nodeType": "Block",
+              "src": "845:67:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 148,
+                        "name": "_owner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 139,
+                        "src": "886:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 149,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 721,
+                          "src": "894:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 150,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "894:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 145,
+                            "name": "_token",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 137,
+                            "src": "868:6:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 144,
+                          "name": "ERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 674,
+                          "src": "862:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ERC20_$674_$",
+                            "typeString": "type(contract ERC20)"
+                          }
+                        },
+                        "id": 146,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "862:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$674",
+                          "typeString": "contract ERC20"
+                        }
+                      },
+                      "id": 147,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "allowance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 645,
+                      "src": "862:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address,address) view external returns (uint256)"
+                      }
+                    },
+                    "id": 151,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "862:43:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 143,
+                  "id": 152,
+                  "nodeType": "Return",
+                  "src": "855:50:2"
+                }
+              ]
+            },
+            "documentation": "@dev Function that tells the balance of the bet\n@param _owner address Address of the better\n@return uint the balance of the user",
+            "id": 154,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "allowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 137,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "759:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 136,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "759:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 139,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "775:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 138,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "758:32:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 143,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 142,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "835:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 141,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "835:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "834:6:2"
+            },
+            "scope": 180,
+            "src": "740:172:2",
+            "stateMutability": "view",
+            "superFunction": 332,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 178,
+              "nodeType": "Block",
+              "src": "1463:85:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 171,
+                        "name": "_from",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 158,
+                        "src": "1500:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 172,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 160,
+                        "src": "1507:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 173,
+                        "name": "_profit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 162,
+                        "src": "1512:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 168,
+                            "name": "_token",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 156,
+                            "src": "1479:6:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 167,
+                          "name": "ERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 674,
+                          "src": "1473:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ERC20_$674_$",
+                            "typeString": "type(contract ERC20)"
+                          }
+                        },
+                        "id": 169,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1473:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20_$674",
+                          "typeString": "contract ERC20"
+                        }
+                      },
+                      "id": 170,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 656,
+                      "src": "1473:26:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1473:47:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 175,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1473:47:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 176,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1537:4:2",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 166,
+                  "id": 177,
+                  "nodeType": "Return",
+                  "src": "1530:11:2"
+                }
+              ]
+            },
+            "documentation": "@dev Function to send the profits the bet has to a winner\n@param _from address Address of the current owner\n@param _to address Address of the beneficiary\n@param _profit uint this will depend in the child token if it is\nan ERC721 or ERC20 Token. But it's the profit the person gets\n@return bool if the transaction was succesfull",
+            "id": 179,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "transferFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 156,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1335:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 155,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1335:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 158,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1359:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 157,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 160,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1382:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 159,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1382:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 162,
+                  "name": "_profit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1403:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 161,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1403:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1325:96:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 166,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 165,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 179,
+                  "src": "1453:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 164,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1453:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1452:6:2"
+            },
+            "scope": 180,
+            "src": "1304:244:2",
+            "stateMutability": "nonpayable",
+            "superFunction": 323,
+            "visibility": "public"
+          }
+        ],
+        "scope": 181,
+        "src": "495:1055:2"
+      }
+    ],
+    "src": "0:1551:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-07-09T11:18:47.853Z"
+}

@@ -138,42 +138,99 @@
       ],
       "name": "OwnershipTransferred",
       "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_proxy",
+          "type": "address"
+        },
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "outcomeReady",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_proxy",
+          "type": "address"
+        },
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getEventOutcome",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "bytecode": "0x608060405260008060146101000a81548160ff021916908315150217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506107698061006d6000396000f30060806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631ff677bf146100935780633f4ba83a146100ea5780635c975abb14610101578063715018a6146101305780638456cb59146101475780638da5cb5b1461015e578063efdb2b46146101b5578063f2fde38b146101f8575b600080fd5b34801561009f57600080fd5b506100a861023b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100f657600080fd5b506100ff610261565b005b34801561010d57600080fd5b5061011661031f565b604051808215151515815260200191505060405180910390f35b34801561013c57600080fd5b50610145610332565b005b34801561015357600080fd5b5061015c610434565b005b34801561016a57600080fd5b506101736104f4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101c157600080fd5b506101f6600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610519565b005b34801561020457600080fd5b50610239600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105dc565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102bc57600080fd5b600060149054906101000a900460ff1615156102d757600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561038d57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561048f57600080fd5b600060149054906101000a900460ff161515156104ab57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561057457600080fd5b600060149054906101000a900460ff1615151561059057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506105d9610434565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561063757600080fd5b61064081610643565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561067f57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820ed7dcc97a53eeb047f9292228b035112dbc8f6a20d85caea9420d15a599f626c0029",
-  "deployedBytecode": "0x60806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631ff677bf146100935780633f4ba83a146100ea5780635c975abb14610101578063715018a6146101305780638456cb59146101475780638da5cb5b1461015e578063efdb2b46146101b5578063f2fde38b146101f8575b600080fd5b34801561009f57600080fd5b506100a861023b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100f657600080fd5b506100ff610261565b005b34801561010d57600080fd5b5061011661031f565b604051808215151515815260200191505060405180910390f35b34801561013c57600080fd5b50610145610332565b005b34801561015357600080fd5b5061015c610434565b005b34801561016a57600080fd5b506101736104f4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101c157600080fd5b506101f6600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610519565b005b34801561020457600080fd5b50610239600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105dc565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156102bc57600080fd5b600060149054906101000a900460ff1615156102d757600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561038d57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561048f57600080fd5b600060149054906101000a900460ff161515156104ab57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561057457600080fd5b600060149054906101000a900460ff1615151561059057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506105d9610434565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561063757600080fd5b61064081610643565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561067f57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820ed7dcc97a53eeb047f9292228b035112dbc8f6a20d85caea9420d15a599f626c0029",
-  "sourceMap": "156:40:1:-;;;268:5:9;247:26;;;;;;;;;;;;;;;;;;;;575:10:11;567:5;;:18;;;;;;;;;;;;;;;;;;156:40:1;;;;;;",
-  "deployedSourceMap": "156:40:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;367:30:7;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;838:92:9;;;;;;247:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:26:9;;;;;;;;;;;;;;;;;;;;;;;;;;;827:111:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:111:11;;;;;;666:90:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:90:9;;;;;;238:20:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:11;;;;;;;;;;;;;;;;;;;;;;;;;;;537:179:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;537:179:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;1100:103:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1100:103:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:7;;;;;;;;;;;;;:::o;838:92:9:-;719:5:11;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;568:6:9;;;;;;;;;;;560:15;;;;;;;;900:5;891:6;;:14;;;;;;;;;;;;;;;;;;916:9;;;;;;;;;;838:92::o;247:26::-;;;;;;;;;;;;;:::o;827:111:11:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;903:5;;;;;;;;;;;884:25;;;;;;;;;;;;931:1;915:5;;:18;;;;;;;;;;;;;;;;;;827:111::o;666:90:9:-;719:5:11;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:9;;;;;;;;;;;415:7;407:16;;;;;;;;729:4;720:6;;:13;;;;;;;;;;;;;;;;;;744:7;;;;;;;;;;666:90::o;238:20:11:-;;;;;;;;;;;;;:::o;537:179:7:-;719:5:11;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:9;;;;;;;;;;;415:7;407:16;;;;;;;;679:12:7;653:11;;:39;;;;;;;;;;;;;;;;;;702:7;:5;:7::i;:::-;537:179;:::o;1100:103:11:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1169:29;1188:9;1169:18;:29::i;:::-;1100:103;:::o;1338:171::-;1429:1;1408:23;;:9;:23;;;;1400:32;;;;;;;;1471:9;1443:38;;1464:5;;;;;;;;;;;1443:38;;;;;;;;;;;;1495:9;1487:5;;:17;;;;;;;;;;;;;;;;;;1338:171;:::o",
-  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"./RegistrySetter.sol\";\n\n\n/**\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title Bet Oracle. */\ncontract BetOracle is RegistrySetter {\n}\n",
+  "bytecode": "0x608060405260008060146101000a81548160ff021916908315150217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506109d98061006d6000396000f3006080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631ff677bf146100a95780633f4ba83a146101005780635c975abb14610117578063715018a6146101465780638456cb591461015d5780638ad3deec146101745780638da5cb5b146101d9578063a03db03614610230578063efdb2b4614610299578063f2fde38b146102dc575b600080fd5b3480156100b557600080fd5b506100be61031f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010c57600080fd5b50610115610345565b005b34801561012357600080fd5b5061012c610403565b604051808215151515815260200191505060405180910390f35b34801561015257600080fd5b5061015b610416565b005b34801561016957600080fd5b50610172610518565b005b34801561018057600080fd5b506101c3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356000191690602001909291905050506105d8565b6040518082815260200191505060405180910390f35b3480156101e557600080fd5b506101ee6106a8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561023c57600080fd5b5061027f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356000191690602001909291905050506106cd565b604051808215151515815260200191505060405180910390f35b3480156102a557600080fd5b506102da600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610789565b005b3480156102e857600080fd5b5061031d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061084c565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a057600080fd5b600060149054906101000a900460ff1615156103bb57600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561047157600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561057357600080fd5b600060149054906101000a900460ff1615151561058f57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b60006105e483836106cd565b15156105ef57600080fd5b8273ffffffffffffffffffffffffffffffffffffffff166340212bc9836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15801561066657600080fd5b505af115801561067a573d6000803e3d6000fd5b505050506040513d602081101561069057600080fd5b81019080805190602001909291905050505092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008273ffffffffffffffffffffffffffffffffffffffff1663d1ddf6bb836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15801561074657600080fd5b505af115801561075a573d6000803e3d6000fd5b505050506040513d602081101561077057600080fd5b8101908080519060200190929190505050905092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156107e457600080fd5b600060149054906101000a900460ff1615151561080057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610849610518565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108a757600080fd5b6108b0816108b3565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156108ef57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582063b8426604d2d5283a28e3070785894f2ed695160e734ddb94f4ef30b6cab53f0029",
+  "deployedBytecode": "0x6080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631ff677bf146100a95780633f4ba83a146101005780635c975abb14610117578063715018a6146101465780638456cb591461015d5780638ad3deec146101745780638da5cb5b146101d9578063a03db03614610230578063efdb2b4614610299578063f2fde38b146102dc575b600080fd5b3480156100b557600080fd5b506100be61031f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010c57600080fd5b50610115610345565b005b34801561012357600080fd5b5061012c610403565b604051808215151515815260200191505060405180910390f35b34801561015257600080fd5b5061015b610416565b005b34801561016957600080fd5b50610172610518565b005b34801561018057600080fd5b506101c3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356000191690602001909291905050506105d8565b6040518082815260200191505060405180910390f35b3480156101e557600080fd5b506101ee6106a8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561023c57600080fd5b5061027f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356000191690602001909291905050506106cd565b604051808215151515815260200191505060405180910390f35b3480156102a557600080fd5b506102da600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610789565b005b3480156102e857600080fd5b5061031d600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061084c565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103a057600080fd5b600060149054906101000a900460ff1615156103bb57600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561047157600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561057357600080fd5b600060149054906101000a900460ff1615151561058f57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b60006105e483836106cd565b15156105ef57600080fd5b8273ffffffffffffffffffffffffffffffffffffffff166340212bc9836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15801561066657600080fd5b505af115801561067a573d6000803e3d6000fd5b505050506040513d602081101561069057600080fd5b81019080805190602001909291905050505092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008273ffffffffffffffffffffffffffffffffffffffff1663d1ddf6bb836040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050602060405180830381600087803b15801561074657600080fd5b505af115801561075a573d6000803e3d6000fd5b505050506040513d602081101561077057600080fd5b8101908080519060200190929190505050905092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156107e457600080fd5b600060149054906101000a900460ff1615151561080057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610849610518565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108a757600080fd5b6108b0816108b3565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156108ef57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582063b8426604d2d5283a28e3070785894f2ed695160e734ddb94f4ef30b6cab53f0029",
+  "sourceMap": "212:1088:0:-;;;268:5:8;247:26;;;;;;;;;;;;;;;;;;;;575:10:10;567:5;;:18;;;;;;;;;;;;;;;;;;212:1088:0;;;;;;",
+  "deployedSourceMap": "212:1088:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;367:30:6;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;838:92:8;;;;;;247:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:26:8;;;;;;;;;;;;;;;;;;;;;;;;;;;827:111:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:111:10;;;;;;666:90:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:90:8;;;;;;1039:259:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1039:259:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:20:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:10;;;;;;;;;;;;;;;;;;;;;;;;;;;531:210:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;531:210:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;537:179:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;537:179:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;1100:103:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1100:103:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:6;;;;;;;;;;;;;:::o;838:92:8:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;568:6:8;;;;;;;;;;;560:15;;;;;;;;900:5;891:6;;:14;;;;;;;;;;;;;;;;;;916:9;;;;;;;;;;838:92::o;247:26::-;;;;;;;;;;;;;:::o;827:111:10:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;903:5;;;;;;;;;;;884:25;;;;;;;;;;;;931:1;915:5;;:18;;;;;;;;;;;;;;;;;;827:111::o;666:90:8:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:8;;;;;;;;;;;415:7;407:16;;;;;;;;729:4;720:6;;:13;;;;;;;;;;;;;;;;;;744:7;;;;;;;;;;666:90::o;1039:259:0:-;1164:4;1192:30;1205:6;1213:8;1192:12;:30::i;:::-;1184:39;;;;;;;;1258:6;1234:47;;;1282:8;1234:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1234:57:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1234:57:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1234:57:0;;;;;;;;;;;;;;;;;1039:259;;;;:::o;238:20:10:-;;;;;;;;;;;;;:::o;531:210:0:-;653:4;704:6;680:44;;;725:8;680:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;680:54:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;680:54:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;680:54:0;;;;;;;;;;;;;;;;673:61;;531:210;;;;:::o;537:179:6:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:8;;;;;;;;;;;415:7;407:16;;;;;;;;679:12:6;653:11;;:39;;;;;;;;;;;;;;;;;;702:7;:5;:7::i;:::-;537:179;:::o;1100:103:10:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1169:29;1188:9;1169:18;:29::i;:::-;1100:103;:::o;1338:171::-;1429:1;1408:23;;:9;:23;;;;1400:32;;;;;;;;1471:9;1443:38;;1464:5;;;;;;;;;;;1443:38;;;;;;;;;;;;1495:9;1487:5;;:17;;;;;;;;;;;;;;;;;;1338:171;:::o",
+  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"./RegistrySetter.sol\";\nimport \"./ProxyInterfaces/BetOracleProxyInterface.sol\";\n\n\n/**\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title Bet Oracle. */\ncontract BetOracle is RegistrySetter {\n\n    /**\n     * @dev Function that returns if the oracle is ready to return the outcome\n     * @param _proxy address Address of the proxy oracle\n     * @param _betHash bytes32 the hash of the bet we are asking for\n     * @return bool if the outcome is ready to get it\n     */\n    function outcomeReady(\n        address _proxy,\n        bytes32 _betHash\n    )\n        public\n        view\n        returns(bool)\n    {\n        return BetOracleProxyInterface(_proxy).outcomeReady(_betHash);\n    }\n\n    /**\n     * @dev Function that returns the outcome of the bet\n     * It will revert if the outcome is not ready\n     * @param _proxy address Address of the proxy oracle\n     * @param _betHash bytes32 the hash of the bet we are asking for\n     * @return uint the outcome of the bet\n     */\n    function getEventOutcome(\n        address _proxy,\n        bytes32 _betHash\n    )\n        public\n        view\n        returns(uint)\n    {\n        require(outcomeReady(_proxy, _betHash));\n\n        BetOracleProxyInterface(_proxy).getEventOutcome(_betHash);\n    }\n}\n",
   "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracle.sol",
   "ast": {
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracle.sol",
     "exportedSymbols": {
       "BetOracle": [
-        11
+        47
       ]
     },
-    "id": 12,
+    "id": 48,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7,
+        "id": 1,
         "literals": [
           "solidity",
           "0.4",
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:1"
+        "src": "0:23:0"
       },
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
         "file": "./RegistrySetter.sol",
-        "id": 8,
+        "id": 2,
         "nodeType": "ImportDirective",
-        "scope": 12,
-        "sourceUnit": 408,
-        "src": "37:30:1",
+        "scope": 48,
+        "sourceUnit": 366,
+        "src": "37:30:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+        "file": "./ProxyInterfaces/BetOracleProxyInterface.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 48,
+        "sourceUnit": 309,
+        "src": "68:55:0",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -183,73 +240,638 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 9,
+              "id": 4,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 407,
-              "src": "178:14:1",
+              "referencedDeclaration": 365,
+              "src": "234:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$407",
+                "typeIdentifier": "t_contract$_RegistrySetter_$365",
                 "typeString": "contract RegistrySetter"
               }
             },
-            "id": 10,
+            "id": 5,
             "nodeType": "InheritanceSpecifier",
-            "src": "178:14:1"
+            "src": "234:14:0"
           }
         ],
         "contractDependencies": [
-          407,
-          498,
-          678
+          365,
+          451,
+          631
         ],
         "contractKind": "contract",
         "documentation": "@title Bet Oracle. ",
         "fullyImplemented": true,
-        "id": 11,
+        "id": 47,
         "linearizedBaseContracts": [
-          11,
-          407,
-          498,
-          678
+          47,
+          365,
+          451,
+          631
         ],
         "name": "BetOracle",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 12,
-        "src": "156:40:1"
+        "nodes": [
+          {
+            "body": {
+              "id": 21,
+              "nodeType": "Block",
+              "src": "663:78:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 18,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9,
+                        "src": "725:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 15,
+                            "name": "_proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7,
+                            "src": "704:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 14,
+                          "name": "BetOracleProxyInterface",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 308,
+                          "src": "680:23:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_BetOracleProxyInterface_$308_$",
+                            "typeString": "type(contract BetOracleProxyInterface)"
+                          }
+                        },
+                        "id": 16,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "680:31:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BetOracleProxyInterface_$308",
+                          "typeString": "contract BetOracleProxyInterface"
+                        }
+                      },
+                      "id": 17,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "outcomeReady",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 300,
+                      "src": "680:44:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (bytes32) view external returns (bool)"
+                      }
+                    },
+                    "id": 19,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "680:54:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13,
+                  "id": 20,
+                  "nodeType": "Return",
+                  "src": "673:61:0"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns if the oracle is ready to return the outcome\n@param _proxy address Address of the proxy oracle\n@param _betHash bytes32 the hash of the bet we are asking for\n@return bool if the outcome is ready to get it",
+            "id": 22,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "outcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "562:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "562:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "586:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "552:56:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "653:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "653:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "652:6:0"
+            },
+            "scope": 47,
+            "src": "531:210:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 45,
+              "nodeType": "Block",
+              "src": "1174:124:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 33,
+                            "name": "_proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24,
+                            "src": "1205:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 34,
+                            "name": "_betHash",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 26,
+                            "src": "1213:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          ],
+                          "id": 32,
+                          "name": "outcomeReady",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 22,
+                          "src": "1192:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes32_$returns$_t_bool_$",
+                            "typeString": "function (address,bytes32) view returns (bool)"
+                          }
+                        },
+                        "id": 35,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1192:30:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 31,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        724,
+                        725
+                      ],
+                      "referencedDeclaration": 724,
+                      "src": "1184:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1184:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1184:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 42,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 26,
+                        "src": "1282:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 39,
+                            "name": "_proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24,
+                            "src": "1258:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 38,
+                          "name": "BetOracleProxyInterface",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 308,
+                          "src": "1234:23:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_BetOracleProxyInterface_$308_$",
+                            "typeString": "type(contract BetOracleProxyInterface)"
+                          }
+                        },
+                        "id": 40,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1234:31:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BetOracleProxyInterface_$308",
+                          "typeString": "contract BetOracleProxyInterface"
+                        }
+                      },
+                      "id": 41,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getEventOutcome",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 307,
+                      "src": "1234:47:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) view external returns (uint256)"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1234:57:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1234:57:0"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns the outcome of the bet\nIt will revert if the outcome is not ready\n@param _proxy address Address of the proxy oracle\n@param _betHash bytes32 the hash of the bet we are asking for\n@return uint the outcome of the bet",
+            "id": 46,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEventOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 27,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "1073:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "1097:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 25,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1097:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1063:56:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "1164:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1164:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1163:6:0"
+            },
+            "scope": 47,
+            "src": "1039:259:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 48,
+        "src": "212:1088:0"
       }
     ],
-    "src": "0:197:1"
+    "src": "0:1301:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracle.sol",
     "exportedSymbols": {
       "BetOracle": [
-        11
+        47
       ]
     },
-    "id": 12,
+    "id": 48,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7,
+        "id": 1,
         "literals": [
           "solidity",
           "0.4",
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:1"
+        "src": "0:23:0"
       },
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
         "file": "./RegistrySetter.sol",
-        "id": 8,
+        "id": 2,
         "nodeType": "ImportDirective",
-        "scope": 12,
-        "sourceUnit": 408,
-        "src": "37:30:1",
+        "scope": 48,
+        "sourceUnit": 366,
+        "src": "37:30:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+        "file": "./ProxyInterfaces/BetOracleProxyInterface.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 48,
+        "sourceUnit": 309,
+        "src": "68:55:0",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -259,44 +881,598 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 9,
+              "id": 4,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 407,
-              "src": "178:14:1",
+              "referencedDeclaration": 365,
+              "src": "234:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$407",
+                "typeIdentifier": "t_contract$_RegistrySetter_$365",
                 "typeString": "contract RegistrySetter"
               }
             },
-            "id": 10,
+            "id": 5,
             "nodeType": "InheritanceSpecifier",
-            "src": "178:14:1"
+            "src": "234:14:0"
           }
         ],
         "contractDependencies": [
-          407,
-          498,
-          678
+          365,
+          451,
+          631
         ],
         "contractKind": "contract",
         "documentation": "@title Bet Oracle. ",
         "fullyImplemented": true,
-        "id": 11,
+        "id": 47,
         "linearizedBaseContracts": [
-          11,
-          407,
-          498,
-          678
+          47,
+          365,
+          451,
+          631
         ],
         "name": "BetOracle",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 12,
-        "src": "156:40:1"
+        "nodes": [
+          {
+            "body": {
+              "id": 21,
+              "nodeType": "Block",
+              "src": "663:78:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 18,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9,
+                        "src": "725:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 15,
+                            "name": "_proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7,
+                            "src": "704:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 14,
+                          "name": "BetOracleProxyInterface",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 308,
+                          "src": "680:23:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_BetOracleProxyInterface_$308_$",
+                            "typeString": "type(contract BetOracleProxyInterface)"
+                          }
+                        },
+                        "id": 16,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "680:31:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BetOracleProxyInterface_$308",
+                          "typeString": "contract BetOracleProxyInterface"
+                        }
+                      },
+                      "id": 17,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "outcomeReady",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 300,
+                      "src": "680:44:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (bytes32) view external returns (bool)"
+                      }
+                    },
+                    "id": 19,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "680:54:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13,
+                  "id": 20,
+                  "nodeType": "Return",
+                  "src": "673:61:0"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns if the oracle is ready to return the outcome\n@param _proxy address Address of the proxy oracle\n@param _betHash bytes32 the hash of the bet we are asking for\n@return bool if the outcome is ready to get it",
+            "id": 22,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "outcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "562:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "562:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "586:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "552:56:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "653:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "653:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "652:6:0"
+            },
+            "scope": 47,
+            "src": "531:210:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 45,
+              "nodeType": "Block",
+              "src": "1174:124:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 33,
+                            "name": "_proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24,
+                            "src": "1205:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 34,
+                            "name": "_betHash",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 26,
+                            "src": "1213:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          ],
+                          "id": 32,
+                          "name": "outcomeReady",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 22,
+                          "src": "1192:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes32_$returns$_t_bool_$",
+                            "typeString": "function (address,bytes32) view returns (bool)"
+                          }
+                        },
+                        "id": 35,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1192:30:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 31,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        724,
+                        725
+                      ],
+                      "referencedDeclaration": 724,
+                      "src": "1184:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1184:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1184:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 42,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 26,
+                        "src": "1282:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 39,
+                            "name": "_proxy",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24,
+                            "src": "1258:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 38,
+                          "name": "BetOracleProxyInterface",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 308,
+                          "src": "1234:23:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_BetOracleProxyInterface_$308_$",
+                            "typeString": "type(contract BetOracleProxyInterface)"
+                          }
+                        },
+                        "id": 40,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1234:31:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BetOracleProxyInterface_$308",
+                          "typeString": "contract BetOracleProxyInterface"
+                        }
+                      },
+                      "id": 41,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getEventOutcome",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 307,
+                      "src": "1234:47:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) view external returns (uint256)"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1234:57:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1234:57:0"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns the outcome of the bet\nIt will revert if the outcome is not ready\n@param _proxy address Address of the proxy oracle\n@param _betHash bytes32 the hash of the bet we are asking for\n@return uint the outcome of the bet",
+            "id": 46,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEventOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 27,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24,
+                  "name": "_proxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "1073:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 26,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "1097:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 25,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1097:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1063:56:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "1164:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1164:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1163:6:0"
+            },
+            "scope": 47,
+            "src": "1039:259:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 48,
+        "src": "212:1088:0"
       }
     ],
-    "src": "0:197:1"
+    "src": "0:1301:0"
   },
   "compiler": {
     "name": "solc",
@@ -304,5 +1480,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-07-08T16:14:04.124Z"
+  "updatedAt": "2018-07-09T11:18:47.854Z"
 }

@@ -1,7 +1,7 @@
 pragma solidity 0.4.24;
 
 //Internal
-import "./TermsContract.sol";
+import "./ProxyInterfaces/BetTermsProxyInterface.sol";
 import "./RegistrySetter.sol";
 
 
@@ -25,7 +25,8 @@ contract BetTerms is RegistrySetter {
         view
         returns(bool)
     {
-        return TermsContract(_termsContract).participationPeriod(_termsHash);
+        return BetTermsProxyInterface(_termsContract)
+            .participationPeriod(_termsHash);
     }
 
     /**
@@ -37,7 +38,8 @@ contract BetTerms is RegistrySetter {
         view
         returns(bool)
     {
-        return TermsContract(_termsContract).waitingPeriod(_termsHash);
+        return BetTermsProxyInterface(_termsContract)
+            .waitingPeriod(_termsHash);
     }
 
     /**
@@ -49,7 +51,8 @@ contract BetTerms is RegistrySetter {
         view
         returns(bool)
     {
-        return TermsContract(_termsContract).retrievingPeriod(_termsHash);
+        return BetTermsProxyInterface(_termsContract)
+            .retrievingPeriod(_termsHash);
     }
 
     /**
@@ -61,6 +64,7 @@ contract BetTerms is RegistrySetter {
         view
         returns(bool)
     {
-        return TermsContract(_termsContract).finishedPeriod(_termsHash);
+        return BetTermsProxyInterface(_termsContract)
+            .finishedPeriod(_termsHash);
     }
 }

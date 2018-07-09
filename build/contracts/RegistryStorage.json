@@ -1,0 +1,738 @@
+{
+  "contractName": "RegistryStorage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betKernel",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betOracle",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betTerms",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betPayments",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610286806100206000396000f300608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634c98ee7b1461006757806380fabc91146100be578063ca033e7d14610115578063dd943d041461016c575b600080fd5b34801561007357600080fd5b5061007c6101c3565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100ca57600080fd5b506100d36101e8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012157600080fd5b5061012a61020e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561017857600080fd5b50610181610234565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a723058200c1adaf2840c60f5ec3971040fb9cd3b579b9bab6fa11e675f01c11020bd4ce20029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634c98ee7b1461006757806380fabc91146100be578063ca033e7d14610115578063dd943d041461016c575b600080fd5b34801561007357600080fd5b5061007c6101c3565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100ca57600080fd5b506100d36101e8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012157600080fd5b5061012a61020e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561017857600080fd5b50610181610234565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a723058200c1adaf2840c60f5ec3971040fb9cd3b579b9bab6fa11e675f01c11020bd4ce20029",
+  "sourceMap": "26:473:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:473:7;;;;;;;",
+  "deployedSourceMap": "26:473:7:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;82:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:24:7;;;;;;;;;;;;;;;;;;;;;;;;;;;144;;8:9:-1;5:2;;;30:1;27;20:12;5:2;144:24:7;;;;;;;;;;;;;;;;;;;;;;;;;;;174:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;174:23:7;;;;;;;;;;;;;;;;;;;;;;;;;;;112:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;112:26:7;;;;;;;;;;;;;;;;;;;;;;;;;;;82:24;;;;;;;;;;;;;:::o;144:::-;;;;;;;;;;;;;:::o;174:23::-;;;;;;;;;;;;;:::o;112:26::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.4.24;\n\n\ncontract RegistryStorage {\n    // Allowed Contracts\n    address public betKernel;\n    address public betPayments;\n    address public betOracle;\n    address public betTerms;\n\n    // Storage\n    struct BetEntry {\n        address paymentsProxy;\n        address oracleProxy;\n        address termsProxy;\n        bytes32 termsHash;\n        address creator;\n    }\n\n    // Primary registry mapping the events with their hash\n    mapping(bytes32 => BetEntry) internal betRegistry;\n}\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistryStorage.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistryStorage.sol",
+    "exportedSymbols": {
+      "RegistryStorage": [
+        391
+      ]
+    },
+    "id": 392,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 367,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 391,
+        "linearizedBaseContracts": [
+          391
+        ],
+        "name": "RegistryStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 369,
+            "name": "betKernel",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "82:24:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 368,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "82:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 371,
+            "name": "betPayments",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "112:26:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 370,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "112:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 373,
+            "name": "betOracle",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "144:24:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 372,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "144:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 375,
+            "name": "betTerms",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "174:23:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 374,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "174:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "RegistryStorage.BetEntry",
+            "id": 386,
+            "members": [
+              {
+                "constant": false,
+                "id": 377,
+                "name": "paymentsProxy",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "245:21:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 376,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "245:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 379,
+                "name": "oracleProxy",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "276:19:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 378,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "276:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 381,
+                "name": "termsProxy",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "305:18:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 380,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "305:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 383,
+                "name": "termsHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "333:17:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 382,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "333:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 385,
+                "name": "creator",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "360:15:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 384,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "360:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "BetEntry",
+            "nodeType": "StructDefinition",
+            "scope": 391,
+            "src": "219:163:7",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 390,
+            "name": "betRegistry",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "447:49:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$386_storage_$",
+              "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
+            },
+            "typeName": {
+              "id": 389,
+              "keyType": {
+                "id": 387,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "455:7:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "447:28:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$386_storage_$",
+                "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 388,
+                "name": "BetEntry",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 386,
+                "src": "466:8:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_BetEntry_$386_storage_ptr",
+                  "typeString": "struct RegistryStorage.BetEntry"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 392,
+        "src": "26:473:7"
+      }
+    ],
+    "src": "0:500:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistryStorage.sol",
+    "exportedSymbols": {
+      "RegistryStorage": [
+        391
+      ]
+    },
+    "id": 392,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 367,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 391,
+        "linearizedBaseContracts": [
+          391
+        ],
+        "name": "RegistryStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 369,
+            "name": "betKernel",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "82:24:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 368,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "82:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 371,
+            "name": "betPayments",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "112:26:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 370,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "112:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 373,
+            "name": "betOracle",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "144:24:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 372,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "144:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 375,
+            "name": "betTerms",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "174:23:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 374,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "174:7:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "RegistryStorage.BetEntry",
+            "id": 386,
+            "members": [
+              {
+                "constant": false,
+                "id": 377,
+                "name": "paymentsProxy",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "245:21:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 376,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "245:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 379,
+                "name": "oracleProxy",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "276:19:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 378,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "276:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 381,
+                "name": "termsProxy",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "305:18:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 380,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "305:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 383,
+                "name": "termsHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "333:17:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 382,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "333:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 385,
+                "name": "creator",
+                "nodeType": "VariableDeclaration",
+                "scope": 386,
+                "src": "360:15:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 384,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "360:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "BetEntry",
+            "nodeType": "StructDefinition",
+            "scope": 391,
+            "src": "219:163:7",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 390,
+            "name": "betRegistry",
+            "nodeType": "VariableDeclaration",
+            "scope": 391,
+            "src": "447:49:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$386_storage_$",
+              "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
+            },
+            "typeName": {
+              "id": 389,
+              "keyType": {
+                "id": 387,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "455:7:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "447:28:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$386_storage_$",
+                "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 388,
+                "name": "BetEntry",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 386,
+                "src": "466:8:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_BetEntry_$386_storage_ptr",
+                  "typeString": "struct RegistryStorage.BetEntry"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 392,
+        "src": "26:473:7"
+      }
+    ],
+    "src": "0:500:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-07-09T11:18:47.848Z"
+}

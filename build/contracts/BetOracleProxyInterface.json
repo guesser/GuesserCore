@@ -1,0 +1,468 @@
+{
+  "contractName": "BetOracleProxyInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "outcomeReady",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getEventOutcome",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\n\ninterface BetOracleProxyInterface {\n\n    function outcomeReady(\n        bytes32 _betHash\n    ) external view returns(bool);\n\n    function getEventOutcome(\n        bytes32 _betHash\n    ) external view returns(uint);\n}\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+    "exportedSymbols": {
+      "BetOracleProxyInterface": [
+        308
+      ]
+    },
+    "id": 309,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 293,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 308,
+        "linearizedBaseContracts": [
+          308
+        ],
+        "name": "BetOracleProxyInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 300,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "outcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 295,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 300,
+                  "src": "98:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "98:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "88:32:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 298,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 300,
+                  "src": "143:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 297,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:6:4"
+            },
+            "scope": 308,
+            "src": "67:82:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 307,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEventOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 303,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 302,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 307,
+                  "src": "189:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 301,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "189:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:32:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 306,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 305,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 307,
+                  "src": "234:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 304,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "234:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "233:6:4"
+            },
+            "scope": 308,
+            "src": "155:85:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 309,
+        "src": "26:216:4"
+      }
+    ],
+    "src": "0:243:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+    "exportedSymbols": {
+      "BetOracleProxyInterface": [
+        308
+      ]
+    },
+    "id": 309,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 293,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 308,
+        "linearizedBaseContracts": [
+          308
+        ],
+        "name": "BetOracleProxyInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 300,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "outcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 295,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 300,
+                  "src": "98:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "98:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "88:32:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 299,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 298,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 300,
+                  "src": "143:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 297,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:6:4"
+            },
+            "scope": 308,
+            "src": "67:82:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 307,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEventOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 303,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 302,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 307,
+                  "src": "189:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 301,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "189:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:32:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 306,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 305,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 307,
+                  "src": "234:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 304,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "234:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "233:6:4"
+            },
+            "scope": 308,
+            "src": "155:85:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 309,
+        "src": "26:216:4"
+      }
+    ],
+    "src": "0:243:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-07-09T11:18:47.846Z"
+}

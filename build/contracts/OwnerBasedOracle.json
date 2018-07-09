@@ -1,0 +1,2076 @@
+{
+  "contractName": "OwnerBasedOracle",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betRegistry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_betRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setBetRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unpause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "outcomeReady",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getEventOutcome",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "_ready",
+          "type": "bool"
+        }
+      ],
+      "name": "setOutcomeReady",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "_outcome",
+          "type": "uint256"
+        }
+      ],
+      "name": "setOutcome",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008060146101000a81548160ff021916908315150217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610a178061006d6000396000f3006080604052600436106100ba576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631ff677bf146100bf5780633b4cdb4e146101165780633f4ba83a1461015357806340212bc91461016a5780635c975abb146101af578063715018a6146101de5780638456cb59146101f55780638da5cb5b1461020c578063a70d41b014610263578063d1ddf6bb1461029e578063efdb2b46146102e7578063f2fde38b1461032a575b600080fd5b3480156100cb57600080fd5b506100d461036d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012257600080fd5b506101516004803603810190808035600019169060200190929190803515159060200190929190505050610393565b005b34801561015f57600080fd5b50610168610425565b005b34801561017657600080fd5b5061019960048036038101908080356000191690602001909291905050506104e3565b6040518082815260200191505060405180910390f35b3480156101bb57600080fd5b506101c461051c565b604051808215151515815260200191505060405180910390f35b3480156101ea57600080fd5b506101f361052f565b005b34801561020157600080fd5b5061020a610631565b005b34801561021857600080fd5b506102216106f1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026f57600080fd5b5061029c600480360381019080803560001916906020019092919080359060200190929190505050610716565b005b3480156102aa57600080fd5b506102cd6004803603810190808035600019169060200190929190505050610795565b604051808215151515815260200191505060405180910390f35b3480156102f357600080fd5b50610328600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107c7565b005b34801561033657600080fd5b5061036b600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061088a565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103ee57600080fd5b8060026000846000191660001916815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561048057600080fd5b600060149054906101000a900460ff16151561049b57600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b60006104ee82610795565b15156104f957600080fd5b600360008360001916600019168152602001908152602001600020549050919050565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561058a57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561068c57600080fd5b600060149054906101000a900460ff161515156106a857600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561077157600080fd5b80600360008460001916600019168152602001908152602001600020819055505050565b600060026000836000191660001916815260200190815260200160002060009054906101000a900460ff169050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561082257600080fd5b600060149054906101000a900460ff1615151561083e57600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610887610631565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108e557600080fd5b6108ee816108f1565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561092d57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582098315e0c1b34fa3011b16e9809282ce51bb5fbb5e25e05db3ae4eda56ec82b230029",
+  "deployedBytecode": "0x6080604052600436106100ba576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631ff677bf146100bf5780633b4cdb4e146101165780633f4ba83a1461015357806340212bc91461016a5780635c975abb146101af578063715018a6146101de5780638456cb59146101f55780638da5cb5b1461020c578063a70d41b014610263578063d1ddf6bb1461029e578063efdb2b46146102e7578063f2fde38b1461032a575b600080fd5b3480156100cb57600080fd5b506100d461036d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012257600080fd5b506101516004803603810190808035600019169060200190929190803515159060200190929190505050610393565b005b34801561015f57600080fd5b50610168610425565b005b34801561017657600080fd5b5061019960048036038101908080356000191690602001909291905050506104e3565b6040518082815260200191505060405180910390f35b3480156101bb57600080fd5b506101c461051c565b604051808215151515815260200191505060405180910390f35b3480156101ea57600080fd5b506101f361052f565b005b34801561020157600080fd5b5061020a610631565b005b34801561021857600080fd5b506102216106f1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026f57600080fd5b5061029c600480360381019080803560001916906020019092919080359060200190929190505050610716565b005b3480156102aa57600080fd5b506102cd6004803603810190808035600019169060200190929190505050610795565b604051808215151515815260200191505060405180910390f35b3480156102f357600080fd5b50610328600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107c7565b005b34801561033657600080fd5b5061036b600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061088a565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103ee57600080fd5b8060026000846000191660001916815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561048057600080fd5b600060149054906101000a900460ff16151561049b57600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b60006104ee82610795565b15156104f957600080fd5b600360008360001916600019168152602001908152602001600020549050919050565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561058a57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561068c57600080fd5b600060149054906101000a900460ff161515156106a857600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561077157600080fd5b80600360008460001916600019168152602001908152602001600020819055505050565b600060026000836000191660001916815260200190815260200160002060009054906101000a900460ff169050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561082257600080fd5b600060149054906101000a900460ff1615151561083e57600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610887610631565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108e557600080fd5b6108ee816108f1565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561092d57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582098315e0c1b34fa3011b16e9809282ce51bb5fbb5e25e05db3ae4eda56ec82b230029",
+  "sourceMap": "331:1549:1:-;;;268:5:8;247:26;;;;;;;;;;;;;;;;;;;;575:10:10;567:5;;:18;;;;;;;;;;;;;;;;;;331:1549:1;;;;;;",
+  "deployedSourceMap": "331:1549:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;367:30:6;;;;;;;;;;;;;;;;;;;;;;;;;;;1416:159:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1416:159:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;838:92:8;;;;;;1063:198:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1063:198:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;247:26:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:26:8;;;;;;;;;;;;;;;;;;;;;;;;;;;827:111:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:111:10;;;;;;666:90:8;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:90:8;;;;;;238:20:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:10;;;;;;;;;;;;;;;;;;;;;;;;;;;1718:160:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1718:160:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;722:150;;8:9:-1;5:2;;;30:1;27;20:12;5:2;722:150:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;537:179:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;537:179:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;1100:103:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1100:103:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:30:6;;;;;;;;;;;;;:::o;1416:159:1:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1562:6:1;1541:8;:18;1550:8;1541:18;;;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;1416:159;;:::o;838:92:8:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;568:6:8;;;;;;;;;;;560:15;;;;;;;;900:5;891:6;;:14;;;;;;;;;;;;;;;;;;916:9;;;;;;;;;;838:92::o;1063:198:1:-;1165:4;1193:22;1206:8;1193:12;:22::i;:::-;1185:31;;;;;;;;1234:10;:20;1245:8;1234:20;;;;;;;;;;;;;;;;;;1227:27;;1063:198;;;:::o;247:26:8:-;;;;;;;;;;;;;:::o;827:111:10:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;903:5;;;;;;;;;;;884:25;;;;;;;;;;;;931:1;915:5;;:18;;;;;;;;;;;;;;;;;;827:111::o;666:90:8:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:8;;;;;;;;;;;415:7;407:16;;;;;;;;729:4;720:6;;:13;;;;;;;;;;;;;;;;;;744:7;;;;;;;;;;666:90::o;238:20:10:-;;;;;;;;;;;;;:::o;1718:160:1:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1863:8:1;1840:10;:20;1851:8;1840:20;;;;;;;;;;;;;;;;;:31;;;;1718:160;;:::o;722:150::-;820:4;847:8;:18;856:8;847:18;;;;;;;;;;;;;;;;;;;;;;;;;;;840:25;;722:150;;;:::o;537:179:6:-;719:5:10;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:8;;;;;;;;;;;415:7;407:16;;;;;;;;679:12:6;653:11;;:39;;;;;;;;;;;;;;;;;;702:7;:5;:7::i;:::-;537:179;:::o;1100:103:10:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1169:29;1188:9;1169:18;:29::i;:::-;1100:103;:::o;1338:171::-;1429:1;1408:23;;:9;:23;;;;1400:32;;;;;;;;1471:9;1443:38;;1464:5;;;;;;;;;;;1443:38;;;;;;;;;;;;1495:9;1487:5;;:17;;;;;;;;;;;;;;;;;;1338:171;:::o",
+  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"../ProxyInterfaces/BetOracleProxyInterface.sol\";\nimport \"../RegistrySetter.sol\";\n\n\n/**\n * A contract that creates an Oracle proxy that is based on the owner\n * knowledge for the outcome resolution.\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title OwnerBasedOracle. */\ncontract OwnerBasedOracle is RegistrySetter, BetOracleProxyInterface {\n\n    mapping(bytes32 => bool) private betReady;\n    mapping(bytes32 => uint) private betOutcome;\n\n    /**\n     * @dev Function that returns if the oracle is ready to return the outcome\n     * @param _betHash bytes32 the hash of the bet we are asking for\n     * @return bool if the outcome is ready to get it\n     */\n    function outcomeReady(\n        bytes32 _betHash\n    )\n        public\n        view\n        returns(bool)\n    {\n        return betReady[_betHash];\n    }\n\n    /**\n     * @dev Function that returns the outcome of the bet\n     * @param _betHash bytes32 the hash of the bet we are asking for\n     * @return uint the outcome of the bet\n     */\n    function getEventOutcome(\n        bytes32 _betHash\n    )\n        public\n        view \n        returns(uint)\n    {\n        require(outcomeReady(_betHash));\n\n        return betOutcome[_betHash];\n    }\n\n    /**\n     * @dev Function that sets if the outcome of a bet is ready\n     * @param _betHash bytes32 the hash of the bet we are asking for\n     */\n    function setOutcomeReady(\n        bytes32 _betHash,\n        bool _ready\n    )\n        public\n        onlyOwner\n    {\n        betReady[_betHash] = _ready;\n    }\n\n    /**\n     * @dev Function that sets the outcome of a bet\n     * @param _betHash bytes32 the hash of the bet we are asking for\n     */\n    function setOutcome(\n        bytes32 _betHash,\n        uint _outcome\n    )\n        public\n        onlyOwner\n    {\n        betOutcome[_betHash] = _outcome;\n    }\n}\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracleProxies/OwnerBasedOracle.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracleProxies/OwnerBasedOracle.sol",
+    "exportedSymbols": {
+      "OwnerBasedOracle": [
+        126
+      ]
+    },
+    "id": 127,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 49,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+        "file": "../ProxyInterfaces/BetOracleProxyInterface.sol",
+        "id": 50,
+        "nodeType": "ImportDirective",
+        "scope": 127,
+        "sourceUnit": 309,
+        "src": "37:56:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
+        "file": "../RegistrySetter.sol",
+        "id": 51,
+        "nodeType": "ImportDirective",
+        "scope": 127,
+        "sourceUnit": 366,
+        "src": "94:31:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 52,
+              "name": "RegistrySetter",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 365,
+              "src": "360:14:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RegistrySetter_$365",
+                "typeString": "contract RegistrySetter"
+              }
+            },
+            "id": 53,
+            "nodeType": "InheritanceSpecifier",
+            "src": "360:14:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 54,
+              "name": "BetOracleProxyInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 308,
+              "src": "376:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetOracleProxyInterface_$308",
+                "typeString": "contract BetOracleProxyInterface"
+              }
+            },
+            "id": 55,
+            "nodeType": "InheritanceSpecifier",
+            "src": "376:23:1"
+          }
+        ],
+        "contractDependencies": [
+          308,
+          365,
+          451,
+          631
+        ],
+        "contractKind": "contract",
+        "documentation": "@title OwnerBasedOracle. ",
+        "fullyImplemented": true,
+        "id": 126,
+        "linearizedBaseContracts": [
+          126,
+          308,
+          365,
+          451,
+          631
+        ],
+        "name": "OwnerBasedOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 59,
+            "name": "betReady",
+            "nodeType": "VariableDeclaration",
+            "scope": 126,
+            "src": "407:41:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 58,
+              "keyType": {
+                "id": 56,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "415:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "407:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueType": {
+                "id": 57,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "426:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 63,
+            "name": "betOutcome",
+            "nodeType": "VariableDeclaration",
+            "scope": 126,
+            "src": "454:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+              "typeString": "mapping(bytes32 => uint256)"
+            },
+            "typeName": {
+              "id": 62,
+              "keyType": {
+                "id": 60,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "462:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "454:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                "typeString": "mapping(bytes32 => uint256)"
+              },
+              "valueType": {
+                "id": 61,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "473:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 74,
+              "nodeType": "Block",
+              "src": "830:42:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 70,
+                      "name": "betReady",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "847:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                        "typeString": "mapping(bytes32 => bool)"
+                      }
+                    },
+                    "id": 72,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 71,
+                      "name": "_betHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 65,
+                      "src": "856:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "847:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 69,
+                  "id": 73,
+                  "nodeType": "Return",
+                  "src": "840:25:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns if the oracle is ready to return the outcome\n@param _betHash bytes32 the hash of the bet we are asking for\n@return bool if the outcome is ready to get it",
+            "id": 75,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "outcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "753:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "743:32:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "820:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "819:6:1"
+            },
+            "scope": 126,
+            "src": "722:150:1",
+            "stateMutability": "view",
+            "superFunction": 300,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 92,
+              "nodeType": "Block",
+              "src": "1175:86:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 84,
+                            "name": "_betHash",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 77,
+                            "src": "1206:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          ],
+                          "id": 83,
+                          "name": "outcomeReady",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 75,
+                          "src": "1193:12:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_bool_$",
+                            "typeString": "function (bytes32) view returns (bool)"
+                          }
+                        },
+                        "id": 85,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1193:22:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 82,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        724,
+                        725
+                      ],
+                      "referencedDeclaration": 724,
+                      "src": "1185:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1185:31:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 87,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1185:31:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 88,
+                      "name": "betOutcome",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 63,
+                      "src": "1234:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                        "typeString": "mapping(bytes32 => uint256)"
+                      }
+                    },
+                    "id": 90,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 89,
+                      "name": "_betHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 77,
+                      "src": "1245:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1234:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 81,
+                  "id": 91,
+                  "nodeType": "Return",
+                  "src": "1227:27:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns the outcome of the bet\n@param _betHash bytes32 the hash of the bet we are asking for\n@return uint the outcome of the bet",
+            "id": 93,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEventOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 77,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 93,
+                  "src": "1097:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 76,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1097:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1087:32:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 93,
+                  "src": "1165:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:6:1"
+            },
+            "scope": 126,
+            "src": "1063:198:1",
+            "stateMutability": "view",
+            "superFunction": 307,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 108,
+              "nodeType": "Block",
+              "src": "1531:44:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 102,
+                        "name": "betReady",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1541:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                          "typeString": "mapping(bytes32 => bool)"
+                        }
+                      },
+                      "id": 104,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 103,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 95,
+                        "src": "1550:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1541:18:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 105,
+                      "name": "_ready",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 97,
+                      "src": "1562:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1541:27:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1541:27:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that sets if the outcome of a bet is ready\n@param _betHash bytes32 the hash of the bet we are asking for",
+            "id": 109,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 100,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 99,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 579,
+                  "src": "1517:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1517:9:1"
+              }
+            ],
+            "name": "setOutcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 98,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 95,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1450:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 94,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1450:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "_ready",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1476:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 96,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1476:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1440:53:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 101,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1531:0:1"
+            },
+            "scope": 126,
+            "src": "1416:159:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 124,
+              "nodeType": "Block",
+              "src": "1830:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 122,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 118,
+                        "name": "betOutcome",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 63,
+                        "src": "1840:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                          "typeString": "mapping(bytes32 => uint256)"
+                        }
+                      },
+                      "id": 120,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 119,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 111,
+                        "src": "1851:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1840:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 121,
+                      "name": "_outcome",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 113,
+                      "src": "1863:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1840:31:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 123,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1840:31:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that sets the outcome of a bet\n@param _betHash bytes32 the hash of the bet we are asking for",
+            "id": 125,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 116,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 115,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 579,
+                  "src": "1816:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1816:9:1"
+              }
+            ],
+            "name": "setOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 114,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "1747:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 110,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1747:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 113,
+                  "name": "_outcome",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "1773:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 112,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1773:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1737:55:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 117,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1830:0:1"
+            },
+            "scope": 126,
+            "src": "1718:160:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 127,
+        "src": "331:1549:1"
+      }
+    ],
+    "src": "0:1881:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracleProxies/OwnerBasedOracle.sol",
+    "exportedSymbols": {
+      "OwnerBasedOracle": [
+        126
+      ]
+    },
+    "id": 127,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 49,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
+        "file": "../ProxyInterfaces/BetOracleProxyInterface.sol",
+        "id": 50,
+        "nodeType": "ImportDirective",
+        "scope": 127,
+        "sourceUnit": 309,
+        "src": "37:56:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
+        "file": "../RegistrySetter.sol",
+        "id": 51,
+        "nodeType": "ImportDirective",
+        "scope": 127,
+        "sourceUnit": 366,
+        "src": "94:31:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 52,
+              "name": "RegistrySetter",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 365,
+              "src": "360:14:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RegistrySetter_$365",
+                "typeString": "contract RegistrySetter"
+              }
+            },
+            "id": 53,
+            "nodeType": "InheritanceSpecifier",
+            "src": "360:14:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 54,
+              "name": "BetOracleProxyInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 308,
+              "src": "376:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetOracleProxyInterface_$308",
+                "typeString": "contract BetOracleProxyInterface"
+              }
+            },
+            "id": 55,
+            "nodeType": "InheritanceSpecifier",
+            "src": "376:23:1"
+          }
+        ],
+        "contractDependencies": [
+          308,
+          365,
+          451,
+          631
+        ],
+        "contractKind": "contract",
+        "documentation": "@title OwnerBasedOracle. ",
+        "fullyImplemented": true,
+        "id": 126,
+        "linearizedBaseContracts": [
+          126,
+          308,
+          365,
+          451,
+          631
+        ],
+        "name": "OwnerBasedOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 59,
+            "name": "betReady",
+            "nodeType": "VariableDeclaration",
+            "scope": 126,
+            "src": "407:41:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 58,
+              "keyType": {
+                "id": 56,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "415:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "407:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueType": {
+                "id": 57,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "426:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 63,
+            "name": "betOutcome",
+            "nodeType": "VariableDeclaration",
+            "scope": 126,
+            "src": "454:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+              "typeString": "mapping(bytes32 => uint256)"
+            },
+            "typeName": {
+              "id": 62,
+              "keyType": {
+                "id": 60,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "462:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "454:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                "typeString": "mapping(bytes32 => uint256)"
+              },
+              "valueType": {
+                "id": 61,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "473:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 74,
+              "nodeType": "Block",
+              "src": "830:42:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 70,
+                      "name": "betReady",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "847:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                        "typeString": "mapping(bytes32 => bool)"
+                      }
+                    },
+                    "id": 72,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 71,
+                      "name": "_betHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 65,
+                      "src": "856:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "847:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 69,
+                  "id": 73,
+                  "nodeType": "Return",
+                  "src": "840:25:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns if the oracle is ready to return the outcome\n@param _betHash bytes32 the hash of the bet we are asking for\n@return bool if the outcome is ready to get it",
+            "id": 75,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "outcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 65,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "753:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "743:32:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "820:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "819:6:1"
+            },
+            "scope": 126,
+            "src": "722:150:1",
+            "stateMutability": "view",
+            "superFunction": 300,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 92,
+              "nodeType": "Block",
+              "src": "1175:86:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 84,
+                            "name": "_betHash",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 77,
+                            "src": "1206:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          ],
+                          "id": 83,
+                          "name": "outcomeReady",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 75,
+                          "src": "1193:12:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_bool_$",
+                            "typeString": "function (bytes32) view returns (bool)"
+                          }
+                        },
+                        "id": 85,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1193:22:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 82,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        724,
+                        725
+                      ],
+                      "referencedDeclaration": 724,
+                      "src": "1185:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1185:31:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 87,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1185:31:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 88,
+                      "name": "betOutcome",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 63,
+                      "src": "1234:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                        "typeString": "mapping(bytes32 => uint256)"
+                      }
+                    },
+                    "id": 90,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 89,
+                      "name": "_betHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 77,
+                      "src": "1245:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1234:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 81,
+                  "id": 91,
+                  "nodeType": "Return",
+                  "src": "1227:27:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that returns the outcome of the bet\n@param _betHash bytes32 the hash of the bet we are asking for\n@return uint the outcome of the bet",
+            "id": 93,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEventOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 77,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 93,
+                  "src": "1097:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 76,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1097:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1087:32:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 93,
+                  "src": "1165:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:6:1"
+            },
+            "scope": 126,
+            "src": "1063:198:1",
+            "stateMutability": "view",
+            "superFunction": 307,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 108,
+              "nodeType": "Block",
+              "src": "1531:44:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 102,
+                        "name": "betReady",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1541:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                          "typeString": "mapping(bytes32 => bool)"
+                        }
+                      },
+                      "id": 104,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 103,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 95,
+                        "src": "1550:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1541:18:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 105,
+                      "name": "_ready",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 97,
+                      "src": "1562:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1541:27:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1541:27:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that sets if the outcome of a bet is ready\n@param _betHash bytes32 the hash of the bet we are asking for",
+            "id": 109,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 100,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 99,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 579,
+                  "src": "1517:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1517:9:1"
+              }
+            ],
+            "name": "setOutcomeReady",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 98,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 95,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1450:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 94,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1450:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "_ready",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "1476:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 96,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1476:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1440:53:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 101,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1531:0:1"
+            },
+            "scope": 126,
+            "src": "1416:159:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 124,
+              "nodeType": "Block",
+              "src": "1830:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 122,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 118,
+                        "name": "betOutcome",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 63,
+                        "src": "1840:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
+                          "typeString": "mapping(bytes32 => uint256)"
+                        }
+                      },
+                      "id": 120,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 119,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 111,
+                        "src": "1851:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1840:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 121,
+                      "name": "_outcome",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 113,
+                      "src": "1863:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1840:31:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 123,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1840:31:1"
+                }
+              ]
+            },
+            "documentation": "@dev Function that sets the outcome of a bet\n@param _betHash bytes32 the hash of the bet we are asking for",
+            "id": 125,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 116,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 115,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 579,
+                  "src": "1816:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1816:9:1"
+              }
+            ],
+            "name": "setOutcome",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 114,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "1747:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 110,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1747:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 113,
+                  "name": "_outcome",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125,
+                  "src": "1773:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 112,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1773:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1737:55:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 117,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1830:0:1"
+            },
+            "scope": 126,
+            "src": "1718:160:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 127,
+        "src": "331:1549:1"
+      }
+    ],
+    "src": "0:1881:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-07-09T11:18:47.855Z"
+}
