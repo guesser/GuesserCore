@@ -84,5 +84,9 @@ contract("Bet Registry Test", async (accounts) => {
         expect(
             winnerBalance.toNumber()
         ).to.be.equal(5);
+        const looserBalance = await token.balanceOf(BETTER_1);
+        expect(
+            looserBalance.toNumber()
+        ).to.be.equal(0);
     });
 });

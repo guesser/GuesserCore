@@ -20,7 +20,6 @@ contract("Owner Based Bet Oracle Proxy Test", async (accounts) => {
     var betPayments;
     var betTerms;
     var betRegistry;
-    var ownerBased;
     var betHash;
     // Bet Payments
     var erc20PaymentProxy;
@@ -69,6 +68,7 @@ contract("Owner Based Bet Oracle Proxy Test", async (accounts) => {
         // Creating the bet
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,
+            token.address,
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,

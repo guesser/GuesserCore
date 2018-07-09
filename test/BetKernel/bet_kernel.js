@@ -1,7 +1,5 @@
 var chai = require("chai");
 var expect = chai.expect;
-var Web3latest = require('web3');
-var web3 = new Web3latest();
 
 const BetKernel = artifacts.require("BetKernel");
 const BetOracle = artifacts.require("BetOracle");
@@ -16,7 +14,7 @@ const OwnerBased = artifacts.require("OwnerBased");
 // BetOracle Proxy
 const OwnerBasedOracle = artifacts.require("OwnerBasedOracle");
 
-contract("Bet Registry Test", async (accounts) => {
+contract("Bet Kernel Test", async (accounts) => {
     var betKernel;
     var betOracle;
     var betPayments;
@@ -31,6 +29,7 @@ contract("Bet Registry Test", async (accounts) => {
     var termsHash;
     // Bet Oracle
     var ownerBasedOracle;
+
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -50,6 +49,7 @@ contract("Bet Registry Test", async (accounts) => {
             betOracle.address,
             betTerms.address
         );
+
         // Setting bet payments
         erc20PaymentProxy = await ERC20PaymentProxy.new();
         token = await DummyToken.new(
@@ -65,29 +65,7 @@ contract("Bet Registry Test", async (accounts) => {
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
-        
-    });
-
-    it("should have set the proper addresses", async () => {
-        const kernelAddress = await betRegistry.betKernel.call();
-        const paymentsAddress = await betRegistry.betPayments.call();
-        const oracleAddress = await betRegistry.betOracle.call();
-        const termsAddress = await betRegistry.betTerms.call();
-        expect(
-            kernelAddress
-        ).to.be.equal(betKernel.address);
-        expect(
-            paymentsAddress
-        ).to.be.equal(betPayments.address);
-        expect(
-            oracleAddress
-        ).to.be.equal(betOracle.address);
-        expect(
-            termsAddress
-        ).to.be.equal(betTerms.address);
-    });
-
-    it("should be able to create a bet witht the proper hash", async () => {
+        // Creating the bet
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,
             token.address,
@@ -104,12 +82,27 @@ contract("Bet Registry Test", async (accounts) => {
             termsHash,
             1 // Salt
         );
-
     });
 
-    it("should return the data of the bet", async () => {
+    it("should have the proper bet registry set", async () => {
+        await betKernel.setBetRegistry(betRegistry.address);
         expect(
-            await betRegistry.getBetCreator.call(betHash)
-        ).to.be.equal(CONTRACT_OWNER);
+            await betKernel.betRegistry.call()
+        ).to.be.equal(betRegistry.address);
+    });
+
+    it("should allow a user to place a bet", async () => {
+        await betPayments.setBetRegistry(betRegistry.address);
+        await token.approve(betPayments.address, 5, {from: BETTER_1});
+        await betKernel.placeBet(
+            betHash,
+            1,
+            5,
+            {from: BETTER_1}
+        );
+        const balance = await token.balanceOf(BETTER_1);
+        expect(
+            balance.toNumber()
+        ).to.be.equal(0);
     });
 });

@@ -11,10 +11,19 @@ contract RegistryStorage {
     // Storage
     struct BetEntry {
         address paymentsProxy;
+        address paymentsToken;
         address oracleProxy;
         address termsProxy;
         bytes32 termsHash;
         address creator;
+        mapping(bytes32 => GameBet) gameBets;
+        uint totalPrincipal;
+    }
+
+    struct GameBet {
+        address player;
+        uint option;
+        uint principal;
     }
 
     // Primary registry mapping the events with their hash
