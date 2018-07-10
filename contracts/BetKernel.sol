@@ -88,12 +88,14 @@ contract BetKernel is RegistrySetter {
                 _betHash
             )
         );
-        if(
+        if (
             _betOracle.getOutcome(
                 betRegistry.getBetOracleProxy(_betHash),
                 _betHash
             ) != betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
-        ) return 0;
+        ) 
+            return 0;
+
         require(
             _betTerms.retrievingPeriod(
                 betRegistry.getBetTermsProxy(_betHash),

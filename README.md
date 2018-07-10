@@ -34,6 +34,7 @@ $ npm run chain
 `
 $ npm run test
 `
+In the future we plan to develop a Javasript library that users can import and easily use the platform without the need to touch solidity at all or do any deploys to the ethereum network, putting the barriers to usability the lower we can.
 
 # Aim
 The aim of the project is not just to have the contracts to inherit from but a way to unify the betting we all love in ethereum. Providing with this a protocol that we all can use easily in just a few lines of code.
