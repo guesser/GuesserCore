@@ -14,7 +14,7 @@ const OwnerBased = artifacts.require("OwnerBased");
 // BetOracle Proxy
 const OwnerBasedOracle = artifacts.require("OwnerBasedOracle");
 
-contract("Bet Kernel Test", async (accounts) => {
+contract("Bet Kernel Exceptions Test", async (accounts) => {
     var betKernel;
     var betOracle;
     var betPayments;
@@ -36,7 +36,8 @@ contract("Bet Kernel Test", async (accounts) => {
 
     const BETTER_1 = accounts[1];
     const BETTER_2 = accounts[2];
-    const WINNER_1 = accounts[3];
+    const ATTACKER_1 = accounts[3];
+    const WINNER_1 = accounts[4];
 
     before(async () => {
         betKernel = await BetKernel.new();
@@ -83,128 +84,132 @@ contract("Bet Kernel Test", async (accounts) => {
             termsHash,
             1 // Salt
         );
-    });
 
-    it("should have the proper bet registry set", async () => {
         await betKernel.setBetRegistry(betRegistry.address);
-        expect(
-            await betKernel.betRegistry.call()
-        ).to.be.equal(betRegistry.address);
-    });
-
-    it("should allow a user to place a bet", async () => {
         await betPayments.setBetRegistry(betRegistry.address);
         await token.approve(betPayments.address, 5, {from: BETTER_1});
+    });
+    
+    it("should not be allowed to place a bet when user doesn't have the money", async () => {
+        // When the user has the money but haven't set the approval
+        try{
+            await betKernel.placeBet(
+                betHash,
+                2,
+                5,
+                {from: BETTER_2}
+            );
+            expect(true).to.be.equal(false);
+        } catch (err) {
+            expect(err)
+        }
 
-        playerBetHash = await betKernel.placeBet.call(
-            betHash,
-            3,
-            5,
-            {from: BETTER_1}
-        );
-
-        await betKernel.placeBet(
-            betHash,
-            3,
-            5,
-            {from: BETTER_1}
-        );
-        let balance = await token.balanceOf(BETTER_1);
-        expect(
-            balance.toNumber()
-        ).to.be.equal(0);
-        balance = await token.balanceOf(betPayments.address);
-        expect(
-            balance.toNumber()
-        ).to.be.equal(5);
-
+        // When the user doesn't have the money
+        try{
+            await betKernel.placeBet(
+                betHash,
+                2,
+                5,
+                {from: ATTACKER_1}
+            );
+            expect(true).to.be.equal(false);
+        } catch (err) {
+            expect(err)
+        }
     });
 
-    it("should return the parameters of the player bet", async () => {
-        const option = await betRegistry.getPlayerBetOption(betHash, playerBetHash);
-        expect(
-            option.toNumber()
-        ).to.be.equal(3);
-        expect(
-            await betRegistry.getPlayerBetPlayer(betHash, playerBetHash)
-        ).to.be.equal(BETTER_1)
-    });
-
-    it("should allow a user to get back the profits", async () => {
-        // First -> Setting the oracle
-        await ownerBasedOracle.setOutcome(betHash, 3);
-        await ownerBasedOracle.setOutcomeReady(betHash, true);
-
-        // Second -> Setting the terms
+    it("should not be allowed to place a bet when it is not open", async () => {
         await ownerBased.changePeriod(
             termsHash,
-            2
+            1
         );
-        // Third -> Asking for the profits
-        const profits = await betKernel.getProfits.call(
-            betHash,
-            playerBetHash,
-            {from: BETTER_1}
-        );
-        // const balance = await token.balanceOf(BETTER_1);
-        expect(
-            profits.toNumber()
-        ).to.be.equal(5);
+        try{
+            await betKernel.placeBet(
+                betHash,
+                2,
+                5,
+                {from: BETTER_1}
+            );
+        } catch (err) {
+            expect(err);
+        }
     });
 
-    it("should return the proper amount in more complex bets", async () => {
-        // Second -> Setting the terms
+    it("shouldn't allow to get the money when it isn't time yet", async () => {
         await ownerBased.changePeriod(
             termsHash,
             0
         );
-        await token.approve(betPayments.address, 5, {from: BETTER_2});
-
-        let player2BetHash = await betKernel.placeBet.call(
+        playerBetHash = await betKernel.placeBet.call(
             betHash,
             2,
             5,
-            {from: BETTER_2}
+            {from: BETTER_1}
         );
         await betKernel.placeBet(
             betHash,
             2,
             5,
-            {from: BETTER_2}
+            {from: BETTER_1}
         );
+        expect(
+            await betRegistry.getPlayerBetPlayer.call(betHash, playerBetHash)
+        ).to.be.equal(BETTER_1)
 
+        try {
+            await betKernel.getProfits(
+                betHash,
+                playerBetHash,
+                {from: BETTER_1}
+            );
+            expect(true).to.be.equal(false);
+        } catch (err) {
+            expect(err);
+        }
+    });
+
+    it("shouldn't allow to get the money from a bet you don't own", async () => {
+        await ownerBasedOracle.setOutcome(betHash, 2);
+        await ownerBasedOracle.setOutcomeReady(betHash, true);
         await ownerBased.changePeriod(
             termsHash,
             2
         );
+        try {
+            await betKernel.getProfits(
+                betHash,
+                playerBetHash,
+                {from: ATTACKER_1}
+            );
+            expect(true).to.be.equal(false);
+        } catch (err) {
+            expect(err);
+        }
         let profits = await betKernel.getProfits.call(
-            betHash,
-            playerBetHash,
-            {from: BETTER_1}
+                betHash,
+                playerBetHash,
+                {from: BETTER_1}
         );
         expect(
             profits.toNumber()
-        ).to.be.equal(10);
-        profits = await betKernel.getProfits.call(
-            betHash,
-            player2BetHash,
-            {from: BETTER_2}
-        );
-        expect(
-            profits.toNumber()
-        ).to.be.equal(0);
-
+        ).to.be.equal(5);
     });
 
-    it("should transfer the proper amount once a bet finalices", async () => {
+    it("shouldn't allow the user to ask twice for its money", async () => {
         await betKernel.getProfits(
             betHash,
             playerBetHash,
             {from: BETTER_1}
         );
-        const balance = await token.balanceOf(BETTER_1);
-        expect(
-            balance.toNumber()
-        ).to.be.equal(10);
+        try {
+            await betKernel.getProfits(
+                betHash,
+                playerBetHash,
+                {from: BETTER_1}
+            );
+            expect(true).to.be.equal(false);
+        } catch (err) {
+            expect(err);
+        }
     });
 });

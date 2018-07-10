@@ -32,6 +32,7 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
 
     /**
      * @dev Function to send the profits the bet has to a winner
+     * @param _token address Address of the token to transfer
      * @param _from address Address of the current owner
      * @param _to address Address of the beneficiary
      * @param _amount uint this will depend in the child token if it is
@@ -48,6 +49,26 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
         returns(bool)
     {
         ERC20(_token).transferFrom(_from, _to, _amount);
+        return true;
+    }
+
+    /**
+     * @dev Function to send the profits the bet has to a winner
+     * @param _token address Address of the token to transfer
+     * @param _to address Address of the beneficiary
+     * @param _amount uint this will depend in the child token if it is
+     * an ERC721 or ERC20 Token. But it's the profit the person gets
+     * @return bool if the transaction was succesfull
+     */
+    function transfer(
+        address _token,
+        address _to,
+        uint _amount
+    )
+        public
+        returns(bool)
+    {
+        ERC20(_token).transfer(_to, _amount);
         return true;
     }
 }

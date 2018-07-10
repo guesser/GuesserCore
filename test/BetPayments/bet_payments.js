@@ -77,14 +77,29 @@ contract("Bet Registry Test", async (accounts) => {
             erc20PaymentProxy.address,
             token.address,
             BETTER_1,
-            WINNER_1,
+            betPayments.address,
             5
         );
-        const winnerBalance = await token.balanceOf(WINNER_1);
+        let winnerBalance = await token.balanceOf(betPayments.address);
         expect(
             winnerBalance.toNumber()
         ).to.be.equal(5);
-        const looserBalance = await token.balanceOf(BETTER_1);
+        let looserBalance = await token.balanceOf(BETTER_1);
+        expect(
+            looserBalance.toNumber()
+        ).to.be.equal(0);
+
+        await betPayments.transfer(
+            erc20PaymentProxy.address,
+            token.address,
+            WINNER_1,
+            5
+        );
+        winnerBalance = await token.balanceOf(WINNER_1);
+        expect(
+            winnerBalance.toNumber()
+        ).to.be.equal(5);
+        looserBalance = await token.balanceOf(betPayments.address);
         expect(
             looserBalance.toNumber()
         ).to.be.equal(0);

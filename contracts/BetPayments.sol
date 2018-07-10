@@ -78,4 +78,34 @@ contract BetPayments is RegistrySetter {
         ));
         return true;
     }
+
+    /**
+     * @dev Function to send the profits the bet has to an address
+     * @param _to address Address of the beneficiary
+     * @param _profit uint this will depend in the child token if it is
+     * an ERC721 or ERC20 Token. But it's the profit the person gets
+     * @return bool if the transaction was succesfull
+     */
+    function transfer(
+        address _paymentsProxy,
+        address _token,
+        address _to,
+        uint _profit
+    )
+        public
+        whenPaused
+        returns(bool)
+    {    
+        require(_paymentsProxy.delegatecall(
+            bytes4(
+                keccak256(
+                    "transfer(address,address,uint256)"
+                )
+            ),
+            _token,
+            _to,
+            _profit
+        ));
+        return true;
+    }
 }

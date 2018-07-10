@@ -18,53 +18,61 @@ contract BetTerms is RegistrySetter {
 
     /**
      * @dev function that asks the termscontract if playing is allowd
+     * @param _termsProxy address the address of the Proxy contract
+     * @param _termsHash bytes32 the hash of the terms
      * @return bool if it is the period for playing
      */
-    function participationPeriod(address _termsContract, bytes32 _termsHash)
+    function participationPeriod(address _termsProxy, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return BetTermsProxyInterface(_termsContract)
+        return BetTermsProxyInterface(_termsProxy)
             .participationPeriod(_termsHash);
     }
 
     /**
      * @dev function that asks the termscontract if playing is in stand by
+     * @param _termsProxy address the address of the Proxy contract
+     * @param _termsHash bytes32 the hash of the terms
      * @return bool if it is the waiting period
      */
-    function waitingPeriod(address _termsContract, bytes32 _termsHash)
+    function waitingPeriod(address _termsProxy, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return BetTermsProxyInterface(_termsContract)
+        return BetTermsProxyInterface(_termsProxy)
             .waitingPeriod(_termsHash);
     }
 
     /**
      * @dev Function that asks the TermsContract if it is the time to ask for the profits
+     * @param _termsProxy address the address of the Proxy contract
+     * @param _termsHash bytes32 the hash of the terms
      * @return bool if the period for betting is over
      */
-    function retrievingPeriod(address _termsContract, bytes32 _termsHash)
+    function retrievingPeriod(address _termsProxy, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return BetTermsProxyInterface(_termsContract)
+        return BetTermsProxyInterface(_termsProxy)
             .retrievingPeriod(_termsHash);
     }
 
     /**
      * @dev Function that asks the TermsContract if the event has finished
+     * @param _termsProxy address the address of the Proxy contract
+     * @param _termsHash bytes32 the hash of the terms
      * @return bool if the event is over
      */
-    function finishedPeriod(address _termsContract, bytes32 _termsHash)
+    function finishedPeriod(address _termsProxy, bytes32 _termsHash)
         public
         view
         returns(bool)
     {
-        return BetTermsProxyInterface(_termsContract)
+        return BetTermsProxyInterface(_termsProxy)
             .finishedPeriod(_termsHash);
     }
 }

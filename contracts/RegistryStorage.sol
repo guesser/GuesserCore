@@ -16,14 +16,16 @@ contract RegistryStorage {
         address termsProxy;
         bytes32 termsHash;
         address creator;
-        mapping(bytes32 => GameBet) gameBets;
+        mapping(bytes32 => PlayerBet) playerBets;
+        mapping(uint => uint) principalInOption;
         uint totalPrincipal;
     }
 
-    struct GameBet {
+    struct PlayerBet {
         address player;
         uint option;
         uint principal;
+        bool returned;
     }
 
     // Primary registry mapping the events with their hash
