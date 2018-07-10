@@ -37,10 +37,10 @@ $ npm run test
 In the future we plan to develop a Javasript library that users can import and easily use the platform without the need to touch solidity at all or do any deploys to the ethereum network, putting the barriers to usability the lower we can.
 
 # Aim
-The aim of the project is not just to have the contracts to inherit from but a way to unify the betting we all love in ethereum. Providing with this a protocol that we all can use easily in just a few lines of code.
+The aim of the project is not just to have the contracts to inherit from but a way to unify the betting we all love in ethereum. We provide a protocol that we all can use easily in just a few lines of code.
 The easier way to see how the platform is working is going to the tests directory and check a few of the files, like the kernel where you can see a few processes of creating a bet by an owner.
 
 # Future
-Providing a betting protocol "to rule them all" it is not an easy job and the huge use cases are very different from each other. Creating new basic contracts for the distinct and growing possibilities is the way to go at the moment, as well as providing help to any project aiming to add betting on their ethereum games.
-Also, providing an easy way to use the protocol by "just" importing a library script is on the way. We think that with this, more people will be able to develop on top of ethereum safe and easy gambling games.
-There are still many things to do, if you want to help with "a few lines" we would love to help you with that, there are still many things to do!
+Building a betting protocol "to rule them all" is not an easy job and the number of usecases can be very different from each other. We believe creating basic layer contracts for the different growing possibilities is the way to go for now, as well as supporting any project aiming to add betting on their ethereum projects.
+Also, an easy way to use the protocol by simply importing a library script is on its way. We think that through this more people will be able to develop on top of ethereum safe and easy-to-use gambling games.
+There are still many things to do, so if you want to help with "a few lines" we would love to help you!
