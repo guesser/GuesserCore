@@ -1,13 +1,13 @@
 ![banner](https://raw.githubusercontent.com/GuesserProtocol/GuesserProtocol/master/core_name.png)
 
 
-# Guesser Protocol 
+# Guesser Core 
 
-The Guesser protocol is a set of smart contracts built to provide developers with the necessary tools to create betting platforms on Ethereum. The aim of the protocol is to be fully upgradeable with support for any kind of purpose you have in mind. Some examples could be ERC721 collectibles betting or even lotteries.
+The Guesser Core protocol is a set of smart contracts built to provide developers with the necessary tools to create betting platforms on Ethereum. The aim of the protocol is to be fully upgradeable with support for any kind of purpose you have in mind. Some examples could be ERC721 (non fungible tokens) betting or even lotteries.
 
 # Installing the protocol
 
-Guesser Protocol is a [Truffle](https://truffleframework.com/) project, and therefore we have it as primary dependency.
+Guesser Core is a [Truffle](https://truffleframework.com/) project, and therefore we have it as primary dependency.
 
 Install it with: 
 
