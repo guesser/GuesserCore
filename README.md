@@ -19,7 +19,8 @@ After that, clone the project and install the internal dependencies:
 
 `
 $ git clone https://github.com/GuesserProtocol/GuesserProtocol.git
-$ cd GuesserProtocol && npm install
+
+$ cd GuesserCore && npm install
 `
 
 # Usage
