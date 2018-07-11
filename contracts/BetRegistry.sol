@@ -2,8 +2,8 @@ pragma solidity 0.4.24;
 
 // Internal
 import "./RegistryStorage.sol";
+import "./ProxyRegistry.sol";
 // External
-import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 
@@ -16,7 +16,7 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
 /** @title Bet BetRegistry. */
-contract BetRegistry is RegistryStorage, Pausable {
+contract BetRegistry is RegistryStorage, ProxyRegistry {
     using SafeMath for uint;
 
     // Events

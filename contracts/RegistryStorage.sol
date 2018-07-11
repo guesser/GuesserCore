@@ -7,6 +7,7 @@ contract RegistryStorage {
     address public betPayments;
     address public betOracle;
     address public betTerms;
+    address public proxyRegistry;
 
     // Storage
     struct BetEntry {

@@ -50,21 +50,21 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
     "exportedSymbols": {
       "BetOracleProxyInterface": [
-        1198
+        1450
       ]
     },
-    "id": 1199,
+    "id": 1451,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1183,
+        "id": 1435,
         "literals": [
           "solidity",
           "0.4",
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:6"
+        "src": "0:23:8"
       },
       {
         "baseContracts": [],
@@ -72,9 +72,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1198,
+        "id": 1450,
         "linearizedBaseContracts": [
-          1198
+          1450
         ],
         "name": "BetOracleProxyInterface",
         "nodeType": "ContractDefinition",
@@ -82,7 +82,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1190,
+            "id": 1442,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -90,16 +90,16 @@
             "name": "outcomeReady",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1186,
+              "id": 1438,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1185,
+                  "id": 1437,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1190,
-                  "src": "98:16:6",
+                  "scope": 1442,
+                  "src": "98:16:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -107,10 +107,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 1184,
+                    "id": 1436,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "98:7:6",
+                    "src": "98:7:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -120,20 +120,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "88:32:6"
+              "src": "88:32:8"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1189,
+              "id": 1441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1188,
+                  "id": 1440,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1190,
-                  "src": "143:4:6",
+                  "scope": 1442,
+                  "src": "143:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -141,10 +141,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1187,
+                    "id": 1439,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "143:4:6",
+                    "src": "143:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -154,10 +154,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "142:6:6"
+              "src": "142:6:8"
             },
-            "scope": 1198,
-            "src": "67:82:6",
+            "scope": 1450,
+            "src": "67:82:8",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -165,7 +165,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1197,
+            "id": 1449,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -173,16 +173,16 @@
             "name": "getOutcome",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1193,
+              "id": 1445,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1192,
+                  "id": 1444,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1197,
-                  "src": "184:16:6",
+                  "scope": 1449,
+                  "src": "184:16:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -190,10 +190,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 1191,
+                    "id": 1443,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "184:7:6",
+                    "src": "184:7:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -203,20 +203,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "174:32:6"
+              "src": "174:32:8"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1196,
+              "id": 1448,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1195,
+                  "id": 1447,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1197,
-                  "src": "229:4:6",
+                  "scope": 1449,
+                  "src": "229:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -224,10 +224,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1194,
+                    "id": 1446,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "229:4:6",
+                    "src": "229:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -237,40 +237,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "228:6:6"
+              "src": "228:6:8"
             },
-            "scope": 1198,
-            "src": "155:80:6",
+            "scope": 1450,
+            "src": "155:80:8",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1199,
-        "src": "26:211:6"
+        "scope": 1451,
+        "src": "26:211:8"
       }
     ],
-    "src": "0:238:6"
+    "src": "0:238:8"
   },
   "legacyAST": {
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
     "exportedSymbols": {
       "BetOracleProxyInterface": [
-        1198
+        1450
       ]
     },
-    "id": 1199,
+    "id": 1451,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1183,
+        "id": 1435,
         "literals": [
           "solidity",
           "0.4",
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:6"
+        "src": "0:23:8"
       },
       {
         "baseContracts": [],
@@ -278,9 +278,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1198,
+        "id": 1450,
         "linearizedBaseContracts": [
-          1198
+          1450
         ],
         "name": "BetOracleProxyInterface",
         "nodeType": "ContractDefinition",
@@ -288,7 +288,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1190,
+            "id": 1442,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -296,16 +296,16 @@
             "name": "outcomeReady",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1186,
+              "id": 1438,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1185,
+                  "id": 1437,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1190,
-                  "src": "98:16:6",
+                  "scope": 1442,
+                  "src": "98:16:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -313,10 +313,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 1184,
+                    "id": 1436,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "98:7:6",
+                    "src": "98:7:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -326,20 +326,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "88:32:6"
+              "src": "88:32:8"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1189,
+              "id": 1441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1188,
+                  "id": 1440,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1190,
-                  "src": "143:4:6",
+                  "scope": 1442,
+                  "src": "143:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -347,10 +347,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1187,
+                    "id": 1439,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "143:4:6",
+                    "src": "143:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -360,10 +360,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "142:6:6"
+              "src": "142:6:8"
             },
-            "scope": 1198,
-            "src": "67:82:6",
+            "scope": 1450,
+            "src": "67:82:8",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -371,7 +371,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1197,
+            "id": 1449,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -379,16 +379,16 @@
             "name": "getOutcome",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1193,
+              "id": 1445,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1192,
+                  "id": 1444,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1197,
-                  "src": "184:16:6",
+                  "scope": 1449,
+                  "src": "184:16:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -396,10 +396,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 1191,
+                    "id": 1443,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "184:7:6",
+                    "src": "184:7:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -409,20 +409,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "174:32:6"
+              "src": "174:32:8"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1196,
+              "id": 1448,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1195,
+                  "id": 1447,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1197,
-                  "src": "229:4:6",
+                  "scope": 1449,
+                  "src": "229:4:8",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -430,10 +430,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1194,
+                    "id": 1446,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "229:4:6",
+                    "src": "229:4:8",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -443,20 +443,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "228:6:6"
+              "src": "228:6:8"
             },
-            "scope": 1198,
-            "src": "155:80:6",
+            "scope": 1450,
+            "src": "155:80:8",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1199,
-        "src": "26:211:6"
+        "scope": 1451,
+        "src": "26:211:8"
       }
     ],
-    "src": "0:238:6"
+    "src": "0:238:8"
   },
   "compiler": {
     "name": "solc",
@@ -464,5 +464,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-07-11T08:17:40.594Z"
+  "updatedAt": "2018-07-11T08:53:18.465Z"
 }

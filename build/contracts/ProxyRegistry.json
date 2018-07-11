@@ -1,0 +1,1745 @@
+{
+  "contractName": "ProxyRegistry",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "oracleProxiesAllowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "paymentsProxiesAllowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "termsProxiesAllowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unpause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_paymentsProxy",
+          "type": "address"
+        },
+        {
+          "name": "_allowance",
+          "type": "bool"
+        }
+      ],
+      "name": "setPaymentsProxiesAllowance",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_oracleProxy",
+          "type": "address"
+        },
+        {
+          "name": "_allowance",
+          "type": "bool"
+        }
+      ],
+      "name": "setOracleProxiesAllowance",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_termsProxy",
+          "type": "address"
+        },
+        {
+          "name": "_allowance",
+          "type": "bool"
+        }
+      ],
+      "name": "setTermsProxiesAllowance",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008060146101000a81548160ff021916908315150217905550336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610a928061006d6000396000f3006080604052600436106100ba576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806323cc137a146100bf5780633cbede6b1461011a5780633f4ba83a1461016957806342f0a13a146101805780635c975abb146101db578063715018a61461020a5780638456cb59146102215780638da5cb5b146102385780639d4faab31461028f578063c4a68d10146102ea578063f2fde38b14610339578063fb46edb31461037c575b600080fd5b3480156100cb57600080fd5b50610100600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103cb565b604051808215151515815260200191505060405180910390f35b34801561012657600080fd5b50610167600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506103eb565b005b34801561017557600080fd5b5061017e6104a1565b005b34801561018c57600080fd5b506101c1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061055f565b604051808215151515815260200191505060405180910390f35b3480156101e757600080fd5b506101f061057f565b604051808215151515815260200191505060405180910390f35b34801561021657600080fd5b5061021f610592565b005b34801561022d57600080fd5b50610236610694565b005b34801561024457600080fd5b5061024d610754565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561029b57600080fd5b506102d0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610779565b604051808215151515815260200191505060405180910390f35b3480156102f657600080fd5b50610337600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803515159060200190929190505050610799565b005b34801561034557600080fd5b5061037a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061084f565b005b34801561038857600080fd5b506103c9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506108b6565b005b60026020528060005260406000206000915054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561044657600080fd5b80600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104fc57600080fd5b600060149054906101000a900460ff16151561051757600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b60016020528060005260406000206000915054906101000a900460ff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105ed57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106ef57600080fd5b600060149054906101000a900460ff1615151561070b57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60036020528060005260406000206000915054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156107f457600080fd5b80600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108aa57600080fd5b6108b38161096c565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561091157600080fd5b80600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156109a857600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058204dd312c8d37314545ae13f6ee93a9b22ed3d762402fcbc91bfe140d3bce9a4b90029",
+  "deployedBytecode": "0x6080604052600436106100ba576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806323cc137a146100bf5780633cbede6b1461011a5780633f4ba83a1461016957806342f0a13a146101805780635c975abb146101db578063715018a61461020a5780638456cb59146102215780638da5cb5b146102385780639d4faab31461028f578063c4a68d10146102ea578063f2fde38b14610339578063fb46edb31461037c575b600080fd5b3480156100cb57600080fd5b50610100600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103cb565b604051808215151515815260200191505060405180910390f35b34801561012657600080fd5b50610167600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506103eb565b005b34801561017557600080fd5b5061017e6104a1565b005b34801561018c57600080fd5b506101c1600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061055f565b604051808215151515815260200191505060405180910390f35b3480156101e757600080fd5b506101f061057f565b604051808215151515815260200191505060405180910390f35b34801561021657600080fd5b5061021f610592565b005b34801561022d57600080fd5b50610236610694565b005b34801561024457600080fd5b5061024d610754565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561029b57600080fd5b506102d0600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610779565b604051808215151515815260200191505060405180910390f35b3480156102f657600080fd5b50610337600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803515159060200190929190505050610799565b005b34801561034557600080fd5b5061037a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061084f565b005b34801561038857600080fd5b506103c9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035151590602001909291905050506108b6565b005b60026020528060005260406000206000915054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561044657600080fd5b80600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156104fc57600080fd5b600060149054906101000a900460ff16151561051757600080fd5b60008060146101000a81548160ff0219169083151502179055507f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a1565b60016020528060005260406000206000915054906101000a900460ff1681565b600060149054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156105ed57600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a260008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106ef57600080fd5b600060149054906101000a900460ff1615151561070b57600080fd5b6001600060146101000a81548160ff0219169083151502179055507f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a1565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60036020528060005260406000206000915054906101000a900460ff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156107f457600080fd5b80600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108aa57600080fd5b6108b38161096c565b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561091157600080fd5b80600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156109a857600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058204dd312c8d37314545ae13f6ee93a9b22ed3d762402fcbc91bfe140d3bce9a4b90029",
+  "sourceMap": "300:838:11:-;;;268:5:14;247:26;;;;;;;;;;;;;;;;;;;;575:10:16;567:5;;:18;;;;;;;;;;;;;;;;;;300:838:11;;;;;;",
+  "deployedSourceMap": "300:838:11:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;403:54;;8:9:-1;5:2;;;30:1;27;20:12;5:2;403:54:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;941:195;;8:9:-1;5:2;;;30:1;27;20:12;5:2;941:195:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;838:92:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;838:92:14;;;;;;341:56:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;341:56:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;247:26:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:26:14;;;;;;;;;;;;;;;;;;;;;;;;;;;827:111:16;;8:9:-1;5:2;;;30:1;27;20:12;5:2;827:111:16;;;;;;666:90:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:90:14;;;;;;238:20:16;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:16;;;;;;;;;;;;;;;;;;;;;;;;;;;463:53:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;463:53:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;736:199;;8:9:-1;5:2;;;30:1;27;20:12;5:2;736:199:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1100:103:16;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1100:103:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;523:207:11;;8:9:-1;5:2;;;30:1;27;20:12;5:2;523:207:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;403:54;;;;;;;;;;;;;;;;;;;;;;:::o;941:195::-;719:5:16;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1119:10:11;1082:21;:34;1104:11;1082:34;;;;;;;;;;;;;;;;:47;;;;;;;;;;;;;;;;;;941:195;;:::o;838:92:14:-;719:5:16;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;568:6:14;;;;;;;;;;;560:15;;;;;;;;900:5;891:6;;:14;;;;;;;;;;;;;;;;;;916:9;;;;;;;;;;838:92::o;341:56:11:-;;;;;;;;;;;;;;;;;;;;;;:::o;247:26:14:-;;;;;;;;;;;;;:::o;827:111:16:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;903:5;;;;;;;;;;;884:25;;;;;;;;;;;;931:1;915:5;;:18;;;;;;;;;;;;;;;;;;827:111::o;666:90:14:-;719:5:16;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;416:6:14;;;;;;;;;;;415:7;407:16;;;;;;;;729:4;720:6;;:13;;;;;;;;;;;;;;;;;;744:7;;;;;;;;;;666:90::o;238:20:16:-;;;;;;;;;;;;;:::o;463:53:11:-;;;;;;;;;;;;;;;;;;;;;;:::o;736:199::-;719:5:16;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;918:10:11;879:22;:36;902:12;879:36;;;;;;;;;;;;;;;;:49;;;;;;;;;;;;;;;;;;736:199;;:::o;1100:103:16:-;719:5;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;1169:29;1188:9;1169:18;:29::i;:::-;1100:103;:::o;523:207:11:-;719:5:16;;;;;;;;;;;705:19;;:10;:19;;;697:28;;;;;;;;713:10:11;670:24;:40;695:14;670:40;;;;;;;;;;;;;;;;:53;;;;;;;;;;;;;;;;;;523:207;;:::o;1338:171:16:-;1429:1;1408:23;;:9;:23;;;;1400:32;;;;;;;;1471:9;1443:38;;1464:5;;;;;;;;;;;1443:38;;;;;;;;;;;;1495:9;1487:5;;:17;;;;;;;;;;;;;;;;;;1338:171;:::o",
+  "source": "pragma solidity 0.4.24;\n\n// External\nimport \"openzeppelin-solidity/contracts/lifecycle/Pausable.sol\";\n\n/**\n * This is the registry where all the proxy addresses that can be used in\n * the bets as a parameters are\n *\n * Author: Carlos Gonzalez -- Github: carlosgj94\n */\n/** @title Proxy Registry. */\n\ncontract ProxyRegistry is Pausable {\n    mapping(address => bool) public paymentsProxiesAllowance;\n    mapping(address => bool) public oracleProxiesAllowance;\n    mapping(address => bool) public termsProxiesAllowance;\n\n    function setPaymentsProxiesAllowance(\n        address _paymentsProxy,\n        bool _allowance\n    )\n        public\n        onlyOwner\n    {\n        paymentsProxiesAllowance[_paymentsProxy] = _allowance;\n    }\n\n    function setOracleProxiesAllowance(\n        address _oracleProxy,\n        bool _allowance\n    )\n        public\n        onlyOwner\n    {\n        oracleProxiesAllowance[_oracleProxy] = _allowance;\n    }\n\n    function setTermsProxiesAllowance(\n        address _termsProxy,\n        bool _allowance\n    )\n        public\n        onlyOwner\n    {\n        termsProxiesAllowance[_termsProxy] = _allowance;\n    }\n}\n\n",
+  "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyRegistry.sol",
+  "ast": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyRegistry.sol",
+    "exportedSymbols": {
+      "ProxyRegistry": [
+        1584
+      ]
+    },
+    "id": 1585,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1520,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:11"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "id": 1521,
+        "nodeType": "ImportDirective",
+        "scope": 1585,
+        "sourceUnit": 1726,
+        "src": "37:64:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1522,
+              "name": "Pausable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1725,
+              "src": "326:8:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Pausable_$1725",
+                "typeString": "contract Pausable"
+              }
+            },
+            "id": 1523,
+            "nodeType": "InheritanceSpecifier",
+            "src": "326:8:11"
+          }
+        ],
+        "contractDependencies": [
+          1725,
+          1905
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Proxy Registry. ",
+        "fullyImplemented": true,
+        "id": 1584,
+        "linearizedBaseContracts": [
+          1584,
+          1725,
+          1905
+        ],
+        "name": "ProxyRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1527,
+            "name": "paymentsProxiesAllowance",
+            "nodeType": "VariableDeclaration",
+            "scope": 1584,
+            "src": "341:56:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1526,
+              "keyType": {
+                "id": 1524,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "349:7:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "341:24:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1525,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "360:4:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1531,
+            "name": "oracleProxiesAllowance",
+            "nodeType": "VariableDeclaration",
+            "scope": 1584,
+            "src": "403:54:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1530,
+              "keyType": {
+                "id": 1528,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "411:7:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "403:24:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1529,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "422:4:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1535,
+            "name": "termsProxiesAllowance",
+            "nodeType": "VariableDeclaration",
+            "scope": 1584,
+            "src": "463:53:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1534,
+              "keyType": {
+                "id": 1532,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "471:7:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "463:24:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1533,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "482:4:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1550,
+              "nodeType": "Block",
+              "src": "660:70:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1544,
+                        "name": "paymentsProxiesAllowance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1527,
+                        "src": "670:24:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1546,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 1545,
+                        "name": "_paymentsProxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1537,
+                        "src": "695:14:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "670:40:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1547,
+                      "name": "_allowance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1539,
+                      "src": "713:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "670:53:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1549,
+                  "nodeType": "ExpressionStatement",
+                  "src": "670:53:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1551,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1542,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1541,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1853,
+                  "src": "646:9:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "646:9:11"
+              }
+            ],
+            "name": "setPaymentsProxiesAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1540,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1537,
+                  "name": "_paymentsProxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1551,
+                  "src": "569:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1536,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "569:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1539,
+                  "name": "_allowance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1551,
+                  "src": "601:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1538,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "601:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:63:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1543,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "660:0:11"
+            },
+            "scope": 1584,
+            "src": "523:207:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1566,
+              "nodeType": "Block",
+              "src": "869:66:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1564,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1560,
+                        "name": "oracleProxiesAllowance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1531,
+                        "src": "879:22:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1562,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 1561,
+                        "name": "_oracleProxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1553,
+                        "src": "902:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "879:36:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1563,
+                      "name": "_allowance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1555,
+                      "src": "918:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "879:49:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1565,
+                  "nodeType": "ExpressionStatement",
+                  "src": "879:49:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1567,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1558,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1557,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1853,
+                  "src": "855:9:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "855:9:11"
+              }
+            ],
+            "name": "setOracleProxiesAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1556,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1553,
+                  "name": "_oracleProxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1567,
+                  "src": "780:20:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1552,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "780:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1555,
+                  "name": "_allowance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1567,
+                  "src": "810:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1554,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "810:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "770:61:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1559,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "869:0:11"
+            },
+            "scope": 1584,
+            "src": "736:199:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1582,
+              "nodeType": "Block",
+              "src": "1072:64:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1576,
+                        "name": "termsProxiesAllowance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1535,
+                        "src": "1082:21:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1578,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 1577,
+                        "name": "_termsProxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1569,
+                        "src": "1104:11:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1082:34:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1579,
+                      "name": "_allowance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1571,
+                      "src": "1119:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1082:47:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1581,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1082:47:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1583,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1574,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1573,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1853,
+                  "src": "1058:9:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1058:9:11"
+              }
+            ],
+            "name": "setTermsProxiesAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1569,
+                  "name": "_termsProxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1583,
+                  "src": "984:19:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1568,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "984:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1571,
+                  "name": "_allowance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1583,
+                  "src": "1013:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1570,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1013:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "974:60:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1575,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1072:0:11"
+            },
+            "scope": 1584,
+            "src": "941:195:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1585,
+        "src": "300:838:11"
+      }
+    ],
+    "src": "0:1140:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyRegistry.sol",
+    "exportedSymbols": {
+      "ProxyRegistry": [
+        1584
+      ]
+    },
+    "id": 1585,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1520,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:11"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
+        "id": 1521,
+        "nodeType": "ImportDirective",
+        "scope": 1585,
+        "sourceUnit": 1726,
+        "src": "37:64:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1522,
+              "name": "Pausable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1725,
+              "src": "326:8:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Pausable_$1725",
+                "typeString": "contract Pausable"
+              }
+            },
+            "id": 1523,
+            "nodeType": "InheritanceSpecifier",
+            "src": "326:8:11"
+          }
+        ],
+        "contractDependencies": [
+          1725,
+          1905
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Proxy Registry. ",
+        "fullyImplemented": true,
+        "id": 1584,
+        "linearizedBaseContracts": [
+          1584,
+          1725,
+          1905
+        ],
+        "name": "ProxyRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1527,
+            "name": "paymentsProxiesAllowance",
+            "nodeType": "VariableDeclaration",
+            "scope": 1584,
+            "src": "341:56:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1526,
+              "keyType": {
+                "id": 1524,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "349:7:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "341:24:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1525,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "360:4:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1531,
+            "name": "oracleProxiesAllowance",
+            "nodeType": "VariableDeclaration",
+            "scope": 1584,
+            "src": "403:54:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1530,
+              "keyType": {
+                "id": 1528,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "411:7:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "403:24:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1529,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "422:4:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1535,
+            "name": "termsProxiesAllowance",
+            "nodeType": "VariableDeclaration",
+            "scope": 1584,
+            "src": "463:53:11",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 1534,
+              "keyType": {
+                "id": 1532,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "471:7:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "463:24:11",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 1533,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "482:4:11",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1550,
+              "nodeType": "Block",
+              "src": "660:70:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1544,
+                        "name": "paymentsProxiesAllowance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1527,
+                        "src": "670:24:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1546,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 1545,
+                        "name": "_paymentsProxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1537,
+                        "src": "695:14:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "670:40:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1547,
+                      "name": "_allowance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1539,
+                      "src": "713:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "670:53:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1549,
+                  "nodeType": "ExpressionStatement",
+                  "src": "670:53:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1551,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1542,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1541,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1853,
+                  "src": "646:9:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "646:9:11"
+              }
+            ],
+            "name": "setPaymentsProxiesAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1540,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1537,
+                  "name": "_paymentsProxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1551,
+                  "src": "569:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1536,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "569:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1539,
+                  "name": "_allowance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1551,
+                  "src": "601:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1538,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "601:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:63:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1543,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "660:0:11"
+            },
+            "scope": 1584,
+            "src": "523:207:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1566,
+              "nodeType": "Block",
+              "src": "869:66:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1564,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1560,
+                        "name": "oracleProxiesAllowance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1531,
+                        "src": "879:22:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1562,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 1561,
+                        "name": "_oracleProxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1553,
+                        "src": "902:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "879:36:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1563,
+                      "name": "_allowance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1555,
+                      "src": "918:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "879:49:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1565,
+                  "nodeType": "ExpressionStatement",
+                  "src": "879:49:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1567,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1558,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1557,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1853,
+                  "src": "855:9:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "855:9:11"
+              }
+            ],
+            "name": "setOracleProxiesAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1556,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1553,
+                  "name": "_oracleProxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1567,
+                  "src": "780:20:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1552,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "780:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1555,
+                  "name": "_allowance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1567,
+                  "src": "810:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1554,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "810:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "770:61:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1559,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "869:0:11"
+            },
+            "scope": 1584,
+            "src": "736:199:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1582,
+              "nodeType": "Block",
+              "src": "1072:64:11",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 1576,
+                        "name": "termsProxiesAllowance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1535,
+                        "src": "1082:21:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 1578,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 1577,
+                        "name": "_termsProxy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1569,
+                        "src": "1104:11:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1082:34:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1579,
+                      "name": "_allowance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1571,
+                      "src": "1119:10:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1082:47:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1581,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1082:47:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1583,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1574,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1573,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1853,
+                  "src": "1058:9:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1058:9:11"
+              }
+            ],
+            "name": "setTermsProxiesAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1569,
+                  "name": "_termsProxy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1583,
+                  "src": "984:19:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1568,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "984:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1571,
+                  "name": "_allowance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1583,
+                  "src": "1013:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1570,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1013:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "974:60:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1575,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1072:0:11"
+            },
+            "scope": 1584,
+            "src": "941:195:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1585,
+        "src": "300:838:11"
+      }
+    ],
+    "src": "0:1140:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-07-11T08:53:18.472Z"
+}
