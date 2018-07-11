@@ -78,6 +78,7 @@ contract("Bet Kernel Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
+            web3.fromAscii("Hola Mundo"),
             1 // Salt
         );
         await betRegistry.createBet(
@@ -86,6 +87,7 @@ contract("Bet Kernel Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
+            web3.fromAscii("Hola Mundo"),
             1 // Salt
         );
     });

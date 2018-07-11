@@ -79,6 +79,7 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
+            web3.fromAscii("Hola Mundo"),
             1 // Salt
         );
 
@@ -88,6 +89,7 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
+            web3.fromAscii("Hola Mundo"),
             1 // Salt
         );
 

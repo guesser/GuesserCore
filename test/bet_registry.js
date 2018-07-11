@@ -1,7 +1,7 @@
 var chai = require("chai");
 var expect = chai.expect;
-var Web3latest = require('web3');
-var web3 = new Web3latest();
+// var Web3latest = require('web3');
+// var web3 = new Web3latest();
 
 const BetKernel = artifacts.require("BetKernel");
 const BetOracle = artifacts.require("BetOracle");
@@ -95,6 +95,7 @@ contract("Bet Registry Test", async (accounts) => {
                 ownerBasedOracle.address,
                 ownerBased.address,
                 termsHash,
+                web3.fromAscii("Hola Mundo"),
                 1 // Salt
             );
             expect(false).to.be.equal(true);
@@ -115,6 +116,7 @@ contract("Bet Registry Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
+            web3.fromAscii("Hola Mundo"),
             1 // Salt
         );
         await betRegistry.createBet(
@@ -123,6 +125,7 @@ contract("Bet Registry Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
+            web3.fromAscii("Hola Mundo"),
             1 // Salt
         );
 

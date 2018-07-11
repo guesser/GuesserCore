@@ -16,6 +16,8 @@ contract RegistryStorage {
         address oracleProxy;
         address termsProxy;
         bytes32 termsHash;
+        string title;
+        uint datetime;
         address creator;
         mapping(bytes32 => PlayerBet) playerBets;
         mapping(uint => uint) principalInOption;

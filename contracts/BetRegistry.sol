@@ -104,6 +104,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         address _oracleProxy,
         address _termsProxy,
         bytes32 _termsHash,
+        string _title,
         uint _salt
     ) public returns(bytes32) {
         require(addressInProxies(_paymentsProxy));
@@ -116,6 +117,8 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
             _oracleProxy,
             _termsProxy,
             _termsHash,
+            _title,
+            block.timestamp,
             msg.sender,
             0
         );
@@ -126,6 +129,8 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
                 _oracleProxy,
                 _termsProxy,
                 _termsHash,
+                _title,
+                block.timestamp,
                 msg.sender,
                 _salt
             )
@@ -210,6 +215,18 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].termsHash;
+    }
+
+    function getBetTitle(bytes32 _betHash) public view returns(string) {
+        require(betExists(_betHash));
+
+        return betRegistry[_betHash].title;
+    }
+
+    function getBetDatetime(bytes32 _betHash) public view returns(uint) {
+        require(betExists(_betHash));
+
+        return betRegistry[_betHash].datetime;
     }
 
     function getBetCreator(bytes32 _betHash) public view returns(address) {
