@@ -12,9 +12,20 @@ import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
 /** @title Proxy Registry. */
 
 contract ProxyRegistry is Pausable {
+    mapping(address => bool) public kernelProxiesAllowance;
     mapping(address => bool) public paymentsProxiesAllowance;
     mapping(address => bool) public oracleProxiesAllowance;
     mapping(address => bool) public termsProxiesAllowance;
+
+    function setKernelProxiesAllowance(
+        address _kernelProxy,
+        bool _allowance
+    )
+        public
+        onlyOwner
+    {
+        kernelProxiesAllowance[_kernelProxy] = _allowance;
+    }
 
     function setPaymentsProxiesAllowance(
         address _paymentsProxy,
@@ -47,7 +58,8 @@ contract ProxyRegistry is Pausable {
     }
 
     function addressInProxies(address _proxy) public view returns(bool) {
-        if (paymentsProxiesAllowance[_proxy] == true ||
+        if (kernelProxiesAllowance[_proxy] == true ||
+            paymentsProxiesAllowance[_proxy] == true ||
             oracleProxiesAllowance[_proxy] == true ||
             termsProxiesAllowance[_proxy] == true) 
             return true;

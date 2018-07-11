@@ -5,6 +5,7 @@ import "./RegistrySetter.sol";
 import "./BetPayments.sol";
 import "./BetOracle.sol";
 import "./BetTerms.sol";
+import "./ProxyInterfaces/BetKernelProxyInterface.sol";
 
 
 /**
@@ -76,47 +77,33 @@ contract BetKernel is RegistrySetter {
         returns(uint)
     {
         BetPayments _betPayments = BetPayments(betRegistry.betPayments());
-        BetOracle _betOracle = BetOracle(betRegistry.betOracle());
-        BetTerms _betTerms = BetTerms(betRegistry.betTerms());
-        
-        require(msg.sender == betRegistry.getPlayerBetPlayer(_betHash, _playerBetHash));
-        require(!betRegistry.getPlayerBetReturned(_betHash, _playerBetHash));
 
-        require(
-            _betOracle.outcomeReady(
-                betRegistry.getBetOracleProxy(_betHash),
-                _betHash
-            )
-        );
-        if (
-            _betOracle.getOutcome(
-                betRegistry.getBetOracleProxy(_betHash),
-                _betHash
-            ) != betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
-        ) 
-            return 0;
+        address _kernelProxy = betRegistry.getBetKernelProxy(_betHash);
+        address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
+        address _paymentsToken = betRegistry.getBetPaymentsToken(_betHash);
 
-        require(
-            _betTerms.retrievingPeriod(
-                betRegistry.getBetTermsProxy(_betHash),
-                betRegistry.getBetTermsHash(_betHash)
-            )
+        uint _initialBalance = _betPayments.balanceOf(
+            _paymentsProxy,
+            _paymentsToken,
+            address(_betPayments)
         );
-        uint _profits = betRegistry.getPrincipalInOption(
+        require(
+            _kernelProxy.delegatecall(
+                bytes4(
+                    keccak256(
+                        "getProfits(bytes32,bytes32)"
+                    )
+                ),
                 _betHash,
-                betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
-            ) / betRegistry.getPlayerBetPrincipal(_betHash, _playerBetHash);
-        _profits = betRegistry.getTotalPrincipal(_betHash) / _profits;
-        // Return the money
-        require(
-            _betPayments.transfer(
-                betRegistry.getBetPaymentsProxy(_betHash),
-                betRegistry.getBetPaymentsToken(_betHash),
-                msg.sender,
-                _profits
+                _playerBetHash
             )
         );
-        betRegistry.setPlayerBetReturned(_betHash, _playerBetHash, true);
-        return _profits;
+
+        uint _finalBalance = _betPayments.balanceOf(
+            _paymentsProxy,
+            _paymentsToken,
+            address(_betPayments)
+        );
+        return _initialBalance - _finalBalance;
     }
 }

@@ -6,6 +6,8 @@ const BetOracle = artifacts.require("BetOracle");
 const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
+// Bet Kernel Proxy
+const ERC20BetKernelProxy = artifacts.require("ERC20BetKernelProxy");
 // Bet Payments Proxy
 const ERC20PaymentProxy = artifacts.require("ERC20PaymentProxy");
 const DummyToken = artifacts.require("DummyToken");
@@ -22,6 +24,8 @@ contract("Bet Kernel Test", async (accounts) => {
     var betRegistry;
     var betHash;
     var playerBetHash;
+    // Bet Kernel Proxy
+    var erc20BetKernelProxy;
     // Bet Payments
     var erc20PaymentProxy;
     var token;
@@ -51,6 +55,8 @@ contract("Bet Kernel Test", async (accounts) => {
             betTerms.address
         );
         
+        // Setting the bet kernel proxy
+        erc20BetKernelProxy = await ERC20BetKernelProxy.new();
         // Setting bet payments
         erc20PaymentProxy = await ERC20PaymentProxy.new();
         token = await DummyToken.new(
@@ -67,12 +73,14 @@ contract("Bet Kernel Test", async (accounts) => {
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
         // setting the proxies
+        await betRegistry.setKernelProxiesAllowance(erc20BetKernelProxy.address, true);
         await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
         await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
         await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
 
         // Creating the bet
         betHash = await betRegistry.createBet.call(
+            erc20BetKernelProxy.address,
             erc20PaymentProxy.address,
             token.address,
             ownerBasedOracle.address,
@@ -82,6 +90,7 @@ contract("Bet Kernel Test", async (accounts) => {
             1 // Salt
         );
         await betRegistry.createBet(
+            erc20BetKernelProxy.address,
             erc20PaymentProxy.address,
             token.address,
             ownerBasedOracle.address,

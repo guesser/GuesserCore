@@ -99,6 +99,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
      * @return bytes32 the that identifies the bet
      */
     function createBet(
+        address _kernelProxy,
         address _paymentsProxy,
         address _paymentsToken,
         address _oracleProxy,
@@ -107,11 +108,13 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         string _title,
         uint _salt
     ) public returns(bytes32) {
+        require(addressInProxies(_kernelProxy));
         require(addressInProxies(_paymentsProxy));
         require(addressInProxies(_oracleProxy));
         require(addressInProxies(_termsProxy));
 
         BetEntry memory _entry = BetEntry(
+            _kernelProxy,
             _paymentsProxy,
             _paymentsToken,
             _oracleProxy,
@@ -124,6 +127,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         );
         bytes32 _hash = keccak256(
             abi.encodePacked(
+                _kernelProxy,
                 _paymentsProxy,
                 _paymentsToken,
                 _oracleProxy,
@@ -187,6 +191,12 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     }
 
     // Getters
+    function getBetKernelProxy(bytes32 _betHash) public view returns (address) {
+        require(betExists(_betHash));
+
+        return betRegistry[_betHash].kernelProxy;
+    }
+
     function getBetPaymentsProxy(bytes32 _betHash) public view returns (address) {
         require(betExists(_betHash));
 

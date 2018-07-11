@@ -88,6 +88,8 @@ contract BetPayments is RegistrySetter {
 
     /**
      * @dev Function to send the profits the bet has to an address
+     * @param _paymentsProxy address Address of the proxy
+     * @param _token address Address of the token to use
      * @param _to address Address of the beneficiary
      * @param _profit uint this will depend in the child token if it is
      * an ERC721 or ERC20 Token. But it's the profit the person gets
@@ -115,5 +117,24 @@ contract BetPayments is RegistrySetter {
             _profit
         ));
         return true;
+    }
+
+    /**
+     * @dev Function that returns the balance of an address
+     * @param _paymentsProxy address Address of the proxy
+     * @param _token address Address fo the token to use
+     * @param _address address Address of the user we want the data from
+     * @return uint the amount of tokens the address holds
+     */
+    function balanceOf(
+        address _paymentsProxy,
+        address _token,
+        address _address
+    )
+        public
+        view
+        returns(uint)
+    {
+        return BetPaymentsProxyInterface(_paymentsProxy).balanceOf(_token, _address);
     }
 }

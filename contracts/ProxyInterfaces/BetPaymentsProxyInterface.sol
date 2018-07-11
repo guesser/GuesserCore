@@ -21,4 +21,9 @@ interface BetPaymentsProxyInterface {
         address _owner,
         uint _chosen
     ) external view returns(bool);
+
+    function balanceOf(
+        address _token,
+        address _address
+    ) external view returns(uint);
 }

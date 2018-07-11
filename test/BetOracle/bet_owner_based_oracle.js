@@ -6,6 +6,8 @@ const BetOracle = artifacts.require("BetOracle");
 const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
+// Bet Kernel Proxy
+const ERC20BetKernelProxy = artifacts.require("ERC20BetKernelProxy");
 // Bet Payments Proxy
 const ERC20PaymentProxy = artifacts.require("ERC20PaymentProxy");
 const DummyToken = artifacts.require("DummyToken");
@@ -21,6 +23,8 @@ contract("Bet Owner Based Bet Oracle Proxy Test", async (accounts) => {
     var betTerms;
     var betRegistry;
     var betHash;
+    // Bet Kernel Proxy
+    var erc20BetKernelProxy;
     // Bet Payments
     var erc20PaymentProxy;
     var token;
@@ -50,6 +54,8 @@ contract("Bet Owner Based Bet Oracle Proxy Test", async (accounts) => {
             betTerms.address
         );
 
+        // Setting the bet kernel proxy
+        erc20BetKernelProxy = await ERC20BetKernelProxy.new();
         // Setting bet payments
         erc20PaymentProxy = await ERC20PaymentProxy.new();
         token = await DummyToken.new(
@@ -66,12 +72,14 @@ contract("Bet Owner Based Bet Oracle Proxy Test", async (accounts) => {
         // Setting the oracle
         betOwnerBasedOracle = await BetOwnerBasedOracle.new();
         // setting the proxies
+        await betRegistry.setKernelProxiesAllowance(erc20BetKernelProxy.address, true);
         await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
         await betRegistry.setOracleProxiesAllowance(betOwnerBasedOracle.address, true);
         await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
 
         // Creating the bet
         betHash = await betRegistry.createBet.call(
+            erc20BetKernelProxy.address,
             erc20PaymentProxy.address,
             token.address,
             betOwnerBasedOracle.address,
@@ -83,6 +91,7 @@ contract("Bet Owner Based Bet Oracle Proxy Test", async (accounts) => {
         );
 
         await betRegistry.createBet(
+            erc20BetKernelProxy.address,
             erc20PaymentProxy.address,
             token.address,
             betOwnerBasedOracle.address,

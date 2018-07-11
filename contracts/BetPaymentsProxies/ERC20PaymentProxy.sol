@@ -75,4 +75,21 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
         ERC20(_token).transfer(_to, _amount);
         return true;
     }
+
+    /**
+     * @dev Function that returns the balance of an address
+     * @param _token address Address fo the token to use
+     * @param _address address Address of the user we want the data from
+     * @return uint the amount of tokens the address holds
+     */
+    function balanceOf(
+        address _token,
+        address _address
+    )
+        public
+        view
+        returns(uint)
+    {
+        return ERC20(_token).balanceOf(_address);
+    }
 }

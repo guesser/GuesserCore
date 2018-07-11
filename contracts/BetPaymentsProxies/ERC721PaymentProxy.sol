@@ -9,7 +9,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
 /**
  * An ERC721 implementation for the payments used in the Guesser Protocol
- * It has to inherate from the BetRegistry so it can get called throught
+ * It has to inherate from the RegistrySetter so it can get called throught
  * a delegate call from the BetPayments contract.
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
@@ -76,5 +76,22 @@ contract ERC721PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
     {
         ERC721(_token).transferFrom(address(this), _to, _tokenId);
         return true;
+    }
+
+    /**
+     * @dev Function that returns the balance of an address
+     * @param _token address Address fo the token to use
+     * @param _address address Address of the user we want the data from
+     * @return uint the amount of tokens the address holds
+     */
+    function balanceOf(
+        address _token,
+        address _address
+    )
+        public
+        view
+        returns(uint)
+    {
+        return ERC721(_token).balanceOf(_address);
     }
 }

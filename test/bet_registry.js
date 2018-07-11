@@ -8,6 +8,8 @@ const BetOracle = artifacts.require("BetOracle");
 const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
+// Bet Kernel Proxy
+const ERC20BetKernelProxy = artifacts.require("ERC20BetKernelProxy");
 // Bet Payments Proxy
 const ERC20PaymentProxy = artifacts.require("ERC20PaymentProxy");
 const DummyToken = artifacts.require("DummyToken");
@@ -23,6 +25,8 @@ contract("Bet Registry Test", async (accounts) => {
     var betTerms;
     var betRegistry;
     var betHash;
+    // Bet Kernel Proxy
+    var erc20BetKernelProxy;
     // Bet Payments
     var erc20PaymentProxy;
     var token;
@@ -50,6 +54,8 @@ contract("Bet Registry Test", async (accounts) => {
             betOracle.address,
             betTerms.address
         );
+        // Setting the bet kernel proxy
+        erc20BetKernelProxy = await ERC20BetKernelProxy.new();
         // Setting bet payments
         erc20PaymentProxy = await ERC20PaymentProxy.new();
         token = await DummyToken.new(
@@ -90,6 +96,7 @@ contract("Bet Registry Test", async (accounts) => {
     it("shouldn't allow to create a bet when the proxies are not set", async () => {
         try {
             await betRegistry.createBet.call(
+                erc20BetKernelProxy.address,
                 erc20PaymentProxy.address,
                 token.address,
                 ownerBasedOracle.address,
@@ -106,11 +113,13 @@ contract("Bet Registry Test", async (accounts) => {
 
     it("should be able to create a bet with the proper hash", async () => {
         // setting the proxies
+        await betRegistry.setKernelProxiesAllowance(erc20BetKernelProxy.address, true);
         await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
         await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
         await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
        
         betHash = await betRegistry.createBet.call(
+            erc20BetKernelProxy.address,
             erc20PaymentProxy.address,
             token.address,
             ownerBasedOracle.address,
@@ -121,6 +130,7 @@ contract("Bet Registry Test", async (accounts) => {
             {from: BETTER_1}
         );
         await betRegistry.createBet(
+            erc20BetKernelProxy.address,
             erc20PaymentProxy.address,
             token.address,
             ownerBasedOracle.address,

@@ -11,6 +11,7 @@ contract RegistryStorage {
 
     // Storage
     struct BetEntry {
+        address kernelProxy;
         address paymentsProxy;
         address paymentsToken;
         address oracleProxy;
