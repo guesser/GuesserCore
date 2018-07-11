@@ -45,5 +45,13 @@ contract ProxyRegistry is Pausable {
     {
         termsProxiesAllowance[_termsProxy] = _allowance;
     }
+
+    function addressInProxies(address _proxy) public view returns(bool) {
+        if (paymentsProxiesAllowance[_proxy] == true ||
+            oracleProxiesAllowance[_proxy] == true ||
+            termsProxiesAllowance[_proxy] == true) 
+            return true;
+        return false;
+    }
 }
 

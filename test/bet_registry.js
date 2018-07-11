@@ -87,7 +87,12 @@ contract("Bet Registry Test", async (accounts) => {
         ).to.be.equal(betTerms.address);
     });
 
-    it("should be able to create a bet witht the proper hash", async () => {
+    it("should be able to create a bet with the proper hash", async () => {
+        // setting the proxies
+        await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
+        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
+
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,
             token.address,

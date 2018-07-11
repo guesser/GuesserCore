@@ -65,6 +65,11 @@ contract("Owner Based Bet Oracle Proxy Test", async (accounts) => {
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
+        // setting the proxies
+        await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
+        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
+
         // Creating the bet
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,

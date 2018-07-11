@@ -10,7 +10,7 @@ const BetRegistry = artifacts.require("BetRegistry");
 const ERC20PaymentProxy = artifacts.require("ERC20PaymentProxy");
 const DummyToken = artifacts.require("DummyToken");
 
-contract("Bet Registry Test", async (accounts) => {
+contract("Bet Payments Test", async (accounts) => {
     var betKernel;
     var betOracle;
     var betPayments;

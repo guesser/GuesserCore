@@ -106,6 +106,10 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         bytes32 _termsHash,
         uint _salt
     ) public returns(bytes32) {
+        require(addressInProxies(_paymentsProxy));
+        require(addressInProxies(_oracleProxy));
+        require(addressInProxies(_termsProxy));
+
         BetEntry memory _entry = BetEntry(
             _paymentsProxy,
             _paymentsToken,

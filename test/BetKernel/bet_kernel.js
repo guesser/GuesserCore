@@ -50,7 +50,7 @@ contract("Bet Kernel Test", async (accounts) => {
             betOracle.address,
             betTerms.address
         );
-
+        
         // Setting bet payments
         erc20PaymentProxy = await ERC20PaymentProxy.new();
         token = await DummyToken.new(
@@ -66,6 +66,11 @@ contract("Bet Kernel Test", async (accounts) => {
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
+        // setting the proxies
+        await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
+        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
+
         // Creating the bet
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,

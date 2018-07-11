@@ -67,6 +67,11 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
+        // setting the proxies
+        await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
+        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
+
         // Creating the bet
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,
@@ -76,6 +81,7 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
             termsHash,
             1 // Salt
         );
+
         await betRegistry.createBet(
             erc20PaymentProxy.address,
             token.address,
@@ -89,7 +95,7 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
         await betPayments.setBetRegistry(betRegistry.address);
         await token.approve(betPayments.address, 5, {from: BETTER_1});
     });
-    
+
     it("should not be allowed to place a bet when user doesn't have the money", async () => {
         // When the user has the money but haven't set the approval
         try{
