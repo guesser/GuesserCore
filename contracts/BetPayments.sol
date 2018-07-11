@@ -111,5 +111,5 @@ contract BetPayments is RegistrySetter {
             _profit
         ));
         return true;
-}
+    }
 }
