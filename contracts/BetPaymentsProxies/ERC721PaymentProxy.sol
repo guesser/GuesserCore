@@ -4,32 +4,33 @@ pragma solidity 0.4.24;
 import "../ProxyInterfaces/BetPaymentsProxyInterface.sol";
 import "../RegistrySetter.sol";
 // External
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
 
 /**
- * An ERC20 implementation for the payments used in the Guesser Protocol
+ * An ERC721 implementation for the payments used in the Guesser Protocol
  * It has to inherate from the BetRegistry so it can get called throught
  * a delegate call from the BetPayments contract.
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
-/** @title ERC20PaymentProxy. */
-contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
+/** @title ERC721PaymentProxy. */
+contract ERC721PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
 
     /**
      * @dev Function that tells the balance of the bet
-     * @param _token address the address of the token to check out
+     * @param _token address Address of the token contract where we are looking
      * @param _owner address Address of the better
-     * @param _chosen uint the balance to check in the user approval
-     * @return bool if the user has at least the selected amount of tokens
+     * @param _chosen uint the chosen token we want to check the allowance
+     * @return uint the balance of the user
      */
     function allowance(address _token, address _owner, uint _chosen)
         public
         view
         returns(bool)
     {
-        if (ERC20(_token).allowance(_owner, msg.sender) >= _chosen)
+        if (ERC721(_token).getApproved(_chosen) == address(this) &&
+                ERC721(_token).ownerOf(_chosen) == _owner)
             return true;
         return false;
     }
@@ -39,7 +40,7 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
      * @param _token address Address of the token to transfer
      * @param _from address Address of the current owner
      * @param _to address Address of the beneficiary
-     * @param _amount uint this will depend in the child token if it is
+     * @param _tokenId uint this will depend in the child token if it is
      * an ERC721 or ERC20 Token. But it's the profit the person gets
      * @return bool if the transaction was succesfull
      */
@@ -47,12 +48,12 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
         address _token,
         address _from,
         address _to,
-        uint _amount
+        uint _tokenId
     )
         public
         returns(bool)
     {
-        ERC20(_token).transferFrom(_from, _to, _amount);
+        ERC721(_token).transferFrom(_from, _to, _tokenId);
         return true;
     }
 
@@ -60,19 +61,19 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
      * @dev Function to send the profits the bet has to a winner
      * @param _token address Address of the token to transfer
      * @param _to address Address of the beneficiary
-     * @param _amount uint this will depend in the child token if it is
+     * @param _tokenId uint this will depend in the child token if it is
      * an ERC721 or ERC20 Token. But it's the profit the person gets
      * @return bool if the transaction was succesfull
      */
     function transfer(
         address _token,
         address _to,
-        uint _amount
+        uint _tokenId
     )
         public
         returns(bool)
     {
-        ERC20(_token).transfer(_to, _amount);
+        ERC721(_token).transferFrom(address(this), _to, _tokenId);
         return true;
     }
 }

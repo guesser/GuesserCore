@@ -65,11 +65,12 @@ contract("Bet Payments Test", async (accounts) => {
             erc20PaymentProxy.address,
             token.address,
             BETTER_1,
+            5
         );
 
         expect(
-            betPaymentBalance.toNumber()
-        ).to.be.equal(5);
+            betPaymentBalance
+        ).to.be.equal(true);
     });
 
     it("should transfer the correct amount of tokens from the payment contract", async () => {

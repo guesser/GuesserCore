@@ -34,15 +34,17 @@ contract BetPayments is RegistrySetter {
     function allowance(
         address _paymentsProxy,
         address _token,
-        address _owner
+        address _owner,
+        uint _chosen
     )
         public
         view
-        returns(uint)
+        returns(bool)
     {
         return BetPaymentsProxyInterface(_paymentsProxy).allowance(
             _token,
-            _owner
+            _owner,
+            _chosen
         );
     }
 
@@ -109,5 +111,5 @@ contract BetPayments is RegistrySetter {
             _profit
         ));
         return true;
-    }
+}
 }
