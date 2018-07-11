@@ -19,8 +19,6 @@ interface BetPaymentsProxyInterface {
     function allowance(
         address _token,
         address _owner,
-        uint _chosen // Will be used in the following way:
-            // ERC20 --> if it has the selected amount
-            // ERC721 --> if it is owner of the selected tokenId
+        uint _chosen
     ) external view returns(bool);
 }

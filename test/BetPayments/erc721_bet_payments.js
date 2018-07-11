@@ -8,9 +8,9 @@ const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
 
 const ERC721PaymentProxy = artifacts.require("ERC721PaymentProxy");
-const DummyToken = artifacts.require("ERC721PaymentProxy");
+const DummyToken = artifacts.require("DummyERC721Token");
 
-contract("Bet Payments Test", async (accounts) => {
+contract("ERC721 Bet Payments Test", async (accounts) => {
     var betKernel;
     var betOracle;
     var betPayments;
@@ -41,66 +41,46 @@ contract("Bet Payments Test", async (accounts) => {
 
         erc721PaymentProxy = await ERC721PaymentProxy.new();
         token = await DummyToken.new(
+            5,
             "DummyToken",
-            "DMT",
-            10,
-            10
+            "DMT"
         );
 
-        await token.setBalance(BETTER_1, 5);
-        await token.setBalance(BETTER_2, 5);
-    });
-
-    it("should tell the correct bet registry associated with the payments", async () => {
         await betPayments.setBetRegistry(betRegistry.address);
-        expect(
-            await betPayments.betRegistry.call()
-        ).to.be.equal(betRegistry.address);
+
+        await token.transferFrom(CONTRACT_OWNER, BETTER_1, 0);
+        await token.transferFrom(CONTRACT_OWNER, BETTER_2, 1);
     });
 
     it("should tell the exact balance the bet has in the payments token", async () => {
-        await token.approve(betPayments.address, 5, {from: BETTER_1});
+        await token.approve(betPayments.address, 0, {from: BETTER_1});
 
-        const betPaymentBalance = await betPayments.allowance(
-            erc20PaymentProxy.address,
+        let allowed = await betPayments.allowance(
+            erc721PaymentProxy.address,
             token.address,
             BETTER_1,
-            5
+            0
         );
 
         expect(
-            betPaymentBalance
+            allowed
         ).to.be.equal(true);
     });
 
     it("should transfer the correct amount of tokens from the payment contract", async () => {
         await betPayments.transferFrom(
-            erc20PaymentProxy.address,
+            erc721PaymentProxy.address,
             token.address,
             BETTER_1,
             betPayments.address,
-            5
+            0
         );
         let winnerBalance = await token.balanceOf(betPayments.address);
         expect(
             winnerBalance.toNumber()
-        ).to.be.equal(5);
-        let looserBalance = await token.balanceOf(BETTER_1);
-        expect(
-            looserBalance.toNumber()
-        ).to.be.equal(0);
+        ).to.be.equal(1);
 
-        await betPayments.transfer(
-            erc20PaymentProxy.address,
-            token.address,
-            WINNER_1,
-            5
-        );
-        winnerBalance = await token.balanceOf(WINNER_1);
-        expect(
-            winnerBalance.toNumber()
-        ).to.be.equal(5);
-        looserBalance = await token.balanceOf(betPayments.address);
+        let looserBalance = await token.balanceOf(BETTER_1);
         expect(
             looserBalance.toNumber()
         ).to.be.equal(0);

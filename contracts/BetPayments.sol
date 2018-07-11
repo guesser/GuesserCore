@@ -8,6 +8,7 @@ import "./ProxyInterfaces/BetPaymentsProxyInterface.sol";
 /**
  * By the moment the types supported are be:
  *  - ERC20 tokens
+ *  - ERC721 tokens
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
@@ -28,8 +29,11 @@ contract BetPayments is RegistrySetter {
     /**
      * @dev Function that tells the balance of the bet.
      * This function is used to check the balance an address has allowed to use
+     * @param _paymentsProxy address Address of the payments proxy
+     * @param _token address Address of the better
      * @param _owner address Address of the better
-     * @return uint the balance of the user
+     * @param _chosen uint Address of the better
+     * @return bool the balance of the user
      */
     function allowance(
         address _paymentsProxy,

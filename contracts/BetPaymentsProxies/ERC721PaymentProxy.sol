@@ -29,10 +29,11 @@ contract ERC721PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
         view
         returns(bool)
     {
-        if (ERC721(_token).getApproved(_chosen) == address(this) &&
+        if (ERC721(_token).getApproved(_chosen) == msg.sender &&
                 ERC721(_token).ownerOf(_chosen) == _owner)
             return true;
-        return false;
+        else
+            return false;
     }
 
     /**
