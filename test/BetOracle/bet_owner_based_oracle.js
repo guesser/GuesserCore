@@ -1,7 +1,5 @@
 var chai = require("chai");
 var expect = chai.expect;
-// var Web3latest = require('web3');
-// var web3 = new Web3latest();
 
 const BetKernel = artifacts.require("BetKernel");
 const BetOracle = artifacts.require("BetOracle");
@@ -14,9 +12,9 @@ const DummyToken = artifacts.require("DummyToken");
 // BetTerms Proxy
 const OwnerBased = artifacts.require("OwnerBased");
 // BetOracle Proxy
-const OwnerBasedOracle = artifacts.require("OwnerBasedOracle");
+const BetOwnerBasedOracle = artifacts.require("BetOwnerBasedOracle");
 
-contract("Bet Registry Test", async (accounts) => {
+contract("Bet Owner Based Bet Oracle Proxy Test", async (accounts) => {
     var betKernel;
     var betOracle;
     var betPayments;
@@ -30,7 +28,8 @@ contract("Bet Registry Test", async (accounts) => {
     var ownerBased;
     var termsHash;
     // Bet Oracle
-    var ownerBasedOracle;
+    var betOwnerBasedOracle;
+
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -50,6 +49,7 @@ contract("Bet Registry Test", async (accounts) => {
             betOracle.address,
             betTerms.address
         );
+
         // Setting bet payments
         erc20PaymentProxy = await ERC20PaymentProxy.new();
         token = await DummyToken.new(
@@ -64,66 +64,28 @@ contract("Bet Registry Test", async (accounts) => {
         ownerBased = await OwnerBased.new();
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
-        ownerBasedOracle = await OwnerBasedOracle.new();
-        
-    });
-
-    it("should have set the proper addresses", async () => {
-        const kernelAddress = await betRegistry.betKernel.call();
-        const paymentsAddress = await betRegistry.betPayments.call();
-        const oracleAddress = await betRegistry.betOracle.call();
-        const termsAddress = await betRegistry.betTerms.call();
-        expect(
-            kernelAddress
-        ).to.be.equal(betKernel.address);
-        expect(
-            paymentsAddress
-        ).to.be.equal(betPayments.address);
-        expect(
-            oracleAddress
-        ).to.be.equal(betOracle.address);
-        expect(
-            termsAddress
-        ).to.be.equal(betTerms.address);
-    });
-
-    it("shouldn't allow to create a bet when the proxies are not set", async () => {
-        try {
-            await betRegistry.createBet.call(
-                erc20PaymentProxy.address,
-                token.address,
-                ownerBasedOracle.address,
-                ownerBased.address,
-                termsHash,
-                web3.fromAscii("Hola Mundo"),
-                1 // Salt
-            );
-            expect(false).to.be.equal(true);
-        } catch(err) {
-            expect(err);
-        }
-    });
-
-    it("should be able to create a bet with the proper hash", async () => {
+        betOwnerBasedOracle = await BetOwnerBasedOracle.new();
         // setting the proxies
         await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
-        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await betRegistry.setOracleProxiesAllowance(betOwnerBasedOracle.address, true);
         await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
-       
+
+        // Creating the bet
         betHash = await betRegistry.createBet.call(
             erc20PaymentProxy.address,
             token.address,
-            ownerBasedOracle.address,
+            betOwnerBasedOracle.address,
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hola Mundo"),
             1, // Salt
             {from: BETTER_1}
         );
+
         await betRegistry.createBet(
             erc20PaymentProxy.address,
             token.address,
-            ownerBasedOracle.address,
+            betOwnerBasedOracle.address,
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hola Mundo"),
@@ -133,9 +95,49 @@ contract("Bet Registry Test", async (accounts) => {
 
     });
 
-    it("should return the data of the bet", async () => {
+    it("should not have the outcome ready by default", async () => {
         expect(
-            await betRegistry.getBetCreator.call(betHash)
-        ).to.be.equal(BETTER_1);
+            await betOracle.outcomeReady.call(
+                betOwnerBasedOracle.address,
+                betHash
+            )
+        ).to.be.equal(false);
+    });
+
+    it("should let the owner to change the outcome of the bet", async () => {
+        await betOwnerBasedOracle.setBetRegistry(betRegistry.address);
+        await betOwnerBasedOracle.setOutcome(betHash, 3, {from: BETTER_1});
+        await betOwnerBasedOracle.setOutcomeReady(betHash, true, {from: BETTER_1});
+        expect(
+            await betOwnerBasedOracle.outcomeReady.call(
+                betHash
+            )
+        ).to.be.equal(true);
+
+        const outcome = await betOwnerBasedOracle.getOutcome.call(
+                betHash
+        );
+
+        expect(
+            outcome.toNumber()
+        ).to.be.equal(3);
+    });
+
+    it("should show the changes of the outcome in the BetOracle", async () => {
+        expect(
+            await betOracle.outcomeReady.call(
+                betOwnerBasedOracle.address,
+                betHash
+            )
+        ).to.be.equal(true);
+
+        const outcome = await betOracle.getOutcome.call(
+            betOwnerBasedOracle.address,
+            betHash
+        );
+
+        expect(
+            outcome.toNumber()
+        ).to.be.equal(3);
     });
 });
