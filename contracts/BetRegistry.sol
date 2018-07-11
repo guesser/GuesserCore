@@ -181,7 +181,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         return _playerBetHash;
     }
 
-    // Setters
+    // Getters
     function getBetPaymentsProxy(bytes32 _betHash) public view returns (address) {
         require(betExists(_betHash));
 
@@ -307,5 +307,15 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         require(playerBetExists(_betHash, _playerBetHash));
         betRegistry[_betHash].playerBets[_playerBetHash].returned = _returned;
         return true;
+    }
+
+    function isAuthorised(address _sender) public view {
+        require(
+            _sender == betKernel ||
+            _sender == betPayments ||
+            _sender == betOracle ||
+            _sender == betTerms ||
+            _sender == owner
+        );
     }
 }

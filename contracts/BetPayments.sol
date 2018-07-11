@@ -65,6 +65,7 @@ contract BetPayments is RegistrySetter {
         whenPaused
         returns(bool)
     {    
+        betRegistry.isAuthorised(msg.sender);
         require(_paymentsProxy.delegatecall(
             bytes4(
                 keccak256(
@@ -96,6 +97,7 @@ contract BetPayments is RegistrySetter {
         whenPaused
         returns(bool)
     {    
+        betRegistry.isAuthorised(msg.sender);
         require(_paymentsProxy.delegatecall(
             bytes4(
                 keccak256(
