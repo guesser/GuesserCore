@@ -123,6 +123,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
             _title,
             block.timestamp,
             msg.sender,
+            new string[](0),
             0
         );
         bytes32 _hash = keccak256(
@@ -254,6 +255,15 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
 
     }
 
+    function setOptionTitle (
+        bytes32 _betHash,
+        string _title
+    )
+        public
+    {
+        betRegistry[_betHash].optionTitles.push(_title);
+    }
+
     // Getters
     function getBetKernelProxy(bytes32 _betHash) public view returns (address) {
         require(betExists(_betHash));
@@ -319,6 +329,21 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].principalInOption[_option];
+    }
+
+    function getOptionsLength(bytes32 _betHash) public view returns(uint) {
+        return betRegistry[_betHash].optionTitles.length;
+    }
+
+    function getOptionTitle (
+        bytes32 _betHash,
+        uint _option
+    )
+        public
+        view
+        returns(string)
+    {
+        return betRegistry[_betHash].optionTitles[_option];
     }
 
     function getPlayerBetPlayer(

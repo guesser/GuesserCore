@@ -112,6 +112,11 @@ contract("Bet Kernel Test", async (accounts) => {
         await betPayments.setBetRegistry(betRegistry.address);
         await token.approve(betPayments.address, 5, {from: BETTER_1});
 
+        await betRegistry.setOptionTitle(betHash, 'Option1');
+        await betRegistry.setOptionTitle(betHash, 'Option2');
+        await betRegistry.setOptionTitle(betHash, 'Option3');
+        await betRegistry.setOptionTitle(betHash, 'Option4');
+
         playerBetHash = await betKernel.placeBet.call(
             betHash,
             3,

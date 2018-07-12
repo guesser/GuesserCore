@@ -152,7 +152,23 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
         }
     });
 
+    it("shouldn't be allow to place a bet in an option that is not set", async () => {
+        try {
+            playerBetHash = await betKernel.placeBet.call(
+                betHash,
+                2,
+                5,
+                {from: BETTER_1}
+            );
+        } catch(err) {
+            expect(err)
+        }
+    });
     it("shouldn't allow to get the money when it isn't time yet", async () => {
+        await betRegistry.setOptionTitle(betHash, 'Option1');
+        await betRegistry.setOptionTitle(betHash, 'Option2');
+        await betRegistry.setOptionTitle(betHash, 'Option3');
+        await betRegistry.setOptionTitle(betHash, 'Option4');
         await ownerBased.changePeriod(
             termsHash,
             0

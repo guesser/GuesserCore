@@ -110,7 +110,6 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         public 
         returns(bool)
     {
-        BetPayments _betPayments = BetPayments(betRegistry.betPayments());
         BetOracle _betOracle = BetOracle(betRegistry.betOracle());
         BetTerms _betTerms = BetTerms(betRegistry.betTerms());
 

@@ -74,29 +74,29 @@
   ],
   "bytecode": "0x608060405234801561001057600080fd5b5061030e806100206000396000f30060806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634c98ee7b1461007257806380fabc91146100c9578063b50cbd9f14610120578063ca033e7d14610177578063dd943d04146101ce575b600080fd5b34801561007e57600080fd5b50610087610225565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100d557600080fd5b506100de61024a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012c57600080fd5b50610135610270565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561018357600080fd5b5061018c610296565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101da57600080fd5b506101e36102bc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a72305820c22fe3b7080b1b5c592140d948e3b2b981966bff3969100454a1460fe753459b0029",
   "deployedBytecode": "0x60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634c98ee7b1461007257806380fabc91146100c9578063b50cbd9f14610120578063ca033e7d14610177578063dd943d04146101ce575b600080fd5b34801561007e57600080fd5b50610087610225565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100d557600080fd5b506100de61024a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012c57600080fd5b50610135610270565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561018357600080fd5b5061018c610296565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101da57600080fd5b506101e36102bc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a72305820c22fe3b7080b1b5c592140d948e3b2b981966bff3969100454a1460fe753459b0029",
-  "sourceMap": "26:862:13:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:862:13;;;;;;;",
-  "deployedSourceMap": "26:862:13:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;82:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:24:13;;;;;;;;;;;;;;;;;;;;;;;;;;;144;;8:9:-1;5:2;;;30:1;27;20:12;5:2;144:24:13;;;;;;;;;;;;;;;;;;;;;;;;;;;203:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;203:28:13;;;;;;;;;;;;;;;;;;;;;;;;;;;174:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;174:23:13;;;;;;;;;;;;;;;;;;;;;;;;;;;112:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;112:26:13;;;;;;;;;;;;;;;;;;;;;;;;;;;82:24;;;;;;;;;;;;;:::o;144:::-;;;;;;;;;;;;;:::o;203:28::-;;;;;;;;;;;;;:::o;174:23::-;;;;;;;;;;;;;:::o;112:26::-;;;;;;;;;;;;;:::o",
+  "sourceMap": "26:862:12:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:862:12;;;;;;;",
+  "deployedSourceMap": "26:862:12:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;82:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:24:12;;;;;;;;;;;;;;;;;;;;;;;;;;;144;;8:9:-1;5:2;;;30:1;27;20:12;5:2;144:24:12;;;;;;;;;;;;;;;;;;;;;;;;;;;203:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;203:28:12;;;;;;;;;;;;;;;;;;;;;;;;;;;174:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;174:23:12;;;;;;;;;;;;;;;;;;;;;;;;;;;112:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;112:26:12;;;;;;;;;;;;;;;;;;;;;;;;;;;82:24;;;;;;;;;;;;;:::o;144:::-;;;;;;;;;;;;;:::o;203:28::-;;;;;;;;;;;;;:::o;174:23::-;;;;;;;;;;;;;:::o;112:26::-;;;;;;;;;;;;;:::o",
   "source": "pragma solidity 0.4.24;\n\n\ncontract RegistryStorage {\n    // Allowed Contracts\n    address public betKernel;\n    address public betPayments;\n    address public betOracle;\n    address public betTerms;\n    address public proxyRegistry;\n\n    // Storage\n    struct BetEntry {\n        address kernelProxy;\n        address paymentsProxy;\n        address paymentsToken;\n        address oracleProxy;\n        address termsProxy;\n        bytes32 termsHash;\n        string title;\n        uint datetime;\n        address creator;\n        mapping(bytes32 => PlayerBet) playerBets;\n        mapping(uint => uint) principalInOption;\n        uint totalPrincipal;\n    }\n\n    struct PlayerBet {\n        address player;\n        uint option;\n        uint principal;\n        bool returned;\n    }\n\n    // Primary registry mapping the events with their hash\n    mapping(bytes32 => BetEntry) internal betRegistry;\n}\n",
   "sourcePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistryStorage.sol",
   "ast": {
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistryStorage.sol",
     "exportedSymbols": {
       "RegistryStorage": [
-        1784
+        1843
       ]
     },
-    "id": 1785,
+    "id": 1844,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1731,
+        "id": 1790,
         "literals": [
           "solidity",
           "0.4",
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:13"
+        "src": "0:23:12"
       },
       {
         "baseContracts": [],
@@ -104,20 +104,20 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1784,
+        "id": 1843,
         "linearizedBaseContracts": [
-          1784
+          1843
         ],
         "name": "RegistryStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1733,
+            "id": 1792,
             "name": "betKernel",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "82:24:13",
+            "scope": 1843,
+            "src": "82:24:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -125,10 +125,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1732,
+              "id": 1791,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "82:7:13",
+              "src": "82:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -139,11 +139,11 @@
           },
           {
             "constant": false,
-            "id": 1735,
+            "id": 1794,
             "name": "betPayments",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "112:26:13",
+            "scope": 1843,
+            "src": "112:26:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -151,10 +151,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1734,
+              "id": 1793,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "112:7:13",
+              "src": "112:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -165,11 +165,11 @@
           },
           {
             "constant": false,
-            "id": 1737,
+            "id": 1796,
             "name": "betOracle",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "144:24:13",
+            "scope": 1843,
+            "src": "144:24:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -177,10 +177,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1736,
+              "id": 1795,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "144:7:13",
+              "src": "144:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -191,11 +191,11 @@
           },
           {
             "constant": false,
-            "id": 1739,
+            "id": 1798,
             "name": "betTerms",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "174:23:13",
+            "scope": 1843,
+            "src": "174:23:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -203,10 +203,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1738,
+              "id": 1797,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "174:7:13",
+              "src": "174:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -217,11 +217,11 @@
           },
           {
             "constant": false,
-            "id": 1741,
+            "id": 1800,
             "name": "proxyRegistry",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "203:28:13",
+            "scope": 1843,
+            "src": "203:28:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -229,10 +229,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1740,
+              "id": 1799,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "203:7:13",
+              "src": "203:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -243,15 +243,15 @@
           },
           {
             "canonicalName": "RegistryStorage.BetEntry",
-            "id": 1770,
+            "id": 1829,
             "members": [
               {
                 "constant": false,
-                "id": 1743,
+                "id": 1802,
                 "name": "kernelProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "279:19:13",
+                "scope": 1829,
+                "src": "279:19:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -259,10 +259,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1742,
+                  "id": 1801,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "279:7:13",
+                  "src": "279:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -273,11 +273,11 @@
               },
               {
                 "constant": false,
-                "id": 1745,
+                "id": 1804,
                 "name": "paymentsProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "308:21:13",
+                "scope": 1829,
+                "src": "308:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -285,10 +285,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1744,
+                  "id": 1803,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "308:7:13",
+                  "src": "308:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -299,11 +299,11 @@
               },
               {
                 "constant": false,
-                "id": 1747,
+                "id": 1806,
                 "name": "paymentsToken",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "339:21:13",
+                "scope": 1829,
+                "src": "339:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -311,10 +311,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1746,
+                  "id": 1805,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "339:7:13",
+                  "src": "339:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -325,11 +325,11 @@
               },
               {
                 "constant": false,
-                "id": 1749,
+                "id": 1808,
                 "name": "oracleProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "370:19:13",
+                "scope": 1829,
+                "src": "370:19:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -337,10 +337,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1748,
+                  "id": 1807,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "370:7:13",
+                  "src": "370:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -351,11 +351,11 @@
               },
               {
                 "constant": false,
-                "id": 1751,
+                "id": 1810,
                 "name": "termsProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "399:18:13",
+                "scope": 1829,
+                "src": "399:18:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -363,10 +363,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1750,
+                  "id": 1809,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "399:7:13",
+                  "src": "399:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -377,11 +377,11 @@
               },
               {
                 "constant": false,
-                "id": 1753,
+                "id": 1812,
                 "name": "termsHash",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "427:17:13",
+                "scope": 1829,
+                "src": "427:17:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -389,10 +389,10 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 1752,
+                  "id": 1811,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "427:7:13",
+                  "src": "427:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -403,11 +403,11 @@
               },
               {
                 "constant": false,
-                "id": 1755,
+                "id": 1814,
                 "name": "title",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "454:12:13",
+                "scope": 1829,
+                "src": "454:12:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -415,10 +415,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1754,
+                  "id": 1813,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "454:6:13",
+                  "src": "454:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -429,11 +429,11 @@
               },
               {
                 "constant": false,
-                "id": 1757,
+                "id": 1816,
                 "name": "datetime",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "476:13:13",
+                "scope": 1829,
+                "src": "476:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -441,10 +441,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1756,
+                  "id": 1815,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "476:4:13",
+                  "src": "476:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -455,11 +455,11 @@
               },
               {
                 "constant": false,
-                "id": 1759,
+                "id": 1818,
                 "name": "creator",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "499:15:13",
+                "scope": 1829,
+                "src": "499:15:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -467,10 +467,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1758,
+                  "id": 1817,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "499:7:13",
+                  "src": "499:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -481,44 +481,44 @@
               },
               {
                 "constant": false,
-                "id": 1763,
+                "id": 1822,
                 "name": "playerBets",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "524:40:13",
+                "scope": 1829,
+                "src": "524:40:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1779_storage_$",
+                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1838_storage_$",
                   "typeString": "mapping(bytes32 => struct RegistryStorage.PlayerBet)"
                 },
                 "typeName": {
-                  "id": 1762,
+                  "id": 1821,
                   "keyType": {
-                    "id": 1760,
+                    "id": 1819,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "532:7:13",
+                    "src": "532:7:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "524:29:13",
+                  "src": "524:29:12",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1779_storage_$",
+                    "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1838_storage_$",
                     "typeString": "mapping(bytes32 => struct RegistryStorage.PlayerBet)"
                   },
                   "valueType": {
                     "contractScope": null,
-                    "id": 1761,
+                    "id": 1820,
                     "name": "PlayerBet",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1779,
-                    "src": "543:9:13",
+                    "referencedDeclaration": 1838,
+                    "src": "543:9:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_PlayerBet_$1779_storage_ptr",
+                      "typeIdentifier": "t_struct$_PlayerBet_$1838_storage_ptr",
                       "typeString": "struct RegistryStorage.PlayerBet"
                     }
                   }
@@ -528,11 +528,11 @@
               },
               {
                 "constant": false,
-                "id": 1767,
+                "id": 1826,
                 "name": "principalInOption",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "574:39:13",
+                "scope": 1829,
+                "src": "574:39:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -540,28 +540,28 @@
                   "typeString": "mapping(uint256 => uint256)"
                 },
                 "typeName": {
-                  "id": 1766,
+                  "id": 1825,
                   "keyType": {
-                    "id": 1764,
+                    "id": 1823,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "582:4:13",
+                    "src": "582:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "574:21:13",
+                  "src": "574:21:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                     "typeString": "mapping(uint256 => uint256)"
                   },
                   "valueType": {
-                    "id": 1765,
+                    "id": 1824,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "590:4:13",
+                    "src": "590:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -573,11 +573,11 @@
               },
               {
                 "constant": false,
-                "id": 1769,
+                "id": 1828,
                 "name": "totalPrincipal",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "623:19:13",
+                "scope": 1829,
+                "src": "623:19:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -585,10 +585,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1768,
+                  "id": 1827,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "623:4:13",
+                  "src": "623:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -600,21 +600,21 @@
             ],
             "name": "BetEntry",
             "nodeType": "StructDefinition",
-            "scope": 1784,
-            "src": "253:396:13",
+            "scope": 1843,
+            "src": "253:396:12",
             "visibility": "public"
           },
           {
             "canonicalName": "RegistryStorage.PlayerBet",
-            "id": 1779,
+            "id": 1838,
             "members": [
               {
                 "constant": false,
-                "id": 1772,
+                "id": 1831,
                 "name": "player",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "682:14:13",
+                "scope": 1838,
+                "src": "682:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -622,10 +622,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1771,
+                  "id": 1830,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "682:7:13",
+                  "src": "682:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -636,11 +636,11 @@
               },
               {
                 "constant": false,
-                "id": 1774,
+                "id": 1833,
                 "name": "option",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "706:11:13",
+                "scope": 1838,
+                "src": "706:11:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -648,10 +648,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1773,
+                  "id": 1832,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "706:4:13",
+                  "src": "706:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -662,11 +662,11 @@
               },
               {
                 "constant": false,
-                "id": 1776,
+                "id": 1835,
                 "name": "principal",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "727:14:13",
+                "scope": 1838,
+                "src": "727:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -674,10 +674,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1775,
+                  "id": 1834,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "727:4:13",
+                  "src": "727:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -688,11 +688,11 @@
               },
               {
                 "constant": false,
-                "id": 1778,
+                "id": 1837,
                 "name": "returned",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "751:13:13",
+                "scope": 1838,
+                "src": "751:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -700,10 +700,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1777,
+                  "id": 1836,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "751:4:13",
+                  "src": "751:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -715,50 +715,50 @@
             ],
             "name": "PlayerBet",
             "nodeType": "StructDefinition",
-            "scope": 1784,
-            "src": "655:116:13",
+            "scope": 1843,
+            "src": "655:116:12",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1783,
+            "id": 1842,
             "name": "betRegistry",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "836:49:13",
+            "scope": 1843,
+            "src": "836:49:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1770_storage_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1829_storage_$",
               "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
             },
             "typeName": {
-              "id": 1782,
+              "id": 1841,
               "keyType": {
-                "id": 1780,
+                "id": 1839,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "844:7:13",
+                "src": "844:7:12",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "836:28:13",
+              "src": "836:28:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1770_storage_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1829_storage_$",
                 "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1781,
+                "id": 1840,
                 "name": "BetEntry",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1770,
-                "src": "855:8:13",
+                "referencedDeclaration": 1829,
+                "src": "855:8:12",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_BetEntry_$1770_storage_ptr",
+                  "typeIdentifier": "t_struct$_BetEntry_$1829_storage_ptr",
                   "typeString": "struct RegistryStorage.BetEntry"
                 }
               }
@@ -767,31 +767,31 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1785,
-        "src": "26:862:13"
+        "scope": 1844,
+        "src": "26:862:12"
       }
     ],
-    "src": "0:889:13"
+    "src": "0:889:12"
   },
   "legacyAST": {
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistryStorage.sol",
     "exportedSymbols": {
       "RegistryStorage": [
-        1784
+        1843
       ]
     },
-    "id": 1785,
+    "id": 1844,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1731,
+        "id": 1790,
         "literals": [
           "solidity",
           "0.4",
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:13"
+        "src": "0:23:12"
       },
       {
         "baseContracts": [],
@@ -799,20 +799,20 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1784,
+        "id": 1843,
         "linearizedBaseContracts": [
-          1784
+          1843
         ],
         "name": "RegistryStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1733,
+            "id": 1792,
             "name": "betKernel",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "82:24:13",
+            "scope": 1843,
+            "src": "82:24:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -820,10 +820,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1732,
+              "id": 1791,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "82:7:13",
+              "src": "82:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -834,11 +834,11 @@
           },
           {
             "constant": false,
-            "id": 1735,
+            "id": 1794,
             "name": "betPayments",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "112:26:13",
+            "scope": 1843,
+            "src": "112:26:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -846,10 +846,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1734,
+              "id": 1793,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "112:7:13",
+              "src": "112:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -860,11 +860,11 @@
           },
           {
             "constant": false,
-            "id": 1737,
+            "id": 1796,
             "name": "betOracle",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "144:24:13",
+            "scope": 1843,
+            "src": "144:24:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -872,10 +872,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1736,
+              "id": 1795,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "144:7:13",
+              "src": "144:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -886,11 +886,11 @@
           },
           {
             "constant": false,
-            "id": 1739,
+            "id": 1798,
             "name": "betTerms",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "174:23:13",
+            "scope": 1843,
+            "src": "174:23:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -898,10 +898,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1738,
+              "id": 1797,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "174:7:13",
+              "src": "174:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -912,11 +912,11 @@
           },
           {
             "constant": false,
-            "id": 1741,
+            "id": 1800,
             "name": "proxyRegistry",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "203:28:13",
+            "scope": 1843,
+            "src": "203:28:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -924,10 +924,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1740,
+              "id": 1799,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "203:7:13",
+              "src": "203:7:12",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -938,15 +938,15 @@
           },
           {
             "canonicalName": "RegistryStorage.BetEntry",
-            "id": 1770,
+            "id": 1829,
             "members": [
               {
                 "constant": false,
-                "id": 1743,
+                "id": 1802,
                 "name": "kernelProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "279:19:13",
+                "scope": 1829,
+                "src": "279:19:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -954,10 +954,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1742,
+                  "id": 1801,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "279:7:13",
+                  "src": "279:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -968,11 +968,11 @@
               },
               {
                 "constant": false,
-                "id": 1745,
+                "id": 1804,
                 "name": "paymentsProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "308:21:13",
+                "scope": 1829,
+                "src": "308:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -980,10 +980,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1744,
+                  "id": 1803,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "308:7:13",
+                  "src": "308:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -994,11 +994,11 @@
               },
               {
                 "constant": false,
-                "id": 1747,
+                "id": 1806,
                 "name": "paymentsToken",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "339:21:13",
+                "scope": 1829,
+                "src": "339:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1006,10 +1006,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1746,
+                  "id": 1805,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "339:7:13",
+                  "src": "339:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1020,11 +1020,11 @@
               },
               {
                 "constant": false,
-                "id": 1749,
+                "id": 1808,
                 "name": "oracleProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "370:19:13",
+                "scope": 1829,
+                "src": "370:19:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1032,10 +1032,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1748,
+                  "id": 1807,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "370:7:13",
+                  "src": "370:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1046,11 +1046,11 @@
               },
               {
                 "constant": false,
-                "id": 1751,
+                "id": 1810,
                 "name": "termsProxy",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "399:18:13",
+                "scope": 1829,
+                "src": "399:18:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1058,10 +1058,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1750,
+                  "id": 1809,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "399:7:13",
+                  "src": "399:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1072,11 +1072,11 @@
               },
               {
                 "constant": false,
-                "id": 1753,
+                "id": 1812,
                 "name": "termsHash",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "427:17:13",
+                "scope": 1829,
+                "src": "427:17:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1084,10 +1084,10 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 1752,
+                  "id": 1811,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "427:7:13",
+                  "src": "427:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -1098,11 +1098,11 @@
               },
               {
                 "constant": false,
-                "id": 1755,
+                "id": 1814,
                 "name": "title",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "454:12:13",
+                "scope": 1829,
+                "src": "454:12:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1110,10 +1110,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1754,
+                  "id": 1813,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "454:6:13",
+                  "src": "454:6:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -1124,11 +1124,11 @@
               },
               {
                 "constant": false,
-                "id": 1757,
+                "id": 1816,
                 "name": "datetime",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "476:13:13",
+                "scope": 1829,
+                "src": "476:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1136,10 +1136,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1756,
+                  "id": 1815,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "476:4:13",
+                  "src": "476:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1150,11 +1150,11 @@
               },
               {
                 "constant": false,
-                "id": 1759,
+                "id": 1818,
                 "name": "creator",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "499:15:13",
+                "scope": 1829,
+                "src": "499:15:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1162,10 +1162,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1758,
+                  "id": 1817,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "499:7:13",
+                  "src": "499:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1176,44 +1176,44 @@
               },
               {
                 "constant": false,
-                "id": 1763,
+                "id": 1822,
                 "name": "playerBets",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "524:40:13",
+                "scope": 1829,
+                "src": "524:40:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1779_storage_$",
+                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1838_storage_$",
                   "typeString": "mapping(bytes32 => struct RegistryStorage.PlayerBet)"
                 },
                 "typeName": {
-                  "id": 1762,
+                  "id": 1821,
                   "keyType": {
-                    "id": 1760,
+                    "id": 1819,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "532:7:13",
+                    "src": "532:7:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "524:29:13",
+                  "src": "524:29:12",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1779_storage_$",
+                    "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_PlayerBet_$1838_storage_$",
                     "typeString": "mapping(bytes32 => struct RegistryStorage.PlayerBet)"
                   },
                   "valueType": {
                     "contractScope": null,
-                    "id": 1761,
+                    "id": 1820,
                     "name": "PlayerBet",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 1779,
-                    "src": "543:9:13",
+                    "referencedDeclaration": 1838,
+                    "src": "543:9:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_PlayerBet_$1779_storage_ptr",
+                      "typeIdentifier": "t_struct$_PlayerBet_$1838_storage_ptr",
                       "typeString": "struct RegistryStorage.PlayerBet"
                     }
                   }
@@ -1223,11 +1223,11 @@
               },
               {
                 "constant": false,
-                "id": 1767,
+                "id": 1826,
                 "name": "principalInOption",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "574:39:13",
+                "scope": 1829,
+                "src": "574:39:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1235,28 +1235,28 @@
                   "typeString": "mapping(uint256 => uint256)"
                 },
                 "typeName": {
-                  "id": 1766,
+                  "id": 1825,
                   "keyType": {
-                    "id": 1764,
+                    "id": 1823,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "582:4:13",
+                    "src": "582:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "574:21:13",
+                  "src": "574:21:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                     "typeString": "mapping(uint256 => uint256)"
                   },
                   "valueType": {
-                    "id": 1765,
+                    "id": 1824,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "590:4:13",
+                    "src": "590:4:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1268,11 +1268,11 @@
               },
               {
                 "constant": false,
-                "id": 1769,
+                "id": 1828,
                 "name": "totalPrincipal",
                 "nodeType": "VariableDeclaration",
-                "scope": 1770,
-                "src": "623:19:13",
+                "scope": 1829,
+                "src": "623:19:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1280,10 +1280,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1768,
+                  "id": 1827,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "623:4:13",
+                  "src": "623:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1295,21 +1295,21 @@
             ],
             "name": "BetEntry",
             "nodeType": "StructDefinition",
-            "scope": 1784,
-            "src": "253:396:13",
+            "scope": 1843,
+            "src": "253:396:12",
             "visibility": "public"
           },
           {
             "canonicalName": "RegistryStorage.PlayerBet",
-            "id": 1779,
+            "id": 1838,
             "members": [
               {
                 "constant": false,
-                "id": 1772,
+                "id": 1831,
                 "name": "player",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "682:14:13",
+                "scope": 1838,
+                "src": "682:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1317,10 +1317,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1771,
+                  "id": 1830,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "682:7:13",
+                  "src": "682:7:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1331,11 +1331,11 @@
               },
               {
                 "constant": false,
-                "id": 1774,
+                "id": 1833,
                 "name": "option",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "706:11:13",
+                "scope": 1838,
+                "src": "706:11:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1343,10 +1343,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1773,
+                  "id": 1832,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "706:4:13",
+                  "src": "706:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1357,11 +1357,11 @@
               },
               {
                 "constant": false,
-                "id": 1776,
+                "id": 1835,
                 "name": "principal",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "727:14:13",
+                "scope": 1838,
+                "src": "727:14:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1369,10 +1369,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1775,
+                  "id": 1834,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "727:4:13",
+                  "src": "727:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1383,11 +1383,11 @@
               },
               {
                 "constant": false,
-                "id": 1778,
+                "id": 1837,
                 "name": "returned",
                 "nodeType": "VariableDeclaration",
-                "scope": 1779,
-                "src": "751:13:13",
+                "scope": 1838,
+                "src": "751:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1395,10 +1395,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1777,
+                  "id": 1836,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "751:4:13",
+                  "src": "751:4:12",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -1410,50 +1410,50 @@
             ],
             "name": "PlayerBet",
             "nodeType": "StructDefinition",
-            "scope": 1784,
-            "src": "655:116:13",
+            "scope": 1843,
+            "src": "655:116:12",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 1783,
+            "id": 1842,
             "name": "betRegistry",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
-            "src": "836:49:13",
+            "scope": 1843,
+            "src": "836:49:12",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1770_storage_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1829_storage_$",
               "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
             },
             "typeName": {
-              "id": 1782,
+              "id": 1841,
               "keyType": {
-                "id": 1780,
+                "id": 1839,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "844:7:13",
+                "src": "844:7:12",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "836:28:13",
+              "src": "836:28:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1770_storage_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_BetEntry_$1829_storage_$",
                 "typeString": "mapping(bytes32 => struct RegistryStorage.BetEntry)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 1781,
+                "id": 1840,
                 "name": "BetEntry",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 1770,
-                "src": "855:8:13",
+                "referencedDeclaration": 1829,
+                "src": "855:8:12",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_BetEntry_$1770_storage_ptr",
+                  "typeIdentifier": "t_struct$_BetEntry_$1829_storage_ptr",
                   "typeString": "struct RegistryStorage.BetEntry"
                 }
               }
@@ -1462,11 +1462,11 @@
             "visibility": "internal"
           }
         ],
-        "scope": 1785,
-        "src": "26:862:13"
+        "scope": 1844,
+        "src": "26:862:12"
       }
     ],
-    "src": "0:889:13"
+    "src": "0:889:12"
   },
   "compiler": {
     "name": "solc",
@@ -1474,5 +1474,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-07-11T19:48:47.868Z"
+  "updatedAt": "2018-07-12T13:44:54.337Z"
 }

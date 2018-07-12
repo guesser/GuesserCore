@@ -20,6 +20,11 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 /** @title ERC20BetKernelProxy. */
 contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
 
+    modifier onlyBetOwner(bytes32 _betHash) {
+        require(betRegistry.getBetCreator(_betHash) == msg.sender);
+        _;
+    }
+
     /**
      * @dev Function that places a bet and returns its hash
      * @param _betHash bytes32 the hash of the bet
@@ -36,6 +41,8 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         public
         returns(bool)
     {
+        require(bytes(betRegistry.getOptionTitle(_betHash, _option)).length != 0);
+
         address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
         address _paymentsToken = betRegistry.getBetPaymentsToken(_betHash);
 
@@ -136,6 +143,7 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
             )
         );
         betRegistry.setPlayerBetReturned(_betHash, _playerBetHash, true);
+
         return true;
     }
 }
