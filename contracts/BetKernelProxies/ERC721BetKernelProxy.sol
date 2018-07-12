@@ -7,18 +7,20 @@ import "../BetPayments.sol";
 import "../BetOracle.sol";
 import "../BetTerms.sol";
 // External
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
 
 /**
- * An ERC20 implementation for the kernel used in the Guesser Protocol
+ * An ERC721 implementation for the kernel used in the Guesser Protocol
  * It has to inherate from the RegistrySetter so it can get called throught
  * a delegate call from the BetPayments contract.
+ * This contract only allows 1 vs 1 bets. 
+ * NO MORE THAN TWO PLAYERS ARE ALLOWED TO PLAY
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
-/** @title ERC20BetKernelProxy. */
-contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
+/** @title ERC721BetKernelProxy. */
+contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
 
     /**
      * @dev Function that places a bet and returns its hash
@@ -32,8 +34,8 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         bytes32 _playerBetHashProof,
         uint _option,
         uint _number
-    )
-        public
+    ) 
+        public 
         returns(bool)
     {
         address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
@@ -54,31 +56,45 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
                 _paymentsToken,
                 msg.sender,
                 address(_betPayments),
-                _number
+                _number // Token Id
             )
         );
+
         // Creating the actual bet and returning the hash
         bytes32 _playerBetHash = betRegistry.insertPlayerBet(
             _betHash,
             msg.sender,
             _option,
-            _number
+            _number // Token id
         );
 
         require(_playerBetHashProof == _playerBetHash);
 
         betRegistry.addTotalPrincipal(
             _betHash,
-            _number
+            1
         );
-        betRegistry.addToOption(
+        
+        if (betRegistry.getPrincipalInOption(
             _betHash,
-            _option,
-            _number
-        );
+            0
+        ) == uint(0)) {
+            betRegistry.addToOption(
+                _betHash,
+                0,
+                _number
+            );
+        } else {
+            betRegistry.addToOption(
+                _betHash,
+                1,
+                _number
+            );
+            // Change terms so nobody else can vote
+        }
+        
 
         return true;
-
     }
 
     /**
@@ -90,14 +106,14 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
     function getProfits(
         bytes32 _betHash,
         bytes32 _playerBetHash
-    )
-        public
+    ) 
+        public 
         returns(bool)
     {
         BetPayments _betPayments = BetPayments(betRegistry.betPayments());
         BetOracle _betOracle = BetOracle(betRegistry.betOracle());
         BetTerms _betTerms = BetTerms(betRegistry.betTerms());
-        
+
         require(msg.sender == betRegistry.getPlayerBetPlayer(_betHash, _playerBetHash));
         require(!betRegistry.getPlayerBetReturned(_betHash, _playerBetHash));
 
@@ -112,7 +128,7 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
                 betRegistry.getBetOracleProxy(_betHash),
                 _betHash
             ) != betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
-        ) 
+        )
             return false;
 
         require(
@@ -121,21 +137,39 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
                 betRegistry.getBetTermsHash(_betHash)
             )
         );
-        uint _profits = betRegistry.getPrincipalInOption(
-                _betHash,
-                betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
-            ) / betRegistry.getPlayerBetPrincipal(_betHash, _playerBetHash);
-        _profits = betRegistry.getTotalPrincipal(_betHash) / _profits;
-        // Return the money
+
+        // Transfer both, his bet and the other
+        transferProfits(_betHash, msg.sender);
+        
+        betRegistry.setPlayerBetReturned(_betHash, _playerBetHash, true);
+
+        return true;
+    }
+
+    function transferProfits(
+        bytes32 _betHash,
+        address _receiver
+    )
+        private
+        returns(uint)
+    {
+        BetPayments _betPayments = BetPayments(betRegistry.betPayments());
+        require(
+            _betPayments.transfer(
+                betRegistry.getBetPaymentsProxy(_betHash),
+                betRegistry.getBetPaymentsToken(_betHash),
+                _receiver,
+                betRegistry.getPrincipalInOption(_betHash, 0)
+            )
+        );
+
         require(
             _betPayments.transfer(
                 betRegistry.getBetPaymentsProxy(_betHash),
                 betRegistry.getBetPaymentsToken(_betHash),
                 msg.sender,
-                _profits
+                betRegistry.getPrincipalInOption(_betHash, 1)
             )
         );
-        betRegistry.setPlayerBetReturned(_betHash, _playerBetHash, true);
-        return true;
     }
 }

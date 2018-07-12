@@ -146,19 +146,13 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         return _hash;
     }
 
-    /**
-     * @dev Function adds a bet from a player to a bet
-     * @param _betHash bytes32 of the bet you want to get
-     * @param _sender address of the sender
-     * @param _option uint the choosen option by the player
-     * @param _amount uint the quantity of tokens bet
-     * @return bool if the the betting was succesfull
-     */
-    function placeBet(
+    // Setters to place a bet
+    // These are authorised only
+    function insertPlayerBet(
         bytes32 _betHash,
         address _sender,
         uint _option,
-        uint _amount
+        uint _number
     )
         public
         onlyAuthorised
@@ -169,25 +163,95 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         PlayerBet memory _bet = PlayerBet(
             _sender,
             _option,
-            _amount,
+            _number,
             false
         );
 
-        bytes32 _playerBetHash = keccak256(
-            abi.encodePacked(
-                _sender,
-                _option,
-                _amount,
-                block.number
-            )
+        bytes32 _playerBetHash = getPlayerBetHash(
+            _betHash,
+            _sender,
+            _option,
+            _number
         );
 
         require(betRegistry[_betHash].playerBets[_playerBetHash].player == address(0));
         betRegistry[_betHash].playerBets[_playerBetHash] = _bet;
-        betRegistry[_betHash].totalPrincipal += _amount;
-        betRegistry[_betHash].principalInOption[_option] += _amount;
 
         return _playerBetHash;
+    }
+
+    /**
+     * @dev Function that lets you add to the principal
+     * @param _betHash bytes32 the bet
+     * @param _number uint the amount to add
+     * @return uint the totalPrincipal
+     */
+    function addTotalPrincipal(
+        bytes32 _betHash,
+        uint _number
+    )
+        public 
+        onlyAuthorised
+        returns(uint) 
+    {
+        require(betRegistry[_betHash].creator != address(0));
+
+        betRegistry[_betHash].totalPrincipal += _number;
+        return betRegistry[_betHash].totalPrincipal;
+    }
+
+    /**
+     * @dev Function that lets you add to an option
+     * @param _betHash bytes32 of the bet you want to get
+     * @param _option uint the option you are betting on
+     * @param _number uint the amount to add
+     * @return uint the amount in that option
+     */
+    function addToOption(
+        bytes32 _betHash,
+        uint _option,
+        uint _number
+    )
+        public
+        onlyAuthorised
+        returns(uint)
+    {
+        require(betRegistry[_betHash].creator != address(0));
+
+        betRegistry[_betHash].principalInOption[_option] += _number;
+
+        return betRegistry[_betHash].principalInOption[_option];
+    }
+
+    /**
+     * @dev Function that returns the hash a bet would have
+     * @param _betHash bytes32 the hash of the bet where place play will happen
+     * @param _sender address the address that wants to bet
+     * @param _option uint the option they want to bet on
+     * @param _number uint the parameter of the bet. This depends if it is an
+     * ERC20 or ERC721 token
+     * @return bytes32 the hash of the bet the player is going to make
+     */
+    function getPlayerBetHash(
+        bytes32 _betHash,
+        address _sender,
+        uint _option,
+        uint _number
+    )
+        public
+        view
+        returns(bytes32)
+    {
+        return keccak256(
+            abi.encodePacked(
+                _betHash,
+                _sender,
+                _option,
+                _number,
+                block.number
+            )
+        );
+
     }
 
     // Getters
