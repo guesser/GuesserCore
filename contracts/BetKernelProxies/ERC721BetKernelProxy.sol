@@ -75,24 +75,7 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
             1
         );
         
-        if (betRegistry.getPrincipalInOption(
-            _betHash,
-            0
-        ) == uint(0)) {
-            betRegistry.addToOption(
-                _betHash,
-                0,
-                _number
-            );
-        } else {
-            betRegistry.addToOption(
-                _betHash,
-                1,
-                _number
-            );
-            // Change terms so nobody else can vote
-        }
-        
+        addTokenToOption(_betHash, _number);
 
         return true;
     }
@@ -170,5 +153,36 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
                 betRegistry.getPrincipalInOption(_betHash, 1)
             )
         );
+    }
+
+    function addTokenToOption(
+        bytes32 _betHash,
+        uint _tokenId
+    )
+        private
+    {
+        if (betRegistry.getPrincipalInOption(
+            _betHash,
+            0
+        ) == uint(0)) {
+            betRegistry.addToOption(
+                _betHash,
+                0,
+                _tokenId
+            );
+        } else {
+            betRegistry.addToOption(
+                _betHash,
+                1,
+                _tokenId
+            );
+            // Change terms so nobody else can vote
+            BetTerms _betTerms = BetTerms(betRegistry.betTerms());
+            _betTerms.changePeriod(
+                betRegistry.getBetTermsProxy(_betHash),
+                betRegistry.getBetTermsHash(_betHash),
+                1
+            );
+        }
     }
 }

@@ -1,12 +1,20 @@
 var chai = require("chai");
 var expect = chai.expect;
 
+const BetKernel = artifacts.require("BetKernel");
+const BetOracle = artifacts.require("BetOracle");
+const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const OwnerBased = artifacts.require("OwnerBased");
+const BetRegistry = artifacts.require("BetRegistry");
 
 contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
+    var betKernel;
+    var betOracle;
+    var betPayments;
     var betTerms;
     var ownerBased;
+    var betRegistry;
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -15,9 +23,21 @@ contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
     const WINNER_1 = accounts[3];
 
     before(async () => {
+        betKernel = await BetKernel.new();
+        betPayments = await BetPayments.new();
+        betOracle = await BetOracle.new();
         betTerms = await BetTerms.new();
 
         ownerBased = await OwnerBased.new();
+
+        betRegistry = await BetRegistry.new(
+            betKernel.address,
+            betPayments.address,
+            betOracle.address,
+            ownerBased.address
+        );
+
+        await ownerBased.setBetRegistry(betRegistry.address);
     });
 
     it("should have the termsHash in the call and the txo", async () => {

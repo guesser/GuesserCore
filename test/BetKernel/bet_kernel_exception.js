@@ -70,6 +70,7 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
         await token.setBalance(BETTER_2, 5);
         // Setting the terms
         ownerBased = await OwnerBased.new();
+        await ownerBased.setBetRegistry(betRegistry.address);
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
@@ -153,6 +154,10 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
     });
 
     it("shouldn't be allow to place a bet in an option that is not set", async () => {
+        await ownerBased.changePeriod(
+            termsHash,
+            0
+        );
         try {
             playerBetHash = await betKernel.placeBet.call(
                 betHash,
@@ -160,19 +165,17 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
                 5,
                 {from: BETTER_1}
             );
+            expect(true).to.be.equal(false);
         } catch(err) {
             expect(err)
         }
     });
     it("shouldn't allow to get the money when it isn't time yet", async () => {
-        await betRegistry.setOptionTitle(betHash, 'Option1');
-        await betRegistry.setOptionTitle(betHash, 'Option2');
-        await betRegistry.setOptionTitle(betHash, 'Option3');
-        await betRegistry.setOptionTitle(betHash, 'Option4');
-        await ownerBased.changePeriod(
-            termsHash,
-            0
-        );
+        await betRegistry.setOptionTitle(betHash, 0, 'Option1');
+        await betRegistry.setOptionTitle(betHash, 1, 'Option2');
+        await betRegistry.setOptionTitle(betHash, 2, 'Option3');
+        await betRegistry.setOptionTitle(betHash, 3, 'Option4');
+
         playerBetHash = await betKernel.placeBet.call(
             betHash,
             2,

@@ -22,7 +22,7 @@ contract RegistryStorage {
         address creator;
         mapping(bytes32 => PlayerBet) playerBets;
         mapping(uint => uint) principalInOption;
-        string[] optionTitles;
+        mapping(uint => string) optionTitles;
         uint totalPrincipal;
     }
 

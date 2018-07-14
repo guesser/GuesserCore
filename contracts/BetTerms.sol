@@ -75,4 +75,12 @@ contract BetTerms is RegistrySetter {
         return BetTermsProxyInterface(_termsProxy)
             .finishedPeriod(_termsHash);
     }
+
+    function changePeriod(address _termsProxy, bytes32 _termsHash, uint _status)
+        public
+    {
+        betRegistry.isAuthorised(msg.sender);
+        BetTermsProxyInterface(_termsProxy)
+            .changePeriod(_termsHash, _status);
+    }
 }

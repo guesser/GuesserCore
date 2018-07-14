@@ -7,6 +7,9 @@ interface BetTermsProxyInterface {
         external 
         returns(bool);
 
+    function changePeriod(bytes32 _termsHash, uint _status)
+        external;
+
     function getTermsHash()
         external
         view

@@ -69,9 +69,11 @@ contract("Bet Kernel Test", async (accounts) => {
         await token.setBalance(BETTER_2, 5);
         // Setting the terms
         ownerBased = await OwnerBased.new();
+        await ownerBased.setBetRegistry(betRegistry.address);
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
+        await ownerBasedOracle.setBetRegistry(betRegistry.address);
         // setting the proxies
         await betRegistry.setKernelProxiesAllowance(erc20BetKernelProxy.address, true);
         await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
@@ -112,11 +114,11 @@ contract("Bet Kernel Test", async (accounts) => {
         await betPayments.setBetRegistry(betRegistry.address);
         await token.approve(betPayments.address, 5, {from: BETTER_1});
 
-        await betRegistry.setOptionTitle(betHash, 'Option1');
-        await betRegistry.setOptionTitle(betHash, 'Option2');
-        await betRegistry.setOptionTitle(betHash, 'Option3');
-        await betRegistry.setOptionTitle(betHash, 'Option4');
-
+        await betRegistry.setOptionTitle(betHash, 0, "Option1");
+        await betRegistry.setOptionTitle(betHash, 1, "Option2");
+        await betRegistry.setOptionTitle(betHash, 2, "Option3");
+        await betRegistry.setOptionTitle(betHash, 3, "Option4");
+        
         playerBetHash = await betKernel.placeBet.call(
             betHash,
             3,

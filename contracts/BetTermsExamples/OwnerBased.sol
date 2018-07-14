@@ -145,8 +145,9 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
         uint _status
     )
         public
-        onlyOwner
     {
+        betRegistry.isAuthorised(msg.sender);
+
         hashStatus[_termsHash] = _status;
         emit LogPeriodChanged(_termsHash, _status);
     }

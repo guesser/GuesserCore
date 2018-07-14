@@ -69,6 +69,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
         await token.transferFrom(CONTRACT_OWNER, BETTER_2, 1);
         // Setting the terms
         ownerBased = await OwnerBased.new();
+        await ownerBased.setBetRegistry(betRegistry.address);
         termsHash = await ownerBased.getTermsHash.call();
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
@@ -104,6 +105,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
     it("should allow a user to place a bet", async () => {
         await betPayments.setBetRegistry(betRegistry.address);
         await betKernel.setBetRegistry(betRegistry.address);
+        await betTerms.setBetRegistry(betRegistry.address);
         await token.approve(betPayments.address, 4, {from: BETTER_1});
 
         playerBetHash = await betKernel.placeBet.call(
@@ -151,6 +153,10 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
         expect(
             balance.toNumber()
         ).to.be.equal(2);
+
+        expect(
+            await ownerBased.waitingPeriod(termsHash)
+        ).to.be.equal(true);
     });
 
     it("should return the parameters of the player bet", async () => {

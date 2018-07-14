@@ -144,8 +144,9 @@ contract("Bet Registry Test", async (accounts) => {
     });
 
     it("should return the data of the bet", async () => {
+        const creator = await betRegistry.getBetCreator.call(betHash)
         expect(
-            await betRegistry.getBetCreator.call(betHash)
+            creator
         ).to.be.equal(BETTER_1);
     });
 });
