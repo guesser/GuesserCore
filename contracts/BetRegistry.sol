@@ -35,13 +35,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     }
 
     modifier onlyAuthorised {
-        require(
-            msg.sender == betKernel ||
-            msg.sender == betPayments ||
-            msg.sender == betOracle ||
-            msg.sender == betTerms ||
-            msg.sender == owner
-        );
+        isAuthorised(msg.sender);
         _;
     }
 
@@ -240,6 +234,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     )
         public
         view
+        onlyAuthorised
         returns(bytes32)
     {
         return keccak256(
@@ -266,67 +261,142 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     }
 
     // Getters
-    function getBetKernelProxy(bytes32 _betHash) public view returns (address) {
+    function getBetKernelProxy(
+        bytes32 _betHash
+    )
+        public 
+        view 
+        onlyAuthorised
+        returns (address) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].kernelProxy;
     }
 
-    function getBetPaymentsProxy(bytes32 _betHash) public view returns (address) {
+    function getBetPaymentsProxy(
+        bytes32 _betHash
+    )
+        public
+        view 
+        onlyAuthorised
+        returns (address) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].paymentsProxy;
     }
 
-    function getBetPaymentsToken(bytes32 _betHash) public view returns(address) {
+    function getBetPaymentsToken(
+        bytes32 _betHash
+    )
+        public
+        view 
+        onlyAuthorised
+        returns(address) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].paymentsToken;
     }
 
-    function getBetOracleProxy(bytes32 _betHash) public view returns(address) {
+    function getBetOracleProxy(bytes32 _betHash) 
+        public 
+        view 
+        onlyAuthorised
+        returns(address) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].oracleProxy;
     }
 
-    function getBetTermsProxy(bytes32 _betHash) public view returns(address) {
+    function getBetTermsProxy(
+        bytes32 _betHash
+    ) 
+        public 
+        view 
+        onlyAuthorised
+        returns(address) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].termsProxy;
     }
 
-    function getBetTermsHash(bytes32 _betHash) public view returns(bytes32) {
+    function getBetTermsHash(
+        bytes32 _betHash
+    )
+        public 
+        view 
+        onlyAuthorised
+        returns(bytes32) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].termsHash;
     }
 
-    function getBetTitle(bytes32 _betHash) public view returns(string) {
+    function getBetTitle(
+        bytes32 _betHash
+    )
+        public 
+        view 
+        onlyAuthorised
+        returns(string) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].title;
     }
 
-    function getBetDatetime(bytes32 _betHash) public view returns(uint) {
+    function getBetDatetime(
+        bytes32 _betHash
+    )
+        public 
+        view 
+        onlyAuthorised
+        returns(uint) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].datetime;
     }
 
-    function getBetCreator(bytes32 _betHash) public view returns(address) {
+    function getBetCreator(
+        bytes32 _betHash
+    )
+        public 
+        view 
+        returns(address) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].creator;
     }
 
-    function getTotalPrincipal(bytes32 _betHash) public view returns(uint) {
+    function getTotalPrincipal(
+        bytes32 _betHash
+    )
+        public 
+        view 
+        onlyAuthorised
+        returns(uint) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].totalPrincipal;
     }
 
-    function getPrincipalInOption(bytes32 _betHash, uint _option) public view returns(uint) {
+    function getPrincipalInOption(
+        bytes32 _betHash,
+        uint _option
+    ) 
+        public 
+        view 
+        onlyAuthorised
+        returns(uint) 
+    {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].principalInOption[_option];
@@ -338,6 +408,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     )
         public
         view
+        onlyAuthorised
         returns(string)
     {
         return betRegistry[_betHash].optionTitles[_option];
@@ -349,6 +420,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     )
         public
         view
+        onlyAuthorised
         returns(address)
     {
         require(playerBetExists(_betHash, _playerBetHash));
@@ -362,6 +434,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     )
         public
         view
+        onlyAuthorised
         returns(uint)
     {
         require(playerBetExists(_betHash, _playerBetHash));
@@ -375,6 +448,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     )
         public
         view
+        onlyAuthorised
         returns(uint)
     {
         require(playerBetExists(_betHash, _playerBetHash));
@@ -388,6 +462,7 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     )
         public
         view
+        onlyAuthorised
         returns(bool)
     {
         require(playerBetExists(_betHash, _playerBetHash));
