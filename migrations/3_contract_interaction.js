@@ -5,7 +5,7 @@ module.exports = function(deployer) {
     const BetOracle = artifacts.require("BetOracle");
     const BetTerms = artifacts.require("BetTerms");
 
-    // New Deploys
+    // New Deployments
     const BetRegistry = artifacts.require("BetRegistry");
 
     return deployer.then(async () => {
@@ -24,10 +24,10 @@ module.exports = function(deployer) {
         );
         const registry = await BetRegistry.deployed();
 
-        console.log("BetKernel address: ", kernel.address);
-        console.log("BetPayments address: ", payments.address);
-        console.log("BetOracle address: ", oracle.address);
-        console.log("BetTerms address: ", terms.address);
-        console.log("BetRegistry address: ", registry.address);
+        // Permissions
+        await kernel.setBetRegistry(registry.address);
+        await payments.setBetRegistry(registry.address);
+        await oracle.setBetRegistry(registry.address);
+        await terms.setBetRegistry(registry.address);
     });
 };
