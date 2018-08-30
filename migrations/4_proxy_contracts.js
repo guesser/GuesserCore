@@ -5,6 +5,7 @@ module.exports = function(deployer) {
     const BetOracle = artifacts.require("BetOracle");
     const BetTerms = artifacts.require("BetTerms");
     const BetRegistry = artifacts.require("BetRegistry");
+    const ProxyRegistry = artifacts.require("ProxyRegistry");
 
     // New Deployments
 
@@ -25,7 +26,8 @@ module.exports = function(deployer) {
         const payments = await BetPayments.deployed();
         const oracle = await BetOracle.deployed();
         const terms = await BetTerms.deployed();
-        const registry = await BetRegistry.deployed();
+        const betRegistry = await BetRegistry.deployed();
+        const proxyRegistry = await ProxyRegistry.deployed();
 
         await deployer.deploy(ERC20BetKernelProxy);
         await deployer.deploy(ERC721BetKernelProxy);
@@ -43,19 +45,20 @@ module.exports = function(deployer) {
         const erc721PaymentProxy = await ERC721PaymentProxy.deployed();
         const ownerTermsProxy = await OwnerBased.deployed();
 
-        await registry.setKernelProxiesAllowance(erc20KernelProxy.address, true);
-        await registry.setKernelProxiesAllowance(erc721KernelProxy.address, true);
-        await registry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
-        await registry.setPaymentsProxiesAllowance(erc721PaymentProxy.address, true);
-        await registry.setOracleProxiesAllowance(betOwnerOracleProxy.address, true);
-        await registry.setOracleProxiesAllowance(ownerOracleProxy.address, true);
-        await registry.setTermsProxiesAllowance(ownerTermsProxy.address, true);
+        await proxyRegistry.setKernelProxiesAllowance(erc20KernelProxy.address, true);
+        await proxyRegistry.setKernelProxiesAllowance(erc721KernelProxy.address, true);
+        await proxyRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
+        await proxyRegistry.setPaymentsProxiesAllowance(erc721PaymentProxy.address, true);
+        await proxyRegistry.setOracleProxiesAllowance(betOwnerOracleProxy.address, true);
+        await proxyRegistry.setOracleProxiesAllowance(ownerOracleProxy.address, true);
+        await proxyRegistry.setTermsProxiesAllowance(ownerTermsProxy.address, true);
 
         console.log("\x1b[35m%s", "BetKernel address: ", kernel.address);
         console.log("BetPayments address: ", payments.address);
         console.log("BetOracle address: ", oracle.address);
         console.log("BetTerms address: ", terms.address);
-        console.log("BetRegistry address: ", registry.address);
+        console.log("BetRegistry address: ", betRegistry.address);
+        console.log("ProxyRegistry address: ", proxyRegistry.address);
 
         console.log("ERC20BetKernelProxy address: ", erc20KernelProxy.address);
         console.log("ERC721BetKernelProxy address: ", erc721KernelProxy.address);

@@ -4,6 +4,7 @@ module.exports = function(deployer) {
     const BetPayments = artifacts.require("BetPayments");
     const BetOracle = artifacts.require("BetOracle");
     const BetTerms = artifacts.require("BetTerms");
+    const ProxyRegistry = artifacts.require("ProxyRegistry");
 
     // New Deployments
     const BetRegistry = artifacts.require("BetRegistry");
@@ -13,10 +14,12 @@ module.exports = function(deployer) {
         const payments = await BetPayments.deployed();
         const oracle = await BetOracle.deployed();
         const terms = await BetTerms.deployed();
+        const proxyRegistry = await ProxyRegistry.deployed();
 
         // Deploying the registry
         await deployer.deploy(
             BetRegistry,
+            proxyRegistry.address,
             kernel.address,
             payments.address,
             oracle.address,

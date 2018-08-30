@@ -6,6 +6,7 @@ const BetOracle = artifacts.require("BetOracle");
 const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
+const ProxyRegistry = artifacts.require("ProxyRegistry");
 
 const ERC721PaymentProxy = artifacts.require("ERC721PaymentProxy");
 const DummyToken = artifacts.require("DummyERC721Token");
@@ -16,6 +17,7 @@ contract("ERC721 Bet Payments Test", async (accounts) => {
     var betPayments;
     var betTerms;
     var betRegistry;
+    var proxyRegistry;
 
     var erc721PaymentProxy;
     var token;
@@ -31,8 +33,10 @@ contract("ERC721 Bet Payments Test", async (accounts) => {
         betPayments = await BetPayments.new();
         betOracle = await BetOracle.new();
         betTerms = await BetTerms.new();
+        proxyRegistry = await ProxyRegistry.new();
 
         betRegistry = await BetRegistry.new(
+            proxyRegistry.address,
             betKernel.address,
             betPayments.address,
             betOracle.address,

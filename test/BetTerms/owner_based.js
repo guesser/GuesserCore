@@ -7,6 +7,7 @@ const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const OwnerBased = artifacts.require("OwnerBased");
 const BetRegistry = artifacts.require("BetRegistry");
+const ProxyRegistry = artifacts.require("ProxyRegistry");
 
 contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
     var betKernel;
@@ -15,6 +16,7 @@ contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
     var betTerms;
     var ownerBased;
     var betRegistry;
+    var proxyRegistry;
 
     const CONTRACT_OWNER = accounts[0];
 
@@ -27,10 +29,12 @@ contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
         betPayments = await BetPayments.new();
         betOracle = await BetOracle.new();
         betTerms = await BetTerms.new();
+        proxyRegistry = await ProxyRegistry.new();
 
         ownerBased = await OwnerBased.new();
 
         betRegistry = await BetRegistry.new(
+            proxyRegistry.address,
             betKernel.address,
             betPayments.address,
             betOracle.address,

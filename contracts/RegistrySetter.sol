@@ -8,6 +8,7 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 
 /**
+ * This contract allows the other core contracts to use the functions of the BetRegistry
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */

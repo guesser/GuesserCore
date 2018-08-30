@@ -8,6 +8,7 @@ const BetOracle = artifacts.require("BetOracle");
 const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
+const ProxyRegistry = artifacts.require("ProxyRegistry");
 // Bet Kernel Proxy
 const ERC20BetKernelProxy = artifacts.require("ERC20BetKernelProxy");
 // Bet Payments Proxy
@@ -24,6 +25,8 @@ contract("Bet Registry Test", async (accounts) => {
     var betPayments;
     var betTerms;
     var betRegistry;
+    var proxyRegistry;
+
     var betHash;
     // Bet Kernel Proxy
     var erc20BetKernelProxy;
@@ -47,8 +50,10 @@ contract("Bet Registry Test", async (accounts) => {
         betPayments = await BetPayments.new();
         betOracle = await BetOracle.new();
         betTerms = await BetTerms.new();
+        proxyRegistry = await ProxyRegistry.new();
 
         betRegistry = await BetRegistry.new(
+            proxyRegistry.address,
             betKernel.address,
             betPayments.address,
             betOracle.address,
@@ -113,10 +118,10 @@ contract("Bet Registry Test", async (accounts) => {
 
     it("should be able to create a bet with the proper hash", async () => {
         // setting the proxies
-        await betRegistry.setKernelProxiesAllowance(erc20BetKernelProxy.address, true);
-        await betRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
-        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
-        await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
+        await proxyRegistry.setKernelProxiesAllowance(erc20BetKernelProxy.address, true);
+        await proxyRegistry.setPaymentsProxiesAllowance(erc20PaymentProxy.address, true);
+        await proxyRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await proxyRegistry.setTermsProxiesAllowance(ownerBased.address, true);
        
         betHash = await betRegistry.createBet.call(
             erc20BetKernelProxy.address,

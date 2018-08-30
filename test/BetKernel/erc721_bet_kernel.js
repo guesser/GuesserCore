@@ -6,6 +6,7 @@ const BetOracle = artifacts.require("BetOracle");
 const BetPayments = artifacts.require("BetPayments");
 const BetTerms = artifacts.require("BetTerms");
 const BetRegistry = artifacts.require("BetRegistry");
+const ProxyRegistry = artifacts.require("ProxyRegistry");
 // Bet Kernel Proxy
 const ERC721BetKernelProxy = artifacts.require("ERC721BetKernelProxy");
 // Bet Payments Proxy
@@ -22,6 +23,8 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
     var betPayments;
     var betTerms;
     var betRegistry;
+    var proxyRegistry;
+
     var betHash;
     var playerBetHash;
     var playerBetHash2;
@@ -48,8 +51,10 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
         betPayments = await BetPayments.new();
         betOracle = await BetOracle.new();
         betTerms = await BetTerms.new();
+        proxyRegistry = await ProxyRegistry.new();
 
         betRegistry = await BetRegistry.new(
+            proxyRegistry.address,
             betKernel.address,
             betPayments.address,
             betOracle.address,
@@ -74,10 +79,10 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
         // setting the proxies
-        await betRegistry.setKernelProxiesAllowance(erc721BetKernelProxy.address, true);
-        await betRegistry.setPaymentsProxiesAllowance(erc721PaymentProxy.address, true);
-        await betRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
-        await betRegistry.setTermsProxiesAllowance(ownerBased.address, true);
+        await proxyRegistry.setKernelProxiesAllowance(erc721BetKernelProxy.address, true);
+        await proxyRegistry.setPaymentsProxiesAllowance(erc721PaymentProxy.address, true);
+        await proxyRegistry.setOracleProxiesAllowance(ownerBasedOracle.address, true);
+        await proxyRegistry.setTermsProxiesAllowance(ownerBased.address, true);
 
         // Creating the bet
         betHash = await betRegistry.createBet.call(
@@ -87,7 +92,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
-            web3.fromAscii("Hola Mundo"),
+            web3.fromAscii("Hello World"),
             1 // Salt
         );
         await betRegistry.createBet(
@@ -97,7 +102,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
             ownerBasedOracle.address,
             ownerBased.address,
             termsHash,
-            web3.fromAscii("Hola Mundo"),
+            web3.fromAscii("Hello World"),
             1 // Salt
         );
     });

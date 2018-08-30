@@ -16,18 +16,23 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
  * Author: Carlos Gonzalez -- Github: carlosgj94
  */
 /** @title Bet BetRegistry. */
-contract BetRegistry is RegistryStorage, ProxyRegistry {
+contract BetRegistry is RegistryStorage {
     using SafeMath for uint;
 
     // Events
     event LogBetEntry(bytes32 _hash);
 
+    // Storage
+    ProxyRegistry public proxyRegistry;
+
     constructor(
+        address _proxyRegistry,
         address _betKernel,
         address _betPayments,
         address _betOracle,
         address _betTerms
     ) public {
+        proxyRegistry = ProxyRegistry(_proxyRegistry);
         betKernel = _betKernel;
         betPayments = _betPayments;
         betOracle = _betOracle;
@@ -37,50 +42,6 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
     modifier onlyAuthorised {
         isAuthorised(msg.sender);
         _;
-    }
-
-    /**
-      * @dev Function to change the bet kernel contract address
-      * @param _betKernel address the address of the new bet kernel
-      */
-    function setBetKernel(address _betKernel) 
-        public
-        onlyOwner
-    {
-        betKernel = _betKernel;
-    }
-
-    /**
-      * @dev Function to change the bet payments contract address
-      * @param _betPayments address the address of the new bet payments
-      */
-    function setBetPayments(address _betPayments) 
-        public
-        onlyOwner
-    {
-        betPayments = _betPayments;
-    }
-
-    /**
-      * @dev Function to change the bet oracle contract address
-      * @param _betOracle address the address of the new bet oracle
-      */
-    function setBetOracle(address _betOracle) 
-        public
-        onlyOwner
-    {
-        betOracle = _betOracle;
-    }
-
-    /**
-      * @dev Function to change the bet terms contract address
-      * @param _betTerms address the address of the new bet terms
-      */
-    function setBetTerms(address _betTerms) 
-        public
-        onlyOwner
-    {
-        betTerms = _betTerms;
     }
 
     /**
@@ -102,10 +63,10 @@ contract BetRegistry is RegistryStorage, ProxyRegistry {
         string _title,
         uint _salt
     ) public returns(bytes32) {
-        require(addressInProxies(_kernelProxy));
-        require(addressInProxies(_paymentsProxy));
-        require(addressInProxies(_oracleProxy));
-        require(addressInProxies(_termsProxy));
+        require(proxyRegistry.addressInProxies(_kernelProxy));
+        require(proxyRegistry.addressInProxies(_paymentsProxy));
+        require(proxyRegistry.addressInProxies(_oracleProxy));
+        require(proxyRegistry.addressInProxies(_termsProxy));
 
         BetEntry memory _entry = BetEntry(
             _kernelProxy,
