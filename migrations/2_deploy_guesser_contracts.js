@@ -5,9 +5,10 @@ const BetTerms = artifacts.require("BetTerms");
 const ProxyRegistry = artifacts.require("ProxyRegistry");
 
 module.exports = function(deployer) {
-  deployer.deploy(BetKernel);
-  deployer.deploy(BetPayments);
-  deployer.deploy(BetOracle);
-  deployer.deploy(BetTerms);
-  deployer.deploy(ProxyRegistry);
+    console.log('Guesser Core Contracts');
+    deployer.deploy(BetKernel);
+    deployer.deploy(BetPayments);
+    deployer.deploy(BetOracle);
+    deployer.deploy(BetTerms);
+    deployer.deploy(ProxyRegistry);
 };

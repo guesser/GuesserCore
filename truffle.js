@@ -18,20 +18,19 @@ module.exports = {
             port: 8545,
             network_id: "*", // Match any network id,
             gas: 4712388,
-            gasPrice: 1,
+            gasPrice: 1
         },
         rinkeby: {
             provider: new LedgerWalletProvider(ledgerOptions, "https://rinkeby.infura.io/" + infura_apikey),
             network_id: 4,
             gas: 4612388 
-        }
+        },
         live: {
             host: "localhost",
             port: 8547,
             network_id: "1",
             gas: 4000000,
-            gasPrice: 10000000000, // 10 GWei, as per https://ethgasstation.info/
-        },
-    },
-    migrations_directory: "migrations",
+            gasPrice: 10000000000 // 10 GWei, as per https://ethgasstation.info/
+        }
+    }
 };
