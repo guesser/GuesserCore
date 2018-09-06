@@ -20,5 +20,23 @@ module.exports { ERC721BetKernelProxy } from './contracts/BetKernelProxies/ERC72
 /************************************
  *  Bet Oracle Proxies Protocol Contracts  *
  ************************************/
-module.exports { BetOwnerBasedOracle } from './contracts/BetOwnerProxies/ERC20BetKernelProxy.js';
-module.exports { ERC721BetKernelProxy } from './contracts/BetKernelProxies/ERC721BetKernelProxy.js';
+module.exports { BetOwnerBasedOracle } from './contracts/BetOwnerProxies/BetOwnerBasedOracle.js';
+module.exports { OwnerBasedOracle } from './contracts/BetOwnerProxies/ERC721BetKernelProxy.js';
+
+/************************************
+ *  Bet Payment Proxies Protocol Contracts  *
+ ************************************/
+module.exports { ERC20PaymentProxy } from './contracts/BetPaymentsProxies/ERC20PaymentProxy.js';
+module.exports { ERC721PaymentProxy } from './contracts/BetPaymentsProxies/ERC721PaymentProxy.js';
+
+/************************************
+ *  Bet Terms Proxies Protocol Contracts  *
+ ************************************/
+module.exports { OwnerBased } from './contracts/BetTermsExamples/OwnerBased.js';
+
+/************************************
+ *  Examples Protocol Contracts  *
+ ************************************/
+module.exports { DummyERC721Token } from './contracts/Examples/DummyERC721Token.js';
+module.exports { DummyToken } from './contracts/Examples/DummyToken.js';
+module.exports { EtherToken } from './contracts/Examples/EtherToken.js';
