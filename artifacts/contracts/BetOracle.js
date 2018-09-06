@@ -1,2 +1,2 @@
 var json = require("../../build/contracts/BetOracle.json");
-export const BetOracle = json;
+module.exports = json;

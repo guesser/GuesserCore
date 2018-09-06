@@ -1,42 +1,65 @@
 /************************************
  *  Core Guesser Protocol Contracts  *
  ************************************/
-module.exports { BetKernel } from './contracts/BetKernel.js';
-module.exports { BetOracle } from './contracts/BetOracle.js';
-module.exports { BetPayments } from './contracts/BetPayments.js';
-module.exports { BetRegistry } from './contracts/BetRegistry.js';
-module.exports { BetTerms } from './contracts/BetTerms.js';
-module.exports { ProxyRegistry } from './contracts/ProxyRegistry.js';
-module.exports { RegistrySetter } from './contracts/RegistrySetter.js';
-module.exports { RegistryStorage } from './contracts/RegistryStorage.js';
-module.exports { TermsContract } from './contracts/TermsContract.js';
+var BetKernel = require('./contracts/BetKernel.js');
+var BetOracle = require('./contracts/BetOracle.js');
+var BetPayments = require('./contracts/BetPayments.js');
+var BetRegistry = require('./contracts/BetRegistry.js');
+var BetTerms = require('./contracts/BetTerms.js');
+var ProxyRegistry = require('./contracts/ProxyRegistry.js');
+var RegistrySetter = require('./contracts/RegistrySetter.js');
+var RegistryStorage = require('./contracts/RegistryStorage.js');
+var TermsContract = require('./contracts/TermsContract.js');
 
 /************************************
  *  Bet Kernel Proxies Protocol Contracts  *
  ************************************/
-module.exports { ERC20BetKernelProxy } from './contracts/BetKernelProxies/ERC20BetKernelProxy.js';
-module.exports { ERC721BetKernelProxy } from './contracts/BetKernelProxies/ERC721BetKernelProxy.js';
+var ERC20BetKernelProxy = require('./contracts/BetKernelProxies/ERC20BetKernelProxy.js');
+var ERC721BetKernelProxy = require('./contracts/BetKernelProxies/ERC721BetKernelProxy.js');
 
 /************************************
  *  Bet Oracle Proxies Protocol Contracts  *
  ************************************/
-module.exports { BetOwnerBasedOracle } from './contracts/BetOwnerProxies/BetOwnerBasedOracle.js';
-module.exports { OwnerBasedOracle } from './contracts/BetOwnerProxies/ERC721BetKernelProxy.js';
+var BetOwnerBasedOracle = require('./contracts/BetOracleProxies/BetOwnerBasedOracle.js');
+var OwnerBasedOracle = require('./contracts/BetOracleProxies/OwnerBasedOracle.js');
 
 /************************************
  *  Bet Payment Proxies Protocol Contracts  *
  ************************************/
-module.exports { ERC20PaymentProxy } from './contracts/BetPaymentsProxies/ERC20PaymentProxy.js';
-module.exports { ERC721PaymentProxy } from './contracts/BetPaymentsProxies/ERC721PaymentProxy.js';
+var ERC20PaymentProxy = require('./contracts/BetPaymentsProxies/ERC20PaymentProxy.js');
+var ERC721PaymentProxy = require('./contracts/BetPaymentsProxies/ERC721PaymentProxy.js');
 
 /************************************
  *  Bet Terms Proxies Protocol Contracts  *
  ************************************/
-module.exports { OwnerBased } from './contracts/BetTermsExamples/OwnerBased.js';
+var OwnerBased = require('./contracts/BetTermsExamples/OwnerBased.js');
 
 /************************************
  *  Examples Protocol Contracts  *
  ************************************/
-module.exports { DummyERC721Token } from './contracts/Examples/DummyERC721Token.js';
-module.exports { DummyToken } from './contracts/Examples/DummyToken.js';
-module.exports { EtherToken } from './contracts/Examples/EtherToken.js';
+var DummyERC721Token = require('./contracts/Examples/DummyERC721Token.js');
+var DummyToken = require('./contracts/Examples/DummyToken.js');
+var EtherToken = require('./contracts/Examples/EtherToken.js');
+
+module.exports = { 
+    BetKernel,
+    BetOracle,
+    BetPayments,
+    BetRegistry,
+    BetTerms,
+    ProxyRegistry,
+    RegistrySetter,
+    RegistryStorage,
+    TermsContract,
+    ERC20BetKernelProxy,
+    ERC721BetKernelProxy,
+    BetOwnerBasedOracle,
+    OwnerBasedOracle,
+    ERC20PaymentProxy,
+    ERC721PaymentProxy,
+    OwnerBased,
+    DummyERC721Token,
+    DummyToken,
+    EtherToken
+}
+

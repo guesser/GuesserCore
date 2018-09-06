@@ -1,2 +1,2 @@
-var json = require("../../build/contracts/ERC20PaymentProxy.json");
-export const ERC20PaymentProxy = json;
+var json = require("../../../build/contracts/ERC20PaymentProxy.json");
+module.exports = json;

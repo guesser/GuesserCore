@@ -1,2 +1,2 @@
-var json = require("../../build/contracts/EtherToken.json");
-export const EtherToken = json;
+var json = require("../../../build/contracts/EtherToken.json");
+module.exports = json;

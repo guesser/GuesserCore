@@ -1,2 +1,2 @@
-var json = require("../../build/contracts/OwnerBasedOracle.json");
-export const OwnerBasedOracle = json;
+var json = require("../../../build/contracts/OwnerBasedOracle.json");
+module.exports = json;
