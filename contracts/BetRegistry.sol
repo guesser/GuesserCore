@@ -131,6 +131,7 @@ contract BetRegistry is RegistryStorage {
 
         require(betRegistry[_betHash].playerBets[_playerBetHash].player == address(0));
         betRegistry[_betHash].playerBets[_playerBetHash] = _bet;
+        addTotalPrincipal(_betHash, _number);
 
         return _playerBetHash;
     }
