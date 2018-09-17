@@ -44,6 +44,10 @@ contract BetRegistry is RegistryStorage {
         _;
     }
 
+    function setProxyRegistry(address _proxyRegistry) public onlyOwner {
+        proxyRegistry = ProxyRegistry(_proxyRegistry);
+    }
+
     /**
      * @dev Function to create bets in the registry
      * @param _paymentsProxy address Direction of the payments proxy contract
@@ -364,7 +368,7 @@ contract BetRegistry is RegistryStorage {
         return betRegistry[_betHash].principalInOption[_option];
     }
 
-    function getOptionTitle (
+    function getOptionTitle(
         bytes32 _betHash,
         uint _option
     )
