@@ -28,7 +28,7 @@ contract RegistrySetter is Pausable {
         whenNotPaused
     {
         betRegistry = BetRegistry(_betRegistry);
-        if (!paused()) {
+        if (paused == false) {
             pause();
         }
     }
