@@ -30,4 +30,16 @@ contract RegistrySetter is Pausable {
         betRegistry = BetRegistry(_betRegistry);
         pause();
     }
+
+    /**
+     * @dev Function that returns the address of the betRegistry setted
+     * @return address
+     */
+    function betRegistry ()
+        public
+        view
+        returns (address)
+    {
+        return address(betRegistry);
+    }
 }
