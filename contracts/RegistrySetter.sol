@@ -25,7 +25,6 @@ contract RegistrySetter is Pausable {
     function setBetRegistry (address _betRegistry)
         public
         onlyOwner
-        whenNotPaused
     {
         betRegistry = BetRegistry(_betRegistry);
         if (paused == false) {
