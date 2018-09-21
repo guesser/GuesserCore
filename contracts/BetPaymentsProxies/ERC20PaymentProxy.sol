@@ -52,8 +52,7 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
         public
         returns(bool)
     {
-        ERC20(_token).transferFrom(_from, _to, _amount);
-        return true;
+        return ERC20(_token).transferFrom(_from, _to, _amount);
     }
 
     /**
@@ -72,8 +71,7 @@ contract ERC20PaymentProxy is RegistrySetter, BetPaymentsProxyInterface {
         public
         returns(bool)
     {
-        ERC20(_token).transfer(_to, _amount);
-        return true;
+        return ERC20(_token).transfer(_to, _amount);
     }
 
     /**

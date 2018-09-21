@@ -289,14 +289,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyRegistry.sol",
     "exportedSymbols": {
       "ProxyRegistry": [
-        2986
+        2982
       ]
     },
-    "id": 2987,
+    "id": 2983,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2866,
+        "id": 2862,
         "literals": [
           "solidity",
           "0.4",
@@ -308,10 +308,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
         "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
-        "id": 2867,
+        "id": 2863,
         "nodeType": "ImportDirective",
-        "scope": 2987,
-        "sourceUnit": 3252,
+        "scope": 2983,
+        "sourceUnit": 3248,
         "src": "37:64:20",
         "symbolAliases": [],
         "unitAlias": ""
@@ -322,43 +322,43 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2868,
+              "id": 2864,
               "name": "Pausable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3251,
+              "referencedDeclaration": 3247,
               "src": "326:8:20",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Pausable_$3251",
+                "typeIdentifier": "t_contract$_Pausable_$3247",
                 "typeString": "contract Pausable"
               }
             },
-            "id": 2869,
+            "id": 2865,
             "nodeType": "InheritanceSpecifier",
             "src": "326:8:20"
           }
         ],
         "contractDependencies": [
-          3251,
-          3431
+          3247,
+          3427
         ],
         "contractKind": "contract",
         "documentation": "@title Proxy Registry. ",
         "fullyImplemented": true,
-        "id": 2986,
+        "id": 2982,
         "linearizedBaseContracts": [
-          2986,
-          3251,
-          3431
+          2982,
+          3247,
+          3427
         ],
         "name": "ProxyRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 2873,
+            "id": 2869,
             "name": "kernelProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "341:54:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -367,9 +367,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2872,
+              "id": 2868,
               "keyType": {
-                "id": 2870,
+                "id": 2866,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "349:7:20",
@@ -385,7 +385,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2871,
+                "id": 2867,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "360:4:20",
@@ -400,10 +400,10 @@
           },
           {
             "constant": false,
-            "id": 2877,
+            "id": 2873,
             "name": "paymentsProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "401:56:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -412,9 +412,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2876,
+              "id": 2872,
               "keyType": {
-                "id": 2874,
+                "id": 2870,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "409:7:20",
@@ -430,7 +430,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2875,
+                "id": 2871,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "420:4:20",
@@ -445,10 +445,10 @@
           },
           {
             "constant": false,
-            "id": 2881,
+            "id": 2877,
             "name": "oracleProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "463:54:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -457,9 +457,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2880,
+              "id": 2876,
               "keyType": {
-                "id": 2878,
+                "id": 2874,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "471:7:20",
@@ -475,7 +475,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2879,
+                "id": 2875,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "482:4:20",
@@ -490,10 +490,10 @@
           },
           {
             "constant": false,
-            "id": 2885,
+            "id": 2881,
             "name": "termsProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "523:53:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -502,9 +502,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2884,
+              "id": 2880,
               "keyType": {
-                "id": 2882,
+                "id": 2878,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "531:7:20",
@@ -520,7 +520,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2883,
+                "id": 2879,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "542:4:20",
@@ -535,14 +535,14 @@
           },
           {
             "body": {
-              "id": 2900,
+              "id": 2896,
               "nodeType": "Block",
               "src": "716:66:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2898,
+                    "id": 2894,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -551,25 +551,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2894,
+                        "id": 2890,
                         "name": "kernelProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2873,
+                        "referencedDeclaration": 2869,
                         "src": "726:22:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2896,
+                      "id": 2892,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2895,
+                        "id": 2891,
                         "name": "_kernelProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2887,
+                        "referencedDeclaration": 2883,
                         "src": "749:12:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -591,11 +591,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2897,
+                      "id": 2893,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2889,
+                      "referencedDeclaration": 2885,
                       "src": "765:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -608,28 +608,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2899,
+                  "id": 2895,
                   "nodeType": "ExpressionStatement",
                   "src": "726:49:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2901,
+            "id": 2897,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2892,
+                "id": 2888,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2891,
+                  "id": 2887,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "702:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -643,15 +643,15 @@
             "name": "setKernelProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2890,
+              "id": 2886,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2887,
+                  "id": 2883,
                   "name": "_kernelProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2901,
+                  "scope": 2897,
                   "src": "627:20:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -660,7 +660,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2886,
+                    "id": 2882,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "627:7:20",
@@ -674,10 +674,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2889,
+                  "id": 2885,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2901,
+                  "scope": 2897,
                   "src": "657:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -686,7 +686,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2888,
+                    "id": 2884,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "657:4:20",
@@ -703,12 +703,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2893,
+              "id": 2889,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "716:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "583:199:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -716,14 +716,14 @@
           },
           {
             "body": {
-              "id": 2916,
+              "id": 2912,
               "nodeType": "Block",
               "src": "925:70:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2914,
+                    "id": 2910,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -732,25 +732,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2910,
+                        "id": 2906,
                         "name": "paymentsProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2877,
+                        "referencedDeclaration": 2873,
                         "src": "935:24:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2912,
+                      "id": 2908,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2911,
+                        "id": 2907,
                         "name": "_paymentsProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2903,
+                        "referencedDeclaration": 2899,
                         "src": "960:14:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -772,11 +772,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2913,
+                      "id": 2909,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2905,
+                      "referencedDeclaration": 2901,
                       "src": "978:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -789,28 +789,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2915,
+                  "id": 2911,
                   "nodeType": "ExpressionStatement",
                   "src": "935:53:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2917,
+            "id": 2913,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2908,
+                "id": 2904,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2907,
+                  "id": 2903,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "911:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -824,15 +824,15 @@
             "name": "setPaymentsProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2906,
+              "id": 2902,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2903,
+                  "id": 2899,
                   "name": "_paymentsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2917,
+                  "scope": 2913,
                   "src": "834:22:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -841,7 +841,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2902,
+                    "id": 2898,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "834:7:20",
@@ -855,10 +855,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2905,
+                  "id": 2901,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2917,
+                  "scope": 2913,
                   "src": "866:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -867,7 +867,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2904,
+                    "id": 2900,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "866:4:20",
@@ -884,12 +884,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2909,
+              "id": 2905,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "925:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "788:207:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -897,14 +897,14 @@
           },
           {
             "body": {
-              "id": 2932,
+              "id": 2928,
               "nodeType": "Block",
               "src": "1134:66:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2930,
+                    "id": 2926,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -913,25 +913,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2926,
+                        "id": 2922,
                         "name": "oracleProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2881,
+                        "referencedDeclaration": 2877,
                         "src": "1144:22:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2928,
+                      "id": 2924,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2927,
+                        "id": 2923,
                         "name": "_oracleProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2919,
+                        "referencedDeclaration": 2915,
                         "src": "1167:12:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -953,11 +953,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2929,
+                      "id": 2925,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2921,
+                      "referencedDeclaration": 2917,
                       "src": "1183:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -970,28 +970,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2931,
+                  "id": 2927,
                   "nodeType": "ExpressionStatement",
                   "src": "1144:49:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2933,
+            "id": 2929,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2924,
+                "id": 2920,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2923,
+                  "id": 2919,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "1120:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1005,15 +1005,15 @@
             "name": "setOracleProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2922,
+              "id": 2918,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2919,
+                  "id": 2915,
                   "name": "_oracleProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2933,
+                  "scope": 2929,
                   "src": "1045:20:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1022,7 +1022,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2918,
+                    "id": 2914,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1045:7:20",
@@ -1036,10 +1036,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2921,
+                  "id": 2917,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2933,
+                  "scope": 2929,
                   "src": "1075:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1048,7 +1048,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2920,
+                    "id": 2916,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1075:4:20",
@@ -1065,12 +1065,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2925,
+              "id": 2921,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1134:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "1001:199:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1078,14 +1078,14 @@
           },
           {
             "body": {
-              "id": 2948,
+              "id": 2944,
               "nodeType": "Block",
               "src": "1337:64:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2946,
+                    "id": 2942,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1094,25 +1094,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2942,
+                        "id": 2938,
                         "name": "termsProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2885,
+                        "referencedDeclaration": 2881,
                         "src": "1347:21:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2944,
+                      "id": 2940,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2943,
+                        "id": 2939,
                         "name": "_termsProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2935,
+                        "referencedDeclaration": 2931,
                         "src": "1369:11:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1134,11 +1134,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2945,
+                      "id": 2941,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2937,
+                      "referencedDeclaration": 2933,
                       "src": "1384:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1151,28 +1151,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2947,
+                  "id": 2943,
                   "nodeType": "ExpressionStatement",
                   "src": "1347:47:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2949,
+            "id": 2945,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2940,
+                "id": 2936,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2939,
+                  "id": 2935,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "1323:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1186,15 +1186,15 @@
             "name": "setTermsProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2938,
+              "id": 2934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2935,
+                  "id": 2931,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2949,
+                  "scope": 2945,
                   "src": "1249:19:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1203,7 +1203,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2934,
+                    "id": 2930,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1249:7:20",
@@ -1217,10 +1217,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2937,
+                  "id": 2933,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2949,
+                  "scope": 2945,
                   "src": "1278:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1229,7 +1229,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2936,
+                    "id": 2932,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1278:4:20",
@@ -1246,12 +1246,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2941,
+              "id": 2937,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1337:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "1206:195:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1259,7 +1259,7 @@
           },
           {
             "body": {
-              "id": 2984,
+              "id": 2980,
               "nodeType": "Block",
               "src": "1475:270:20",
               "statements": [
@@ -1270,7 +1270,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 2978,
+                    "id": 2974,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1281,7 +1281,7 @@
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
-                      "id": 2972,
+                      "id": 2968,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1292,7 +1292,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 2966,
+                        "id": 2962,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1303,7 +1303,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 2960,
+                          "id": 2956,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1312,25 +1312,25 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 2956,
+                              "id": 2952,
                               "name": "kernelProxiesAllowance",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2873,
+                              "referencedDeclaration": 2869,
                               "src": "1489:22:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 2958,
+                            "id": 2954,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 2957,
+                              "id": 2953,
                               "name": "_proxy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2951,
+                              "referencedDeclaration": 2947,
                               "src": "1512:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -1353,7 +1353,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 2959,
+                            "id": 2955,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1382,7 +1382,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 2965,
+                          "id": 2961,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1391,25 +1391,25 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 2961,
+                              "id": 2957,
                               "name": "paymentsProxiesAllowance",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2877,
+                              "referencedDeclaration": 2873,
                               "src": "1543:24:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 2963,
+                            "id": 2959,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 2962,
+                              "id": 2958,
                               "name": "_proxy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2951,
+                              "referencedDeclaration": 2947,
                               "src": "1568:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -1432,7 +1432,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 2964,
+                            "id": 2960,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1467,7 +1467,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 2971,
+                        "id": 2967,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1476,25 +1476,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 2967,
+                            "id": 2963,
                             "name": "oracleProxiesAllowance",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2881,
+                            "referencedDeclaration": 2877,
                             "src": "1599:22:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                               "typeString": "mapping(address => bool)"
                             }
                           },
-                          "id": 2969,
+                          "id": 2965,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 2968,
+                            "id": 2964,
                             "name": "_proxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2951,
+                            "referencedDeclaration": 2947,
                             "src": "1622:6:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1517,7 +1517,7 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "74727565",
-                          "id": 2970,
+                          "id": 2966,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1552,7 +1552,7 @@
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
-                      "id": 2977,
+                      "id": 2973,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1561,25 +1561,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 2973,
+                          "id": 2969,
                           "name": "termsProxiesAllowance",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2885,
+                          "referencedDeclaration": 2881,
                           "src": "1653:21:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                             "typeString": "mapping(address => bool)"
                           }
                         },
-                        "id": 2975,
+                        "id": 2971,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 2974,
+                          "id": 2970,
                           "name": "_proxy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2951,
+                          "referencedDeclaration": 2947,
                           "src": "1675:6:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1602,7 +1602,7 @@
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "74727565",
-                        "id": 2976,
+                        "id": 2972,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1630,14 +1630,14 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 2981,
+                  "id": 2977,
                   "nodeType": "IfStatement",
                   "src": "1485:231:20",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 2979,
+                      "id": 2975,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1652,8 +1652,8 @@
                       },
                       "value": "true"
                     },
-                    "functionReturnParameters": 2955,
-                    "id": 2980,
+                    "functionReturnParameters": 2951,
+                    "id": 2976,
                     "nodeType": "Return",
                     "src": "1705:11:20"
                   }
@@ -1662,7 +1662,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "66616c7365",
-                    "id": 2982,
+                    "id": 2978,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -1677,15 +1677,15 @@
                     },
                     "value": "false"
                   },
-                  "functionReturnParameters": 2955,
-                  "id": 2983,
+                  "functionReturnParameters": 2951,
+                  "id": 2979,
                   "nodeType": "Return",
                   "src": "1726:12:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2985,
+            "id": 2981,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1693,15 +1693,15 @@
             "name": "addressInProxies",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2952,
+              "id": 2948,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2951,
+                  "id": 2947,
                   "name": "_proxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2985,
+                  "scope": 2981,
                   "src": "1433:14:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1710,7 +1710,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2950,
+                    "id": 2946,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1433:7:20",
@@ -1727,15 +1727,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2955,
+              "id": 2951,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2954,
+                  "id": 2950,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2985,
+                  "scope": 2981,
                   "src": "1469:4:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1744,7 +1744,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2953,
+                    "id": 2949,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1469:4:20",
@@ -1759,14 +1759,14 @@
               ],
               "src": "1468:6:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "1407:338:20",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2987,
+        "scope": 2983,
         "src": "300:1447:20"
       }
     ],
@@ -1776,14 +1776,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyRegistry.sol",
     "exportedSymbols": {
       "ProxyRegistry": [
-        2986
+        2982
       ]
     },
-    "id": 2987,
+    "id": 2983,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2866,
+        "id": 2862,
         "literals": [
           "solidity",
           "0.4",
@@ -1795,10 +1795,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
         "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
-        "id": 2867,
+        "id": 2863,
         "nodeType": "ImportDirective",
-        "scope": 2987,
-        "sourceUnit": 3252,
+        "scope": 2983,
+        "sourceUnit": 3248,
         "src": "37:64:20",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1809,43 +1809,43 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2868,
+              "id": 2864,
               "name": "Pausable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3251,
+              "referencedDeclaration": 3247,
               "src": "326:8:20",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Pausable_$3251",
+                "typeIdentifier": "t_contract$_Pausable_$3247",
                 "typeString": "contract Pausable"
               }
             },
-            "id": 2869,
+            "id": 2865,
             "nodeType": "InheritanceSpecifier",
             "src": "326:8:20"
           }
         ],
         "contractDependencies": [
-          3251,
-          3431
+          3247,
+          3427
         ],
         "contractKind": "contract",
         "documentation": "@title Proxy Registry. ",
         "fullyImplemented": true,
-        "id": 2986,
+        "id": 2982,
         "linearizedBaseContracts": [
-          2986,
-          3251,
-          3431
+          2982,
+          3247,
+          3427
         ],
         "name": "ProxyRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 2873,
+            "id": 2869,
             "name": "kernelProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "341:54:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1854,9 +1854,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2872,
+              "id": 2868,
               "keyType": {
-                "id": 2870,
+                "id": 2866,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "349:7:20",
@@ -1872,7 +1872,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2871,
+                "id": 2867,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "360:4:20",
@@ -1887,10 +1887,10 @@
           },
           {
             "constant": false,
-            "id": 2877,
+            "id": 2873,
             "name": "paymentsProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "401:56:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1899,9 +1899,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2876,
+              "id": 2872,
               "keyType": {
-                "id": 2874,
+                "id": 2870,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "409:7:20",
@@ -1917,7 +1917,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2875,
+                "id": 2871,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "420:4:20",
@@ -1932,10 +1932,10 @@
           },
           {
             "constant": false,
-            "id": 2881,
+            "id": 2877,
             "name": "oracleProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "463:54:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1944,9 +1944,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2880,
+              "id": 2876,
               "keyType": {
-                "id": 2878,
+                "id": 2874,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "471:7:20",
@@ -1962,7 +1962,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2879,
+                "id": 2875,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "482:4:20",
@@ -1977,10 +1977,10 @@
           },
           {
             "constant": false,
-            "id": 2885,
+            "id": 2881,
             "name": "termsProxiesAllowance",
             "nodeType": "VariableDeclaration",
-            "scope": 2986,
+            "scope": 2982,
             "src": "523:53:20",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1989,9 +1989,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2884,
+              "id": 2880,
               "keyType": {
-                "id": 2882,
+                "id": 2878,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "531:7:20",
@@ -2007,7 +2007,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2883,
+                "id": 2879,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "542:4:20",
@@ -2022,14 +2022,14 @@
           },
           {
             "body": {
-              "id": 2900,
+              "id": 2896,
               "nodeType": "Block",
               "src": "716:66:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2898,
+                    "id": 2894,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2038,25 +2038,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2894,
+                        "id": 2890,
                         "name": "kernelProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2873,
+                        "referencedDeclaration": 2869,
                         "src": "726:22:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2896,
+                      "id": 2892,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2895,
+                        "id": 2891,
                         "name": "_kernelProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2887,
+                        "referencedDeclaration": 2883,
                         "src": "749:12:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2078,11 +2078,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2897,
+                      "id": 2893,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2889,
+                      "referencedDeclaration": 2885,
                       "src": "765:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2095,28 +2095,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2899,
+                  "id": 2895,
                   "nodeType": "ExpressionStatement",
                   "src": "726:49:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2901,
+            "id": 2897,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2892,
+                "id": 2888,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2891,
+                  "id": 2887,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "702:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2130,15 +2130,15 @@
             "name": "setKernelProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2890,
+              "id": 2886,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2887,
+                  "id": 2883,
                   "name": "_kernelProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2901,
+                  "scope": 2897,
                   "src": "627:20:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2147,7 +2147,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2886,
+                    "id": 2882,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "627:7:20",
@@ -2161,10 +2161,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2889,
+                  "id": 2885,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2901,
+                  "scope": 2897,
                   "src": "657:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2173,7 +2173,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2888,
+                    "id": 2884,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "657:4:20",
@@ -2190,12 +2190,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2893,
+              "id": 2889,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "716:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "583:199:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2203,14 +2203,14 @@
           },
           {
             "body": {
-              "id": 2916,
+              "id": 2912,
               "nodeType": "Block",
               "src": "925:70:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2914,
+                    "id": 2910,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2219,25 +2219,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2910,
+                        "id": 2906,
                         "name": "paymentsProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2877,
+                        "referencedDeclaration": 2873,
                         "src": "935:24:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2912,
+                      "id": 2908,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2911,
+                        "id": 2907,
                         "name": "_paymentsProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2903,
+                        "referencedDeclaration": 2899,
                         "src": "960:14:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2259,11 +2259,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2913,
+                      "id": 2909,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2905,
+                      "referencedDeclaration": 2901,
                       "src": "978:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2276,28 +2276,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2915,
+                  "id": 2911,
                   "nodeType": "ExpressionStatement",
                   "src": "935:53:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2917,
+            "id": 2913,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2908,
+                "id": 2904,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2907,
+                  "id": 2903,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "911:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2311,15 +2311,15 @@
             "name": "setPaymentsProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2906,
+              "id": 2902,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2903,
+                  "id": 2899,
                   "name": "_paymentsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2917,
+                  "scope": 2913,
                   "src": "834:22:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2328,7 +2328,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2902,
+                    "id": 2898,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "834:7:20",
@@ -2342,10 +2342,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2905,
+                  "id": 2901,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2917,
+                  "scope": 2913,
                   "src": "866:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2354,7 +2354,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2904,
+                    "id": 2900,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "866:4:20",
@@ -2371,12 +2371,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2909,
+              "id": 2905,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "925:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "788:207:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2384,14 +2384,14 @@
           },
           {
             "body": {
-              "id": 2932,
+              "id": 2928,
               "nodeType": "Block",
               "src": "1134:66:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2930,
+                    "id": 2926,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2400,25 +2400,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2926,
+                        "id": 2922,
                         "name": "oracleProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2881,
+                        "referencedDeclaration": 2877,
                         "src": "1144:22:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2928,
+                      "id": 2924,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2927,
+                        "id": 2923,
                         "name": "_oracleProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2919,
+                        "referencedDeclaration": 2915,
                         "src": "1167:12:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2440,11 +2440,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2929,
+                      "id": 2925,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2921,
+                      "referencedDeclaration": 2917,
                       "src": "1183:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2457,28 +2457,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2931,
+                  "id": 2927,
                   "nodeType": "ExpressionStatement",
                   "src": "1144:49:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2933,
+            "id": 2929,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2924,
+                "id": 2920,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2923,
+                  "id": 2919,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "1120:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2492,15 +2492,15 @@
             "name": "setOracleProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2922,
+              "id": 2918,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2919,
+                  "id": 2915,
                   "name": "_oracleProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2933,
+                  "scope": 2929,
                   "src": "1045:20:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2509,7 +2509,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2918,
+                    "id": 2914,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1045:7:20",
@@ -2523,10 +2523,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2921,
+                  "id": 2917,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2933,
+                  "scope": 2929,
                   "src": "1075:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2535,7 +2535,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2920,
+                    "id": 2916,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1075:4:20",
@@ -2552,12 +2552,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2925,
+              "id": 2921,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1134:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "1001:199:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2565,14 +2565,14 @@
           },
           {
             "body": {
-              "id": 2948,
+              "id": 2944,
               "nodeType": "Block",
               "src": "1337:64:20",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 2946,
+                    "id": 2942,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2581,25 +2581,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 2942,
+                        "id": 2938,
                         "name": "termsProxiesAllowance",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2885,
+                        "referencedDeclaration": 2881,
                         "src": "1347:21:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 2944,
+                      "id": 2940,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 2943,
+                        "id": 2939,
                         "name": "_termsProxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2935,
+                        "referencedDeclaration": 2931,
                         "src": "1369:11:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2621,11 +2621,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 2945,
+                      "id": 2941,
                       "name": "_allowance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2937,
+                      "referencedDeclaration": 2933,
                       "src": "1384:10:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2638,28 +2638,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2947,
+                  "id": 2943,
                   "nodeType": "ExpressionStatement",
                   "src": "1347:47:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2949,
+            "id": 2945,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2940,
+                "id": 2936,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2939,
+                  "id": 2935,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3379,
+                  "referencedDeclaration": 3375,
                   "src": "1323:9:20",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2673,15 +2673,15 @@
             "name": "setTermsProxiesAllowance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2938,
+              "id": 2934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2935,
+                  "id": 2931,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2949,
+                  "scope": 2945,
                   "src": "1249:19:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2690,7 +2690,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2934,
+                    "id": 2930,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1249:7:20",
@@ -2704,10 +2704,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2937,
+                  "id": 2933,
                   "name": "_allowance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2949,
+                  "scope": 2945,
                   "src": "1278:15:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2716,7 +2716,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2936,
+                    "id": 2932,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1278:4:20",
@@ -2733,12 +2733,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2941,
+              "id": 2937,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1337:0:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "1206:195:20",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2746,7 +2746,7 @@
           },
           {
             "body": {
-              "id": 2984,
+              "id": 2980,
               "nodeType": "Block",
               "src": "1475:270:20",
               "statements": [
@@ -2757,7 +2757,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 2978,
+                    "id": 2974,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2768,7 +2768,7 @@
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
-                      "id": 2972,
+                      "id": 2968,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2779,7 +2779,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 2966,
+                        "id": 2962,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2790,7 +2790,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 2960,
+                          "id": 2956,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2799,25 +2799,25 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 2956,
+                              "id": 2952,
                               "name": "kernelProxiesAllowance",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2873,
+                              "referencedDeclaration": 2869,
                               "src": "1489:22:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 2958,
+                            "id": 2954,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 2957,
+                              "id": 2953,
                               "name": "_proxy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2951,
+                              "referencedDeclaration": 2947,
                               "src": "1512:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -2840,7 +2840,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 2959,
+                            "id": 2955,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2869,7 +2869,7 @@
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 2965,
+                          "id": 2961,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2878,25 +2878,25 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 2961,
+                              "id": 2957,
                               "name": "paymentsProxiesAllowance",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2877,
+                              "referencedDeclaration": 2873,
                               "src": "1543:24:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 2963,
+                            "id": 2959,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 2962,
+                              "id": 2958,
                               "name": "_proxy",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2951,
+                              "referencedDeclaration": 2947,
                               "src": "1568:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -2919,7 +2919,7 @@
                           "rightExpression": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 2964,
+                            "id": 2960,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2954,7 +2954,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 2971,
+                        "id": 2967,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2963,25 +2963,25 @@
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
-                            "id": 2967,
+                            "id": 2963,
                             "name": "oracleProxiesAllowance",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2881,
+                            "referencedDeclaration": 2877,
                             "src": "1599:22:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                               "typeString": "mapping(address => bool)"
                             }
                           },
-                          "id": 2969,
+                          "id": 2965,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 2968,
+                            "id": 2964,
                             "name": "_proxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2951,
+                            "referencedDeclaration": 2947,
                             "src": "1622:6:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -3004,7 +3004,7 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "74727565",
-                          "id": 2970,
+                          "id": 2966,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3039,7 +3039,7 @@
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
-                      "id": 2977,
+                      "id": 2973,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3048,25 +3048,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 2973,
+                          "id": 2969,
                           "name": "termsProxiesAllowance",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2885,
+                          "referencedDeclaration": 2881,
                           "src": "1653:21:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                             "typeString": "mapping(address => bool)"
                           }
                         },
-                        "id": 2975,
+                        "id": 2971,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 2974,
+                          "id": 2970,
                           "name": "_proxy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2951,
+                          "referencedDeclaration": 2947,
                           "src": "1675:6:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3089,7 +3089,7 @@
                       "rightExpression": {
                         "argumentTypes": null,
                         "hexValue": "74727565",
-                        "id": 2976,
+                        "id": 2972,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3117,14 +3117,14 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 2981,
+                  "id": 2977,
                   "nodeType": "IfStatement",
                   "src": "1485:231:20",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 2979,
+                      "id": 2975,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3139,8 +3139,8 @@
                       },
                       "value": "true"
                     },
-                    "functionReturnParameters": 2955,
-                    "id": 2980,
+                    "functionReturnParameters": 2951,
+                    "id": 2976,
                     "nodeType": "Return",
                     "src": "1705:11:20"
                   }
@@ -3149,7 +3149,7 @@
                   "expression": {
                     "argumentTypes": null,
                     "hexValue": "66616c7365",
-                    "id": 2982,
+                    "id": 2978,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -3164,15 +3164,15 @@
                     },
                     "value": "false"
                   },
-                  "functionReturnParameters": 2955,
-                  "id": 2983,
+                  "functionReturnParameters": 2951,
+                  "id": 2979,
                   "nodeType": "Return",
                   "src": "1726:12:20"
                 }
               ]
             },
             "documentation": null,
-            "id": 2985,
+            "id": 2981,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3180,15 +3180,15 @@
             "name": "addressInProxies",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2952,
+              "id": 2948,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2951,
+                  "id": 2947,
                   "name": "_proxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2985,
+                  "scope": 2981,
                   "src": "1433:14:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3197,7 +3197,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2950,
+                    "id": 2946,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1433:7:20",
@@ -3214,15 +3214,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2955,
+              "id": 2951,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2954,
+                  "id": 2950,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2985,
+                  "scope": 2981,
                   "src": "1469:4:20",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3231,7 +3231,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2953,
+                    "id": 2949,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1469:4:20",
@@ -3246,14 +3246,14 @@
               ],
               "src": "1468:6:20"
             },
-            "scope": 2986,
+            "scope": 2982,
             "src": "1407:338:20",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2987,
+        "scope": 2983,
         "src": "300:1447:20"
       }
     ],
@@ -3267,10 +3267,10 @@
     "70": {
       "events": {},
       "links": {},
-      "address": "0x06b61077be94e297e5be3440059d8eaae3ccfe78",
-      "transactionHash": "0x76ef29b0d88eec82f8ae320673da8663636eeafa42418354965639a02541026d"
+      "address": "0xa5c55cac66684039f826992faa8fb71cc60afb30",
+      "transactionHash": "0xef484c5fa2ec3c46441c047efb3951c0674fbd72b41314977d56e10181ece4e7"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-19T07:53:41.155Z"
+  "updatedAt": "2018-09-20T18:36:37.349Z"
 }

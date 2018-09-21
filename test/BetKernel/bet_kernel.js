@@ -155,7 +155,7 @@ contract("Bet Kernel Test", async (accounts) => {
         ).to.be.equal(3);
         expect(
             await betRegistry.getPlayerBetPlayer(betHash, playerBetHash)
-        ).to.be.equal(BETTER_1)
+        ).to.be.equal(BETTER_1);
     });
 
     it("should allow a user to get back the profits", async () => {

@@ -222,7 +222,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 137,
-        "sourceUnit": 3032,
+        "sourceUnit": 3028,
         "src": "37:30:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -255,7 +255,7 @@
         "id": 5,
         "nodeType": "ImportDirective",
         "scope": 137,
-        "sourceUnit": 2312,
+        "sourceUnit": 2308,
         "src": "122:24:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -266,7 +266,7 @@
         "id": 6,
         "nodeType": "ImportDirective",
         "scope": 137,
-        "sourceUnit": 2751,
+        "sourceUnit": 2747,
         "src": "147:55:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -280,10 +280,10 @@
               "id": 7,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3031,
+              "referencedDeclaration": 3027,
               "src": "312:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$3031",
+                "typeIdentifier": "t_contract$_RegistrySetter_$3027",
                 "typeString": "contract RegistrySetter"
               }
             },
@@ -293,9 +293,9 @@
           }
         ],
         "contractDependencies": [
-          3031,
-          3251,
-          3431
+          3027,
+          3247,
+          3427
         ],
         "contractKind": "contract",
         "documentation": "@title BetKernel. ",
@@ -303,9 +303,9 @@
         "id": 136,
         "linearizedBaseContracts": [
           136,
-          3031,
-          3251,
-          3431
+          3027,
+          3247,
+          3427
         ],
         "name": "BetKernel",
         "nodeType": "ContractDefinition",
@@ -373,7 +373,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5173,
+                          "referencedDeclaration": 5169,
                           "src": "883:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -446,12 +446,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "819:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -462,7 +462,7 @@
                       "lValueRequested": false,
                       "memberName": "getPlayerBetHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1715,
+                      "referencedDeclaration": 1711,
                       "src": "819:28:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$_t_address_$_t_uint256_$_t_uint256_$returns$_t_bytes32_$",
@@ -549,12 +549,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "979:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -565,7 +565,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetKernelProxy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1757,
+                      "referencedDeclaration": 1753,
                       "src": "979:29:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -632,7 +632,7 @@
                                   "name": "keccak256",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 5167,
+                                  "referencedDeclaration": 5163,
                                   "src": "1120:9:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -817,10 +817,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5176,
-                        5177
+                        5172,
+                        5173
                       ],
-                      "referencedDeclaration": 5176,
+                      "referencedDeclaration": 5172,
                       "src": "1028:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -881,7 +881,7 @@
                   "name": "whenPaused",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3220,
+                  "referencedDeclaration": 3216,
                   "src": "744:10:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1074,12 +1074,12 @@
                             "name": "betRegistry",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              2998
+                              2994
                             ],
-                            "referencedDeclaration": 2998,
+                            "referencedDeclaration": 2994,
                             "src": "1848:11:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                              "typeIdentifier": "t_contract$_BetRegistry_$2207",
                               "typeString": "contract BetRegistry"
                             }
                           },
@@ -1090,7 +1090,7 @@
                           "lValueRequested": false,
                           "memberName": "betPayments",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3040,
+                          "referencedDeclaration": 3036,
                           "src": "1848:23:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
@@ -1210,12 +1210,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "1908:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -1226,7 +1226,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetKernelProxy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1757,
+                      "referencedDeclaration": 1753,
                       "src": "1908:29:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -1313,12 +1313,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "1982:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -1329,7 +1329,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetPaymentsProxy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1778,
+                      "referencedDeclaration": 1774,
                       "src": "1982:31:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -1416,12 +1416,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "2058:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -1432,7 +1432,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetPaymentsToken",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1799,
+                      "referencedDeclaration": 1795,
                       "src": "2058:31:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -1672,7 +1672,7 @@
                                   "name": "keccak256",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 5167,
+                                  "referencedDeclaration": 5163,
                                   "src": "2358:9:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -1823,10 +1823,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5176,
-                        5177
+                        5172,
+                        5173
                       ],
-                      "referencedDeclaration": 5176,
+                      "referencedDeclaration": 5172,
                       "src": "2266:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2217,7 +2217,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 137,
-        "sourceUnit": 3032,
+        "sourceUnit": 3028,
         "src": "37:30:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2250,7 +2250,7 @@
         "id": 5,
         "nodeType": "ImportDirective",
         "scope": 137,
-        "sourceUnit": 2312,
+        "sourceUnit": 2308,
         "src": "122:24:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2261,7 +2261,7 @@
         "id": 6,
         "nodeType": "ImportDirective",
         "scope": 137,
-        "sourceUnit": 2751,
+        "sourceUnit": 2747,
         "src": "147:55:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2275,10 +2275,10 @@
               "id": 7,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3031,
+              "referencedDeclaration": 3027,
               "src": "312:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$3031",
+                "typeIdentifier": "t_contract$_RegistrySetter_$3027",
                 "typeString": "contract RegistrySetter"
               }
             },
@@ -2288,9 +2288,9 @@
           }
         ],
         "contractDependencies": [
-          3031,
-          3251,
-          3431
+          3027,
+          3247,
+          3427
         ],
         "contractKind": "contract",
         "documentation": "@title BetKernel. ",
@@ -2298,9 +2298,9 @@
         "id": 136,
         "linearizedBaseContracts": [
           136,
-          3031,
-          3251,
-          3431
+          3027,
+          3247,
+          3427
         ],
         "name": "BetKernel",
         "nodeType": "ContractDefinition",
@@ -2368,7 +2368,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5173,
+                          "referencedDeclaration": 5169,
                           "src": "883:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2441,12 +2441,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "819:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -2457,7 +2457,7 @@
                       "lValueRequested": false,
                       "memberName": "getPlayerBetHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1715,
+                      "referencedDeclaration": 1711,
                       "src": "819:28:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$_t_address_$_t_uint256_$_t_uint256_$returns$_t_bytes32_$",
@@ -2544,12 +2544,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "979:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -2560,7 +2560,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetKernelProxy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1757,
+                      "referencedDeclaration": 1753,
                       "src": "979:29:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -2627,7 +2627,7 @@
                                   "name": "keccak256",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 5167,
+                                  "referencedDeclaration": 5163,
                                   "src": "1120:9:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -2812,10 +2812,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5176,
-                        5177
+                        5172,
+                        5173
                       ],
-                      "referencedDeclaration": 5176,
+                      "referencedDeclaration": 5172,
                       "src": "1028:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2876,7 +2876,7 @@
                   "name": "whenPaused",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3220,
+                  "referencedDeclaration": 3216,
                   "src": "744:10:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3069,12 +3069,12 @@
                             "name": "betRegistry",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              2998
+                              2994
                             ],
-                            "referencedDeclaration": 2998,
+                            "referencedDeclaration": 2994,
                             "src": "1848:11:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                              "typeIdentifier": "t_contract$_BetRegistry_$2207",
                               "typeString": "contract BetRegistry"
                             }
                           },
@@ -3085,7 +3085,7 @@
                           "lValueRequested": false,
                           "memberName": "betPayments",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 3040,
+                          "referencedDeclaration": 3036,
                           "src": "1848:23:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
@@ -3205,12 +3205,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "1908:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -3221,7 +3221,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetKernelProxy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1757,
+                      "referencedDeclaration": 1753,
                       "src": "1908:29:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -3308,12 +3308,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "1982:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -3324,7 +3324,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetPaymentsProxy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1778,
+                      "referencedDeclaration": 1774,
                       "src": "1982:31:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -3411,12 +3411,12 @@
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2998
+                          2994
                         ],
-                        "referencedDeclaration": 2998,
+                        "referencedDeclaration": 2994,
                         "src": "2058:11:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2211",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
                           "typeString": "contract BetRegistry"
                         }
                       },
@@ -3427,7 +3427,7 @@
                       "lValueRequested": false,
                       "memberName": "getBetPaymentsToken",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1799,
+                      "referencedDeclaration": 1795,
                       "src": "2058:31:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_address_$",
@@ -3667,7 +3667,7 @@
                                   "name": "keccak256",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 5167,
+                                  "referencedDeclaration": 5163,
                                   "src": "2358:9:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
@@ -3818,10 +3818,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5176,
-                        5177
+                        5172,
+                        5173
                       ],
-                      "referencedDeclaration": 5176,
+                      "referencedDeclaration": 5172,
                       "src": "2266:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4236,10 +4236,10 @@
         }
       },
       "links": {},
-      "address": "0x2630393fc5c900b6ac03010103f71d13a2ab34c8",
-      "transactionHash": "0xc4fff6cb71301efca9ee59d5bc7c8c655dbebdb37008a767133b08bbd7fd44a3"
+      "address": "0xe9604dc1f4479e5aa4ebefb1c454afcb3ca14b04",
+      "transactionHash": "0xe82b316ed89baa434b48241acf86f2f37867a79db38e5b309011c625f0e33e5d"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-19T07:53:41.162Z"
+  "updatedAt": "2018-09-20T18:36:37.355Z"
 }

@@ -41,8 +41,6 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         public
         returns(bool)
     {
-        require(bytes(betRegistry.getOptionTitle(_betHash, _option)).length != 0);
-
         address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
         address _paymentsToken = betRegistry.getBetPaymentsToken(_betHash);
 
