@@ -224,14 +224,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracleProxies/OwnerBasedOracle.sol",
     "exportedSymbols": {
       "OwnerBasedOracle": [
-        995
+        982
       ]
     },
-    "id": 996,
+    "id": 983,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 918,
+        "id": 905,
         "literals": [
           "solidity",
           "0.4",
@@ -243,10 +243,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
         "file": "../ProxyInterfaces/BetOracleProxyInterface.sol",
-        "id": 919,
+        "id": 906,
         "nodeType": "ImportDirective",
-        "scope": 996,
-        "sourceUnit": 2764,
+        "scope": 983,
+        "sourceUnit": 2751,
         "src": "37:56:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -254,10 +254,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
         "file": "../RegistrySetter.sol",
-        "id": 920,
+        "id": 907,
         "nodeType": "ImportDirective",
-        "scope": 996,
-        "sourceUnit": 3028,
+        "scope": 983,
+        "sourceUnit": 3015,
         "src": "94:31:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -268,17 +268,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 921,
+              "id": 908,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3027,
+              "referencedDeclaration": 3014,
               "src": "360:14:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$3027",
+                "typeIdentifier": "t_contract$_RegistrySetter_$3014",
                 "typeString": "contract RegistrySetter"
               }
             },
-            "id": 922,
+            "id": 909,
             "nodeType": "InheritanceSpecifier",
             "src": "360:14:5"
           },
@@ -286,47 +286,47 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 923,
+              "id": 910,
               "name": "BetOracleProxyInterface",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2763,
+              "referencedDeclaration": 2750,
               "src": "376:23:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BetOracleProxyInterface_$2763",
+                "typeIdentifier": "t_contract$_BetOracleProxyInterface_$2750",
                 "typeString": "contract BetOracleProxyInterface"
               }
             },
-            "id": 924,
+            "id": 911,
             "nodeType": "InheritanceSpecifier",
             "src": "376:23:5"
           }
         ],
         "contractDependencies": [
-          2763,
-          3027,
-          3247,
-          3427
+          2750,
+          3014,
+          3234,
+          3414
         ],
         "contractKind": "contract",
         "documentation": "@title OwnerBasedOracle. ",
         "fullyImplemented": true,
-        "id": 995,
+        "id": 982,
         "linearizedBaseContracts": [
-          995,
-          2763,
-          3027,
-          3247,
-          3427
+          982,
+          2750,
+          3014,
+          3234,
+          3414
         ],
         "name": "OwnerBasedOracle",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 928,
+            "id": 915,
             "name": "betReady",
             "nodeType": "VariableDeclaration",
-            "scope": 995,
+            "scope": 982,
             "src": "407:41:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -335,9 +335,9 @@
               "typeString": "mapping(bytes32 => bool)"
             },
             "typeName": {
-              "id": 927,
+              "id": 914,
               "keyType": {
-                "id": 925,
+                "id": 912,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "415:7:5",
@@ -353,7 +353,7 @@
                 "typeString": "mapping(bytes32 => bool)"
               },
               "valueType": {
-                "id": 926,
+                "id": 913,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "426:4:5",
@@ -368,10 +368,10 @@
           },
           {
             "constant": false,
-            "id": 932,
+            "id": 919,
             "name": "betOutcome",
             "nodeType": "VariableDeclaration",
-            "scope": 995,
+            "scope": 982,
             "src": "454:43:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -380,9 +380,9 @@
               "typeString": "mapping(bytes32 => uint256)"
             },
             "typeName": {
-              "id": 931,
+              "id": 918,
               "keyType": {
-                "id": 929,
+                "id": 916,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "462:7:5",
@@ -398,7 +398,7 @@
                 "typeString": "mapping(bytes32 => uint256)"
               },
               "valueType": {
-                "id": 930,
+                "id": 917,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "473:4:5",
@@ -413,7 +413,7 @@
           },
           {
             "body": {
-              "id": 943,
+              "id": 930,
               "nodeType": "Block",
               "src": "830:42:5",
               "statements": [
@@ -422,25 +422,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 939,
+                      "id": 926,
                       "name": "betReady",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 928,
+                      "referencedDeclaration": 915,
                       "src": "847:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                         "typeString": "mapping(bytes32 => bool)"
                       }
                     },
-                    "id": 941,
+                    "id": 928,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 940,
+                      "id": 927,
                       "name": "_betHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 934,
+                      "referencedDeclaration": 921,
                       "src": "856:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -458,15 +458,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 938,
-                  "id": 942,
+                  "functionReturnParameters": 925,
+                  "id": 929,
                   "nodeType": "Return",
                   "src": "840:25:5"
                 }
               ]
             },
             "documentation": "@dev Function that returns if the oracle is ready to return the outcome\n@param _betHash bytes32 the hash of the bet we are asking for\n@return bool if the outcome is ready to get it",
-            "id": 944,
+            "id": 931,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -474,15 +474,15 @@
             "name": "outcomeReady",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 935,
+              "id": 922,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 934,
+                  "id": 921,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 944,
+                  "scope": 931,
                   "src": "753:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -491,7 +491,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 933,
+                    "id": 920,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "753:7:5",
@@ -508,15 +508,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 938,
+              "id": 925,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 937,
+                  "id": 924,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 944,
+                  "scope": 931,
                   "src": "820:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -525,7 +525,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 936,
+                    "id": 923,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "820:4:5",
@@ -540,15 +540,15 @@
               ],
               "src": "819:6:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "722:150:5",
             "stateMutability": "view",
-            "superFunction": 2755,
+            "superFunction": 2742,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 961,
+              "id": 948,
               "nodeType": "Block",
               "src": "1170:86:5",
               "statements": [
@@ -561,11 +561,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 953,
+                            "id": 940,
                             "name": "_betHash",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 946,
+                            "referencedDeclaration": 933,
                             "src": "1201:8:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -580,18 +580,18 @@
                               "typeString": "bytes32"
                             }
                           ],
-                          "id": 952,
+                          "id": 939,
                           "name": "outcomeReady",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 944,
+                          "referencedDeclaration": 931,
                           "src": "1188:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_bool_$",
                             "typeString": "function (bytes32) view returns (bool)"
                           }
                         },
-                        "id": 954,
+                        "id": 941,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -613,21 +613,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 951,
+                      "id": 938,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5172,
-                        5173
+                        5159,
+                        5160
                       ],
-                      "referencedDeclaration": 5172,
+                      "referencedDeclaration": 5159,
                       "src": "1180:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 955,
+                    "id": 942,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -641,7 +641,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 956,
+                  "id": 943,
                   "nodeType": "ExpressionStatement",
                   "src": "1180:31:5"
                 },
@@ -650,25 +650,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 957,
+                      "id": 944,
                       "name": "betOutcome",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 932,
+                      "referencedDeclaration": 919,
                       "src": "1229:10:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
                         "typeString": "mapping(bytes32 => uint256)"
                       }
                     },
-                    "id": 959,
+                    "id": 946,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 958,
+                      "id": 945,
                       "name": "_betHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 946,
+                      "referencedDeclaration": 933,
                       "src": "1240:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -686,15 +686,15 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 950,
-                  "id": 960,
+                  "functionReturnParameters": 937,
+                  "id": 947,
                   "nodeType": "Return",
                   "src": "1222:27:5"
                 }
               ]
             },
             "documentation": "@dev Function that returns the outcome of the bet\n@param _betHash bytes32 the hash of the bet we are asking for\n@return uint the outcome of the bet",
-            "id": 962,
+            "id": 949,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -702,15 +702,15 @@
             "name": "getOutcome",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 947,
+              "id": 934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 946,
+                  "id": 933,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 962,
+                  "scope": 949,
                   "src": "1092:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -719,7 +719,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 945,
+                    "id": 932,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1092:7:5",
@@ -736,15 +736,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 950,
+              "id": 937,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 949,
+                  "id": 936,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 962,
+                  "scope": 949,
                   "src": "1160:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -753,7 +753,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 948,
+                    "id": 935,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1160:4:5",
@@ -768,22 +768,22 @@
               ],
               "src": "1159:6:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "1063:193:5",
             "stateMutability": "view",
-            "superFunction": 2762,
+            "superFunction": 2749,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 977,
+              "id": 964,
               "nodeType": "Block",
               "src": "1526:44:5",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 975,
+                    "id": 962,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -792,25 +792,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 971,
+                        "id": 958,
                         "name": "betReady",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 928,
+                        "referencedDeclaration": 915,
                         "src": "1536:8:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                           "typeString": "mapping(bytes32 => bool)"
                         }
                       },
-                      "id": 973,
+                      "id": 960,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 972,
+                        "id": 959,
                         "name": "_betHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 964,
+                        "referencedDeclaration": 951,
                         "src": "1545:8:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -832,11 +832,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 974,
+                      "id": 961,
                       "name": "_ready",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 966,
+                      "referencedDeclaration": 953,
                       "src": "1557:6:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -849,28 +849,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 976,
+                  "id": 963,
                   "nodeType": "ExpressionStatement",
                   "src": "1536:27:5"
                 }
               ]
             },
             "documentation": "@dev Function that sets if the outcome of a bet is ready\n@param _betHash bytes32 the hash of the bet we are asking for",
-            "id": 978,
+            "id": 965,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 969,
+                "id": 956,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 968,
+                  "id": 955,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3375,
+                  "referencedDeclaration": 3362,
                   "src": "1512:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -884,15 +884,15 @@
             "name": "setOutcomeReady",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 967,
+              "id": 954,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 964,
+                  "id": 951,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 978,
+                  "scope": 965,
                   "src": "1445:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -901,7 +901,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 963,
+                    "id": 950,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1445:7:5",
@@ -915,10 +915,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 966,
+                  "id": 953,
                   "name": "_ready",
                   "nodeType": "VariableDeclaration",
-                  "scope": 978,
+                  "scope": 965,
                   "src": "1471:11:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -927,7 +927,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 965,
+                    "id": 952,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1471:4:5",
@@ -944,12 +944,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 970,
+              "id": 957,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1526:0:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "1411:159:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -957,14 +957,14 @@
           },
           {
             "body": {
-              "id": 993,
+              "id": 980,
               "nodeType": "Block",
               "src": "1825:48:5",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 991,
+                    "id": 978,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -973,25 +973,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 987,
+                        "id": 974,
                         "name": "betOutcome",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 932,
+                        "referencedDeclaration": 919,
                         "src": "1835:10:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
                           "typeString": "mapping(bytes32 => uint256)"
                         }
                       },
-                      "id": 989,
+                      "id": 976,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 988,
+                        "id": 975,
                         "name": "_betHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 980,
+                        "referencedDeclaration": 967,
                         "src": "1846:8:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1013,11 +1013,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 990,
+                      "id": 977,
                       "name": "_outcome",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 982,
+                      "referencedDeclaration": 969,
                       "src": "1858:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1030,28 +1030,28 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 992,
+                  "id": 979,
                   "nodeType": "ExpressionStatement",
                   "src": "1835:31:5"
                 }
               ]
             },
             "documentation": "@dev Function that sets the outcome of a bet\n@param _betHash bytes32 the hash of the bet we are asking for",
-            "id": 994,
+            "id": 981,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 985,
+                "id": 972,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 984,
+                  "id": 971,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3375,
+                  "referencedDeclaration": 3362,
                   "src": "1811:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1065,15 +1065,15 @@
             "name": "setOutcome",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 983,
+              "id": 970,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 980,
+                  "id": 967,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 994,
+                  "scope": 981,
                   "src": "1742:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1082,7 +1082,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 979,
+                    "id": 966,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1742:7:5",
@@ -1096,10 +1096,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 982,
+                  "id": 969,
                   "name": "_outcome",
                   "nodeType": "VariableDeclaration",
-                  "scope": 994,
+                  "scope": 981,
                   "src": "1768:13:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1108,7 +1108,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 981,
+                    "id": 968,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1768:4:5",
@@ -1125,19 +1125,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 986,
+              "id": 973,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1825:0:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "1713:160:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 996,
+        "scope": 983,
         "src": "331:1544:5"
       }
     ],
@@ -1147,14 +1147,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetOracleProxies/OwnerBasedOracle.sol",
     "exportedSymbols": {
       "OwnerBasedOracle": [
-        995
+        982
       ]
     },
-    "id": 996,
+    "id": 983,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 918,
+        "id": 905,
         "literals": [
           "solidity",
           "0.4",
@@ -1166,10 +1166,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetOracleProxyInterface.sol",
         "file": "../ProxyInterfaces/BetOracleProxyInterface.sol",
-        "id": 919,
+        "id": 906,
         "nodeType": "ImportDirective",
-        "scope": 996,
-        "sourceUnit": 2764,
+        "scope": 983,
+        "sourceUnit": 2751,
         "src": "37:56:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1177,10 +1177,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
         "file": "../RegistrySetter.sol",
-        "id": 920,
+        "id": 907,
         "nodeType": "ImportDirective",
-        "scope": 996,
-        "sourceUnit": 3028,
+        "scope": 983,
+        "sourceUnit": 3015,
         "src": "94:31:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1191,17 +1191,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 921,
+              "id": 908,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3027,
+              "referencedDeclaration": 3014,
               "src": "360:14:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$3027",
+                "typeIdentifier": "t_contract$_RegistrySetter_$3014",
                 "typeString": "contract RegistrySetter"
               }
             },
-            "id": 922,
+            "id": 909,
             "nodeType": "InheritanceSpecifier",
             "src": "360:14:5"
           },
@@ -1209,47 +1209,47 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 923,
+              "id": 910,
               "name": "BetOracleProxyInterface",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2763,
+              "referencedDeclaration": 2750,
               "src": "376:23:5",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BetOracleProxyInterface_$2763",
+                "typeIdentifier": "t_contract$_BetOracleProxyInterface_$2750",
                 "typeString": "contract BetOracleProxyInterface"
               }
             },
-            "id": 924,
+            "id": 911,
             "nodeType": "InheritanceSpecifier",
             "src": "376:23:5"
           }
         ],
         "contractDependencies": [
-          2763,
-          3027,
-          3247,
-          3427
+          2750,
+          3014,
+          3234,
+          3414
         ],
         "contractKind": "contract",
         "documentation": "@title OwnerBasedOracle. ",
         "fullyImplemented": true,
-        "id": 995,
+        "id": 982,
         "linearizedBaseContracts": [
-          995,
-          2763,
-          3027,
-          3247,
-          3427
+          982,
+          2750,
+          3014,
+          3234,
+          3414
         ],
         "name": "OwnerBasedOracle",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 928,
+            "id": 915,
             "name": "betReady",
             "nodeType": "VariableDeclaration",
-            "scope": 995,
+            "scope": 982,
             "src": "407:41:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1258,9 +1258,9 @@
               "typeString": "mapping(bytes32 => bool)"
             },
             "typeName": {
-              "id": 927,
+              "id": 914,
               "keyType": {
-                "id": 925,
+                "id": 912,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "415:7:5",
@@ -1276,7 +1276,7 @@
                 "typeString": "mapping(bytes32 => bool)"
               },
               "valueType": {
-                "id": 926,
+                "id": 913,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "426:4:5",
@@ -1291,10 +1291,10 @@
           },
           {
             "constant": false,
-            "id": 932,
+            "id": 919,
             "name": "betOutcome",
             "nodeType": "VariableDeclaration",
-            "scope": 995,
+            "scope": 982,
             "src": "454:43:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1303,9 +1303,9 @@
               "typeString": "mapping(bytes32 => uint256)"
             },
             "typeName": {
-              "id": 931,
+              "id": 918,
               "keyType": {
-                "id": 929,
+                "id": 916,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "462:7:5",
@@ -1321,7 +1321,7 @@
                 "typeString": "mapping(bytes32 => uint256)"
               },
               "valueType": {
-                "id": 930,
+                "id": 917,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "473:4:5",
@@ -1336,7 +1336,7 @@
           },
           {
             "body": {
-              "id": 943,
+              "id": 930,
               "nodeType": "Block",
               "src": "830:42:5",
               "statements": [
@@ -1345,25 +1345,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 939,
+                      "id": 926,
                       "name": "betReady",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 928,
+                      "referencedDeclaration": 915,
                       "src": "847:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                         "typeString": "mapping(bytes32 => bool)"
                       }
                     },
-                    "id": 941,
+                    "id": 928,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 940,
+                      "id": 927,
                       "name": "_betHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 934,
+                      "referencedDeclaration": 921,
                       "src": "856:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -1381,15 +1381,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 938,
-                  "id": 942,
+                  "functionReturnParameters": 925,
+                  "id": 929,
                   "nodeType": "Return",
                   "src": "840:25:5"
                 }
               ]
             },
             "documentation": "@dev Function that returns if the oracle is ready to return the outcome\n@param _betHash bytes32 the hash of the bet we are asking for\n@return bool if the outcome is ready to get it",
-            "id": 944,
+            "id": 931,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1397,15 +1397,15 @@
             "name": "outcomeReady",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 935,
+              "id": 922,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 934,
+                  "id": 921,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 944,
+                  "scope": 931,
                   "src": "753:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1414,7 +1414,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 933,
+                    "id": 920,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "753:7:5",
@@ -1431,15 +1431,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 938,
+              "id": 925,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 937,
+                  "id": 924,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 944,
+                  "scope": 931,
                   "src": "820:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1448,7 +1448,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 936,
+                    "id": 923,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "820:4:5",
@@ -1463,15 +1463,15 @@
               ],
               "src": "819:6:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "722:150:5",
             "stateMutability": "view",
-            "superFunction": 2755,
+            "superFunction": 2742,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 961,
+              "id": 948,
               "nodeType": "Block",
               "src": "1170:86:5",
               "statements": [
@@ -1484,11 +1484,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 953,
+                            "id": 940,
                             "name": "_betHash",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 946,
+                            "referencedDeclaration": 933,
                             "src": "1201:8:5",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -1503,18 +1503,18 @@
                               "typeString": "bytes32"
                             }
                           ],
-                          "id": 952,
+                          "id": 939,
                           "name": "outcomeReady",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 944,
+                          "referencedDeclaration": 931,
                           "src": "1188:12:5",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_bool_$",
                             "typeString": "function (bytes32) view returns (bool)"
                           }
                         },
-                        "id": 954,
+                        "id": 941,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1536,21 +1536,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 951,
+                      "id": 938,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5172,
-                        5173
+                        5159,
+                        5160
                       ],
-                      "referencedDeclaration": 5172,
+                      "referencedDeclaration": 5159,
                       "src": "1180:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 955,
+                    "id": 942,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1564,7 +1564,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 956,
+                  "id": 943,
                   "nodeType": "ExpressionStatement",
                   "src": "1180:31:5"
                 },
@@ -1573,25 +1573,25 @@
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 957,
+                      "id": 944,
                       "name": "betOutcome",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 932,
+                      "referencedDeclaration": 919,
                       "src": "1229:10:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
                         "typeString": "mapping(bytes32 => uint256)"
                       }
                     },
-                    "id": 959,
+                    "id": 946,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 958,
+                      "id": 945,
                       "name": "_betHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 946,
+                      "referencedDeclaration": 933,
                       "src": "1240:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -1609,15 +1609,15 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 950,
-                  "id": 960,
+                  "functionReturnParameters": 937,
+                  "id": 947,
                   "nodeType": "Return",
                   "src": "1222:27:5"
                 }
               ]
             },
             "documentation": "@dev Function that returns the outcome of the bet\n@param _betHash bytes32 the hash of the bet we are asking for\n@return uint the outcome of the bet",
-            "id": 962,
+            "id": 949,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1625,15 +1625,15 @@
             "name": "getOutcome",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 947,
+              "id": 934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 946,
+                  "id": 933,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 962,
+                  "scope": 949,
                   "src": "1092:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1642,7 +1642,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 945,
+                    "id": 932,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1092:7:5",
@@ -1659,15 +1659,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 950,
+              "id": 937,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 949,
+                  "id": 936,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 962,
+                  "scope": 949,
                   "src": "1160:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1676,7 +1676,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 948,
+                    "id": 935,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1160:4:5",
@@ -1691,22 +1691,22 @@
               ],
               "src": "1159:6:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "1063:193:5",
             "stateMutability": "view",
-            "superFunction": 2762,
+            "superFunction": 2749,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 977,
+              "id": 964,
               "nodeType": "Block",
               "src": "1526:44:5",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 975,
+                    "id": 962,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1715,25 +1715,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 971,
+                        "id": 958,
                         "name": "betReady",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 928,
+                        "referencedDeclaration": 915,
                         "src": "1536:8:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                           "typeString": "mapping(bytes32 => bool)"
                         }
                       },
-                      "id": 973,
+                      "id": 960,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 972,
+                        "id": 959,
                         "name": "_betHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 964,
+                        "referencedDeclaration": 951,
                         "src": "1545:8:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1755,11 +1755,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 974,
+                      "id": 961,
                       "name": "_ready",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 966,
+                      "referencedDeclaration": 953,
                       "src": "1557:6:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1772,28 +1772,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 976,
+                  "id": 963,
                   "nodeType": "ExpressionStatement",
                   "src": "1536:27:5"
                 }
               ]
             },
             "documentation": "@dev Function that sets if the outcome of a bet is ready\n@param _betHash bytes32 the hash of the bet we are asking for",
-            "id": 978,
+            "id": 965,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 969,
+                "id": 956,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 968,
+                  "id": 955,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3375,
+                  "referencedDeclaration": 3362,
                   "src": "1512:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1807,15 +1807,15 @@
             "name": "setOutcomeReady",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 967,
+              "id": 954,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 964,
+                  "id": 951,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 978,
+                  "scope": 965,
                   "src": "1445:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1824,7 +1824,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 963,
+                    "id": 950,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1445:7:5",
@@ -1838,10 +1838,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 966,
+                  "id": 953,
                   "name": "_ready",
                   "nodeType": "VariableDeclaration",
-                  "scope": 978,
+                  "scope": 965,
                   "src": "1471:11:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1850,7 +1850,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 965,
+                    "id": 952,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1471:4:5",
@@ -1867,12 +1867,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 970,
+              "id": 957,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1526:0:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "1411:159:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1880,14 +1880,14 @@
           },
           {
             "body": {
-              "id": 993,
+              "id": 980,
               "nodeType": "Block",
               "src": "1825:48:5",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 991,
+                    "id": 978,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1896,25 +1896,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 987,
+                        "id": 974,
                         "name": "betOutcome",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 932,
+                        "referencedDeclaration": 919,
                         "src": "1835:10:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
                           "typeString": "mapping(bytes32 => uint256)"
                         }
                       },
-                      "id": 989,
+                      "id": 976,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 988,
+                        "id": 975,
                         "name": "_betHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 980,
+                        "referencedDeclaration": 967,
                         "src": "1846:8:5",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1936,11 +1936,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 990,
+                      "id": 977,
                       "name": "_outcome",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 982,
+                      "referencedDeclaration": 969,
                       "src": "1858:8:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1953,28 +1953,28 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 992,
+                  "id": 979,
                   "nodeType": "ExpressionStatement",
                   "src": "1835:31:5"
                 }
               ]
             },
             "documentation": "@dev Function that sets the outcome of a bet\n@param _betHash bytes32 the hash of the bet we are asking for",
-            "id": 994,
+            "id": 981,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 985,
+                "id": 972,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 984,
+                  "id": 971,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3375,
+                  "referencedDeclaration": 3362,
                   "src": "1811:9:5",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1988,15 +1988,15 @@
             "name": "setOutcome",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 983,
+              "id": 970,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 980,
+                  "id": 967,
                   "name": "_betHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 994,
+                  "scope": 981,
                   "src": "1742:16:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2005,7 +2005,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 979,
+                    "id": 966,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1742:7:5",
@@ -2019,10 +2019,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 982,
+                  "id": 969,
                   "name": "_outcome",
                   "nodeType": "VariableDeclaration",
-                  "scope": 994,
+                  "scope": 981,
                   "src": "1768:13:5",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2031,7 +2031,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 981,
+                    "id": 968,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1768:4:5",
@@ -2048,19 +2048,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 986,
+              "id": 973,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1825:0:5"
             },
-            "scope": 995,
+            "scope": 982,
             "src": "1713:160:5",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 996,
+        "scope": 983,
         "src": "331:1544:5"
       }
     ],
@@ -2074,10 +2074,10 @@
     "70": {
       "events": {},
       "links": {},
-      "address": "0x8f280d264b218b9f1bc669b6994a140cef421a30",
-      "transactionHash": "0x41dc155daafe3f550c3069e0ca4506c82ff80db15f7e078dacab7922ec45eefc"
+      "address": "0x199d5bdc8906af699b1df362844e016f54931b56",
+      "transactionHash": "0xff92272749df99745d55e942a19cf96813754d326d03422eb1ded91388d629fd"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-20T18:36:37.338Z"
+  "updatedAt": "2018-09-21T11:41:43.946Z"
 }

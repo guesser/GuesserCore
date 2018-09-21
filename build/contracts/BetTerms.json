@@ -264,14 +264,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetTerms.sol",
     "exportedSymbols": {
       "BetTerms": [
-        2307
+        2294
       ]
     },
-    "id": 2308,
+    "id": 2295,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2209,
+        "id": 2196,
         "literals": [
           "solidity",
           "0.4",
@@ -283,10 +283,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetTermsProxyInterface.sol",
         "file": "./ProxyInterfaces/BetTermsProxyInterface.sol",
-        "id": 2210,
+        "id": 2197,
         "nodeType": "ImportDirective",
-        "scope": 2308,
-        "sourceUnit": 2861,
+        "scope": 2295,
+        "sourceUnit": 2848,
         "src": "36:54:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -294,10 +294,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
         "file": "./RegistrySetter.sol",
-        "id": 2211,
+        "id": 2198,
         "nodeType": "ImportDirective",
-        "scope": 2308,
-        "sourceUnit": 3028,
+        "scope": 2295,
+        "sourceUnit": 3015,
         "src": "91:30:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -308,42 +308,42 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2212,
+              "id": 2199,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3027,
+              "referencedDeclaration": 3014,
               "src": "560:14:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$3027",
+                "typeIdentifier": "t_contract$_RegistrySetter_$3014",
                 "typeString": "contract RegistrySetter"
               }
             },
-            "id": 2213,
+            "id": 2200,
             "nodeType": "InheritanceSpecifier",
             "src": "560:14:10"
           }
         ],
         "contractDependencies": [
-          3027,
-          3247,
-          3427
+          3014,
+          3234,
+          3414
         ],
         "contractKind": "contract",
         "documentation": "@title Bet Terms. ",
         "fullyImplemented": true,
-        "id": 2307,
+        "id": 2294,
         "linearizedBaseContracts": [
-          2307,
-          3027,
-          3247,
-          3427
+          2294,
+          3014,
+          3234,
+          3414
         ],
         "name": "BetTerms",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 2229,
+              "id": 2216,
               "nodeType": "Block",
               "src": "967:104:10",
               "statements": [
@@ -353,11 +353,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2226,
+                        "id": 2213,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2217,
+                        "referencedDeclaration": 2204,
                         "src": "1053:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -377,11 +377,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2223,
+                            "id": 2210,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2215,
+                            "referencedDeclaration": 2202,
                             "src": "1007:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -396,18 +396,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2222,
+                          "id": 2209,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "984:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2224,
+                        "id": 2211,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -417,25 +417,25 @@
                         "nodeType": "FunctionCall",
                         "src": "984:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2225,
+                      "id": 2212,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "participationPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2838,
+                      "referencedDeclaration": 2825,
                       "src": "984:68:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2227,
+                    "id": 2214,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -449,15 +449,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2221,
-                  "id": 2228,
+                  "functionReturnParameters": 2208,
+                  "id": 2215,
                   "nodeType": "Return",
                   "src": "977:87:10"
                 }
               ]
             },
             "documentation": "@dev function that asks the termscontract if playing is allowd\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if it is the period for playing",
-            "id": 2230,
+            "id": 2217,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -465,15 +465,15 @@
             "name": "participationPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2218,
+              "id": 2205,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2215,
+                  "id": 2202,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2230,
+                  "scope": 2217,
                   "src": "872:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -482,7 +482,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2214,
+                    "id": 2201,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "872:7:10",
@@ -496,10 +496,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2217,
+                  "id": 2204,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2230,
+                  "scope": 2217,
                   "src": "893:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -508,7 +508,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2216,
+                    "id": 2203,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "893:7:10",
@@ -525,15 +525,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2221,
+              "id": 2208,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2220,
+                  "id": 2207,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2230,
+                  "scope": 2217,
                   "src": "957:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -542,7 +542,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2219,
+                    "id": 2206,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "957:4:10",
@@ -557,7 +557,7 @@
               ],
               "src": "956:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "843:228:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -565,7 +565,7 @@
           },
           {
             "body": {
-              "id": 2246,
+              "id": 2233,
               "nodeType": "Block",
               "src": "1457:98:10",
               "statements": [
@@ -575,11 +575,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2243,
+                        "id": 2230,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2234,
+                        "referencedDeclaration": 2221,
                         "src": "1537:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -599,11 +599,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2240,
+                            "id": 2227,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2232,
+                            "referencedDeclaration": 2219,
                             "src": "1497:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -618,18 +618,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2239,
+                          "id": 2226,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "1474:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2241,
+                        "id": 2228,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -639,25 +639,25 @@
                         "nodeType": "FunctionCall",
                         "src": "1474:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2242,
+                      "id": 2229,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "waitingPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2845,
+                      "referencedDeclaration": 2832,
                       "src": "1474:62:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2244,
+                    "id": 2231,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -671,15 +671,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2238,
-                  "id": 2245,
+                  "functionReturnParameters": 2225,
+                  "id": 2232,
                   "nodeType": "Return",
                   "src": "1467:81:10"
                 }
               ]
             },
             "documentation": "@dev function that asks the termscontract if playing is in stand by\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if it is the waiting period",
-            "id": 2247,
+            "id": 2234,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -687,15 +687,15 @@
             "name": "waitingPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2235,
+              "id": 2222,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2232,
+                  "id": 2219,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2247,
+                  "scope": 2234,
                   "src": "1362:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -704,7 +704,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2231,
+                    "id": 2218,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1362:7:10",
@@ -718,10 +718,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2234,
+                  "id": 2221,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2247,
+                  "scope": 2234,
                   "src": "1383:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -730,7 +730,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2233,
+                    "id": 2220,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1383:7:10",
@@ -747,15 +747,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2238,
+              "id": 2225,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2237,
+                  "id": 2224,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2247,
+                  "scope": 2234,
                   "src": "1447:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -764,7 +764,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2236,
+                    "id": 2223,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1447:4:10",
@@ -779,7 +779,7 @@
               ],
               "src": "1446:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "1339:216:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -787,7 +787,7 @@
           },
           {
             "body": {
-              "id": 2263,
+              "id": 2250,
               "nodeType": "Block",
               "src": "1965:101:10",
               "statements": [
@@ -797,11 +797,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2260,
+                        "id": 2247,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2251,
+                        "referencedDeclaration": 2238,
                         "src": "2048:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -821,11 +821,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2257,
+                            "id": 2244,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2249,
+                            "referencedDeclaration": 2236,
                             "src": "2005:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -840,18 +840,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2256,
+                          "id": 2243,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "1982:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2258,
+                        "id": 2245,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -861,25 +861,25 @@
                         "nodeType": "FunctionCall",
                         "src": "1982:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2259,
+                      "id": 2246,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "retrievingPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2852,
+                      "referencedDeclaration": 2839,
                       "src": "1982:65:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2261,
+                    "id": 2248,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -893,15 +893,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2255,
-                  "id": 2262,
+                  "functionReturnParameters": 2242,
+                  "id": 2249,
                   "nodeType": "Return",
                   "src": "1975:84:10"
                 }
               ]
             },
             "documentation": "@dev Function that asks the TermsContract if it is the time to ask for the profits\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if the period for betting is over",
-            "id": 2264,
+            "id": 2251,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -909,15 +909,15 @@
             "name": "retrievingPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2252,
+              "id": 2239,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2249,
+                  "id": 2236,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2264,
+                  "scope": 2251,
                   "src": "1870:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -926,7 +926,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2248,
+                    "id": 2235,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1870:7:10",
@@ -940,10 +940,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2251,
+                  "id": 2238,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2264,
+                  "scope": 2251,
                   "src": "1891:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -952,7 +952,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2250,
+                    "id": 2237,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1891:7:10",
@@ -969,15 +969,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2255,
+              "id": 2242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2254,
+                  "id": 2241,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2264,
+                  "scope": 2251,
                   "src": "1955:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -986,7 +986,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2253,
+                    "id": 2240,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1955:4:10",
@@ -1001,7 +1001,7 @@
               ],
               "src": "1954:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "1844:222:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -1009,7 +1009,7 @@
           },
           {
             "body": {
-              "id": 2280,
+              "id": 2267,
               "nodeType": "Block",
               "src": "2446:99:10",
               "statements": [
@@ -1019,11 +1019,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2277,
+                        "id": 2264,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2268,
+                        "referencedDeclaration": 2255,
                         "src": "2527:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1043,11 +1043,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2274,
+                            "id": 2261,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2266,
+                            "referencedDeclaration": 2253,
                             "src": "2486:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1062,18 +1062,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2273,
+                          "id": 2260,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "2463:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2275,
+                        "id": 2262,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1083,25 +1083,25 @@
                         "nodeType": "FunctionCall",
                         "src": "2463:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2276,
+                      "id": 2263,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "finishedPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2859,
+                      "referencedDeclaration": 2846,
                       "src": "2463:63:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2278,
+                    "id": 2265,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1115,15 +1115,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2272,
-                  "id": 2279,
+                  "functionReturnParameters": 2259,
+                  "id": 2266,
                   "nodeType": "Return",
                   "src": "2456:82:10"
                 }
               ]
             },
             "documentation": "@dev Function that asks the TermsContract if the event has finished\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if the event is over",
-            "id": 2281,
+            "id": 2268,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1131,15 +1131,15 @@
             "name": "finishedPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2269,
+              "id": 2256,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2266,
+                  "id": 2253,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2281,
+                  "scope": 2268,
                   "src": "2351:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1148,7 +1148,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2265,
+                    "id": 2252,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2351:7:10",
@@ -1162,10 +1162,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2268,
+                  "id": 2255,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2281,
+                  "scope": 2268,
                   "src": "2372:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1174,7 +1174,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2267,
+                    "id": 2254,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "2372:7:10",
@@ -1191,15 +1191,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2272,
+              "id": 2259,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2271,
+                  "id": 2258,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2281,
+                  "scope": 2268,
                   "src": "2436:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1208,7 +1208,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2270,
+                    "id": 2257,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2436:4:10",
@@ -1223,7 +1223,7 @@
               ],
               "src": "2435:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "2327:218:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -1231,7 +1231,7 @@
           },
           {
             "body": {
-              "id": 2305,
+              "id": 2292,
               "nodeType": "Block",
               "src": "2647:145:10",
               "statements": [
@@ -1243,18 +1243,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2293,
+                          "id": 2280,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5169,
+                          "referencedDeclaration": 5156,
                           "src": "2682:3:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2294,
+                        "id": 2281,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1278,34 +1278,34 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2290,
+                        "id": 2277,
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2994
+                          2981
                         ],
-                        "referencedDeclaration": 2994,
+                        "referencedDeclaration": 2981,
                         "src": "2657:11:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2194",
                           "typeString": "contract BetRegistry"
                         }
                       },
-                      "id": 2292,
+                      "id": 2279,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "isAuthorised",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2206,
+                      "referencedDeclaration": 2193,
                       "src": "2657:24:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_address_$returns$__$",
                         "typeString": "function (address) view external"
                       }
                     },
-                    "id": 2295,
+                    "id": 2282,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1319,7 +1319,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2296,
+                  "id": 2283,
                   "nodeType": "ExpressionStatement",
                   "src": "2657:36:10"
                 },
@@ -1329,11 +1329,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2301,
+                        "id": 2288,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2285,
+                        "referencedDeclaration": 2272,
                         "src": "2765:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1342,11 +1342,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 2302,
+                        "id": 2289,
                         "name": "_status",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2287,
+                        "referencedDeclaration": 2274,
                         "src": "2777:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1370,11 +1370,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2298,
+                            "id": 2285,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2283,
+                            "referencedDeclaration": 2270,
                             "src": "2726:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1389,18 +1389,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2297,
+                          "id": 2284,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "2703:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2299,
+                        "id": 2286,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1410,25 +1410,25 @@
                         "nodeType": "FunctionCall",
                         "src": "2703:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2300,
+                      "id": 2287,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "changePeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2826,
+                      "referencedDeclaration": 2813,
                       "src": "2703:61:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_uint256_$returns$__$",
                         "typeString": "function (bytes32,uint256) external"
                       }
                     },
-                    "id": 2303,
+                    "id": 2290,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1442,14 +1442,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2304,
+                  "id": 2291,
                   "nodeType": "ExpressionStatement",
                   "src": "2703:82:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2306,
+            "id": 2293,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1457,15 +1457,15 @@
             "name": "changePeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2288,
+              "id": 2275,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2283,
+                  "id": 2270,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
+                  "scope": 2293,
                   "src": "2573:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1474,7 +1474,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2282,
+                    "id": 2269,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2573:7:10",
@@ -1488,10 +1488,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2285,
+                  "id": 2272,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
+                  "scope": 2293,
                   "src": "2594:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1500,7 +1500,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2284,
+                    "id": 2271,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "2594:7:10",
@@ -1514,10 +1514,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2287,
+                  "id": 2274,
                   "name": "_status",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
+                  "scope": 2293,
                   "src": "2614:12:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1526,7 +1526,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2286,
+                    "id": 2273,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2614:4:10",
@@ -1543,19 +1543,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2289,
+              "id": 2276,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2647:0:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "2551:241:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2308,
+        "scope": 2295,
         "src": "539:2255:10"
       }
     ],
@@ -1565,14 +1565,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetTerms.sol",
     "exportedSymbols": {
       "BetTerms": [
-        2307
+        2294
       ]
     },
-    "id": 2308,
+    "id": 2295,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2209,
+        "id": 2196,
         "literals": [
           "solidity",
           "0.4",
@@ -1584,10 +1584,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/ProxyInterfaces/BetTermsProxyInterface.sol",
         "file": "./ProxyInterfaces/BetTermsProxyInterface.sol",
-        "id": 2210,
+        "id": 2197,
         "nodeType": "ImportDirective",
-        "scope": 2308,
-        "sourceUnit": 2861,
+        "scope": 2295,
+        "sourceUnit": 2848,
         "src": "36:54:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1595,10 +1595,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
         "file": "./RegistrySetter.sol",
-        "id": 2211,
+        "id": 2198,
         "nodeType": "ImportDirective",
-        "scope": 2308,
-        "sourceUnit": 3028,
+        "scope": 2295,
+        "sourceUnit": 3015,
         "src": "91:30:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1609,42 +1609,42 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2212,
+              "id": 2199,
               "name": "RegistrySetter",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3027,
+              "referencedDeclaration": 3014,
               "src": "560:14:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RegistrySetter_$3027",
+                "typeIdentifier": "t_contract$_RegistrySetter_$3014",
                 "typeString": "contract RegistrySetter"
               }
             },
-            "id": 2213,
+            "id": 2200,
             "nodeType": "InheritanceSpecifier",
             "src": "560:14:10"
           }
         ],
         "contractDependencies": [
-          3027,
-          3247,
-          3427
+          3014,
+          3234,
+          3414
         ],
         "contractKind": "contract",
         "documentation": "@title Bet Terms. ",
         "fullyImplemented": true,
-        "id": 2307,
+        "id": 2294,
         "linearizedBaseContracts": [
-          2307,
-          3027,
-          3247,
-          3427
+          2294,
+          3014,
+          3234,
+          3414
         ],
         "name": "BetTerms",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 2229,
+              "id": 2216,
               "nodeType": "Block",
               "src": "967:104:10",
               "statements": [
@@ -1654,11 +1654,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2226,
+                        "id": 2213,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2217,
+                        "referencedDeclaration": 2204,
                         "src": "1053:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1678,11 +1678,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2223,
+                            "id": 2210,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2215,
+                            "referencedDeclaration": 2202,
                             "src": "1007:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1697,18 +1697,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2222,
+                          "id": 2209,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "984:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2224,
+                        "id": 2211,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1718,25 +1718,25 @@
                         "nodeType": "FunctionCall",
                         "src": "984:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2225,
+                      "id": 2212,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "participationPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2838,
+                      "referencedDeclaration": 2825,
                       "src": "984:68:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2227,
+                    "id": 2214,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1750,15 +1750,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2221,
-                  "id": 2228,
+                  "functionReturnParameters": 2208,
+                  "id": 2215,
                   "nodeType": "Return",
                   "src": "977:87:10"
                 }
               ]
             },
             "documentation": "@dev function that asks the termscontract if playing is allowd\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if it is the period for playing",
-            "id": 2230,
+            "id": 2217,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1766,15 +1766,15 @@
             "name": "participationPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2218,
+              "id": 2205,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2215,
+                  "id": 2202,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2230,
+                  "scope": 2217,
                   "src": "872:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1783,7 +1783,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2214,
+                    "id": 2201,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "872:7:10",
@@ -1797,10 +1797,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2217,
+                  "id": 2204,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2230,
+                  "scope": 2217,
                   "src": "893:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1809,7 +1809,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2216,
+                    "id": 2203,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "893:7:10",
@@ -1826,15 +1826,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2221,
+              "id": 2208,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2220,
+                  "id": 2207,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2230,
+                  "scope": 2217,
                   "src": "957:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1843,7 +1843,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2219,
+                    "id": 2206,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "957:4:10",
@@ -1858,7 +1858,7 @@
               ],
               "src": "956:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "843:228:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -1866,7 +1866,7 @@
           },
           {
             "body": {
-              "id": 2246,
+              "id": 2233,
               "nodeType": "Block",
               "src": "1457:98:10",
               "statements": [
@@ -1876,11 +1876,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2243,
+                        "id": 2230,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2234,
+                        "referencedDeclaration": 2221,
                         "src": "1537:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1900,11 +1900,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2240,
+                            "id": 2227,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2232,
+                            "referencedDeclaration": 2219,
                             "src": "1497:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -1919,18 +1919,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2239,
+                          "id": 2226,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "1474:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2241,
+                        "id": 2228,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1940,25 +1940,25 @@
                         "nodeType": "FunctionCall",
                         "src": "1474:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2242,
+                      "id": 2229,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "waitingPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2845,
+                      "referencedDeclaration": 2832,
                       "src": "1474:62:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2244,
+                    "id": 2231,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1972,15 +1972,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2238,
-                  "id": 2245,
+                  "functionReturnParameters": 2225,
+                  "id": 2232,
                   "nodeType": "Return",
                   "src": "1467:81:10"
                 }
               ]
             },
             "documentation": "@dev function that asks the termscontract if playing is in stand by\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if it is the waiting period",
-            "id": 2247,
+            "id": 2234,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1988,15 +1988,15 @@
             "name": "waitingPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2235,
+              "id": 2222,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2232,
+                  "id": 2219,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2247,
+                  "scope": 2234,
                   "src": "1362:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2005,7 +2005,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2231,
+                    "id": 2218,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1362:7:10",
@@ -2019,10 +2019,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2234,
+                  "id": 2221,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2247,
+                  "scope": 2234,
                   "src": "1383:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2031,7 +2031,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2233,
+                    "id": 2220,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1383:7:10",
@@ -2048,15 +2048,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2238,
+              "id": 2225,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2237,
+                  "id": 2224,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2247,
+                  "scope": 2234,
                   "src": "1447:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2065,7 +2065,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2236,
+                    "id": 2223,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1447:4:10",
@@ -2080,7 +2080,7 @@
               ],
               "src": "1446:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "1339:216:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -2088,7 +2088,7 @@
           },
           {
             "body": {
-              "id": 2263,
+              "id": 2250,
               "nodeType": "Block",
               "src": "1965:101:10",
               "statements": [
@@ -2098,11 +2098,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2260,
+                        "id": 2247,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2251,
+                        "referencedDeclaration": 2238,
                         "src": "2048:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -2122,11 +2122,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2257,
+                            "id": 2244,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2249,
+                            "referencedDeclaration": 2236,
                             "src": "2005:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -2141,18 +2141,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2256,
+                          "id": 2243,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "1982:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2258,
+                        "id": 2245,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2162,25 +2162,25 @@
                         "nodeType": "FunctionCall",
                         "src": "1982:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2259,
+                      "id": 2246,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "retrievingPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2852,
+                      "referencedDeclaration": 2839,
                       "src": "1982:65:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2261,
+                    "id": 2248,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2194,15 +2194,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2255,
-                  "id": 2262,
+                  "functionReturnParameters": 2242,
+                  "id": 2249,
                   "nodeType": "Return",
                   "src": "1975:84:10"
                 }
               ]
             },
             "documentation": "@dev Function that asks the TermsContract if it is the time to ask for the profits\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if the period for betting is over",
-            "id": 2264,
+            "id": 2251,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2210,15 +2210,15 @@
             "name": "retrievingPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2252,
+              "id": 2239,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2249,
+                  "id": 2236,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2264,
+                  "scope": 2251,
                   "src": "1870:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2227,7 +2227,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2248,
+                    "id": 2235,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1870:7:10",
@@ -2241,10 +2241,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2251,
+                  "id": 2238,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2264,
+                  "scope": 2251,
                   "src": "1891:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2253,7 +2253,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2250,
+                    "id": 2237,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1891:7:10",
@@ -2270,15 +2270,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2255,
+              "id": 2242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2254,
+                  "id": 2241,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2264,
+                  "scope": 2251,
                   "src": "1955:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2287,7 +2287,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2253,
+                    "id": 2240,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1955:4:10",
@@ -2302,7 +2302,7 @@
               ],
               "src": "1954:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "1844:222:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -2310,7 +2310,7 @@
           },
           {
             "body": {
-              "id": 2280,
+              "id": 2267,
               "nodeType": "Block",
               "src": "2446:99:10",
               "statements": [
@@ -2320,11 +2320,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2277,
+                        "id": 2264,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2268,
+                        "referencedDeclaration": 2255,
                         "src": "2527:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -2344,11 +2344,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2274,
+                            "id": 2261,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2266,
+                            "referencedDeclaration": 2253,
                             "src": "2486:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -2363,18 +2363,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2273,
+                          "id": 2260,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "2463:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2275,
+                        "id": 2262,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2384,25 +2384,25 @@
                         "nodeType": "FunctionCall",
                         "src": "2463:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2276,
+                      "id": 2263,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "finishedPeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2859,
+                      "referencedDeclaration": 2846,
                       "src": "2463:63:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_bytes32_$returns$_t_bool_$",
                         "typeString": "function (bytes32) view external returns (bool)"
                       }
                     },
-                    "id": 2278,
+                    "id": 2265,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2416,15 +2416,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 2272,
-                  "id": 2279,
+                  "functionReturnParameters": 2259,
+                  "id": 2266,
                   "nodeType": "Return",
                   "src": "2456:82:10"
                 }
               ]
             },
             "documentation": "@dev Function that asks the TermsContract if the event has finished\n@param _termsProxy address the address of the Proxy contract\n@param _termsHash bytes32 the hash of the terms\n@return bool if the event is over",
-            "id": 2281,
+            "id": 2268,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2432,15 +2432,15 @@
             "name": "finishedPeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2269,
+              "id": 2256,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2266,
+                  "id": 2253,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2281,
+                  "scope": 2268,
                   "src": "2351:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2449,7 +2449,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2265,
+                    "id": 2252,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2351:7:10",
@@ -2463,10 +2463,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2268,
+                  "id": 2255,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2281,
+                  "scope": 2268,
                   "src": "2372:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2475,7 +2475,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2267,
+                    "id": 2254,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "2372:7:10",
@@ -2492,15 +2492,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2272,
+              "id": 2259,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2271,
+                  "id": 2258,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2281,
+                  "scope": 2268,
                   "src": "2436:4:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2509,7 +2509,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2270,
+                    "id": 2257,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2436:4:10",
@@ -2524,7 +2524,7 @@
               ],
               "src": "2435:6:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "2327:218:10",
             "stateMutability": "view",
             "superFunction": null,
@@ -2532,7 +2532,7 @@
           },
           {
             "body": {
-              "id": 2305,
+              "id": 2292,
               "nodeType": "Block",
               "src": "2647:145:10",
               "statements": [
@@ -2544,18 +2544,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 2293,
+                          "id": 2280,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5169,
+                          "referencedDeclaration": 5156,
                           "src": "2682:3:10",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2294,
+                        "id": 2281,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2579,34 +2579,34 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 2290,
+                        "id": 2277,
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2994
+                          2981
                         ],
-                        "referencedDeclaration": 2994,
+                        "referencedDeclaration": 2981,
                         "src": "2657:11:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2194",
                           "typeString": "contract BetRegistry"
                         }
                       },
-                      "id": 2292,
+                      "id": 2279,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "isAuthorised",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2206,
+                      "referencedDeclaration": 2193,
                       "src": "2657:24:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_address_$returns$__$",
                         "typeString": "function (address) view external"
                       }
                     },
-                    "id": 2295,
+                    "id": 2282,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2620,7 +2620,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2296,
+                  "id": 2283,
                   "nodeType": "ExpressionStatement",
                   "src": "2657:36:10"
                 },
@@ -2630,11 +2630,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 2301,
+                        "id": 2288,
                         "name": "_termsHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2285,
+                        "referencedDeclaration": 2272,
                         "src": "2765:10:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -2643,11 +2643,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 2302,
+                        "id": 2289,
                         "name": "_status",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2287,
+                        "referencedDeclaration": 2274,
                         "src": "2777:7:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2671,11 +2671,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 2298,
+                            "id": 2285,
                             "name": "_termsProxy",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2283,
+                            "referencedDeclaration": 2270,
                             "src": "2726:11:10",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -2690,18 +2690,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 2297,
+                          "id": 2284,
                           "name": "BetTermsProxyInterface",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2860,
+                          "referencedDeclaration": 2847,
                           "src": "2703:22:10",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2860_$",
+                            "typeIdentifier": "t_type$_t_contract$_BetTermsProxyInterface_$2847_$",
                             "typeString": "type(contract BetTermsProxyInterface)"
                           }
                         },
-                        "id": 2299,
+                        "id": 2286,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2711,25 +2711,25 @@
                         "nodeType": "FunctionCall",
                         "src": "2703:35:10",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2860",
+                          "typeIdentifier": "t_contract$_BetTermsProxyInterface_$2847",
                           "typeString": "contract BetTermsProxyInterface"
                         }
                       },
-                      "id": 2300,
+                      "id": 2287,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "changePeriod",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2826,
+                      "referencedDeclaration": 2813,
                       "src": "2703:61:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_uint256_$returns$__$",
                         "typeString": "function (bytes32,uint256) external"
                       }
                     },
-                    "id": 2303,
+                    "id": 2290,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2743,14 +2743,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2304,
+                  "id": 2291,
                   "nodeType": "ExpressionStatement",
                   "src": "2703:82:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 2306,
+            "id": 2293,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2758,15 +2758,15 @@
             "name": "changePeriod",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2288,
+              "id": 2275,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2283,
+                  "id": 2270,
                   "name": "_termsProxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
+                  "scope": 2293,
                   "src": "2573:19:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2775,7 +2775,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2282,
+                    "id": 2269,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2573:7:10",
@@ -2789,10 +2789,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2285,
+                  "id": 2272,
                   "name": "_termsHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
+                  "scope": 2293,
                   "src": "2594:18:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2801,7 +2801,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2284,
+                    "id": 2271,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "2594:7:10",
@@ -2815,10 +2815,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2287,
+                  "id": 2274,
                   "name": "_status",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
+                  "scope": 2293,
                   "src": "2614:12:10",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2827,7 +2827,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2286,
+                    "id": 2273,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2614:4:10",
@@ -2844,19 +2844,19 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2289,
+              "id": 2276,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2647:0:10"
             },
-            "scope": 2307,
+            "scope": 2294,
             "src": "2551:241:10",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2308,
+        "scope": 2295,
         "src": "539:2255:10"
       }
     ],
@@ -2912,10 +2912,10 @@
         }
       },
       "links": {},
-      "address": "0x2e1fdf64f6c1a29ed83472b81298543d2086e8aa",
-      "transactionHash": "0x20b7753da87f0cc1c506af3f0905fdde1720488ea7c644b2a9237b7ccfbaf555"
+      "address": "0xf63e84780f477d4f0db3fe2f86b272be8b7e5b23",
+      "transactionHash": "0x67674d181a5de8c1eb950760896c2613cef977298a678a34dbbc94ad8591930e"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-20T18:36:37.347Z"
+  "updatedAt": "2018-09-21T11:41:43.949Z"
 }

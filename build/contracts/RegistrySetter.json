@@ -150,14 +150,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
     "exportedSymbols": {
       "RegistrySetter": [
-        3027
+        3014
       ]
     },
-    "id": 3028,
+    "id": 3015,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2984,
+        "id": 2971,
         "literals": [
           "solidity",
           "0.4",
@@ -169,10 +169,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetRegistry.sol",
         "file": "./BetRegistry.sol",
-        "id": 2985,
+        "id": 2972,
         "nodeType": "ImportDirective",
-        "scope": 3028,
-        "sourceUnit": 2208,
+        "scope": 3015,
+        "sourceUnit": 2195,
         "src": "37:27:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -180,10 +180,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
         "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
-        "id": 2986,
+        "id": 2973,
         "nodeType": "ImportDirective",
-        "scope": 3028,
-        "sourceUnit": 3248,
+        "scope": 3015,
+        "sourceUnit": 3235,
         "src": "77:64:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -191,10 +191,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 2987,
+        "id": 2974,
         "nodeType": "ImportDirective",
-        "scope": 3028,
-        "sourceUnit": 3342,
+        "scope": 3015,
+        "sourceUnit": 3329,
         "src": "142:59:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -205,55 +205,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2988,
+              "id": 2975,
               "name": "Pausable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3247,
+              "referencedDeclaration": 3234,
               "src": "411:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Pausable_$3247",
+                "typeIdentifier": "t_contract$_Pausable_$3234",
                 "typeString": "contract Pausable"
               }
             },
-            "id": 2989,
+            "id": 2976,
             "nodeType": "InheritanceSpecifier",
             "src": "411:8:21"
           }
         ],
         "contractDependencies": [
-          3247,
-          3427
+          3234,
+          3414
         ],
         "contractKind": "contract",
         "documentation": "@title Registry Setter. ",
         "fullyImplemented": true,
-        "id": 3027,
+        "id": 3014,
         "linearizedBaseContracts": [
-          3027,
-          3247,
-          3427
+          3014,
+          3234,
+          3414
         ],
         "name": "RegistrySetter",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 2992,
+            "id": 2979,
             "libraryName": {
               "contractScope": null,
-              "id": 2990,
+              "id": 2977,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3341,
+              "referencedDeclaration": 3328,
               "src": "432:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$3341",
+                "typeIdentifier": "t_contract$_SafeMath_$3328",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
             "src": "426:24:21",
             "typeName": {
-              "id": 2991,
+              "id": 2978,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "445:4:21",
@@ -265,26 +265,26 @@
           },
           {
             "constant": false,
-            "id": 2994,
+            "id": 2981,
             "name": "betRegistry",
             "nodeType": "VariableDeclaration",
-            "scope": 3027,
+            "scope": 3014,
             "src": "456:30:21",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_BetRegistry_$2207",
+              "typeIdentifier": "t_contract$_BetRegistry_$2194",
               "typeString": "contract BetRegistry"
             },
             "typeName": {
               "contractScope": null,
-              "id": 2993,
+              "id": 2980,
               "name": "BetRegistry",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2207,
+              "referencedDeclaration": 2194,
               "src": "456:11:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                "typeIdentifier": "t_contract$_BetRegistry_$2194",
                 "typeString": "contract BetRegistry"
               }
             },
@@ -293,30 +293,30 @@
           },
           {
             "body": {
-              "id": 3015,
+              "id": 3002,
               "nodeType": "Block",
               "src": "710:118:21",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 3005,
+                    "id": 2992,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 3001,
+                      "id": 2988,
                       "name": "betRegistry",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2994
+                        2981
                       ],
-                      "referencedDeclaration": 2994,
+                      "referencedDeclaration": 2981,
                       "src": "720:11:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                        "typeIdentifier": "t_contract$_BetRegistry_$2194",
                         "typeString": "contract BetRegistry"
                       }
                     },
@@ -327,11 +327,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 3003,
+                          "id": 2990,
                           "name": "_betRegistry",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2996,
+                          "referencedDeclaration": 2983,
                           "src": "746:12:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -346,18 +346,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 3002,
+                        "id": 2989,
                         "name": "BetRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2207,
+                        "referencedDeclaration": 2194,
                         "src": "734:11:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_BetRegistry_$2207_$",
+                          "typeIdentifier": "t_type$_t_contract$_BetRegistry_$2194_$",
                           "typeString": "type(contract BetRegistry)"
                         }
                       },
-                      "id": 3004,
+                      "id": 2991,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -367,17 +367,17 @@
                       "nodeType": "FunctionCall",
                       "src": "734:25:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                        "typeIdentifier": "t_contract$_BetRegistry_$2194",
                         "typeString": "contract BetRegistry"
                       }
                     },
                     "src": "720:39:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                      "typeIdentifier": "t_contract$_BetRegistry_$2194",
                       "typeString": "contract BetRegistry"
                     }
                   },
-                  "id": 3006,
+                  "id": 2993,
                   "nodeType": "ExpressionStatement",
                   "src": "720:39:21"
                 },
@@ -388,18 +388,18 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 3009,
+                    "id": 2996,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 3007,
+                      "id": 2994,
                       "name": "paused",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3199,
+                      "referencedDeclaration": 3186,
                       "src": "773:6:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -411,7 +411,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 3008,
+                      "id": 2995,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -433,11 +433,11 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 3014,
+                  "id": 3001,
                   "nodeType": "IfStatement",
                   "src": "769:53:21",
                   "trueBody": {
-                    "id": 3013,
+                    "id": 3000,
                     "nodeType": "Block",
                     "src": "790:32:21",
                     "statements": [
@@ -447,18 +447,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 3010,
+                            "id": 2997,
                             "name": "pause",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3231,
+                            "referencedDeclaration": 3218,
                             "src": "804:5:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                               "typeString": "function ()"
                             }
                           },
-                          "id": 3011,
+                          "id": 2998,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -472,7 +472,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 3012,
+                        "id": 2999,
                         "nodeType": "ExpressionStatement",
                         "src": "804:7:21"
                       }
@@ -482,21 +482,21 @@
               ]
             },
             "documentation": "@dev Function to add the final Bet Token of the event\n@param _betRegistry address Address of the token",
-            "id": 3016,
+            "id": 3003,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2999,
+                "id": 2986,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2998,
+                  "id": 2985,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3375,
+                  "referencedDeclaration": 3362,
                   "src": "696:9:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -510,15 +510,15 @@
             "name": "setBetRegistry",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2997,
+              "id": 2984,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2996,
+                  "id": 2983,
                   "name": "_betRegistry",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3016,
+                  "scope": 3003,
                   "src": "651:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -527,7 +527,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2995,
+                    "id": 2982,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "651:7:21",
@@ -544,12 +544,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 3000,
+              "id": 2987,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "710:0:21"
             },
-            "scope": 3027,
+            "scope": 3014,
             "src": "626:202:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -557,7 +557,7 @@
           },
           {
             "body": {
-              "id": 3025,
+              "id": 3012,
               "nodeType": "Block",
               "src": "1027:44:21",
               "statements": [
@@ -567,16 +567,16 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3022,
+                        "id": 3009,
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2994
+                          2981
                         ],
-                        "referencedDeclaration": 2994,
+                        "referencedDeclaration": 2981,
                         "src": "1052:11:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2194",
                           "typeString": "contract BetRegistry"
                         }
                       }
@@ -584,11 +584,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2194",
                           "typeString": "contract BetRegistry"
                         }
                       ],
-                      "id": 3021,
+                      "id": 3008,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -601,7 +601,7 @@
                       },
                       "typeName": "address"
                     },
-                    "id": 3023,
+                    "id": 3010,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -615,15 +615,15 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 3020,
-                  "id": 3024,
+                  "functionReturnParameters": 3007,
+                  "id": 3011,
                   "nodeType": "Return",
                   "src": "1037:27:21"
                 }
               ]
             },
             "documentation": "@dev Function that returns the address of the betRegistry setted\n@return address",
-            "id": 3026,
+            "id": 3013,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -631,22 +631,22 @@
             "name": "betRegistry",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3017,
+              "id": 3004,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "966:2:21"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3020,
+              "id": 3007,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3019,
+                  "id": 3006,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3026,
+                  "scope": 3013,
                   "src": "1014:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -655,7 +655,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3018,
+                    "id": 3005,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1014:7:21",
@@ -670,14 +670,14 @@
               ],
               "src": "1013:9:21"
             },
-            "scope": 3027,
+            "scope": 3014,
             "src": "945:126:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3028,
+        "scope": 3015,
         "src": "384:689:21"
       }
     ],
@@ -687,14 +687,14 @@
     "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/RegistrySetter.sol",
     "exportedSymbols": {
       "RegistrySetter": [
-        3027
+        3014
       ]
     },
-    "id": 3028,
+    "id": 3015,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2984,
+        "id": 2971,
         "literals": [
           "solidity",
           "0.4",
@@ -706,10 +706,10 @@
       {
         "absolutePath": "/Users/carlosgonzalezjuarez/Documents/Development/GuesserProtocol/contracts/BetRegistry.sol",
         "file": "./BetRegistry.sol",
-        "id": 2985,
+        "id": 2972,
         "nodeType": "ImportDirective",
-        "scope": 3028,
-        "sourceUnit": 2208,
+        "scope": 3015,
+        "sourceUnit": 2195,
         "src": "37:27:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -717,10 +717,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
         "file": "openzeppelin-solidity/contracts/lifecycle/Pausable.sol",
-        "id": 2986,
+        "id": 2973,
         "nodeType": "ImportDirective",
-        "scope": 3028,
-        "sourceUnit": 3248,
+        "scope": 3015,
+        "sourceUnit": 3235,
         "src": "77:64:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -728,10 +728,10 @@
       {
         "absolutePath": "openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 2987,
+        "id": 2974,
         "nodeType": "ImportDirective",
-        "scope": 3028,
-        "sourceUnit": 3342,
+        "scope": 3015,
+        "sourceUnit": 3329,
         "src": "142:59:21",
         "symbolAliases": [],
         "unitAlias": ""
@@ -742,55 +742,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 2988,
+              "id": 2975,
               "name": "Pausable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3247,
+              "referencedDeclaration": 3234,
               "src": "411:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Pausable_$3247",
+                "typeIdentifier": "t_contract$_Pausable_$3234",
                 "typeString": "contract Pausable"
               }
             },
-            "id": 2989,
+            "id": 2976,
             "nodeType": "InheritanceSpecifier",
             "src": "411:8:21"
           }
         ],
         "contractDependencies": [
-          3247,
-          3427
+          3234,
+          3414
         ],
         "contractKind": "contract",
         "documentation": "@title Registry Setter. ",
         "fullyImplemented": true,
-        "id": 3027,
+        "id": 3014,
         "linearizedBaseContracts": [
-          3027,
-          3247,
-          3427
+          3014,
+          3234,
+          3414
         ],
         "name": "RegistrySetter",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 2992,
+            "id": 2979,
             "libraryName": {
               "contractScope": null,
-              "id": 2990,
+              "id": 2977,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3341,
+              "referencedDeclaration": 3328,
               "src": "432:8:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$3341",
+                "typeIdentifier": "t_contract$_SafeMath_$3328",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
             "src": "426:24:21",
             "typeName": {
-              "id": 2991,
+              "id": 2978,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "445:4:21",
@@ -802,26 +802,26 @@
           },
           {
             "constant": false,
-            "id": 2994,
+            "id": 2981,
             "name": "betRegistry",
             "nodeType": "VariableDeclaration",
-            "scope": 3027,
+            "scope": 3014,
             "src": "456:30:21",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_BetRegistry_$2207",
+              "typeIdentifier": "t_contract$_BetRegistry_$2194",
               "typeString": "contract BetRegistry"
             },
             "typeName": {
               "contractScope": null,
-              "id": 2993,
+              "id": 2980,
               "name": "BetRegistry",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2207,
+              "referencedDeclaration": 2194,
               "src": "456:11:21",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                "typeIdentifier": "t_contract$_BetRegistry_$2194",
                 "typeString": "contract BetRegistry"
               }
             },
@@ -830,30 +830,30 @@
           },
           {
             "body": {
-              "id": 3015,
+              "id": 3002,
               "nodeType": "Block",
               "src": "710:118:21",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 3005,
+                    "id": 2992,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 3001,
+                      "id": 2988,
                       "name": "betRegistry",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2994
+                        2981
                       ],
-                      "referencedDeclaration": 2994,
+                      "referencedDeclaration": 2981,
                       "src": "720:11:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                        "typeIdentifier": "t_contract$_BetRegistry_$2194",
                         "typeString": "contract BetRegistry"
                       }
                     },
@@ -864,11 +864,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 3003,
+                          "id": 2990,
                           "name": "_betRegistry",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2996,
+                          "referencedDeclaration": 2983,
                           "src": "746:12:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -883,18 +883,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 3002,
+                        "id": 2989,
                         "name": "BetRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2207,
+                        "referencedDeclaration": 2194,
                         "src": "734:11:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_BetRegistry_$2207_$",
+                          "typeIdentifier": "t_type$_t_contract$_BetRegistry_$2194_$",
                           "typeString": "type(contract BetRegistry)"
                         }
                       },
-                      "id": 3004,
+                      "id": 2991,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -904,17 +904,17 @@
                       "nodeType": "FunctionCall",
                       "src": "734:25:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                        "typeIdentifier": "t_contract$_BetRegistry_$2194",
                         "typeString": "contract BetRegistry"
                       }
                     },
                     "src": "720:39:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                      "typeIdentifier": "t_contract$_BetRegistry_$2194",
                       "typeString": "contract BetRegistry"
                     }
                   },
-                  "id": 3006,
+                  "id": 2993,
                   "nodeType": "ExpressionStatement",
                   "src": "720:39:21"
                 },
@@ -925,18 +925,18 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 3009,
+                    "id": 2996,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 3007,
+                      "id": 2994,
                       "name": "paused",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3199,
+                      "referencedDeclaration": 3186,
                       "src": "773:6:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -948,7 +948,7 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 3008,
+                      "id": 2995,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -970,11 +970,11 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 3014,
+                  "id": 3001,
                   "nodeType": "IfStatement",
                   "src": "769:53:21",
                   "trueBody": {
-                    "id": 3013,
+                    "id": 3000,
                     "nodeType": "Block",
                     "src": "790:32:21",
                     "statements": [
@@ -984,18 +984,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 3010,
+                            "id": 2997,
                             "name": "pause",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3231,
+                            "referencedDeclaration": 3218,
                             "src": "804:5:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                               "typeString": "function ()"
                             }
                           },
-                          "id": 3011,
+                          "id": 2998,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1009,7 +1009,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 3012,
+                        "id": 2999,
                         "nodeType": "ExpressionStatement",
                         "src": "804:7:21"
                       }
@@ -1019,21 +1019,21 @@
               ]
             },
             "documentation": "@dev Function to add the final Bet Token of the event\n@param _betRegistry address Address of the token",
-            "id": 3016,
+            "id": 3003,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 2999,
+                "id": 2986,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 2998,
+                  "id": 2985,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 3375,
+                  "referencedDeclaration": 3362,
                   "src": "696:9:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1047,15 +1047,15 @@
             "name": "setBetRegistry",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2997,
+              "id": 2984,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2996,
+                  "id": 2983,
                   "name": "_betRegistry",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3016,
+                  "scope": 3003,
                   "src": "651:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1064,7 +1064,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2995,
+                    "id": 2982,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "651:7:21",
@@ -1081,12 +1081,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 3000,
+              "id": 2987,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "710:0:21"
             },
-            "scope": 3027,
+            "scope": 3014,
             "src": "626:202:21",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1094,7 +1094,7 @@
           },
           {
             "body": {
-              "id": 3025,
+              "id": 3012,
               "nodeType": "Block",
               "src": "1027:44:21",
               "statements": [
@@ -1104,16 +1104,16 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3022,
+                        "id": 3009,
                         "name": "betRegistry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          2994
+                          2981
                         ],
-                        "referencedDeclaration": 2994,
+                        "referencedDeclaration": 2981,
                         "src": "1052:11:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2194",
                           "typeString": "contract BetRegistry"
                         }
                       }
@@ -1121,11 +1121,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BetRegistry_$2207",
+                          "typeIdentifier": "t_contract$_BetRegistry_$2194",
                           "typeString": "contract BetRegistry"
                         }
                       ],
-                      "id": 3021,
+                      "id": 3008,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1138,7 +1138,7 @@
                       },
                       "typeName": "address"
                     },
-                    "id": 3023,
+                    "id": 3010,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1152,15 +1152,15 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 3020,
-                  "id": 3024,
+                  "functionReturnParameters": 3007,
+                  "id": 3011,
                   "nodeType": "Return",
                   "src": "1037:27:21"
                 }
               ]
             },
             "documentation": "@dev Function that returns the address of the betRegistry setted\n@return address",
-            "id": 3026,
+            "id": 3013,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1168,22 +1168,22 @@
             "name": "betRegistry",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3017,
+              "id": 3004,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "966:2:21"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3020,
+              "id": 3007,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3019,
+                  "id": 3006,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3026,
+                  "scope": 3013,
                   "src": "1014:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1192,7 +1192,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3018,
+                    "id": 3005,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1014:7:21",
@@ -1207,14 +1207,14 @@
               ],
               "src": "1013:9:21"
             },
-            "scope": 3027,
+            "scope": 3014,
             "src": "945:126:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3028,
+        "scope": 3015,
         "src": "384:689:21"
       }
     ],
@@ -1270,10 +1270,10 @@
         }
       },
       "links": {},
-      "address": "0xef05bef170f555b0309bcdf45e14f3058fc970ce",
-      "transactionHash": "0xb0287b3e73643cc604095f7169288358e48fad819a7e675bcc57a52e3169b910"
+      "address": "0xb6667e7efc69b124f1ed6ee1e446bf21afbe3c85",
+      "transactionHash": "0x504b25cc3280a159c2faa5b74f7a9e8e730983fdc53fb30fcbf3884724531d61"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-20T18:36:35.220Z"
+  "updatedAt": "2018-09-21T11:41:42.126Z"
 }

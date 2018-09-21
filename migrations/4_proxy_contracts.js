@@ -53,6 +53,9 @@ module.exports = function(deployer) {
         await proxyRegistry.setOracleProxiesAllowance(ownerOracleProxy.address, true);
         await proxyRegistry.setTermsProxiesAllowance(ownerTermsProxy.address, true);
 
+        await ownerTermsProxy.setBetRegistry(betRegistry.address);
+        await betOwnerOracleProxy.setBetRegistry(betRegistry.address);
+
         console.log("\x1b[35m%s", "BetKernel address: ", kernel.address);
         console.log("BetPayments address: ", payments.address);
         console.log("BetOracle address: ", oracle.address);
