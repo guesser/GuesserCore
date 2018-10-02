@@ -101,12 +101,12 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
         return betsTerms[_termsHash].waitingPeriod < now;
     }
 
-    function bytesToUint(bytes32 b) private pure returns (uint256){
-        uint256 number;
-        for(uint i = 0; i < b.length; i++){
-            number = number + uint(b[i])*(2**(8*(b.length-(i+1))));
+    function bytesToUint(bytes32 _b) private pure returns (uint256) {
+        uint256 _number;
+        for(uint i = 0; i < _b.length; i++){
+            _number = _number + uint(_b[i])*(2**(8*(_b.length-(i+1))));
         }
 
-        return number;
+        return _number;
     }
 }
