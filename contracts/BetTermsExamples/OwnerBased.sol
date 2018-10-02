@@ -32,9 +32,11 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
 
     /**
      * @dev Function that returns a terms hash for the next event
+     * @param _terms bytes in the Owner based this parameter is not really
+     * needed. But it needs to fulfill the interface.
      * @return bytes32 the terms hash
      */
-    function getTermsHash()
+    function getTermsHash(bytes32 _terms)  // solhint-disable-line
         public
         view
         returns(bytes32)

@@ -76,7 +76,9 @@ contract("Bet Kernel Exceptions Test", async (accounts) => {
         // Setting the terms
         ownerBased = await OwnerBased.new();
         await ownerBased.setBetRegistry(betRegistry.address);
-        termsHash = await ownerBased.getTermsHash.call();
+        termsHash = await ownerBased.getTermsHash.call(
+          web3.toHex('')
+        );
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
         // setting the proxies

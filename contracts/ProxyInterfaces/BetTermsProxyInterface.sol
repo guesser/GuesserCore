@@ -10,7 +10,7 @@ interface BetTermsProxyInterface {
     function changePeriod(bytes32 _termsHash, uint _status)
         external;
 
-    function getTermsHash()
+    function getTermsHash(bytes32 _terms)
         external
         view
         returns(bytes32);

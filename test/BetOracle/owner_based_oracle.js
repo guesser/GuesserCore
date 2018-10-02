@@ -72,7 +72,9 @@ contract("Owner Based Bet Oracle Proxy Test", async (accounts) => {
         await token.setBalance(BETTER_2, 5);
         // Setting the terms
         ownerBased = await OwnerBased.new();
-        termsHash = await ownerBased.getTermsHash.call();
+        termsHash = await ownerBased.getTermsHash.call(
+          web3.toHex('')
+        );
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
         // setting the proxies

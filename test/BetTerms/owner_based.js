@@ -45,7 +45,9 @@ contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
     });
 
     it("should have the termsHash in the call and the txo", async () => {
-        termsHash = await ownerBased.getTermsHash.call();
+        termsHash = await ownerBased.getTermsHash.call(
+          web3.toHex('')
+        );
         expect(
             await ownerBased.setTermsHash.call(termsHash)
         ).to.be.equal(true);
