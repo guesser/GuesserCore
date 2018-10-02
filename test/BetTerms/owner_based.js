@@ -49,10 +49,14 @@ contract("Owner Based Bet Terms Proxy Test", async (accounts) => {
           web3.toHex('')
         );
         expect(
-            await ownerBased.setTermsHash.call(termsHash)
+            await ownerBased.setTermsHash.call(
+              termsHash,
+              web3.toHex('')
+            )
         ).to.be.equal(true);
         await ownerBased.setTermsHash(
-            termsHash
+            termsHash,
+            web3.toHex('')
         );
     });
 

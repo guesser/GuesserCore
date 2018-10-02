@@ -36,7 +36,7 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
      * needed. But it needs to fulfill the interface.
      * @return bytes32 the terms hash
      */
-    function getTermsHash(bytes32 _terms)  // solhint-disable-line
+    function getTermsHash(bytes32 _terms)
         public
         view
         returns(bytes32)
@@ -44,23 +44,26 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
         return keccak256(
             abi.encodePacked(
                 msg.sender,
-                betsNumber
+                betsNumber,
+                _terms
             )
         );
     }
 
     /**
      * @dev Function that given a terms hash creates it if it is true
+     * @param _terms bytes32 the data being used to control the terms of the bet
      * @param _termsHash bytes32 the random number to create the terms hash
      */
-    function setTermsHash(bytes32 _termsHash)
+    function setTermsHash(bytes32 _termsHash, bytes32 _terms)
         public
         returns(bool)
     {
         bytes32 _hash = keccak256(
             abi.encodePacked(
                 msg.sender,
-                betsNumber
+                betsNumber,
+                _terms
             )
         );
 
