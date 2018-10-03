@@ -74,7 +74,7 @@ contract("Bet Registry Test", async (accounts) => {
         // Setting the terms
         ownerBased = await OwnerBased.new();
         termsHash = await ownerBased.getTermsHash.call(
-          web3.toHex('')
+          [web3.toHex('')]
         );
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
