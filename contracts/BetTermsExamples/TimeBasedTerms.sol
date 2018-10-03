@@ -32,9 +32,9 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
      * @return bytes32 the terms hash
      */
     function getTermsHash(bytes32[] _terms) public view returns(bytes32) {
-        uint256 _participationPeriod = bytesToUint(_terms[0]);
-        uint256 _waitingPeriod = bytesToUint(_terms[1]);
-        uint256 _retrievingPeriod = bytesToUint(_terms[2]);
+        uint256 _participationPeriod = uint256(_terms[0]);
+        uint256 _waitingPeriod = uint256(_terms[1]);
+        uint256 _retrievingPeriod = uint256(_terms[2]);
 
         return keccak256(
             abi.encodePacked(
@@ -46,9 +46,9 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
     }
 
     function setTermsHash(bytes32[] _terms) public returns(bool) {
-        uint256 _participationPeriod = bytesToUint(_terms[0]);
-        uint256 _waitingPeriod = bytesToUint(_terms[1]);
-        uint256 _retrievingPeriod = bytesToUint(_terms[2]);
+        uint256 _participationPeriod = uint256(_terms[0]);
+        uint256 _waitingPeriod = uint256(_terms[1]);
+        uint256 _retrievingPeriod = uint256(_terms[2]);
 
         // solium-disable-next-line security/no-block-members
         require(_participationPeriod > now, "Participation period must be until future deadline");
@@ -101,12 +101,9 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
         return betsTerms[_termsHash].waitingPeriod < now;
     }
 
-    function bytesToUint(bytes32 _b) private pure returns (uint256) {
-        uint256 _number;
-        for(uint i = 0; i < _b.length; i++){
-            _number = _number + uint(_b[i])*(2**(8*(_b.length-(i+1))));
-        }
-
-        return _number;
+    function uintToBytes32(uint _number) public pure returns (bytes32) {
+        bytes32 _b = bytes32(_number);
+        
+        return _b;
     }
 }

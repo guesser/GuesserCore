@@ -12,3 +12,4 @@ require('./BetKernel/bet_kernel.js');
 require('./BetKernel/bet_kernel_exception.js');
 require('./BetKernel/erc721_bet_kernel.js');
 require('./Examples/EtherToken.js');
+require('./BetTerms/time_based.js');
