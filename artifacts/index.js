@@ -33,6 +33,7 @@ var ERC721PaymentProxy = require('./contracts/BetPaymentsProxies/ERC721PaymentPr
  *  Bet Terms Proxies Protocol Contracts  *
  ************************************/
 var OwnerBased = require('./contracts/BetTermsExamples/OwnerBased.js');
+var TimeBasedTerms = require('./contracts/BetTermsExamples/TimeBasedTerms.js');
 
 /************************************
  *  Examples Protocol Contracts  *
@@ -58,6 +59,7 @@ module.exports = {
     ERC20PaymentProxy,
     ERC721PaymentProxy,
     OwnerBased,
+    TimeBasedTerms,
     DummyERC721Token,
     DummyToken,
     EtherToken
