@@ -21,6 +21,11 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
         uint _status
     );
 
+    event TermsAdded(
+        address indexed _sender,
+        bytes32 indexed _termsHash
+    );
+
     enum Status {
         ParticipationPeriod,
         RetrievingPeriod,
@@ -36,7 +41,7 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
      * needed. But it needs to fulfill the interface.
      * @return bytes32 the terms hash
      */
-    function getTermsHash(bytes32 _terms)
+    function getTermsHash(bytes32[] _terms)
         public
         view
         returns(bytes32)
@@ -53,9 +58,8 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
     /**
      * @dev Function that given a terms hash creates it if it is true
      * @param _terms bytes32 the data being used to control the terms of the bet
-     * @param _termsHash bytes32 the random number to create the terms hash
      */
-    function setTermsHash(bytes32 _termsHash, bytes32 _terms)
+    function setTermsHash(bytes32[] _terms)
         public
         returns(bool)
     {
@@ -67,7 +71,7 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
             )
         );
 
-        require(_termsHash == _hash);
+        emit TermsAdded(msg.sender, _hash);
 
         // Setting the hash to the first state of the enum
         hashStatus[_hash] = 0;

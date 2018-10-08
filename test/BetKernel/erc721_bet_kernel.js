@@ -76,7 +76,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
         ownerBased = await OwnerBased.new();
         await ownerBased.setBetRegistry(betRegistry.address);
         termsHash = await ownerBased.getTermsHash.call(
-          web3.toHex('')
+          [web3.toHex('')]
         );
         // Setting the oracle
         ownerBasedOracle = await OwnerBasedOracle.new();
