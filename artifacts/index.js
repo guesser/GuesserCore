@@ -33,7 +33,7 @@ var ERC721PaymentProxy = require('./contracts/BetPaymentsProxies/ERC721PaymentPr
  *  Bet Terms Proxies Protocol Contracts  *
  ************************************/
 var OwnerBased = require('./contracts/BetTermsExamples/OwnerBased.js');
-var TimeBasedTerms = require('./contracts/BetTermsExamples/TimeBasedTerms.js');
+var TimeBasedTerms = require('./contracts/BetTermsExamples/TimeBasedTermsProxy.js');
 
 /************************************
  *  Examples Protocol Contracts  *
