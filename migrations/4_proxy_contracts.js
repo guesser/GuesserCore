@@ -20,6 +20,7 @@ module.exports = function(deployer) {
     const ERC721PaymentProxy = artifacts.require("ERC721PaymentProxy");
     // Terms Proxies
     const OwnerBased = artifacts.require("OwnerBased");
+    const TimeBasedTermsProxy = artifacts.require("TimeBasedTerms");
 
     return deployer.then(async () => {
         const kernel = await BetKernel.deployed();
@@ -36,6 +37,7 @@ module.exports = function(deployer) {
         await deployer.deploy(ERC20PaymentProxy);
         await deployer.deploy(ERC721PaymentProxy);
         await deployer.deploy(OwnerBased);
+        await deployer.deploy(TimeBasedTermsProxy);
 
         const erc20KernelProxy = await ERC20BetKernelProxy.deployed();
         const erc721KernelProxy = await ERC721BetKernelProxy.deployed();
@@ -44,6 +46,7 @@ module.exports = function(deployer) {
         const erc20PaymentProxy = await ERC20PaymentProxy.deployed();
         const erc721PaymentProxy = await ERC721PaymentProxy.deployed();
         const ownerTermsProxy = await OwnerBased.deployed();
+        const timeBasedTermsProxy = await TimeBasedTermsProxy.deployed();
 
         await proxyRegistry.setKernelProxiesAllowance(erc20KernelProxy.address, true);
         await proxyRegistry.setKernelProxiesAllowance(erc721KernelProxy.address, true);
@@ -52,8 +55,10 @@ module.exports = function(deployer) {
         await proxyRegistry.setOracleProxiesAllowance(betOwnerOracleProxy.address, true);
         await proxyRegistry.setOracleProxiesAllowance(ownerOracleProxy.address, true);
         await proxyRegistry.setTermsProxiesAllowance(ownerTermsProxy.address, true);
+        await proxyRegistry.setTermsProxiesAllowance(timeBasedTermsProxy.address, true);
 
         await ownerTermsProxy.setBetRegistry(betRegistry.address);
+        await timeBasedTermsProxy.setBetRegistry(betRegistry.address);
         await betOwnerOracleProxy.setBetRegistry(betRegistry.address);
 
         console.log("\x1b[35m%s", "BetKernel address: ", kernel.address);
@@ -70,6 +75,7 @@ module.exports = function(deployer) {
         console.log("ERC20PaymentProxy address: ", erc20PaymentProxy.address);
         console.log("ERC721PaymentProxy address: ", erc721PaymentProxy.address);
         console.log("OwnerBased terms address: ", ownerTermsProxy.address);
+        console.log("TimeBased terms address: ", timeBasedTermsProxy.address);
         console.log("\x1b[0m");
     });
 };
