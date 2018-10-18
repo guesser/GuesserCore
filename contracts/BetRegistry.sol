@@ -50,6 +50,7 @@ contract BetRegistry is RegistryStorage {
 
     /**
      * @dev Function to create bets in the registry
+     * @param _kernelProxy address Direction of the kernel proxy contract
      * @param _paymentsProxy address Direction of the payments proxy contract
      * @param _oracleProxy address Direction of the oracle proxy contract
      * @param _termsProxy address Address of the terms proxy contract

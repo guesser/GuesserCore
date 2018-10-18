@@ -58,6 +58,7 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
     /**
      * @dev Function that given a terms hash creates it if it is true
      * @param _terms bytes32 the data being used to control the terms of the bet
+     * @return bool if the setter was succesful
      */
     function setTermsHash(bytes32[] _terms)
         public

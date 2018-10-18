@@ -23,7 +23,7 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
     mapping(bytes32 => BetTerms) internal betsTerms;
 
     function changePeriod(bytes32, uint)
-        external {
+    external {
         revert("This terms contract doesn't support this operation");
     }
 

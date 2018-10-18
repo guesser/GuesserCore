@@ -13,3 +13,6 @@ require('./BetKernel/bet_kernel_exception.js');
 require('./BetKernel/erc721_bet_kernel.js');
 require('./Examples/EtherToken.js');
 require('./BetTerms/time_based.js');
+
+// Integration tests
+require('./Integration/time_based_mutual.js');

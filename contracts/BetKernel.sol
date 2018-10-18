@@ -6,6 +6,7 @@ import "./BetPayments.sol";
 import "./BetOracle.sol";
 import "./BetTerms.sol";
 import "./ProxyInterfaces/BetKernelProxyInterface.sol";
+import "./ProxyInterfaces/BetTermsProxyInterface.sol";
 
 
 /**
@@ -14,6 +15,48 @@ import "./ProxyInterfaces/BetKernelProxyInterface.sol";
  */
 /** @title BetKernel. */
 contract BetKernel is RegistrySetter {
+
+    /**
+     * @dev Function creates a bet with the selected parameters
+     * @param _kernelProxy address Direction of the kernel proxy contract
+     * @param _paymentsProxy address Direction of the payments proxy contract
+     * @param _oracleProxy address Direction of the oracle proxy contract
+     * @param _termsProxy address Address of the terms proxy contract
+     * @param _terms bytes32[] The terms of the bet
+     * @param _salt uint random number to provide a unique hash
+     * @return bytes32 the that identifies the bet
+     * @return bytes32 the terms of the created bet
+     */
+    function createBet(
+        address _kernelProxy,
+        address _paymentsProxy,
+        address _paymentsToken,
+        address _oracleProxy,
+        address _termsProxy,
+        bytes32[] _terms,
+        string _title,
+        uint _salt
+    )
+        public
+        returns(bytes32, bytes32)
+    {
+        BetTermsProxyInterface _termsProxyContract = BetTermsProxyInterface(_termsProxy);
+        bytes32 _termsHash = _termsProxyContract.getTermsHash(_terms);
+        _termsProxyContract.setTermsHash(_terms);
+
+        bytes32 _betHash = betRegistry.createBet(
+            _kernelProxy,
+            _paymentsProxy,
+            _paymentsToken,
+            _oracleProxy,
+            _termsProxy,
+            _termsHash,
+            _title,
+            _salt
+        );
+
+        return (_betHash, _termsHash);
+    }
 
     /**
      * @dev Function adds a bet from a player to a bet

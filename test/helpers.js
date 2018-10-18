@@ -1,5 +1,4 @@
 // Time Forwarding Test Helper
-
 const jsonrpc = '2.0'
 
 const id = 0
