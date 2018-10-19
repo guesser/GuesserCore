@@ -32,6 +32,7 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
     function placeBet(
         bytes32 _betHash,
         bytes32 _playerBetHashProof,
+        address _player,
         uint _option,
         uint _number
     ) 
@@ -63,7 +64,7 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         // Creating the actual bet and returning the hash
         bytes32 _playerBetHash = betRegistry.insertPlayerBet(
             _betHash,
-            msg.sender,
+            _player,
             _option,
             _number // Token id
         );

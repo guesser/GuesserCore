@@ -15,7 +15,18 @@ import "./ProxyInterfaces/BetTermsProxyInterface.sol";
  */
 /** @title BetKernel. */
 contract BetKernel is RegistrySetter {
+    address public wethAddress;
 
+    function () public payable {
+        if (msg.value > 0)
+            require(msg.sender == wethAddress, "Only WETH token can send money to this contract");
+    }
+
+    function setWethAddress(address _wethAddress) external onlyOwner {
+        require(wethAddress == address(0), "WETH token address already initialized");
+        wethAddress = _wethAddress;
+    }
+    
     /**
      * @dev Function creates a bet with the selected parameters
      * @param _kernelProxy address Direction of the kernel proxy contract
@@ -61,6 +72,50 @@ contract BetKernel is RegistrySetter {
     /**
      * @dev Function adds a bet from a player to a bet
      * @param _betHash bytes32 of the bet you want to get
+     * @param _player address the address of the player (might be registered by other address)
+     * @param _option uint the choosen option by the player
+     * @param _number uint the quantity of tokens bet
+     * @return bool if the betting was succesfull
+     */
+    function placeBet(
+        bytes32 _betHash,
+        address _player,
+        uint _option,
+        uint _number
+    )
+        public
+        whenPaused
+        returns(bytes32)
+    {
+        bytes32 _playerBetHash = betRegistry.getPlayerBetHash(
+            _betHash,
+            _player,
+            _option,
+            _number
+        );
+
+        address _kernelProxy = betRegistry.getBetKernelProxy(_betHash);
+        require(
+            _kernelProxy.delegatecall(
+                bytes4(
+                    keccak256(
+                        "placeBet(bytes32,bytes32,address,uint256,uint256)"
+                    )
+                ),
+                _betHash,
+                _playerBetHash,
+                _player,
+                _option,
+                _number
+            )
+        );
+
+        return _playerBetHash;
+    }
+
+    /**
+     * @dev Function adds a bet from a player to a bet
+     * @param _betHash bytes32 of the bet you want to get
      * @param _option uint the choosen option by the player
      * @param _number uint the quantity of tokens bet
      * @return bool if the betting was succesfull
@@ -74,29 +129,7 @@ contract BetKernel is RegistrySetter {
         whenPaused
         returns(bytes32)
     {
-        bytes32 _playerBetHash = betRegistry.getPlayerBetHash(
-            _betHash,
-            msg.sender,
-            _option,
-            _number
-        );
-
-        address _kernelProxy = betRegistry.getBetKernelProxy(_betHash);
-        require(
-            _kernelProxy.delegatecall(
-                bytes4(
-                    keccak256(
-                        "placeBet(bytes32,bytes32,uint256,uint256)"
-                    )
-                ),
-                _betHash,
-                _playerBetHash,
-                _option,
-                _number
-            )
-        );
-
-        return _playerBetHash;
+        return placeBet(_betHash, msg.sender, _option, _number);
     }
 
     /**
