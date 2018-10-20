@@ -1,8 +1,13 @@
 pragma solidity 0.4.24;
 
 // Internal
-import "./ERC20BetKernelProxy.sol";
+import "../ProxyInterfaces/BetKernelProxyInterface.sol";
+import "../RegistrySetter.sol";
+import "../BetPayments.sol";
+import "../BetOracle.sol";
+import "../BetTerms.sol";
 import "../WETH9.sol";
+
 
 /**
  * A WETH implementation for the kernel used in the Guesser Protocol
@@ -12,7 +17,81 @@ import "../WETH9.sol";
  * Author: Ben Kaufman -- Github: ben-kaufman
  */
 /** @title ETHBetKernelProxy. */
-contract ETHBetKernelProxy is ERC20BetKernelProxy {
+contract ETHBetKernelProxy is RegistrySetter, BetKernelProxyInterface {
+
+    /**
+     * @dev Function that places a bet and returns its hash
+     * @param _betHash bytes32 the hash of the bet
+     * @param _option uint the option voted
+     * @param _number uint the amount voted
+     * @return bool the amount of tokens sent
+     */
+    function placeBet(
+        bytes32 _betHash,
+        bytes32 _playerBetHashProof,
+        address _player,
+        uint _option,
+        uint _number
+    )
+        public
+        payable
+        returns(bool)
+    {
+        
+        address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
+        address _paymentsToken = betRegistry.getBetPaymentsToken(_betHash);
+
+        BetPayments _betPayments = BetPayments(betRegistry.betPayments());
+        BetTerms _betTerms = BetTerms(betRegistry.betTerms());
+
+        require(msg.value == _number, "amount given is different than value sent");
+        require(_number > 0, "you must send ether to place a bet");
+
+        WETH9(_paymentsToken).deposit.value(msg.value)();
+
+        require(WETH9(_paymentsToken).approve(address(_betPayments), _number), "couldn't approve weth");
+        
+        require(
+            _betTerms.participationPeriod(
+                betRegistry.getBetTermsProxy(_betHash),
+                betRegistry.getBetTermsHash(_betHash)
+            )
+        );
+
+        require(
+            _betPayments.transferFrom(
+                _paymentsProxy,
+                _paymentsToken,
+                msg.sender,
+                address(_betPayments),
+                _number
+            )
+        );
+
+        // Creating the actual bet and returning the hash
+        bytes32 _playerBetHash = betRegistry.insertPlayerBet(
+            _betHash,
+            _player,
+            _option,
+            _number
+        );
+
+        require(_playerBetHashProof == _playerBetHash);
+
+        betRegistry.addTotalPrincipal(
+            _betHash,
+            _number
+        );
+        
+        betRegistry.addToOption(
+            _betHash,
+            _option,
+            _number
+        );
+
+        return true;
+    }
+
     /**
      * @dev Function that ask for the profits of a user
      * @param _betHash bytes32 the hash of the bet

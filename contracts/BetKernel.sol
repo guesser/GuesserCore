@@ -84,6 +84,7 @@ contract BetKernel is RegistrySetter {
         uint _number
     )
         public
+        payable
         whenPaused
         returns(bytes32)
     {

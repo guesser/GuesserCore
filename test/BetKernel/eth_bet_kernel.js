@@ -11,8 +11,6 @@ const BetRegistry = artifacts.require("BetRegistry");
 const ProxyRegistry = artifacts.require("ProxyRegistry");
 // Bet Kernel Proxy
 const ETHBetKernelProxy = artifacts.require("ETHBetKernelProxy");
-// ETH Forwarder
-const ETHForwarder = artifacts.require("ETHForwarder");
 // WETH Token
 const WETH9 = artifacts.require("WETH9");
 // Bet Payments Proxy
@@ -37,7 +35,6 @@ contract("ETH Bet Kernel Test", async accounts => {
   // Bet Payments
   var erc20PaymentProxy;
   var token;
-  var ethForwarder;
   // Bet Terms
   var ownerBased;
   var termsHash;
@@ -72,7 +69,6 @@ contract("ETH Bet Kernel Test", async accounts => {
     // Setting the ETH forwarder and WETH token
     token = await WETH9.new();
     await betKernel.setWethAddress(token.address);
-    ethForwarder = await ETHForwarder.new(betKernel.address, betPayments.address, token.address);
     
     // Setting the terms
     ownerBased = await OwnerBased.new();
@@ -141,7 +137,7 @@ contract("ETH Bet Kernel Test", async accounts => {
     );
 
     let initBalance = (await web3.eth.getBalance(BETTER_1)).toNumber();
-    await ethForwarder.placeBet(betHash, 3, { from: BETTER_1, value: web3.toWei(5) });
+    await betKernel.placeBet(betHash, 3, web3.toWei(5), { from: BETTER_1, value: web3.toWei(5) });
     let balance = (await web3.eth.getBalance(BETTER_1)).toNumber();
     expect(Math.round(web3.fromWei(initBalance - balance))).to.almost.equal(5);
     balance = await token.balanceOf(betPayments.address);
@@ -182,7 +178,7 @@ contract("ETH Bet Kernel Test", async accounts => {
       web3.toWei(5),
     );
 
-    await ethForwarder.placeBet(betHash, 2, { 
+    await betKernel.placeBet(betHash, 2, web3.toWei(5), { 
       from: BETTER_2, 
       value: web3.toWei(5) 
     });
