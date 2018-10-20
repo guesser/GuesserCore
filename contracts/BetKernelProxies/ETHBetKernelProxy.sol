@@ -62,7 +62,7 @@ contract ETHBetKernelProxy is RegistrySetter, BetKernelProxyInterface {
             _betPayments.transferFrom(
                 _paymentsProxy,
                 _paymentsToken,
-                msg.sender,
+                address(this),
                 address(_betPayments),
                 _number
             )
