@@ -200,7 +200,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(bytes32)
     {
         return keccak256(

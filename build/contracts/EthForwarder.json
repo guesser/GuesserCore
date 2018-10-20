@@ -1,0 +1,2376 @@
+{
+  "contractName": "EthForwarder",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "wethToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betKernel",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "betPayments",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_betKernel",
+          "type": "address"
+        },
+        {
+          "name": "_betPayments",
+          "type": "address"
+        },
+        {
+          "name": "_wethToken",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_betHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "_option",
+          "type": "uint256"
+        }
+      ],
+      "name": "placeBet",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50604051606080610761833981018060405281019080805190602001909291908051906020019092919080519060200190929190505050826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050506106468061011b6000396000f300608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634b57b0be146100675780634c98ee7b146100be578063dd943d0414610115578063f3118d8e1461016c575b600080fd5b34801561007357600080fd5b5061007c6101b6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100ca57600080fd5b506100d36101dc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012157600080fd5b5061012a610201565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610198600480360381019080803560001916906020019092919080359060200190929190505050610227565b60405180826000191660001916815260200191505060405180910390f35b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600080341115156102c6576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f796f75206d7573742073656e6420657468657220746f20706c6163652061206281526020017f657400000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663d0e30db0346040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004016000604051808303818588803b15801561034c57600080fd5b505af1158015610360573d6000803e3d6000fd5b5050505050600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663095ea7b3600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16346040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b15801561044c57600080fd5b505af1158015610460573d6000803e3d6000fd5b505050506040513d602081101561047657600080fd5b810190808051906020019092919050505015156104fb576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f636f756c646e277420617070726f76652077657468000000000000000000000081525060200191505060405180910390fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663edda9b29843385346040518563ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018085600019166000191681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001945050505050602060405180830381600087803b1580156105d757600080fd5b505af11580156105eb573d6000803e3d6000fd5b505050506040513d602081101561060157600080fd5b81019080805190602001909291905050509050929150505600a165627a7a723058201d330a492e40c58b41536f5998a9d178a224378967444563dac6fd4b823ddd0d0029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634b57b0be146100675780634c98ee7b146100be578063dd943d0414610115578063f3118d8e1461016c575b600080fd5b34801561007357600080fd5b5061007c6101b6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100ca57600080fd5b506100d36101dc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561012157600080fd5b5061012a610201565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610198600480360381019080803560001916906020019092919080359060200190929190505050610227565b60405180826000191660001916815260200191505060405180910390f35b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600080341115156102c6576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001807f796f75206d7573742073656e6420657468657220746f20706c6163652061206281526020017f657400000000000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663d0e30db0346040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004016000604051808303818588803b15801561034c57600080fd5b505af1158015610360573d6000803e3d6000fd5b5050505050600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663095ea7b3600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16346040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b15801561044c57600080fd5b505af1158015610460573d6000803e3d6000fd5b505050506040513d602081101561047657600080fd5b810190808051906020019092919050505015156104fb576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f636f756c646e277420617070726f76652077657468000000000000000000000081525060200191505060405180910390fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663edda9b29843385346040518563ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018085600019166000191681526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001945050505050602060405180830381600087803b1580156105d757600080fd5b505af11580156105eb573d6000803e3d6000fd5b505050506040513d602081101561060157600080fd5b81019080805190602001909291905050509050929150505600a165627a7a723058201d330a492e40c58b41536f5998a9d178a224378967444563dac6fd4b823ddd0d0029",
+  "sourceMap": "340:774:14:-;;;465:193;8:9:-1;5:2;;;30:1;27;20:12;5:2;465:193:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;573:10;561:9;;:22;;;;;;;;;;;;;;;;;;607:12;593:11;;:26;;;;;;;;;;;;;;;;;;641:10;629:9;;:22;;;;;;;;;;;;;;;;;;465:193;;;340:774;;;;;;",
+  "deployedSourceMap": "340:774:14:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;436:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;436:22:14;;;;;;;;;;;;;;;;;;;;;;;;;;;368:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;368:26:14;;;;;;;;;;;;;;;;;;;;;;;;;;;400:30;;8:9:-1;5:2;;;30:1;27;20:12;5:2;400:30:14;;;;;;;;;;;;;;;;;;;;;;;;;;;664:448;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;436:22;;;;;;;;;;;;;:::o;368:26::-;;;;;;;;;;;;;:::o;400:30::-;;;;;;;;;;;;;:::o;664:448::-;783:7;829:1;817:9;:13;809:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;880:9;;;;;;;;;;;:17;;;904:9;880:36;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;880:36:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;880:36:14;;;;;935:9;;;;;;;;;;;:17;;;961:11;;;;;;;;;;;975:9;935:50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;935:50:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;935:50:14;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;935:50:14;;;;;;;;;;;;;;;;927:84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1045:9;;;;;;;;;;;:18;;;1064:8;1074:10;1086:7;1095:9;1045:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1045:60:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1045:60:14;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1045:60:14;;;;;;;;;;;;;;;;1038:67;;664:448;;;;:::o",
+  "source": "pragma solidity 0.4.24;\n\n// Internal\nimport \"./BetKernel.sol\";\nimport \"./BetPayments.sol\";\nimport \"./WETH9.sol\";\n\n\n/**\n * A utility contract for placing a bet by sending ETH.\n * The contract wraps the ETH into WETH and places a bet with it in the bet kernel.\n *\n * Author: Ben Kaufman -- Github: ben-kaufman\n */\n/** @title EthForwarder. */\ncontract EthForwarder {\n    BetKernel public betKernel;\n    BetPayments public betPayments;\n    WETH9 public wethToken;\n\n    constructor (BetKernel _betKernel, BetPayments _betPayments, WETH9 _wethToken) public {\n        betKernel = _betKernel;\n        betPayments = _betPayments;\n        wethToken = _wethToken;\n    }\n\n    function placeBet(\n        bytes32 _betHash,\n        uint _option\n    )\n        public\n        payable\n        returns(bytes32)\n    {   \n        require(msg.value > 0, \"you must send ether to place a bet\");\n\n        wethToken.deposit.value(msg.value)();\n\n        require(wethToken.approve(address(betPayments), msg.value), \"couldn't approve weth\");\n                \n        return betKernel.placeBet(_betHash, msg.sender, _option, msg.value);\n    }\n}",
+  "sourcePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/EthForwarder.sol",
+  "ast": {
+    "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/EthForwarder.sol",
+    "exportedSymbols": {
+      "EthForwarder": [
+        3258
+      ]
+    },
+    "id": 3259,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3176,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/BetKernel.sol",
+        "file": "./BetKernel.sol",
+        "id": 3177,
+        "nodeType": "ImportDirective",
+        "scope": 3259,
+        "sourceUnit": 264,
+        "src": "37:25:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/BetPayments.sol",
+        "file": "./BetPayments.sol",
+        "id": 3178,
+        "nodeType": "ImportDirective",
+        "scope": 3259,
+        "sourceUnit": 1587,
+        "src": "63:27:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/WETH9.sol",
+        "file": "./WETH9.sol",
+        "id": 3179,
+        "nodeType": "ImportDirective",
+        "scope": 3259,
+        "sourceUnit": 4192,
+        "src": "91:21:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title EthForwarder. ",
+        "fullyImplemented": true,
+        "id": 3258,
+        "linearizedBaseContracts": [
+          3258
+        ],
+        "name": "EthForwarder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3181,
+            "name": "betKernel",
+            "nodeType": "VariableDeclaration",
+            "scope": 3258,
+            "src": "368:26:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_BetKernel_$263",
+              "typeString": "contract BetKernel"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3180,
+              "name": "BetKernel",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 263,
+              "src": "368:9:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetKernel_$263",
+                "typeString": "contract BetKernel"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3183,
+            "name": "betPayments",
+            "nodeType": "VariableDeclaration",
+            "scope": 3258,
+            "src": "400:30:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_BetPayments_$1586",
+              "typeString": "contract BetPayments"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3182,
+              "name": "BetPayments",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1586,
+              "src": "400:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetPayments_$1586",
+                "typeString": "contract BetPayments"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3185,
+            "name": "wethToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 3258,
+            "src": "436:22:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_WETH9_$4191",
+              "typeString": "contract WETH9"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3184,
+              "name": "WETH9",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4191,
+              "src": "436:5:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_WETH9_$4191",
+                "typeString": "contract WETH9"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3206,
+              "nodeType": "Block",
+              "src": "551:107:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3196,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3194,
+                      "name": "betKernel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3181,
+                      "src": "561:9:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetKernel_$263",
+                        "typeString": "contract BetKernel"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3195,
+                      "name": "_betKernel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3187,
+                      "src": "573:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetKernel_$263",
+                        "typeString": "contract BetKernel"
+                      }
+                    },
+                    "src": "561:22:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetKernel_$263",
+                      "typeString": "contract BetKernel"
+                    }
+                  },
+                  "id": 3197,
+                  "nodeType": "ExpressionStatement",
+                  "src": "561:22:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3200,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3198,
+                      "name": "betPayments",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3183,
+                      "src": "593:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetPayments_$1586",
+                        "typeString": "contract BetPayments"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3199,
+                      "name": "_betPayments",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3189,
+                      "src": "607:12:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetPayments_$1586",
+                        "typeString": "contract BetPayments"
+                      }
+                    },
+                    "src": "593:26:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetPayments_$1586",
+                      "typeString": "contract BetPayments"
+                    }
+                  },
+                  "id": 3201,
+                  "nodeType": "ExpressionStatement",
+                  "src": "593:26:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3204,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3202,
+                      "name": "wethToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3185,
+                      "src": "629:9:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_WETH9_$4191",
+                        "typeString": "contract WETH9"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3203,
+                      "name": "_wethToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3191,
+                      "src": "641:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_WETH9_$4191",
+                        "typeString": "contract WETH9"
+                      }
+                    },
+                    "src": "629:22:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_WETH9_$4191",
+                      "typeString": "contract WETH9"
+                    }
+                  },
+                  "id": 3205,
+                  "nodeType": "ExpressionStatement",
+                  "src": "629:22:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3207,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3187,
+                  "name": "_betKernel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3207,
+                  "src": "478:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_BetKernel_$263",
+                    "typeString": "contract BetKernel"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3186,
+                    "name": "BetKernel",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 263,
+                    "src": "478:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetKernel_$263",
+                      "typeString": "contract BetKernel"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3189,
+                  "name": "_betPayments",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3207,
+                  "src": "500:24:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_BetPayments_$1586",
+                    "typeString": "contract BetPayments"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3188,
+                    "name": "BetPayments",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1586,
+                    "src": "500:11:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetPayments_$1586",
+                      "typeString": "contract BetPayments"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3191,
+                  "name": "_wethToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3207,
+                  "src": "526:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_WETH9_$4191",
+                    "typeString": "contract WETH9"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3190,
+                    "name": "WETH9",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4191,
+                    "src": "526:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_WETH9_$4191",
+                      "typeString": "contract WETH9"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "477:66:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3193,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "551:0:14"
+            },
+            "scope": 3258,
+            "src": "465:193:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3256,
+              "nodeType": "Block",
+              "src": "796:316:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3220,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3217,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6192,
+                            "src": "817:3:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 3218,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "817:9:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 3219,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "829:1:14",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "817:13:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "796f75206d7573742073656e6420657468657220746f20706c616365206120626574",
+                        "id": 3221,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "832:36:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_20733c170e3814e57851631964e56f355d8cb80476704fd0a8f3705e2685fa65",
+                          "typeString": "literal_string \"you must send ether to place a bet\""
+                        },
+                        "value": "you must send ether to place a bet"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_20733c170e3814e57851631964e56f355d8cb80476704fd0a8f3705e2685fa65",
+                          "typeString": "literal_string \"you must send ether to place a bet\""
+                        }
+                      ],
+                      "id": 3216,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        6195,
+                        6196
+                      ],
+                      "referencedDeclaration": 6196,
+                      "src": "809:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3222,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "809:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3223,
+                  "nodeType": "ExpressionStatement",
+                  "src": "809:60:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3229,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6192,
+                            "src": "904:3:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 3230,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "904:9:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3224,
+                            "name": "wethToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3185,
+                            "src": "880:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_WETH9_$4191",
+                              "typeString": "contract WETH9"
+                            }
+                          },
+                          "id": 3227,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "deposit",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4022,
+                          "src": "880:17:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_payable$__$returns$__$",
+                            "typeString": "function () payable external"
+                          }
+                        },
+                        "id": 3228,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "880:23:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_setvalue_nonpayable$_t_uint256_$returns$_t_function_external_payable$__$returns$__$value_$",
+                          "typeString": "function (uint256) returns (function () payable external)"
+                        }
+                      },
+                      "id": 3231,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "880:34:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$__$returns$__$value",
+                        "typeString": "function () payable external"
+                      }
+                    },
+                    "id": 3232,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "880:36:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3233,
+                  "nodeType": "ExpressionStatement",
+                  "src": "880:36:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 3238,
+                                "name": "betPayments",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3183,
+                                "src": "961:11:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_BetPayments_$1586",
+                                  "typeString": "contract BetPayments"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_BetPayments_$1586",
+                                  "typeString": "contract BetPayments"
+                                }
+                              ],
+                              "id": 3237,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "953:7:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_address_$",
+                                "typeString": "type(address)"
+                              },
+                              "typeName": "address"
+                            },
+                            "id": 3239,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "953:20:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3240,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 6192,
+                              "src": "975:3:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 3241,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "975:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3235,
+                            "name": "wethToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3185,
+                            "src": "935:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_WETH9_$4191",
+                              "typeString": "contract WETH9"
+                            }
+                          },
+                          "id": 3236,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "approve",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4095,
+                          "src": "935:17:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) external returns (bool)"
+                          }
+                        },
+                        "id": 3242,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "935:50:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "636f756c646e277420617070726f76652077657468",
+                        "id": 3243,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "987:23:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1d5a2c7f0ab4ad83760aaff3d3e07f46841910d3f8a56b5664979fd48fed1bff",
+                          "typeString": "literal_string \"couldn't approve weth\""
+                        },
+                        "value": "couldn't approve weth"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1d5a2c7f0ab4ad83760aaff3d3e07f46841910d3f8a56b5664979fd48fed1bff",
+                          "typeString": "literal_string \"couldn't approve weth\""
+                        }
+                      ],
+                      "id": 3234,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        6195,
+                        6196
+                      ],
+                      "referencedDeclaration": 6196,
+                      "src": "927:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3244,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "927:84:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3245,
+                  "nodeType": "ExpressionStatement",
+                  "src": "927:84:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3248,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3209,
+                        "src": "1064:8:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3249,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6192,
+                          "src": "1074:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3250,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1074:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3251,
+                        "name": "_option",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3211,
+                        "src": "1086:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3252,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6192,
+                          "src": "1095:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3253,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1095:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3246,
+                        "name": "betKernel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3181,
+                        "src": "1045:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BetKernel_$263",
+                          "typeString": "contract BetKernel"
+                        }
+                      },
+                      "id": 3247,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "placeBet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 162,
+                      "src": "1045:18:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$_t_bytes32_$_t_address_$_t_uint256_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes32,address,uint256,uint256) payable external returns (bytes32)"
+                      }
+                    },
+                    "id": 3254,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1045:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 3215,
+                  "id": 3255,
+                  "nodeType": "Return",
+                  "src": "1038:67:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3257,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "placeBet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3209,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3257,
+                  "src": "691:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3208,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3211,
+                  "name": "_option",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3257,
+                  "src": "717:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3210,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "717:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "681:54:14"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 3215,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3214,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3257,
+                  "src": "783:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3213,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "783:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "782:9:14"
+            },
+            "scope": 3258,
+            "src": "664:448:14",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 3259,
+        "src": "340:774:14"
+      }
+    ],
+    "src": "0:1114:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/EthForwarder.sol",
+    "exportedSymbols": {
+      "EthForwarder": [
+        3258
+      ]
+    },
+    "id": 3259,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3176,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/BetKernel.sol",
+        "file": "./BetKernel.sol",
+        "id": 3177,
+        "nodeType": "ImportDirective",
+        "scope": 3259,
+        "sourceUnit": 264,
+        "src": "37:25:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/BetPayments.sol",
+        "file": "./BetPayments.sol",
+        "id": 3178,
+        "nodeType": "ImportDirective",
+        "scope": 3259,
+        "sourceUnit": 1587,
+        "src": "63:27:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/benkaufman/Documents/Work/Guesser/GuesserCore/contracts/WETH9.sol",
+        "file": "./WETH9.sol",
+        "id": 3179,
+        "nodeType": "ImportDirective",
+        "scope": 3259,
+        "sourceUnit": 4192,
+        "src": "91:21:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title EthForwarder. ",
+        "fullyImplemented": true,
+        "id": 3258,
+        "linearizedBaseContracts": [
+          3258
+        ],
+        "name": "EthForwarder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3181,
+            "name": "betKernel",
+            "nodeType": "VariableDeclaration",
+            "scope": 3258,
+            "src": "368:26:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_BetKernel_$263",
+              "typeString": "contract BetKernel"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3180,
+              "name": "BetKernel",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 263,
+              "src": "368:9:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetKernel_$263",
+                "typeString": "contract BetKernel"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3183,
+            "name": "betPayments",
+            "nodeType": "VariableDeclaration",
+            "scope": 3258,
+            "src": "400:30:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_BetPayments_$1586",
+              "typeString": "contract BetPayments"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3182,
+              "name": "BetPayments",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1586,
+              "src": "400:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BetPayments_$1586",
+                "typeString": "contract BetPayments"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3185,
+            "name": "wethToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 3258,
+            "src": "436:22:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_WETH9_$4191",
+              "typeString": "contract WETH9"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3184,
+              "name": "WETH9",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4191,
+              "src": "436:5:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_WETH9_$4191",
+                "typeString": "contract WETH9"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3206,
+              "nodeType": "Block",
+              "src": "551:107:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3196,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3194,
+                      "name": "betKernel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3181,
+                      "src": "561:9:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetKernel_$263",
+                        "typeString": "contract BetKernel"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3195,
+                      "name": "_betKernel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3187,
+                      "src": "573:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetKernel_$263",
+                        "typeString": "contract BetKernel"
+                      }
+                    },
+                    "src": "561:22:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetKernel_$263",
+                      "typeString": "contract BetKernel"
+                    }
+                  },
+                  "id": 3197,
+                  "nodeType": "ExpressionStatement",
+                  "src": "561:22:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3200,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3198,
+                      "name": "betPayments",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3183,
+                      "src": "593:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetPayments_$1586",
+                        "typeString": "contract BetPayments"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3199,
+                      "name": "_betPayments",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3189,
+                      "src": "607:12:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_BetPayments_$1586",
+                        "typeString": "contract BetPayments"
+                      }
+                    },
+                    "src": "593:26:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetPayments_$1586",
+                      "typeString": "contract BetPayments"
+                    }
+                  },
+                  "id": 3201,
+                  "nodeType": "ExpressionStatement",
+                  "src": "593:26:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3204,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3202,
+                      "name": "wethToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3185,
+                      "src": "629:9:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_WETH9_$4191",
+                        "typeString": "contract WETH9"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3203,
+                      "name": "_wethToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3191,
+                      "src": "641:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_WETH9_$4191",
+                        "typeString": "contract WETH9"
+                      }
+                    },
+                    "src": "629:22:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_WETH9_$4191",
+                      "typeString": "contract WETH9"
+                    }
+                  },
+                  "id": 3205,
+                  "nodeType": "ExpressionStatement",
+                  "src": "629:22:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3207,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3192,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3187,
+                  "name": "_betKernel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3207,
+                  "src": "478:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_BetKernel_$263",
+                    "typeString": "contract BetKernel"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3186,
+                    "name": "BetKernel",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 263,
+                    "src": "478:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetKernel_$263",
+                      "typeString": "contract BetKernel"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3189,
+                  "name": "_betPayments",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3207,
+                  "src": "500:24:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_BetPayments_$1586",
+                    "typeString": "contract BetPayments"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3188,
+                    "name": "BetPayments",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1586,
+                    "src": "500:11:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_BetPayments_$1586",
+                      "typeString": "contract BetPayments"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3191,
+                  "name": "_wethToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3207,
+                  "src": "526:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_WETH9_$4191",
+                    "typeString": "contract WETH9"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3190,
+                    "name": "WETH9",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4191,
+                    "src": "526:5:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_WETH9_$4191",
+                      "typeString": "contract WETH9"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "477:66:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3193,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "551:0:14"
+            },
+            "scope": 3258,
+            "src": "465:193:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3256,
+              "nodeType": "Block",
+              "src": "796:316:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3220,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3217,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6192,
+                            "src": "817:3:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 3218,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "817:9:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 3219,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "829:1:14",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "817:13:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "796f75206d7573742073656e6420657468657220746f20706c616365206120626574",
+                        "id": 3221,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "832:36:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_20733c170e3814e57851631964e56f355d8cb80476704fd0a8f3705e2685fa65",
+                          "typeString": "literal_string \"you must send ether to place a bet\""
+                        },
+                        "value": "you must send ether to place a bet"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_20733c170e3814e57851631964e56f355d8cb80476704fd0a8f3705e2685fa65",
+                          "typeString": "literal_string \"you must send ether to place a bet\""
+                        }
+                      ],
+                      "id": 3216,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        6195,
+                        6196
+                      ],
+                      "referencedDeclaration": 6196,
+                      "src": "809:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3222,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "809:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3223,
+                  "nodeType": "ExpressionStatement",
+                  "src": "809:60:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3229,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6192,
+                            "src": "904:3:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 3230,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "904:9:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3224,
+                            "name": "wethToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3185,
+                            "src": "880:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_WETH9_$4191",
+                              "typeString": "contract WETH9"
+                            }
+                          },
+                          "id": 3227,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "deposit",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4022,
+                          "src": "880:17:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_payable$__$returns$__$",
+                            "typeString": "function () payable external"
+                          }
+                        },
+                        "id": 3228,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "880:23:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_setvalue_nonpayable$_t_uint256_$returns$_t_function_external_payable$__$returns$__$value_$",
+                          "typeString": "function (uint256) returns (function () payable external)"
+                        }
+                      },
+                      "id": 3231,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "880:34:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$__$returns$__$value",
+                        "typeString": "function () payable external"
+                      }
+                    },
+                    "id": 3232,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "880:36:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3233,
+                  "nodeType": "ExpressionStatement",
+                  "src": "880:36:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 3238,
+                                "name": "betPayments",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3183,
+                                "src": "961:11:14",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_BetPayments_$1586",
+                                  "typeString": "contract BetPayments"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_BetPayments_$1586",
+                                  "typeString": "contract BetPayments"
+                                }
+                              ],
+                              "id": 3237,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "953:7:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_address_$",
+                                "typeString": "type(address)"
+                              },
+                              "typeName": "address"
+                            },
+                            "id": 3239,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "953:20:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3240,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 6192,
+                              "src": "975:3:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 3241,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "value",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "975:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3235,
+                            "name": "wethToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3185,
+                            "src": "935:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_WETH9_$4191",
+                              "typeString": "contract WETH9"
+                            }
+                          },
+                          "id": 3236,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "approve",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4095,
+                          "src": "935:17:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) external returns (bool)"
+                          }
+                        },
+                        "id": 3242,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "935:50:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "636f756c646e277420617070726f76652077657468",
+                        "id": 3243,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "987:23:14",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1d5a2c7f0ab4ad83760aaff3d3e07f46841910d3f8a56b5664979fd48fed1bff",
+                          "typeString": "literal_string \"couldn't approve weth\""
+                        },
+                        "value": "couldn't approve weth"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1d5a2c7f0ab4ad83760aaff3d3e07f46841910d3f8a56b5664979fd48fed1bff",
+                          "typeString": "literal_string \"couldn't approve weth\""
+                        }
+                      ],
+                      "id": 3234,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        6195,
+                        6196
+                      ],
+                      "referencedDeclaration": 6196,
+                      "src": "927:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3244,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "927:84:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3245,
+                  "nodeType": "ExpressionStatement",
+                  "src": "927:84:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3248,
+                        "name": "_betHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3209,
+                        "src": "1064:8:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3249,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6192,
+                          "src": "1074:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3250,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1074:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3251,
+                        "name": "_option",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3211,
+                        "src": "1086:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3252,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6192,
+                          "src": "1095:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3253,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1095:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3246,
+                        "name": "betKernel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3181,
+                        "src": "1045:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_BetKernel_$263",
+                          "typeString": "contract BetKernel"
+                        }
+                      },
+                      "id": 3247,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "placeBet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 162,
+                      "src": "1045:18:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$_t_bytes32_$_t_address_$_t_uint256_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes32,address,uint256,uint256) payable external returns (bytes32)"
+                      }
+                    },
+                    "id": 3254,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1045:60:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 3215,
+                  "id": 3255,
+                  "nodeType": "Return",
+                  "src": "1038:67:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3257,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "placeBet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3209,
+                  "name": "_betHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3257,
+                  "src": "691:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3208,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3211,
+                  "name": "_option",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3257,
+                  "src": "717:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3210,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "717:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "681:54:14"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 3215,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3214,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3257,
+                  "src": "783:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3213,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "783:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "782:9:14"
+            },
+            "scope": 3258,
+            "src": "664:448:14",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 3259,
+        "src": "340:774:14"
+      }
+    ],
+    "src": "0:1114:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-20T09:44:28.924Z"
+}
