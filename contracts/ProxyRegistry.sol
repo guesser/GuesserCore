@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // External
 import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
@@ -61,9 +61,8 @@ contract ProxyRegistry is Pausable {
         if (kernelProxiesAllowance[_proxy] == true ||
             paymentsProxiesAllowance[_proxy] == true ||
             oracleProxiesAllowance[_proxy] == true ||
-            termsProxiesAllowance[_proxy] == true) 
+            termsProxiesAllowance[_proxy] == true)
             return true;
         return false;
     }
 }
-

@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "../ProxyInterfaces/BetOracleProxyInterface.sol";
@@ -41,7 +41,7 @@ contract OwnerBasedOracle is RegistrySetter, BetOracleProxyInterface {
         bytes32 _betHash
     )
         public
-        view 
+        view
         returns(uint)
     {
         require(outcomeReady(_betHash));

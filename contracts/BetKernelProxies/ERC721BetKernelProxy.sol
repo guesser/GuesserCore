@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "../ProxyInterfaces/BetKernelProxyInterface.sol";
@@ -14,7 +14,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
  * An ERC721 implementation for the kernel used in the Guesser Protocol
  * It has to inherate from the RegistrySetter so it can get called throught
  * a delegate call from the BetPayments contract.
- * This contract only allows 1 vs 1 bets. 
+ * This contract only allows 1 vs 1 bets.
  * NO MORE THAN TWO PLAYERS ARE ALLOWED TO PLAY
  *
  * Author: Carlos Gonzalez -- Github: carlosgj94
@@ -34,8 +34,8 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         bytes32 _playerBetHashProof,
         uint _option,
         uint _number
-    ) 
-        public 
+    )
+        public
         returns(bool)
     {
         address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
@@ -74,7 +74,7 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
             _betHash,
             1
         );
-        
+
         addTokenToOption(_betHash, _number);
 
         return true;
@@ -89,8 +89,8 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
     function getProfits(
         bytes32 _betHash,
         bytes32 _playerBetHash
-    ) 
-        public 
+    )
+        public
         returns(bool)
     {
         BetOracle _betOracle = BetOracle(betRegistry.betOracle());
@@ -122,7 +122,7 @@ contract ERC721BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
 
         // Transfer both, his bet and the other
         transferProfits(_betHash, msg.sender);
-        
+
         betRegistry.setPlayerBetReturned(_betHash, _playerBetHash, true);
 
         return true;

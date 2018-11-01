@@ -1,10 +1,10 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 
 interface BetTermsProxyInterface {
 
     function setTermsHash(bytes32[] _terms)
-        public 
+        public
         returns(bool);
 
     function changePeriod(bytes32 _termsHash, uint _status)
@@ -26,7 +26,7 @@ interface BetTermsProxyInterface {
         returns(bool);
 
     function retrievingPeriod(bytes32 _termsHash)
-        external 
+        external
         view
         returns(bool);
 

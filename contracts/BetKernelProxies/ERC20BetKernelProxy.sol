@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "../ProxyInterfaces/BetKernelProxyInterface.sol";
@@ -102,7 +102,7 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         BetPayments _betPayments = BetPayments(betRegistry.betPayments());
         BetOracle _betOracle = BetOracle(betRegistry.betOracle());
         BetTerms _betTerms = BetTerms(betRegistry.betTerms());
-        
+
         require(msg.sender == betRegistry.getPlayerBetPlayer(_betHash, _playerBetHash));
         require(!betRegistry.getPlayerBetReturned(_betHash, _playerBetHash));
 
@@ -117,7 +117,7 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
                 betRegistry.getBetOracleProxy(_betHash),
                 _betHash
             ) != betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
-        ) 
+        )
             return false;
 
         require(

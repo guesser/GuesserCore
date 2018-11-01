@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "../RegistrySetter.sol";
@@ -54,7 +54,7 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
         require(_participationPeriod > now, "Participation period must be until future deadline");
         require(_waitingPeriod > _participationPeriod, "Waiting period must end after participation period");
         require(_retrievingPeriod > _waitingPeriod, "Retrieving period must end after waiting period");
-        
+
         bytes32 hash = getTermsHash(_terms);
         betsTerms[hash] = BetTerms(_participationPeriod, _waitingPeriod, _retrievingPeriod);
 
@@ -103,7 +103,7 @@ contract TimeBasedTerms is RegistrySetter, BetTermsProxyInterface {
 
     function uintToBytes32(uint _number) public pure returns (bytes32) {
         bytes32 _b = bytes32(_number);
-        
+
         return _b;
     }
 }

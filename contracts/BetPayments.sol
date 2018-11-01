@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "./RegistrySetter.sol";
@@ -70,7 +70,7 @@ contract BetPayments is RegistrySetter {
         public
         whenPaused
         returns(bool)
-    {    
+    {
         betRegistry.isAuthorised(msg.sender);
         require(_paymentsProxy.delegatecall(
             bytes4(
@@ -104,7 +104,7 @@ contract BetPayments is RegistrySetter {
         public
         whenPaused
         returns(bool)
-    {    
+    {
         betRegistry.isAuthorised(msg.sender);
         require(_paymentsProxy.delegatecall(
             bytes4(

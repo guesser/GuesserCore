@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "../RegistrySetter.sol";
@@ -119,7 +119,7 @@ contract OwnerBased is RegistrySetter, BetTermsProxyInterface {
      * @return bool if the period for betting is over
      */
     function retrievingPeriod(bytes32 _termsHash)
-        public 
+        public
         view
         returns(bool)
     {

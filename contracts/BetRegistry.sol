@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 // Internal
 import "./RegistryStorage.sol";
@@ -150,9 +150,9 @@ contract BetRegistry is RegistryStorage {
         bytes32 _betHash,
         uint _number
     )
-        public 
+        public
         onlyAuthorised
-        returns(uint) 
+        returns(uint)
     {
         require(betRegistry[_betHash].creator != address(0));
 
@@ -230,10 +230,10 @@ contract BetRegistry is RegistryStorage {
     function getBetKernelProxy(
         bytes32 _betHash
     )
-        public 
-        view 
+        public
+        view
         onlyAuthorised
-        returns (address) 
+        returns (address)
     {
         require(betExists(_betHash));
 
@@ -244,9 +244,9 @@ contract BetRegistry is RegistryStorage {
         bytes32 _betHash
     )
         public
-        view 
+        view
         onlyAuthorised
-        returns (address) 
+        returns (address)
     {
         require(betExists(_betHash));
 
@@ -257,20 +257,20 @@ contract BetRegistry is RegistryStorage {
         bytes32 _betHash
     )
         public
-        view 
+        view
         onlyAuthorised
-        returns(address) 
+        returns(address)
     {
         require(betExists(_betHash));
 
         return betRegistry[_betHash].paymentsToken;
     }
 
-    function getBetOracleProxy(bytes32 _betHash) 
-        public 
-        view 
+    function getBetOracleProxy(bytes32 _betHash)
+        public
+        view
         onlyAuthorised
-        returns(address) 
+        returns(address)
     {
         require(betExists(_betHash));
 
@@ -279,11 +279,11 @@ contract BetRegistry is RegistryStorage {
 
     function getBetTermsProxy(
         bytes32 _betHash
-    ) 
-        public 
-        view 
+    )
+        public
+        view
         onlyAuthorised
-        returns(address) 
+        returns(address)
     {
         require(betExists(_betHash));
 
@@ -293,10 +293,10 @@ contract BetRegistry is RegistryStorage {
     function getBetTermsHash(
         bytes32 _betHash
     )
-        public 
-        view 
+        public
+        view
         onlyAuthorised
-        returns(bytes32) 
+        returns(bytes32)
     {
         require(betExists(_betHash));
 
@@ -306,10 +306,10 @@ contract BetRegistry is RegistryStorage {
     function getBetTitle(
         bytes32 _betHash
     )
-        public 
-        view 
+        public
+        view
         onlyAuthorised
-        returns(string) 
+        returns(string)
     {
         require(betExists(_betHash));
 
@@ -319,10 +319,10 @@ contract BetRegistry is RegistryStorage {
     function getBetDatetime(
         bytes32 _betHash
     )
-        public 
-        view 
+        public
+        view
         onlyAuthorised
-        returns(uint) 
+        returns(uint)
     {
         require(betExists(_betHash));
 
@@ -332,9 +332,9 @@ contract BetRegistry is RegistryStorage {
     function getBetCreator(
         bytes32 _betHash
     )
-        public 
-        view 
-        returns(address) 
+        public
+        view
+        returns(address)
     {
         require(betExists(_betHash));
 
@@ -344,10 +344,10 @@ contract BetRegistry is RegistryStorage {
     function getTotalPrincipal(
         bytes32 _betHash
     )
-        public 
-        view 
+        public
+        view
         onlyAuthorised
-        returns(uint) 
+        returns(uint)
     {
         require(betExists(_betHash));
 
@@ -357,11 +357,11 @@ contract BetRegistry is RegistryStorage {
     function getPrincipalInOption(
         bytes32 _betHash,
         uint _option
-    ) 
-        public 
-        view 
+    )
+        public
+        view
         onlyAuthorised
-        returns(uint) 
+        returns(uint)
     {
         require(betExists(_betHash));
 
@@ -454,7 +454,7 @@ contract BetRegistry is RegistryStorage {
         bytes32 _playerBetHash,
         bool _returned
     )
-        public 
+        public
         onlyAuthorised
         returns(bool)
     {

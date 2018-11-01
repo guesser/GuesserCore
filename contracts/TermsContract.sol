@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.24;
 
 
 // Minimal interface to implement in the TermsContractProxies
@@ -6,7 +6,7 @@ pragma solidity 0.4.24;
 interface TermsContract {
 
     function participationPeriod(bytes32 _termsHash)
-        external 
+        external
         view
         returns(bool);
 
@@ -16,12 +16,12 @@ interface TermsContract {
         returns(bool);
 
     function retrievingPeriod(bytes32 _termsHash)
-        external 
+        external
         view
         returns(bool);
 
     function finishedPeriod(bytes32 _termsHash)
-        external 
+        external
         view
         returns(bool);
 }
