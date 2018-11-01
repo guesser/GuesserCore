@@ -231,7 +231,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns (address)
     {
         require(betExists(_betHash));
@@ -244,7 +243,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns (address)
     {
         require(betExists(_betHash));
@@ -257,7 +255,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(address)
     {
         require(betExists(_betHash));
@@ -268,7 +265,6 @@ contract BetRegistry is RegistryStorage {
     function getBetOracleProxy(bytes32 _betHash)
         public
         view
-        onlyAuthorised
         returns(address)
     {
         require(betExists(_betHash));
@@ -281,7 +277,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(address)
     {
         require(betExists(_betHash));
@@ -294,7 +289,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(bytes32)
     {
         require(betExists(_betHash));
@@ -307,7 +301,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(string)
     {
         require(betExists(_betHash));
@@ -320,7 +313,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(uint)
     {
         require(betExists(_betHash));
@@ -345,7 +337,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(uint)
     {
         require(betExists(_betHash));
@@ -359,7 +350,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(uint)
     {
         require(betExists(_betHash));
@@ -373,7 +363,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(string)
     {
         return betRegistry[_betHash].optionTitles[_option];
@@ -385,7 +374,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(address)
     {
         require(playerBetExists(_betHash, _playerBetHash));
@@ -399,7 +387,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(uint)
     {
         require(playerBetExists(_betHash, _playerBetHash));
@@ -413,7 +400,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(uint)
     {
         require(playerBetExists(_betHash, _playerBetHash));
@@ -427,7 +413,6 @@ contract BetRegistry is RegistryStorage {
     )
         public
         view
-        onlyAuthorised
         returns(bool)
     {
         require(playerBetExists(_betHash, _playerBetHash));
