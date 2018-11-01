@@ -6,24 +6,18 @@ import "../RegistrySetter.sol";
 import "../BetPayments.sol";
 import "../BetOracle.sol";
 import "../BetTerms.sol";
-// External
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "../WETH9.sol";
 
 
 /**
- * An ERC20 implementation for the kernel used in the Guesser Protocol
+ * A WETH implementation for the kernel used in the Guesser Protocol
  * It has to inherate from the RegistrySetter so it can get called throught
  * a delegate call from the BetPayments contract.
  *
- * Author: Carlos Gonzalez -- Github: carlosgj94
+ * Author: Ben Kaufman -- Github: ben-kaufman
  */
-/** @title ERC20BetKernelProxy. */
-contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
-
-    modifier onlyBetOwner(bytes32 _betHash) {
-        require(betRegistry.getBetCreator(_betHash) == msg.sender);
-        _;
-    }
+/** @title ETHBetKernelProxy. */
+contract ETHBetKernelProxy is RegistrySetter, BetKernelProxyInterface {
 
     /**
      * @dev Function that places a bet and returns its hash
@@ -40,13 +34,23 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         uint _number
     )
         public
+        payable
         returns(bool)
     {
+
         address _paymentsProxy = betRegistry.getBetPaymentsProxy(_betHash);
         address _paymentsToken = betRegistry.getBetPaymentsToken(_betHash);
 
         BetPayments _betPayments = BetPayments(betRegistry.betPayments());
         BetTerms _betTerms = BetTerms(betRegistry.betTerms());
+
+        require(msg.value == _number, "amount given is different than value sent");
+        require(_number > 0, "you must send ether to place a bet");
+
+        WETH9(_paymentsToken).deposit.value(msg.value)();
+
+        require(WETH9(_paymentsToken).approve(address(_betPayments), _number), "couldn't approve weth");
+
         require(
             _betTerms.participationPeriod(
                 betRegistry.getBetTermsProxy(_betHash),
@@ -58,11 +62,12 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
             _betPayments.transferFrom(
                 _paymentsProxy,
                 _paymentsToken,
-                msg.sender,
+                address(this),
                 address(_betPayments),
                 _number
             )
         );
+
         // Creating the actual bet and returning the hash
         bytes32 _playerBetHash = betRegistry.insertPlayerBet(
             _betHash,
@@ -77,6 +82,7 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
             _betHash,
             _number
         );
+
         betRegistry.addToOption(
             _betHash,
             _option,
@@ -84,7 +90,6 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
         );
 
         return true;
-
     }
 
     /**
@@ -132,16 +137,24 @@ contract ERC20BetKernelProxy is RegistrySetter, BetKernelProxyInterface {
                 betRegistry.getPlayerBetOption(_betHash, _playerBetHash)
             ) / betRegistry.getPlayerBetPrincipal(_betHash, _playerBetHash);
         _profits = betRegistry.getTotalPrincipal(_betHash) / _profits;
-        // Return the money
+
+        // Get the WETH tokens
         require(
             _betPayments.transfer(
                 betRegistry.getBetPaymentsProxy(_betHash),
                 betRegistry.getBetPaymentsToken(_betHash),
-                msg.sender,
+                address(this),
                 _profits
             )
         );
+
         betRegistry.setPlayerBetReturned(_betHash, _playerBetHash, true);
+
+
+        WETH9(betRegistry.getBetPaymentsToken(_betHash)).withdraw(_profits);
+        // Return the ETH
+        (msg.sender).transfer(_profits);
+
 
         return true;
     }

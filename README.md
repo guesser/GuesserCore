@@ -1,4 +1,4 @@
-![banner](https://raw.githubusercontent.com/GuesserProtocol/GuesserProtocol/master/core_name.png)
+![banner](https://raw.githubusercontent.com/Guesser/GuesserCore/master/guesser_core_github.png)
 
 
 # Guesser Core 
