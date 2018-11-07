@@ -101,6 +101,7 @@ contract("ETH Bet Kernel Test", async accounts => {
       ownerBased.address,
       termsHash,
       web3.fromAscii("Hola Mundo"),
+      BETTER_1,
       1 // Salt
     );
     await betRegistry.createBet(
@@ -111,6 +112,7 @@ contract("ETH Bet Kernel Test", async accounts => {
       ownerBased.address,
       termsHash,
       web3.fromAscii("Hola Mundo"),
+      BETTER_1,
       1 // Salt
     );
   });

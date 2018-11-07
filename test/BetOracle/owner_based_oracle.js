@@ -92,6 +92,7 @@ contract("Owner Based Bet Oracle Proxy Test", async (accounts) => {
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hola Mundo"),
+            BETTER_1,
             1 // Salt
         );
     });

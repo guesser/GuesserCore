@@ -66,6 +66,7 @@ contract BetRegistry is RegistryStorage {
         address _termsProxy,
         bytes32 _termsHash,
         string _title,
+        address _sender,
         uint _salt
     ) public returns(bytes32) {
         require(proxyRegistry.addressInProxies(_kernelProxy));
@@ -82,7 +83,7 @@ contract BetRegistry is RegistryStorage {
             _termsHash,
             _title,
             block.timestamp,
-            msg.sender,
+            _sender,
             0
         );
         bytes32 _hash = keccak256(
@@ -303,8 +304,6 @@ contract BetRegistry is RegistryStorage {
         view
         returns(string)
     {
-        require(betExists(_betHash));
-
         return betRegistry[_betHash].title;
     }
 

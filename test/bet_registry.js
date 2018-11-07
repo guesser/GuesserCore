@@ -110,6 +110,7 @@ contract("Bet Registry Test", async (accounts) => {
                 ownerBased.address,
                 termsHash,
                 web3.fromAscii("Hola Mundo"),
+                BETTER_1,
                 1 // Salt
             );
             expect(false).to.be.equal(true);
@@ -133,6 +134,7 @@ contract("Bet Registry Test", async (accounts) => {
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hola Mundo"),
+            BETTER_1,
             1, // Salt
             {from: BETTER_1}
         );
@@ -144,6 +146,7 @@ contract("Bet Registry Test", async (accounts) => {
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hola Mundo"),
+            BETTER_1,
             1, // Salt
             {from: BETTER_1}
         );

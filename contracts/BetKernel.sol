@@ -63,6 +63,7 @@ contract BetKernel is RegistrySetter {
             _termsProxy,
             _termsHash,
             _title,
+            msg.sender,
             _salt
         );
 

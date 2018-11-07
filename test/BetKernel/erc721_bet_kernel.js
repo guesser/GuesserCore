@@ -95,6 +95,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hello World"),
+            BETTER_1,
             1 // Salt
         );
         await betRegistry.createBet(
@@ -105,6 +106,7 @@ contract("ERC721 Bet Kernel Test", async (accounts) => {
             ownerBased.address,
             termsHash,
             web3.fromAscii("Hello World"),
+            BETTER_1,
             1 // Salt
         );
     });

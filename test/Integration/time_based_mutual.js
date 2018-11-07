@@ -111,7 +111,7 @@ contract("Time Based Mutual", async accounts => {
       ownerBasedOracle.address,
       timeBasedProxy.address,
       terms,
-      web3.fromAscii("Hola Mundo"),
+      web3.fromAscii("Hello World"),
       1 // Salt
     );
     await betKernel.createBet(
@@ -121,7 +121,7 @@ contract("Time Based Mutual", async accounts => {
       ownerBasedOracle.address,
       timeBasedProxy.address,
       terms,
-      web3.fromAscii("Hola Mundo"),
+      web3.fromAscii("Hello World"),
       1 // Salt
     );
     betHash = betResult[0];
