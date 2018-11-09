@@ -25,6 +25,8 @@ contract BetRegistry is RegistryStorage {
     // Storage
     ProxyRegistry public proxyRegistry;
 
+    bytes32[] public bets;
+
     constructor(
         address _proxyRegistry,
         address _betKernel,
@@ -95,7 +97,6 @@ contract BetRegistry is RegistryStorage {
                 _termsProxy,
                 _termsHash,
                 _title,
-                block.timestamp,
                 msg.sender,
                 _salt
             )
@@ -103,8 +104,13 @@ contract BetRegistry is RegistryStorage {
         require(betRegistry[_hash].creator == address(0));
 
         betRegistry[_hash] = _entry;
+        bets.push(_hash);
         emit LogBetEntry(_hash);
         return _hash;
+    }
+
+    function getBet(uint _index) public view returns(bytes32) {
+        return bets[_index];
     }
 
     // Setters to place a bet
